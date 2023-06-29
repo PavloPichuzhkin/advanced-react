@@ -1,9 +1,12 @@
 import {useState} from "react";
 import './Test.scss'
+import classes from './Test.module.scss';
+
 interface Props  {
     defaultCount: string|number
 };
-export const Test = (props: Props  ) => {
+
+ const Test = (props: Props  ) => {
     const {defaultCount  } = props
     const [count, setCount] = useState<string|number>(defaultCount)
 
@@ -13,7 +16,8 @@ export const Test = (props: Props  ) => {
     return (
         <div>
             <h2 className={'count'}>{count}</h2>
-            <div onClick={inc}>someDiv</div>
+            <div onClick={inc} className={classes.btn}>someDiv</div>
         </div>
     );
 };
+export default Test

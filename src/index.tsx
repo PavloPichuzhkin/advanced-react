@@ -1,12 +1,18 @@
-// import bar from './bar';
-// bar();
+
 import { createRoot } from 'react-dom/client';
-import {Test} from "./pages/Test";
+import {BrowserRouter} from "react-router-dom";
+import ThemeProvider from "./styles/theme/ThemeProvider";
+import App from "./App";
 
 const domNode = document.getElementById('root');
 
 const root = createRoot(domNode );
-const defaultCount="5"
-root.render( <Test defaultCount={defaultCount } />);
+root.render(
+    <BrowserRouter>
+        <ThemeProvider>
+            <App />
+        </ThemeProvider>
+    </BrowserRouter>,
+);
 
 //TODO test toto webstorm
