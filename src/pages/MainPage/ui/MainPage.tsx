@@ -1,4 +1,5 @@
-import Test from "../Test";
+import {Test} from "entities/Test";
+
 
 const MainPage = () => {
     const defaultCount="5"
