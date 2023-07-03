@@ -1,6 +1,6 @@
 import LightIcon from 'shared/assets/icons/theme-light.svg';
 import DarkIcon from 'shared/assets/icons/theme-dark.svg';
-import {Button, ThemeButton} from "shared/ui/Button/Button";
+import {Button, ThemeButton} from "shared/ui/Button/ui/Button";
 import {useTheme} from "shared/lib/hooks/useTheme/useTheme";
 import {classNames} from "shared/lib/helpers/classNames/classNames";
 import {Theme} from "shared/lib/context/ThemeContext";

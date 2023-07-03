@@ -1,16 +1,11 @@
-import {Test} from "entities/Test";
-
+import {useTranslation} from "react-i18next";
 
 const MainPage = () => {
-    const defaultCount="5"
+    const {t} = useTranslation()
 
     return (
         <div>
-            MainPage
-            <div>
-                Text
-                < Test defaultCount={defaultCount }   />
-            </div>
+            {t('Main page')}
         </div>
     );
 };
