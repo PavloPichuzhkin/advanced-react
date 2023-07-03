@@ -4,7 +4,7 @@ import classes from './Test.module.scss';
 
 interface Props  {
     defaultCount: string|number
-};
+}
 
  const Test = (props: Props  ) => {
     const {defaultCount  } = props
@@ -21,3 +21,4 @@ interface Props  {
     );
 };
 export default Test
+
