@@ -42,10 +42,30 @@ export function buildLoaders({isDev,}: BuildOptions): RuleSetRule[] {
         test: /\.svg$/,
         use: ['@svgr/webpack']
     }
+    const babelLoader = {
+        test: /\.(js|jsx|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: "babel-loader",
+            options: {
+                presets: ['@babel/preset-env'],
+                "plugins": [
+                    [
+                        "i18next-extract",
+                        {
+                            locales: ['uk', 'en'],
+                            keyAsDefaultValue: true
+                        }
+                    ],
+                ]
+            }
+        }
+    }
 
     return [
         fileLoader,
         svgLoader,
+        babelLoader,
         tsLoader,
         cssLoader,
     ]

@@ -9,6 +9,7 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
             overlay: false,
         },
         historyApiFallback:true,
+        hot: true,
 
     }
 }
