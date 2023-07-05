@@ -1,12 +1,12 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next'
-import { Test } from 'entities/Test'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Test } from 'entities/Test';
 
 const AboutPage = () => {
-    const { t } = useTranslation('about')
+    const { t } = useTranslation('about');
     return (
         <div>
-            <Test defaultCount={5}/>
+            <Test defaultCount={5} />
             <div>
                 {t('About Page')}
             </div>
@@ -15,7 +15,7 @@ const AboutPage = () => {
                 {t('Test')}
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default AboutPage
+export default AboutPage;

@@ -1,1 +1,1 @@
-export * from './ui/AppLink'
+export * from './ui/AppLink';
