@@ -1,8 +1,8 @@
-import {RuleSetRule} from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import {BuildOptions} from "./types/config";
+import { type RuleSetRule } from 'webpack'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { type BuildOptions } from './types/config'
 
-export function buildLoaders({isDev,}: BuildOptions): RuleSetRule[] {
+export function buildLoaders ({ isDev }: BuildOptions): RuleSetRule[] {
     const cssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
@@ -15,18 +15,18 @@ export function buildLoaders({isDev,}: BuildOptions): RuleSetRule[] {
                     modules: {
                         auto: (resPath: string) => Boolean(resPath.includes('.module.')),
                         localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]'
-                    },
+                    }
                 }
             },
             // Compiles Sass to CSS
-            'sass-loader',
+            'sass-loader'
         ]
     }
 
     const tsLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/,
+        exclude: /node_modules/
     }
 
     const fileLoader = {
@@ -46,17 +46,17 @@ export function buildLoaders({isDev,}: BuildOptions): RuleSetRule[] {
         test: /\.(js|jsx|tsx)$/,
         exclude: /node_modules/,
         use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
                 presets: ['@babel/preset-env'],
-                "plugins": [
+                plugins: [
                     [
-                        "i18next-extract",
+                        'i18next-extract',
                         {
                             locales: ['uk', 'en'],
                             keyAsDefaultValue: true
                         }
-                    ],
+                    ]
                 ]
             }
         }
@@ -67,6 +67,6 @@ export function buildLoaders({isDev,}: BuildOptions): RuleSetRule[] {
         svgLoader,
         babelLoader,
         tsLoader,
-        cssLoader,
+        cssLoader
     ]
 }
