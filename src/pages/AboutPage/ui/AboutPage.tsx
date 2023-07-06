@@ -12,8 +12,8 @@ const AboutPage = () => {
             </div>
             <div>
                 {t('description.part1')}
-                {t('Test')}
             </div>
+            <div>{t('some')}</div>
         </div>
     );
 };

@@ -2,5 +2,6 @@
   "About Page": "About Page",
   "description": {
     "part1": "To get started, edit <1>src/App.js</1> and save to reload."},
-  "Test": "Test"
+  "Test": "Test",
+  "some": "some"
 }

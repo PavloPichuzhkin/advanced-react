@@ -1,14 +1,16 @@
 .Navbar {
-  background-color: var(--inverted-bg-color);
-  height: 60px;
-  display: flex;
-  align-items: center;
-  margin-right: auto;
+    background-color: var(--inverted-bg-color);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
 }
+
 .links{
-  margin-left: auto;
-  margin-right: 2%;
+    margin-left: auto;
+    margin-right: 2%;
 }
+
 .mainLink{
-  margin-right: 20px;
+    margin-right: 20px;
 }

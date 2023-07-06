@@ -18,6 +18,9 @@ export const Navbar = ({ className }: NavbarProps) => {
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
             <div className={cls.links}>
+                {/* eslint-disable-next-line i18next/no-literal-string */}
+                <div>Someone</div>
+
                 <AppLink
                     theme={appLinkTheme}
                     to="/"
