@@ -1,10 +1,14 @@
 {
   "About Page": "About Page",
   "About us": "About us",
+  "An unexpected error occurred": "An unexpected error occurred",
   "Language": "Language",
   "Main": "Main",
   "Main page": "Main page",
+  "Page not found": "Page not found",
+  "Refresh the page": "Refresh the page",
   "Test": "Test",
+  "Throw error": "Throw error",
   "description": {
     "part1": "part1"
   },

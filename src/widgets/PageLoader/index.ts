@@ -1,1 +1,1 @@
-export * from './ui/Button';
+export { PageLoader } from './ui/PageLoader';

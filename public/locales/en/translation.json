@@ -3,5 +3,9 @@
   "Main page": "Main page",
   "Language": "English",
   "Main": "Main",
-  "About us": "About us"
-  }
+  "About us": "About us",
+  "Page not found": "Page not found",
+  "An unexpected error occurred": "An unexpected error occurred",
+  "Refresh the page": "Refresh the page",
+  "Throw error": "Throw error"
+}
