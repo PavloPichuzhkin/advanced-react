@@ -14,7 +14,7 @@ const AboutPage = () => {
                 {t('About Page')}
             </div>
             <div>
-                description.part1
+                {t('description.part1')}
             </div>
             <ThrowErrorButton />
         </div>
