@@ -1,5 +1,5 @@
 import React, {
-    type FC, type PropsWithChildren, useMemo, useState,
+    FC, PropsWithChildren, useMemo, useState,
 } from 'react';
 import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from 'shared/lib/context/ThemeContext';
 
