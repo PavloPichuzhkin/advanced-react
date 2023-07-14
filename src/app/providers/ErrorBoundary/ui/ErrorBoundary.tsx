@@ -1,6 +1,7 @@
 import React, { ErrorInfo, ReactNode, Suspense } from 'react';
 import { ErrorPage } from 'widgets/ErrorPage/ui/ErrorPage';
 import { Loader } from 'shared/ui/Loader/Loader';
+import { classNames } from 'shared/lib/helpers/classNames/classNames';
 
 interface ErrorBoundaryProps {
     children: ReactNode;
@@ -36,7 +37,7 @@ class ErrorBoundary
             return (
                 // <Suspense fallback={<Loader />}>
                 <Suspense fallback="">
-                    <ErrorPage />
+                    <ErrorPage className={classNames('app', {}, ['dark'])} />
                 </Suspense>
             );
         }

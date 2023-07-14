@@ -7,7 +7,7 @@ import { Suspense } from 'react';
 import { Sidebar } from 'widgets/Sidebar';
 
 function App() {
-    const { theme, toggleTheme } = useTheme();
+    const { theme } = useTheme();
 
     return (
 

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
-import { Button } from 'shared/ui/Button';
+import { Button, ThemeButton } from 'shared/ui/Button';
 import cls from './ErrorPage.module.scss';
 
 interface ErrorPageProps {
@@ -18,7 +18,7 @@ export const ErrorPage = ({ className }: ErrorPageProps) => {
     return (
         <div className={classNames(cls.ErrorPage, {}, [className])}>
             <p>{t('An unexpected error occurred')}</p>
-            <Button onClick={reloadPage}>
+            <Button onClick={reloadPage} theme={ThemeButton.OUTLINE}>
                 {t('Refresh the page')}
             </Button>
         </div>

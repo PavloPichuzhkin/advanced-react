@@ -12,7 +12,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
     const toggle = async () => {
         i18n.changeLanguage(i18n.language === 'uk' ? 'en' : 'uk');
     };
-
+    console.log(t('Language'));
     return (
         <Button
             className={classNames('', {}, [className])}
@@ -20,6 +20,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
             onClick={toggle}
         >
             {t('Language')}
+
         </Button>
     );
 };
