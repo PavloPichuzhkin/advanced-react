@@ -13,5 +13,6 @@
   "description": {
     "part1": "part1"
   },
-  "some": "some"
+  "some": "some",
+  "Toggle": "Toggle"
 }

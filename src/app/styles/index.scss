@@ -3,20 +3,19 @@
 @import "./themes/light";
 @import "./themes/dark";
 
-//body{
-//    background: #eae6e6;
-//}
+// body{
+//     background: #eae6e6;
+// }
 
 .app {
     font: var(--font-m);
-
     background: var(--bg-color);
     color: var(--primary-color);
     min-height: 100vh;
 }
 
 .content-page {
-    //background: var(--bg-color);
+    // background: var(--bg-color);
     display: flex;
 }
 
