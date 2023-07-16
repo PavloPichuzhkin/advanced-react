@@ -4,4 +4,4 @@
 .idea
 /node_modules
 /storybook-static
-.loki
+#.loki
