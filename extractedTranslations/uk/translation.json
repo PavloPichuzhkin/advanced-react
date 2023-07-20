@@ -19,9 +19,11 @@
   "Test": "Test",
   "Throw error": "Throw error",
   "Toggle": "Toggle",
+  "decrement": "decrement",
   "description": {
     "part1": "part1"
   },
+  "increment": "increment",
   "some": "some",
   "Войти": "Войти"
 }

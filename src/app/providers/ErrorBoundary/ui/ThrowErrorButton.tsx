@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button';
 
 export const ThrowErrorButton = () => {
     const [error, setError] = useState(false);
@@ -17,6 +17,7 @@ export const ThrowErrorButton = () => {
     return (
         <Button
             onClick={onThrow}
+            theme={ButtonTheme.BACKGROUND_INVERTED}
         >
             {t('Throw error')}
         </Button>

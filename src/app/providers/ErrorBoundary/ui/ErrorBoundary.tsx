@@ -37,7 +37,7 @@ class ErrorBoundary
             return (
                 // <Suspense fallback={<Loader />}>
                 <Suspense fallback="">
-                    <ErrorPage className={classNames('app', {}, ['dark'])} />
+                    <ErrorPage className={classNames('', {}, [])} />
                 </Suspense>
             );
         }

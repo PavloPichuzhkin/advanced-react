@@ -13,7 +13,7 @@ interface ModalProps {
     onClose?: () => void;
 }
 
-const ANIMATION_DELAY = 300;
+const ANIMATION_DELAY = 400;
 
 export const Modal = (props: ModalProps) => {
     const {
@@ -37,7 +37,6 @@ export const Modal = (props: ModalProps) => {
         }
     }, [onClose]);
 
-    // Новые ссылки!!!
     const onKeyDown = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') {
             closeHandler();

@@ -7,8 +7,10 @@
   "Page not found": "Сторінка не знайдена",
   "An unexpected error occurred": "Сталася неочікувана помилка",
   "Refresh the page": "Оновіть сторінку",
-  "Throw error": "Throw error",
-  "Toggle": "Toggle",
+  "Throw error": "Створити помилку",
+  "Toggle": "Перемкнути",
   "Short Language": "Uk",
-  "Sign in": "Вхід"
+  "Sign in": "Вхід",
+  "decrement": "decrement",
+  "increment": "increment"
 }

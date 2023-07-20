@@ -9,7 +9,7 @@ i18n
     .use(Backend)
     .use(initReactI18next)
     .init({
-        lng: 'uk',
+        lng: localStorage.getItem('i18nextLng') || 'uk',
         fallbackLng: 'uk', // if detected not default language i18n sent + 1 chunk with it
         debug: __IS_DEV__,
         // debug: true, // for storybook
