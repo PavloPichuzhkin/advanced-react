@@ -1,7 +1,14 @@
 .PageLoader{
+    flex-grow: 1;
+    background: var(--inverted-bg-color);
+}
+
+.beneathPageLoader{
+    background: var(--bg-color);
     height: calc(100vh - var(--navbar-height));
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
+    border-top-left-radius: 5px;
+    width: 100%;
 }

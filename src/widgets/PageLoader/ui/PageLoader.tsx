@@ -8,7 +8,10 @@ interface PageLoaderProps {
 }
 
 export const PageLoader = ({ className }: PageLoaderProps) => (
+
     <div className={classNames(cls.PageLoader, {}, [className])}>
-        <Spinner />
+        <div className={cls.beneathPageLoader}>
+            <Loader />
+        </div>
     </div>
 );

@@ -8,6 +8,7 @@ const i18nextStoryDecorator = (Story: StoryFn, context: StoryContext) => {
 
     // When the locale global changes
     // Set the new locale in i18n
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
         i18n.changeLanguage(locale);
     }, [locale]);
