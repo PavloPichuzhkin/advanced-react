@@ -7,14 +7,14 @@ import { CounterEntity } from './Counter';
 describe('Counter', () => {
     test('test render', () => {
         componentRender(<CounterEntity />, {
-            initialState: { counter: { value: 10 } },
+            initialState: { counterEntity: { valueEntity: 10 } },
         });
         expect(screen.getByTestId('value-title')).toHaveTextContent('10');
     });
 
     test('increment', () => {
         componentRender(<CounterEntity />, {
-            initialState: { counter: { value: 10 } },
+            initialState: { counterEntity: { valueEntity: 10 } },
         });
         fireEvent.click(screen.getByTestId('increment-btn'));
         // userEvent.click(screen.getByTestId('increment-btn'));
@@ -23,9 +23,9 @@ describe('Counter', () => {
 
     test('decrement', () => {
         componentRender(<CounterEntity />, {
-            initialState: { counter: { value: 9 } },
+            initialState: { counterEntity: { valueEntity: 9 } },
         });
-        userEvent.click(screen.getByTestId('decrement-btn'));
+        userEvent.click(screen.getByTestId('decrement-btn')); // TODO
         expect(screen.getByTestId('value-title')).toHaveTextContent('9');
     });
 });
