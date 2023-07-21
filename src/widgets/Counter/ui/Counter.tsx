@@ -8,7 +8,6 @@ export const Counter = () => {
     const dispatch = useDispatch();
     const counterValue = useSelector(getCounterValue);
     const { t } = useTranslation();
-    console.log(counterValue);
     const increment = () => {
         dispatch(counterActions.increment());
     };

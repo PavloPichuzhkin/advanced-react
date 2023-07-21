@@ -7,6 +7,6 @@ describe('getCounter', () => {
         const state: DeepPartial<StateSchema> = {
             counterEntity: { valueEntity: 10 },
         };
-        expect(getCounter(state as StateSchema)).toEqual({ value: 10 });
+        expect(getCounter(state as StateSchema)).toEqual({ valueEntity: 10 });
     });
 });
