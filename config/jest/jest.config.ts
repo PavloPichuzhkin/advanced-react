@@ -2,6 +2,9 @@ import type { Config } from 'jest';
 import path from 'path';
 
 const config: Config = {
+    globals: {
+        __IS_DEV__: true,
+    },
     clearMocks: true,
     testEnvironment: 'jsdom',
     coveragePathIgnorePatterns: [
@@ -16,7 +19,7 @@ const config: Config = {
         'node',
     ],
     moduleDirectories: [
-        'node_modules',
+        '<rootDir>src', 'node_modules',
     ],
     modulePaths: [
         '<rootDir>src',
@@ -206,5 +209,5 @@ const config: Config = {
     // Whether to use watchman for file crawling
     // watchman: true,
 };
-
+console.log(config.moduleDirectories);
 export default config;

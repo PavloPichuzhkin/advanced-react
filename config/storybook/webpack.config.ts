@@ -10,8 +10,13 @@ export default ({ config }: {config: webpack.Configuration}) => {
         entry: '',
         src: path.resolve(__dirname, '..', '..', 'src'),
     };
-    config.resolve.modules.push(paths.src);
-    config.resolve.extensions.push('.ts', '.tsx');
+    // https://stackoverflow.com/questions/51771077/storybook-with-absolute-paths
+    // modules: [path.resolve(__dirname, 'src'), 'node_modules']
+    config!.resolve!.modules = [];
+    config!.resolve!.modules!.push(paths.src);
+    config!.resolve!.modules!.push('node_modules');
+    // console.log(config!.resolve!.modules);
+    config!.resolve!.extensions!.push('.ts', '.tsx');
 
     // eslint-disable-next-line no-param-reassign
     config.module.rules = config.module.rules.map((rule: RuleSetRule) => {

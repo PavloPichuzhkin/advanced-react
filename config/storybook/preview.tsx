@@ -5,6 +5,7 @@ import { Theme } from 'shared/lib/context/ThemeContext';
 import { RouterDecorator } from 'shared/config/storybook/RouterDecorator';
 import i18nextStoryDecorator from 'shared/config/storybook/i18nextStoryDecorator';
 import i18n from 'shared/config/i18n/i18n';
+import { StoreProviderDecorator } from 'shared/config/storybook/StoreProviderDecorator';
 
 const preview: Preview = {
     globalTypes: {
@@ -37,7 +38,7 @@ const preview: Preview = {
         ThemeDecorator(Theme.LIGHT),
         RouterDecorator,
         i18nextStoryDecorator,
-
+        StoreProviderDecorator,
     ],
 };
 
