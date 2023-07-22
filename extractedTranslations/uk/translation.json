@@ -1,7 +1,10 @@
 {
+  "": "",
   "About Page": "About Page",
   "About us": "About us",
   "An unexpected error occurred": "An unexpected error occurred",
+  "Enter password": "Enter password",
+  "Enter username": "Enter username",
   "Language": "Language",
   "Language22": "Language22",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
@@ -25,5 +28,7 @@
   },
   "increment": "increment",
   "some": "some",
+  "Введите username": "Введите username",
+  "Введите пароль": "Введите пароль",
   "Войти": "Войти"
 }

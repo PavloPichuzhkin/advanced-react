@@ -18,15 +18,15 @@ export const CounterEntity = () => {
 
     return (
         <div>
-            <h1 data-testid="value-title">{counterValueEntity}</h1>
+            <h1 data-testid="value-title-entity">{counterValueEntity}</h1>
             <Button
                 onClick={increment}
-                data-testid="increment-btn"
+                data-testid="increment-btn-entity"
             >
                 {t('increment')}
             </Button>
             <Button
-                data-testid="decrement-btn"
+                data-testid="decrement-btn-entity"
                 onClick={decrement}
             >
                 {t('decrement')}

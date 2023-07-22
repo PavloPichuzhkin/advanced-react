@@ -3,12 +3,11 @@
 @import "./themes/light";
 @import "./themes/dark";
 
-// body{
-//     background: #eae6e6;
-// }
+body{
+    font: var(--font-m);
+}
 
 .app {
-    font: var(--font-m);
     background: var(--bg-color);
     color: var(--primary-color);
     min-height: 100vh;

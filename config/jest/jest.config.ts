@@ -19,7 +19,7 @@ const config: Config = {
         'node',
     ],
     moduleDirectories: [
-        '<rootDir>src', 'node_modules',
+        'node_modules',
     ],
     modulePaths: [
         '<rootDir>src',
@@ -209,5 +209,5 @@ const config: Config = {
     // Whether to use watchman for file crawling
     // watchman: true,
 };
-console.log(config.moduleDirectories);
+// console.log(config.moduleDirectories);
 export default config;

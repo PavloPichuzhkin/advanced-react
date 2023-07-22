@@ -1,5 +1,4 @@
 import { fireEvent, screen } from '@testing-library/react';
-// import { userEvent } from '@storybook/testing-library';
 import { componentRender } from 'shared/lib/helpers/tests/componentRender/componentRender';
 import userEvent from '@testing-library/user-event';
 import { CounterEntity } from './Counter';
@@ -9,23 +8,23 @@ describe('Counter', () => {
         componentRender(<CounterEntity />, {
             initialState: { counterEntity: { valueEntity: 10 } },
         });
-        expect(screen.getByTestId('value-title')).toHaveTextContent('10');
+        expect(screen.getByTestId('value-title-entity')).toHaveTextContent('10');
     });
 
     test('increment', () => {
         componentRender(<CounterEntity />, {
             initialState: { counterEntity: { valueEntity: 10 } },
         });
-        fireEvent.click(screen.getByTestId('increment-btn'));
+        fireEvent.click(screen.getByTestId('increment-btn-entity'));
         // userEvent.click(screen.getByTestId('increment-btn'));
-        expect(screen.getByTestId('value-title')).toHaveTextContent('11');
+        expect(screen.getByTestId('value-title-entity')).toHaveTextContent('11');
     });
 
-    test('decrement', () => {
+    test('decrement', async () => {
         componentRender(<CounterEntity />, {
-            initialState: { counterEntity: { valueEntity: 9 } },
+            initialState: { counterEntity: { valueEntity: 10 } },
         });
-        userEvent.click(screen.getByTestId('decrement-btn')); // TODO
-        expect(screen.getByTestId('value-title')).toHaveTextContent('9');
+        await userEvent.click(screen.getByTestId('decrement-btn-entity'));
+        expect(screen.getByTestId('value-title-entity')).toHaveTextContent('9');
     });
 });
