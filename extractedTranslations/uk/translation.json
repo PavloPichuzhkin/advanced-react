@@ -3,8 +3,10 @@
   "About Page": "About Page",
   "About us": "About us",
   "An unexpected error occurred": "An unexpected error occurred",
+  "Authorization form": "Authorization form",
   "Enter password": "Enter password",
   "Enter username": "Enter username",
+  "Incorrect username or password": "Incorrect username or password",
   "Language": "Language",
   "Language22": "Language22",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
@@ -19,9 +21,12 @@
   "Short Language": "Short Language",
   "Sign in": "Вхід",
   "Sign in ": "Sign in ",
+  "Sign in11": "Sign in11",
+  "Sign out": "Sign out",
   "Test": "Test",
   "Throw error": "Throw error",
   "Toggle": "Toggle",
+  "Uncorrected username or password": "Uncorrected username or password",
   "decrement": "decrement",
   "description": {
     "part1": "part1"
