@@ -5,5 +5,5 @@
 /node_modules
 /storybook-static
 #.loki
-.loki/report.html
-.loki/report.json
+/.loki/report.html
+/.loki/report.json

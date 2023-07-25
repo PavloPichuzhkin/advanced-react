@@ -29,6 +29,6 @@ export const loginByUsername = createAsyncThunk<
         return response.data;
     } catch (e) {
         console.log(e);
-        return thunkAPI.rejectWithValue('error');
+        return thunkAPI.rejectWithValue('error403');
     }
 });

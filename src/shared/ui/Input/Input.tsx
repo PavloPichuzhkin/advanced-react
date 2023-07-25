@@ -50,7 +50,8 @@ export const Input = memo((props: InputProps) => {
     const onSelect = (e: any) => {
         setCaretPosition(e?.target?.selectionStart || 0);
     };
-
+    // console.log(value);
+    // console.log(placeholder);
     return (
         <div className={classNames(cls.InputWrapper, {}, [className])}>
             {placeholder && (

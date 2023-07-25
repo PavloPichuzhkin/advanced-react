@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'shared/lib/context/ThemeContext';
-import { LoginForm } from './LoginForm';
+import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDecorator';
+import LoginForm from './LoginForm';
 
 const meta: Meta<typeof LoginForm> = {
-    title: '/features/AuthByUsername/LoginForm',
+    title: 'features/AuthByUsername/LoginForm',
     component: LoginForm,
     tags: ['autodocs'],
 };
@@ -16,9 +17,32 @@ export const Primary: Story = {
     args: {
     },
 };
+Primary.decorators = [PartialStoreDecorator({
+    loginForm: { username: '123', password: 'asd' },
+})];
 
 export const Dark: Story = {
     args: {
     },
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK), PartialStoreDecorator({
+    loginForm: { username: '123', password: 'asd' },
+})];
+
+export const withError: Story = {
+    args: {
+    },
+};
+withError.args = {};
+withError.decorators = [PartialStoreDecorator({
+    loginForm: { username: '123', password: 'asd', error: 'ERROR' },
+})];
+
+export const Loading: Story = {
+    args: {
+    },
+};
+Loading.args = {};
+Loading.decorators = [PartialStoreDecorator({
+    loginForm: { isLoading: true },
+})];
