@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDecorator';
+import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import LoginForm from './LoginForm';
 
 const meta: Meta<typeof LoginForm> = {
@@ -27,7 +28,7 @@ export const Dark: Story = {
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK), PartialStoreDecorator({
     loginForm: { username: '123', password: 'asd' },
-})];
+}, { loginForm: loginReducer })];
 
 export const withError: Story = {
     args: {

@@ -5,7 +5,7 @@ import { useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { getUserAuthData, userActions } from 'enteties/User';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'app/providers/StoreProvider/config/store';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {

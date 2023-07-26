@@ -5,8 +5,8 @@ import { Navbar } from 'widgets/Navbar';
 import { AppRouter } from 'app/providers/router';
 import { Suspense, useEffect } from 'react';
 import { Sidebar } from 'widgets/Sidebar';
-import { useAppDispatch } from 'app/providers/StoreProvider/config/store';
 import { userActions } from 'enteties/User';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 function App() {
     const { theme } = useTheme();
