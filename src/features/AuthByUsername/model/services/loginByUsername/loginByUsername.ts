@@ -18,7 +18,7 @@ export const loginByUsername = createAsyncThunk<
             'http://localhost:8000/login',
             authData,
         );
-        console.log(response);
+
         if (!response.data) {
             throw new Error();
         }
