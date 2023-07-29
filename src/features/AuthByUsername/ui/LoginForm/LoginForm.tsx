@@ -2,31 +2,33 @@ import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
-import { useSelector, useStore } from 'react-redux';
+import { useSelector } from 'react-redux';
 import React, { memo, useCallback, useEffect } from 'react';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { getUsername } from 'features/AuthByUsername/model/selectors/getUsername/getUsername';
 import { getPassword } from 'features/AuthByUsername/model/selectors/getPassword/getPassword';
-import { ReduxStoreWithManager } from 'app/providers/StoreProvider/config/StateSchema';
 import { getLoginError } from 'features/AuthByUsername/model/selectors/getLoginError/getLoginError';
 import { getLoginIsLoading } from 'features/AuthByUsername/model/selectors/getLoginIsLoading/getLoginIsLoading';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useNavigate } from 'react-router-dom';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 
 export interface LoginFormProps {
     className?: string;
+    onSuccess:()=>void
 }
 
 const reducers:ReducersList = {
     loginForm: loginReducer,
 };
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
 
     const username = useSelector(getUsername);
     const password = useSelector(getPassword);
@@ -50,8 +52,11 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
     const onLoginClick = useCallback(async () => {
         const result = await dispatch(loginByUsername({ password, username }));
         // console.log(result);
-        // result.meta.requestStatus
-    }, [dispatch, password, username]);
+        if (result.meta.requestStatus === 'fulfilled') {
+            onSuccess();
+            // navigate('/', { replace: true });
+        }
+    }, [dispatch, onSuccess, password, username]);
 
     const onKeyDown = useCallback((e: KeyboardEvent) => {
         // console.log(e.key);

@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ThrowErrorButton } from 'app/providers/ErrorBoundary/ui/ThrowErrorButton';
 import { Counter } from 'widgets/Counter';
 import { CounterEntity } from 'enteties/Counter';
-// import { Counter } from 'entities/Counter';
 
 const AboutPage = () => {
     const { t } = useTranslation('about');
+    const [test, setTest] = useState(0);
     return (
         <div>
             <div>
@@ -15,6 +15,7 @@ const AboutPage = () => {
             <div>
                 {t('description.part1')}
             </div>
+            {/* <button type="button" onClick={() => setTest((t) => t + 1)}>Test</button> */}
             <ThrowErrorButton />
             <Counter />
             <CounterEntity />
@@ -22,4 +23,4 @@ const AboutPage = () => {
     );
 };
 
-export default AboutPage;
+export default memo(AboutPage);

@@ -1,10 +1,14 @@
 import { counterReducer } from 'widgets/Counter';
-import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
+import {
+    CombinedState, configureStore, Reducer, ReducersMapObject,
+} from '@reduxjs/toolkit';
 import { counterReducerEntity } from 'enteties/Counter';
 import { userReducer } from 'enteties/User';
-// import { loginReducer } from 'features/AuthByUsername';
+import { $api } from 'shared/api/api';
+import { NavigateOptions } from 'react-router';
+import { To } from 'react-router-dom';
+import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { createReducerManager } from './reducerManager';
-import { StateSchema } from './StateSchema';
 
 export function createReduxStore(
     initialState?: StateSchema,
@@ -19,10 +23,19 @@ export function createReduxStore(
 
     const reducerManager = createReducerManager(rootReducers);
 
-    const store = configureStore<StateSchema>({
-        reducer: reducerManager.reduce,
+    const extraArg: ThunkExtraArg = {
+        api: $api,
+    };
+
+    const store = configureStore({
+        reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
+        middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+            thunk: {
+                extraArgument: extraArg,
+            },
+        }),
     });
 
     // @ts-ignore

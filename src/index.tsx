@@ -7,21 +7,29 @@ import { StrictMode } from 'react';
 import App from './app/App';
 import './shared/config/i18n/i18n';
 
-const domNode = document.getElementById('root');
+const domNode = document.getElementById('root') as HTMLElement;
+// if (!domNode) {
+//     throw new Error(
+//         'root not found',
+//     );
+// }
 
 const root = createRoot(domNode);
 root.render(
     <StrictMode>
-        <StoreProvider>
-            <ErrorBoundary>
-                <BrowserRouter>
+        <BrowserRouter>
+            <StoreProvider>
+                <ErrorBoundary>
+
                     <ThemeProvider>
                         <App />
                     </ThemeProvider>
-                </BrowserRouter>
-            </ErrorBoundary>
-        </StoreProvider>
-    </StrictMode>,
+
+                </ErrorBoundary>
+            </StoreProvider>
+        </BrowserRouter>
+    </StrictMode>
+    ,
 );
 
 // TODO test toto webstorm

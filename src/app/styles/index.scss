@@ -18,6 +18,7 @@ body{
 }
 
 .under-page-wrapper{
+    flex-grow: 1;
     background: var(--inverted-bg-color);
     height: 100%;
 }

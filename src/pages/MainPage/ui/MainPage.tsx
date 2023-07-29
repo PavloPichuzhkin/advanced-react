@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { memo } from 'react';
 
 const MainPage = () => {
     const { t } = useTranslation();
@@ -6,4 +7,4 @@ const MainPage = () => {
     return <div>{t('Main page')}</div>;
 };
 
-export default MainPage;
+export default memo(MainPage);

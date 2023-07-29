@@ -5,6 +5,7 @@
 /node_modules
 /storybook-static
 #.loki
-.loki/report.html
+/.loki/report.html
 /.loki/report.json
 /coverage
+/src/shared/assets/icons/Vector.svg

@@ -2,9 +2,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button';
 import { counterActionscounterEntity } from 'enteties/Counter/model/slice/counterSlice';
+import { memo } from 'react';
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 
-export const CounterEntity = () => {
+export const CounterEntity = memo(() => {
     const dispatch = useDispatch();
     const counterValueEntity = useSelector(getCounterValue);
     const { t } = useTranslation();
@@ -33,4 +34,4 @@ export const CounterEntity = () => {
             </Button>
         </div>
     );
-};
+});

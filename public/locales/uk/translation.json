@@ -17,5 +17,9 @@
   "Enter username": "Введіть ваше ім'я",
   "Incorrect username or password": "Неправильне ім'я користувача або пароль",
   "Authorization form": "Форма авторизації",
-  "Sign out": "Вийти"
+  "Sign out": "Вийти",
+  "PROFILE PAGE": "PROFILE PAGE",
+  "item": "item",
+  "Profile": "Профіль",
+  "text": "text"
 }
