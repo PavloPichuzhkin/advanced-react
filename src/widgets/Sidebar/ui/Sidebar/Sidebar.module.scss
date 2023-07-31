@@ -1,5 +1,9 @@
 .Sidebar {
     height: calc(100vh - var(--navbar-height));
+
+    // height: 100%;
+
+    // height: 100vh;
     width: var(--sidebar-width);
     background: var(--inverted-bg-color);
     position: relative;

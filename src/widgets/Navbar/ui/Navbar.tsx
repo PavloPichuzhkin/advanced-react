@@ -32,7 +32,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     }, [dispatch]);
 
     if (authData) {
-        console.log(authData);
         return (
             <div className={classNames(cls.Navbar, {}, [className])}>
                 <Button

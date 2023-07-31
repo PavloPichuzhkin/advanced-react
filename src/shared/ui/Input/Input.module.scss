@@ -1,5 +1,12 @@
 .InputWrapper {
     display: flex;
+    border: 1px solid transparent;
+
+    // border: 1px solid var(--primary-color);
+    // padding: 0.2rem;
+    padding-left: 0.5rem;
+    width: 99%;
+
 }
 
 .placeholder {
@@ -32,6 +39,12 @@
     left: 0;
     position: absolute;
     animation: blink 0.8s forwards infinite;
+}
+
+.readonly {
+    border: 1px solid transparent;
+    opacity: 0.95;
+
 }
 
 @keyframes blink {

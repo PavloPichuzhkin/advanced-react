@@ -2,9 +2,14 @@
   "": "",
   "About Page": "About Page",
   "About us": "About us",
+  "An error occurred while loading the profile": "An error occurred while loading the profile",
   "An unexpected error occurred": "An unexpected error occurred",
   "Authorisation form": "",
   "Authorization form": "",
+  "Avatar link": "Avatar link",
+  "Cancel": "Cancel",
+  "City": "City",
+  "Edit": "Edit",
   "Enter password": "",
   "Enter username": "",
   "Incorrect username or password": "",
@@ -19,7 +24,12 @@
   "Main page": "Main page",
   "PROFILE PAGE": "PROFILE PAGE",
   "Page not found": "Page not found",
+  "Please try to refresh the page": "Please try to refresh the page",
+  "Profile": "Profile",
   "Refresh the page": "Refresh the page",
+  "Save": "Save",
+  "Select country": "Select country",
+  "Select currency": "",
   "Short Language": "Short Language",
   "Sign in": "Sign in",
   "Sign in ": "Sign in ",
@@ -30,6 +40,10 @@
   "Toggle": "Toggle",
   "Uncorrect username or password": "",
   "Uncorrected username or password": "Uncorrected username or password",
+  "Your Firstname": "Your Firstname",
+  "Your Lastname": "Your Lastname",
+  "Your age": "Your age",
+  "Your username": "Your username",
   "decrement": "decrement",
   "description": {
     "part1": "part1"
@@ -38,5 +52,7 @@
   "some": "some",
   "Введите username": "",
   "Введите пароль": "",
-  "Войти": "Войти"
+  "Войти": "Войти",
+  "Попробуйте обновить страницу": "Попробуйте обновить страницу",
+  "Произошла ошибка при загрузке профиля": "Произошла ошибка при загрузке профиля"
 }

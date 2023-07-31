@@ -25,6 +25,7 @@ export const RoutePath: Record<AppRoutes, string> = {
 export interface AppRouteProps { // import {RouteProps} from "react-router-dom";
     path: string
     element: ReactNode
+    authOnly?: boolean
 
 }
 
@@ -40,6 +41,7 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     [AppRoutes.PROFILE]: {
         path: RoutePath.profile,
         element: <ProfilePage />,
+        authOnly: true,
     },
 
     [AppRoutes.NOT_FOUND]: {

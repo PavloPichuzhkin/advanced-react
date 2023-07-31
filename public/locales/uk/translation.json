@@ -14,12 +14,13 @@
   "decrement": "decrement",
   "increment": "increment",
   "Enter password": "Введіть пароль",
-  "Enter username": "Введіть ваше ім'я",
+  "Enter username": "Введіть ім'я",
   "Incorrect username or password": "Неправильне ім'я користувача або пароль",
   "Authorization form": "Форма авторизації",
   "Sign out": "Вийти",
   "PROFILE PAGE": "PROFILE PAGE",
   "item": "item",
   "Profile": "Профіль",
-  "text": "text"
+  "text": "text",
+  "Select currency": "Select currency"
 }

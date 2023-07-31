@@ -12,6 +12,9 @@ import { getLoginIsLoading } from 'features/AuthByUsername/model/selectors/getLo
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useNavigate } from 'react-router-dom';
+import { fetchProfileData } from 'enteties/Profile';
+import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
+import { userActions } from 'enteties/User';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
@@ -53,7 +56,12 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         const result = await dispatch(loginByUsername({ password, username }));
         // console.log(result);
         if (result.meta.requestStatus === 'fulfilled') {
+            const profileData = await dispatch(fetchProfileData());
+            // if (profileData.meta.requestStatus === 'fulfilled') {
+
             onSuccess();
+            // }
+
             // navigate('/', { replace: true });
         }
     }, [dispatch, onSuccess, password, username]);
