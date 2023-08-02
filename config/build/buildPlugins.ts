@@ -7,7 +7,7 @@ import { BuildOptions } from './types/config';
 
 export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstance[] {
     const {
-        mode, paths, isDev, apiUrl,
+        mode, paths, isDev, apiUrl, project,
     } = options;
 
     const plugins = [
@@ -20,6 +20,8 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
             __API__: JSON.stringify(apiUrl),
+            __PROJECT__: JSON.stringify(project),
+
         }),
     ];
 

@@ -14,7 +14,7 @@ function App() {
 
     useEffect(() => {
         dispatch(userActions.initAuthData());
-        console.log('userActions.initAuthData()');
+        // console.log('userActions.initAuthData()');
     }, [dispatch]);
 
     return (

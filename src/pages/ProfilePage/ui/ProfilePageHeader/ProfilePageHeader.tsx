@@ -3,8 +3,12 @@ import { Text } from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getProfileReadonly, profileActions, updateProfileData } from 'enteties/Profile';
-import { useCallback } from 'react';
+import {
+    getProfileReadonly, getProfileValidateErrors, profileActions, updateProfileData,
+} from 'enteties/Profile';
+import {
+    memo, useCallback, useState, useEffect, SetStateAction,
+} from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './ProfilePageHeader.module.scss';
 
@@ -12,10 +16,12 @@ interface ProfilePageHeaderProps {
     className?: string;
 }
 
-export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
+export const ProfilePageHeader = memo((props: ProfilePageHeaderProps) => {
     const {
         className,
     } = props;
+
+    const validateErrors = useSelector(getProfileValidateErrors);
 
     const { t } = useTranslation('profile');
 
@@ -33,6 +39,17 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     const onSave = useCallback(() => {
         dispatch(updateProfileData());
     }, [dispatch]);
+
+    const [myTimeout, setMyTimeout] = useState(true);
+
+    useEffect(() => {
+        if (validateErrors) {
+            setMyTimeout(true);
+            setTimeout(() => {
+                setMyTimeout(false);
+            }, 3000);
+        }
+    }, [validateErrors]);
 
     return (
         <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
@@ -53,6 +70,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                             className={cls.saveBtn}
                             theme={ButtonTheme.OUTLINE}
                             onClick={onSave}
+                            disabled={!!validateErrors?.length && myTimeout}
                         >
                             {t('Save')}
                         </Button>
@@ -68,4 +86,4 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                 )}
         </div>
     );
-};
+});

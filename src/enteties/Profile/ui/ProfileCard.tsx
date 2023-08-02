@@ -6,8 +6,7 @@ import { Profile } from 'enteties/Profile';
 import { Spinner } from 'shared/ui/Spinner/Spinner';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Country, CountrySelect } from 'enteties/CountrySelect';
-import { Currency } from 'enteties/CurrencySelect/model/types/currency';
-import { CurrencySelect } from 'enteties/CurrencySelect';
+import { Currency, CurrencySelect } from 'enteties/CurrencySelect';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
@@ -99,6 +98,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     className={cls.input}
                     onChange={onChangeAge}
                     readonly={readonly}
+                    // type="number"
                 />
                 <Input
                     value={data?.city}

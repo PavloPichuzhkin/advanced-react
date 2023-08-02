@@ -12,5 +12,10 @@
   "Your username": "Ім'я користувача",
   "Avatar link": "Посилання на аватар",
   "Select currency": "Оберіть валюту",
-  "Select country": "Оберіть країну"
+  "Select country": "Оберіть країну",
+  "Server error during save": "Помилка сервера під час збереження",
+  "Incorrect region": "Неправильний регіон",
+  "Data not specified": "Дані не вказані",
+  "First and last name are required": "Ім'я та прізвище обов'язкові",
+  "Incorrect age": "Неправильний вік"
 }
