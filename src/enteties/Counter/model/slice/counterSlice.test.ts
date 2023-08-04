@@ -20,6 +20,6 @@ describe('counterSlice.test', () => {
     test('should work with empty state', () => {
         expect(
             counterReducerEntity(undefined, counterActionscounterEntity.increment()),
-        ).toEqual({ valueEntity: 1 });
+        ).toEqual({ valueEntity: 4 });
     });
 });
