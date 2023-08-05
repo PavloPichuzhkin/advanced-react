@@ -24,7 +24,7 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
     };
-    // const babelLoader = {
+    // const babelLoader = {  // disable i18next-extract plugin
     //     test: /\.(js|jsx|tsx)$/,
     //     exclude: /node_modules/,
     //     use: {
