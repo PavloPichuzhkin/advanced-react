@@ -7,17 +7,19 @@ interface AvatarProps {
     src?: string;
     size?: number;
     alt?: string;
+    border?: string;
 }
 
 export const Avatar = memo(({
-    className, src, size, alt,
+    className, src, size, alt, border,
 }: AvatarProps) => {
     const mods: Mods = {};
 
     const styles = useMemo<CSSProperties>(() => ({
         width: size || 100,
         height: size || 100,
-    }), [size]);
+        borderRadius: border || '50%',
+    }), [border, size]);
 
     return (
         <img

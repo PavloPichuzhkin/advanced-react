@@ -7,6 +7,7 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { ProfileSchema } from 'enteties/Profile';
+import { ArticleDetailsSchema } from 'enteties/Article';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -14,8 +15,9 @@ export interface StateSchema {
     user: UserSchema;
 
     // Async reducers
-    loginForm?: LoginSchema
+    loginForm?: LoginSchema;
     profile?: ProfileSchema;
+    articleDetails?: ArticleDetailsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

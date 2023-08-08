@@ -1,9 +1,5 @@
 .Sidebar {
     height: calc(100vh - var(--navbar-height));
-
-    // height: 100%;
-
-    // height: 100vh;
     width: var(--sidebar-width);
     background: var(--inverted-bg-color);
     position: relative;
@@ -27,6 +23,7 @@
     position: absolute;
     right: calc(-1 * var(--font-line-l));
     bottom: var(--font-line-l);
+    z-index: 10;
 }
 
 .items {
@@ -34,6 +31,7 @@
     margin-left: 30px;
     display: flex;
     flex-direction: column;
+    width: 65%;
 }
 
 .collapsed {

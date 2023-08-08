@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'shared/lib/context/ThemeContext';
-import { Text, TextTheme } from './Text';
+import {
+    Text, TextAlign, TextSize, TextTheme,
+} from './Text';
 
 const meta: Meta<typeof Text> = {
     title: 'Shared/Text',
@@ -18,7 +20,36 @@ export const Primary: Story = {
         text: 'Description Description Description Description',
     },
 };
+export const PrimaryCenterAlign: Story = {
+    args: {
+        title: 'Title lorem ipsun',
+        text: 'Description Description Description Description',
+        align: TextAlign.CENTER,
+    },
+};
+export const PrimaryRightAlign: Story = {
+    args: {
+        title: 'Title lorem ipsun',
+        text: 'Description Description Description Description',
+        align: TextAlign.RIGHT,
+    },
+};
 
+export const SizeL: Story = {
+    args: {
+        title: 'Title lorem ipsun',
+        text: 'Description Description Description Description',
+        size: TextSize.L,
+    },
+};
+
+export const SizeXL: Story = {
+    args: {
+        title: 'Title lorem ipsun',
+        text: 'Description Description Description Description',
+        size: TextSize.XL,
+    },
+};
 export const Error: Story = {
     args: {
         title: 'Title lorem ipsun',

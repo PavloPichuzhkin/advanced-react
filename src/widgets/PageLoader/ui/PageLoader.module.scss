@@ -1,6 +1,8 @@
 .PageLoader{
     flex-grow: 1;
     background: var(--inverted-bg-color);
+    width: 100%;
+
 }
 
 .beneathPageLoader{
@@ -10,5 +12,6 @@
     justify-content: center;
     align-items: center;
     border-top-left-radius: 5px;
-    width: 100%;
+
+    // width: 100%;
 }

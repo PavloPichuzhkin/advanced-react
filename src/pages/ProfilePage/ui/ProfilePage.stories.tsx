@@ -30,6 +30,7 @@ export const Light: Story = {
                 username: 'admin',
                 avatar,
             },
+            readonly: true,
         },
     })],
 };
