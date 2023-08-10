@@ -24,6 +24,5 @@ export const LoginModal = ({
         <Suspense fallback={<Loader />}>
             <LoginFormAsync onSuccess={onClose} />
         </Suspense>
-        {/* <LoginForm /> */}
     </Modal>
 );

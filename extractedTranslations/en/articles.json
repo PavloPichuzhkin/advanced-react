@@ -3,5 +3,11 @@
   "Article Details": "",
   "Article not found": "Article not found",
   "Articles D": "",
-  "Articles Page": ""
+  "Articles Page": "",
+  "Comments": "Comments",
+  "${block": {
+    "title}": "${block.title}"
+  },
+  "block": "block",
+  "title": "title"
 }

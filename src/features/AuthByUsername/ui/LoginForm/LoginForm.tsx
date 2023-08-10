@@ -67,7 +67,6 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     }, [dispatch, onSuccess, password, username]);
 
     const onKeyDown = useCallback((e: KeyboardEvent) => {
-        // console.log(e.key);
         if (e.key === 'Enter') {
             onLoginClick();
         }

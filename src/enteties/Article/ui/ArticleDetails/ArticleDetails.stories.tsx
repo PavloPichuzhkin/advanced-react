@@ -15,7 +15,7 @@ const meta: Meta<typeof ArticleDetails> = {
 export default meta;
 type Story = StoryObj<typeof ArticleDetails>;
 
-const article: Article = {
+export const article: Article = {
     id: '1',
     title: 'Javascript news',
     subtitle: "What's new in JS for 2023? Що нового в JS у 2023 році?",

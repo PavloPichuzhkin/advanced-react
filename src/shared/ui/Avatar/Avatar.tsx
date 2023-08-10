@@ -1,5 +1,6 @@
 import { classNames, Mods } from 'shared/lib/helpers/classNames/classNames';
 import { CSSProperties, memo, useMemo } from 'react';
+import defaultAvatar from 'shared/assets/tests/storybook.jpg';
 import cls from './Avatar.module.scss';
 
 interface AvatarProps {
@@ -11,7 +12,11 @@ interface AvatarProps {
 }
 
 export const Avatar = memo(({
-    className, src, size, alt, border,
+    className,
+    src = defaultAvatar,
+    size,
+    alt,
+    border,
 }: AvatarProps) => {
     const mods: Mods = {};
 
