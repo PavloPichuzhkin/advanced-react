@@ -56,7 +56,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         const result = await dispatch(loginByUsername({ password, username }));
         // console.log(result);
         if (result.meta.requestStatus === 'fulfilled') {
-            const profileData = await dispatch(fetchProfileData());
+            // const profileData = await dispatch(fetchProfileData());
             // if (profileData.meta.requestStatus === 'fulfilled') {
 
             onSuccess();

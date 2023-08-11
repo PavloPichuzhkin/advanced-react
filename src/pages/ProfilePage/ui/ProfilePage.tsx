@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { memo, useEffect, useCallback } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import {
     fetchProfileData,
     getProfileError,
@@ -19,6 +19,7 @@ import { Currency } from 'enteties/CurrencySelect/model/types/currency';
 import { useTranslation } from 'react-i18next';
 import { TextTheme, Text } from 'shared/ui/Text/Text';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -38,22 +39,29 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const readonly = useSelector(getProfileReadonly);
     const authData = useSelector(getUserAuthData);
     const validateErrors = useSelector(getProfileValidateErrors);
+    const { id } = useParams<{ id: string }>();
+    console.log(id);
+    console.log(authData);
 
-    const validateErrorTranslates = {
+    const validateErrorTranslates = ({
         [ValidateProfileError.SERVER_ERROR]: t('Server error during save'),
         [ValidateProfileError.INCORRECT_COUNTRY]: t('Incorrect region'),
         [ValidateProfileError.NO_DATA]: t('Data not specified'),
         [ValidateProfileError.INCORRECT_USER_DATA]: t('First and last name are required'),
         [ValidateProfileError.INCORRECT_AGE]: t('Incorrect age'),
-    };
-    // useEffect(() => {
-    //     if (__PROJECT__ !== 'storybook') {
-    //         dispatch(fetchProfileData());
-    //     }
-    // }, [dispatch]);
-    useInitialEffect(() => {
-        dispatch(fetchProfileData());
     });
+
+    // useInitialEffect(() => {
+    //     dispatch(fetchProfileData(id || authData?.id as string));
+    //     // if (id) {
+    //     //     dispatch(fetchProfileData(id));
+    //     // }
+    // });
+    useEffect(() => {
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData(id || authData?.id as string));
+        }
+    }, [authData?.id, dispatch, id]);
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ first: value || '' }));

@@ -56,7 +56,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                 <ArticleDetails id={id} />
                 <Text className={cls.commentTitle} title={`${t('Comments')}:`} />
                 <CommentsList
-                    isLoading
+                    isLoading={commentsIsLoading}
                     comments={comments}
                 />
             </div>

@@ -16,19 +16,19 @@ const domNode = document.getElementById('root') as HTMLElement;
 
 const root = createRoot(domNode);
 root.render(
-    <StrictMode>
-        <BrowserRouter>
-            <StoreProvider>
-                <ErrorBoundary>
+    // <StrictMode>
+    <BrowserRouter>
+        <StoreProvider>
+            <ErrorBoundary>
 
-                    <ThemeProvider>
-                        <App />
-                    </ThemeProvider>
+                <ThemeProvider>
+                    <App />
+                </ThemeProvider>
 
-                </ErrorBoundary>
-            </StoreProvider>
-        </BrowserRouter>
-    </StrictMode>
+            </ErrorBoundary>
+        </StoreProvider>
+    </BrowserRouter>
+    // </StrictMode>
     ,
 );
 

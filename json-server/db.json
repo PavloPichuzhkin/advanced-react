@@ -28,13 +28,13 @@
       "id": "3",
       "text": "some comment 3",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     },
     {
       "id": "4",
       "text": "some comment 4 WTF",
       "articleId": "1",
-      "userId": "1"
+      "userId": "3"
     }
   ],
   "users": [
@@ -47,21 +47,56 @@
     },
     {
       "id": "2",
-      "username": "user",
+      "username": "user1",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://as1.ftcdn.net/v2/jpg/06/19/33/30/1000_F_619333024_IfgNj7pGIeoG3BUPHfEkBT15l7yi7HbG.jpg"
+
+    },
+    {
+      "id": "3",
+      "username": "user2",
+      "password": "123",
+      "role": "USER",
+      "avatar": "https://as1.ftcdn.net/v2/jpg/01/10/87/84/1000_F_110878455_QZVeLFXBa1ZLiN7lMU8dDEtqqgOgJIRZ.jpg"
+
     }
   ],
-  "profile": {
-    "first": "Pavlo",
-    "lastname": "Pichuzhkin",
-    "age": 22,
-    "currency": "USD",
-    "country": "United States of America",
-    "city": "Kiev",
-    "username": "admin",
-    "avatar": "https://images.unsplash.com/photo-1573547429441-d7ef62e04b63?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=725&q=80"
-  },
+  "profile": [
+    {
+      "id": "1",
+      "first": "Pavlo",
+      "lastname": "Pichuzhkin",
+      "age": 222,
+      "currency": "USD",
+      "country": "United States of America",
+      "city": "Kiev",
+      "username": "admin",
+      "avatar": "https://as1.ftcdn.net/v2/jpg/05/56/29/10/1000_F_556291020_q2ieMiOCKYbtoLITrnt7qcSL1LJYyWrU.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Pavlo2",
+      "lastname": "Pichuzhkin",
+      "age": 222,
+      "currency": "USD",
+      "country": "United States of America",
+      "city": "Kiev",
+      "username": "admin",
+      "avatar": "https://as1.ftcdn.net/v2/jpg/06/19/33/30/1000_F_619333024_IfgNj7pGIeoG3BUPHfEkBT15l7yi7HbG.jpg"
+    },
+    {
+      "id": "3",
+      "first": "Pavlo3",
+      "lastname": "Pichuzhkin",
+      "age": 222,
+      "currency": "USD",
+      "country": "United States of America",
+      "city": "Kiev",
+      "username": "admin",
+      "avatar": "https://images.unsplash.com/photo-1573547429441-d7ef62e04b63?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=725&q=80"
+    }
+  ],
   "articles": [
     {
       "id": "1",
