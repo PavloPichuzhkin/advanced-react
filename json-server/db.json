@@ -35,6 +35,12 @@
       "text": "some comment 4 WTF",
       "articleId": "1",
       "userId": "3"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "fhydhdf",
+      "id": "OpjzuB7"
     }
   ],
   "users": [
@@ -51,7 +57,6 @@
       "password": "123",
       "role": "USER",
       "avatar": "https://as1.ftcdn.net/v2/jpg/06/19/33/30/1000_F_619333024_IfgNj7pGIeoG3BUPHfEkBT15l7yi7HbG.jpg"
-
     },
     {
       "id": "3",
@@ -59,7 +64,6 @@
       "password": "123",
       "role": "USER",
       "avatar": "https://as1.ftcdn.net/v2/jpg/01/10/87/84/1000_F_110878455_QZVeLFXBa1ZLiN7lMU8dDEtqqgOgJIRZ.jpg"
-
     }
   ],
   "profile": [
@@ -67,7 +71,7 @@
       "id": "1",
       "first": "Pavlo",
       "lastname": "Pichuzhkin",
-      "age": 222,
+      "age": 22222,
       "currency": "USD",
       "country": "United States of America",
       "city": "Kiev",
@@ -78,7 +82,7 @@
       "id": "2",
       "first": "Pavlo2",
       "lastname": "Pichuzhkin",
-      "age": 222,
+      "age": 22,
       "currency": "USD",
       "country": "United States of America",
       "city": "Kiev",

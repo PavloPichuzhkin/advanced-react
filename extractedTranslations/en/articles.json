@@ -9,5 +9,7 @@
     "title}": "${block.title}"
   },
   "block": "block",
-  "title": "title"
+  "title": "title",
+  "Send": "Send",
+  "Enter comment": "Enter comment"
 }

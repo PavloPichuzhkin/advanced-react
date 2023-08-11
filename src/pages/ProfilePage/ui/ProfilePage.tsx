@@ -40,8 +40,6 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const authData = useSelector(getUserAuthData);
     const validateErrors = useSelector(getProfileValidateErrors);
     const { id } = useParams<{ id: string }>();
-    console.log(id);
-    console.log(authData);
 
     const validateErrorTranslates = ({
         [ValidateProfileError.SERVER_ERROR]: t('Server error during save'),
