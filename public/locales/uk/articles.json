@@ -6,5 +6,6 @@
   "Comments": "Comments",
   "Note": "Примітка",
   "Send": "Відправити",
-  "Enter comment": "Введіть комент"
+  "Enter comment": "Введіть комент",
+  "Server error during send comment": "Server error during send comment"
 }

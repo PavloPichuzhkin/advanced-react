@@ -5,6 +5,7 @@ import {
 
 import { Comment } from 'enteties/Comments';
 import { StateSchema } from 'app/providers/StoreProvider';
+import { addComment } from 'features/AddCommentForm';
 import {
     fetchCommentsByArticleId,
 } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -44,6 +45,13 @@ const articleDetailsCommentsSlice = createSlice({
                 state.isLoading = false;
                 state.error = action.payload;
             });
+        // .addCase(addComment.fulfilled, (
+        //     state,
+        //     action: PayloadAction<Comment>,
+        // ) => {
+        //     state.isLoading = false;
+        //     commentsAdapter.addOne(state, action.payload);
+        // });
     },
 });
 

@@ -54,15 +54,9 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 
     const onLoginClick = useCallback(async () => {
         const result = await dispatch(loginByUsername({ password, username }));
-        // console.log(result);
+
         if (result.meta.requestStatus === 'fulfilled') {
-            // const profileData = await dispatch(fetchProfileData());
-            // if (profileData.meta.requestStatus === 'fulfilled') {
-
             onSuccess();
-            // }
-
-            // navigate('/', { replace: true });
         }
     }, [dispatch, onSuccess, password, username]);
 

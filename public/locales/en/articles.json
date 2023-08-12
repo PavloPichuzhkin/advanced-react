@@ -6,5 +6,6 @@
   "Comments": "Comments",
   "Note": "Note",
   "Send": "Send",
-  "Enter comment": "Enter comment"
+  "Enter comment": "Enter comment",
+  "Server error during send comment": "Server error during send comment"
 }

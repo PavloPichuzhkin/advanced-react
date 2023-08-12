@@ -2,15 +2,16 @@ import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
-import { ArticleDetails } from 'enteties/Article';
+import { ArticleDetails, getArticleDetailsData } from 'enteties/Article';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { CommentsList } from 'enteties/Comments';
 import { Text } from 'shared/ui/Text/Text';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import AddCommentForm from 'features/AddCommentForm';
-import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import AddCommentForm, { addComment } from 'features/AddCommentForm';
+// import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
 import cls from './ArticleDetailsPage.module.scss';
 import { articleDetailsCommentsReducer } from '../../model/slice/articleDetailsCommentsSlice';
 import {
@@ -37,14 +38,27 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const dispatch = useAppDispatch();
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-    const commentsError = useSelector(getArticleCommentsError);
+    // const commentsError = useSelector(getArticleCommentsError);
+    const article = useSelector(getArticleDetailsData);
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
     });
-    const onSendComment = useCallback((text: string) => {
-        dispatch(addCommentForArticle(text));
-    }, [dispatch]);
+
+    const onSendComment = useCallback(async () => {
+        // dispatch(addCommentForArticle(text));
+        const resultAddComment = await dispatch(
+            addComment({
+                reqUrl: '/comments',
+                commentForId: { articleId: article?.id || '' },
+            }),
+        );
+
+        if (resultAddComment.meta.requestStatus === 'fulfilled') {
+            dispatch(fetchCommentsByArticleId(article?.id));
+        }
+        return resultAddComment;
+    }, [article?.id, dispatch]);
 
     if (__PROJECT__ === 'storybook') { id = '1'; }
     if (!id) {
@@ -60,7 +74,8 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
             <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <ArticleDetails id={id} />
                 <Text className={cls.commentTitle} title={`${t('Comments')}:`} />
-                {!!comments?.length && <AddCommentForm onSendComment={onSendComment} />}
+                <AddCommentForm onSendComment={onSendComment} />
+                {/* {!!comments?.length && <AddCommentForm onSendComment={onSendComment} />} */}
                 <CommentsList
                     isLoading={commentsIsLoading}
                     comments={comments}
