@@ -30,15 +30,19 @@ export const addComment = createAsyncThunk<
                 }
 
                 try {
-                    const response = await extra.api.post<Comment>(reqUrl, {
-                        ...commentForId,
-                        userId: userData.id,
-                        text: commentText,
-                    }, {
-                        params: {
-                            _expand: 'user',
+                    const response = await extra.api.post<Comment>(
+                        reqUrl,
+                        {
+                            ...commentForId,
+                            userId: userData.id,
+                            text: commentText,
                         },
-                    });
+                        // {
+                        //     params: {
+                        //         _expand: 'user',
+                        //     },
+                        // },
+                    );
 
                     if (!response.data) {
                         throw new Error();

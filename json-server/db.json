@@ -35,8 +35,19 @@
       "text": "some comment 4 WTF",
       "articleId": "1",
       "userId": "3"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "1111111",
+      "id": "eLPSKEz"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "gcgcgcc",
+      "id": "kSbqneQ"
     }
-
   ],
   "users": [
     {

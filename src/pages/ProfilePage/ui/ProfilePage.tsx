@@ -49,17 +49,11 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         [ValidateProfileError.INCORRECT_AGE]: t('Incorrect age'),
     });
 
-    // useInitialEffect(() => {
-    //     dispatch(fetchProfileData(id || authData?.id as string));
-    //     // if (id) {
-    //     //     dispatch(fetchProfileData(id));
-    //     // }
-    // });
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData(id || authData?.id as string));
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [authData?.id, dispatch, id]);
+    });
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ first: value || '' }));
