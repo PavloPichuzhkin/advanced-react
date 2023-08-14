@@ -12,5 +12,7 @@
   "title": "title",
   "Send": "Send",
   "Enter comment": "Enter comment",
-  "Server error during send comment": "Server error during send comment"
+  "Server error during send comment": "Server error during send comment",
+  "Read more": "Read more",
+  "Back to list": "Back to list"
 }

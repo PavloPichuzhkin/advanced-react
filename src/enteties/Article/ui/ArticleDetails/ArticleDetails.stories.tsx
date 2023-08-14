@@ -17,6 +17,10 @@ type Story = StoryObj<typeof ArticleDetails>;
 
 export const article: Article = {
     id: '1',
+    user: {
+        id: '1',
+        username: 'Gogi',
+    },
     title: 'Javascript news',
     subtitle: "What's new in JS for 2023? Що нового в JS у 2023 році?",
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
