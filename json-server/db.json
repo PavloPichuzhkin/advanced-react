@@ -59,6 +59,30 @@
       "userId": "1",
       "text": "dfhgdfh",
       "id": "Y8MDHX0"
+    },
+    {
+      "articleId": "2",
+      "userId": "2",
+      "text": "ooooooo",
+      "id": "3KZf9-u"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "0",
+      "id": "Gjx95Md"
+    },
+    {
+      "articleId": "16",
+      "userId": "2",
+      "text": "sdfsd",
+      "id": "Hm6-k84"
+    },
+    {
+      "articleId": "16",
+      "userId": "2",
+      "text": "sdfsdfsdf",
+      "id": "awA4U8y"
     }
   ],
   "users": [
@@ -100,7 +124,7 @@
       "id": "2",
       "first": "Pavlo2",
       "lastname": "Pichuzhkin",
-      "age": 22,
+      "age": 12,
       "currency": "USD",
       "country": "United States of America",
       "city": "Kiev",

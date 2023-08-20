@@ -13,6 +13,7 @@
     background: var(--inverted-bg-color);
     height: calc(100vh - var(--navbar-height));
     width: 100%;
+    overflow-y: auto;
 
 }
 

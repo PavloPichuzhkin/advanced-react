@@ -5,7 +5,7 @@ import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDeco
 import { Page } from './Page';
 
 const meta: Meta<typeof Page> = {
-    title: 'Pages/Page',
+    title: 'Widgets/Page',
     component: Page,
     // tags: ['autodocs'],
 };

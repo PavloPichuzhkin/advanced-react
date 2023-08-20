@@ -11,11 +11,13 @@ import { ArticleDetailsSchema } from 'enteties/Article';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/AddCommentForm/model/types/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { ScrollPositionSchema } from 'features/ScrollPositionStorage';
 
 export interface StateSchema {
     counter: CounterSchema;
     counterEntity: CounterSchemaEntity;
     user: UserSchema;
+    scrollPositions: ScrollPositionSchema;
 
     // Async reducers
     loginForm?: LoginSchema;
@@ -27,11 +29,14 @@ export interface StateSchema {
 }
 
 export type StateSchemaKey = keyof StateSchema;
+export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
+
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>;
     reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
     add: (key: StateSchemaKey, reducer: Reducer) => void;
     remove: (key: StateSchemaKey) => void;
+    getMountedReducers: () => MountedReducers;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {

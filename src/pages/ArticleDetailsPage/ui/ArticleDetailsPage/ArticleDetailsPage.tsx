@@ -12,7 +12,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import AddCommentForm, { addComment } from 'features/AddCommentForm';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import cls from './ArticleDetailsPage.module.scss';
 import { articleDetailsCommentsReducer } from '../../model/slice/articleDetailsCommentsSlice';
 import { getArticleComments, getArticleCommentsIsLoading } from '../../model/selectors/getComments';
@@ -70,7 +70,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     }
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
                     {t('Back to list')}
