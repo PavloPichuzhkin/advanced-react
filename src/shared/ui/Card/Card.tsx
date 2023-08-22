@@ -4,10 +4,16 @@ import {
 } from 'react';
 import cls from './Card.module.scss';
 
+export enum CardTheme {
+    NORMAL = 'normal',
+    OUTLINED = 'outlined',
+}
+
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
     className?: string;
     children: ReactNode;
-    border?:string;
+    border?: string;
+    theme?: CardTheme;
 }
 
 export const Card = memo((props: CardProps) => {
@@ -15,6 +21,7 @@ export const Card = memo((props: CardProps) => {
         className,
         children,
         border,
+        theme = CardTheme.NORMAL,
         ...otherProps
     } = props;
     const styles = useMemo<CSSProperties>(() => ({
@@ -24,7 +31,7 @@ export const Card = memo((props: CardProps) => {
     return (
         <div
             style={styles}
-            className={classNames(cls.Card, {}, [className])}
+            className={classNames(cls.Card, {}, [className, cls[theme]])}
             {...otherProps}
         >
             {children}

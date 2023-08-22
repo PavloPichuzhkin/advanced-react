@@ -4,12 +4,25 @@
     }
 }
 
+// .SMALL {
+//    display: flex;
+//    flex-wrap: wrap;
+//    .card {
+//        margin-right: 30px;
+//        margin-bottom: 30px;
+//    }
+// }
+
+
 .SMALL {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2rem;
+    margin-right: 1rem;
+}
 
-    .card {
-        margin-right: 30px;
-        margin-bottom: 30px;
-    }
+.noArticles{
+    display: flex;
+    justify-content: center;
 }

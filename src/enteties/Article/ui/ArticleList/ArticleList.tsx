@@ -1,5 +1,8 @@
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { memo } from 'react';
+import { Text, TextSize } from 'shared/ui/Text/Text';
+import { useTranslation } from 'react-i18next';
+import { Card } from 'shared/ui/Card/Card';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
@@ -27,6 +30,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
         isLoading,
     } = props;
 
+    const { t } = useTranslation('articles');
+
     // if (isLoading) {
     //     return (
     //         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
@@ -43,7 +48,13 @@ export const ArticleList = memo((props: ArticleListProps) => {
             key={article.id}
         />
     );
-
+    if (!isLoading && !articles.length) {
+        return (
+            <div className={classNames(cls.noArticles, {}, [className])}>
+                <Card><Text size={TextSize.L} title={t('No articles found')} /></Card>
+            </div>
+        );
+    }
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
             {articles.length > 0

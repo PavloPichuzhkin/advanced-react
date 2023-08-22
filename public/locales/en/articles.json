@@ -9,5 +9,19 @@
   "Enter comment": "Enter comment",
   "Server error during send comment": "Server error during send comment",
   "Read more": "Read more",
-  "Back to list": "Back to list"
+  "Back to list": "Back to list",
+  "increasing": "increasing",
+  "descending": "descending",
+  "date of creation": "date of creation",
+  "by name": "by name",
+  "name": "name",
+  "viewing": "viewing",
+  "by": "by",
+  "Sort by": "Sort by",
+  "Search": "Search",
+  "All articles": "All articles",
+  "IT": "IT",
+  "Economy": "Economy",
+  "Science": "Science",
+  "No articles found": "No articles found"
 }

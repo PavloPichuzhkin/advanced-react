@@ -1,14 +1,23 @@
 {
   "": "",
+  "All articles": "All articles",
   "Authorization form": "",
+  "Economy": "Economy",
   "Enter password": "",
   "Enter username": "",
+  "IT": "IT",
   "Incorrect username or password": "",
   "Language": "",
+  "Main page": "",
+  "No articles found": "",
   "Page not found": "",
+  "Science": "Science",
+  "Search": "Search",
   "Short Language": "",
   "Sign in": "",
   "There are no comments": "There are no comments",
   "decrement": "",
-  "increment": ""
+  "increment": "",
+  "viewing": "viewing",
+  "Поиск": ""
 }
