@@ -46,6 +46,14 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
+            {addCommentFormIsLoading && (
+                <div>
+                    <Text
+                        theme={TextTheme.ERROR}
+                        title={t('Comment is sending')}
+                    />
+                </div>
+            )}
             {error && (
                 <div>
                     <Text

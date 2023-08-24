@@ -28,7 +28,7 @@ export const Tabs = memo((props: TabsProps) => {
     return (
         <div className={classNames(cls.Tabs, {}, [className])}>
             {tabs.map((tab) => (
-                <Button theme={ButtonTheme.CLEAR}>
+                <Button theme={ButtonTheme.CLEAR} key={tab.value}>
                     <Card
                         theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINED}
                         className={cls.tab}

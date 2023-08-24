@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top-left-radius: 5px;
+    border-top-left-radius: var(--border-top-left-radius);
 
     // width: 100%;
 }

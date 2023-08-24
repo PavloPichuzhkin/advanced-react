@@ -3,3 +3,11 @@ export interface AddCommentFormSchema {
     error?: string;
     isLoading?: boolean;
 }
+
+export interface AddCommentReqParams {
+    reqUrl: string,
+    commentForId: {
+        articleId?: string,
+        productId?: string,
+    },
+}

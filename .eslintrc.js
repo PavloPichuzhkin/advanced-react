@@ -50,6 +50,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
         'no-param-reassign': 'off',
         'no-undef': 'off',
+        'arrow-body-style': 'off',
 
     },
     globals: {

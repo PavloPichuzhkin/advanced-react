@@ -3,13 +3,11 @@ import { getUserAuthData } from 'enteties/User';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Comment } from 'enteties/Comments';
 import { getAddCommentFormText } from 'features/AddCommentForm/model/selectors/addCommentFormSelectors';
+import { AddCommentReqParams } from 'features/AddCommentForm/model/types/addCommentForm';
 
 export const addComment = createAsyncThunk<
     Comment,
-    {
-        reqUrl: string,
-        commentForId:{articleId: string},
-            },
+    AddCommentReqParams,
     ThunkConfig<string>
             >('articleDetails/addComment', async (
                 {

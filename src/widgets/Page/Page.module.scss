@@ -1,7 +1,7 @@
 .Page {
     // flex-grow: 1;
     padding: 20px 20px 20px 36px;
-    border-top-left-radius: 0.5rem;
+    border-top-left-radius: var(--border-top-left-radius);
     background: var(--bg-color);
     height: 100%;
     width: 100%;
