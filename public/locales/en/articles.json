@@ -5,6 +5,8 @@
   "An error occurred while loading the article": "An error occurred while loading the article.",
   "Comments": "Comments",
   "Note": "Note",
+  "Warning": "Warning",
+  "Tips": "Tips",
   "Send": "Send",
   "Enter comment": "Enter comment",
   "Server error during send comment": "Server error during send comment",

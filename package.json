@@ -8,7 +8,7 @@
     "start:dev": "concurrently \"npm start\" \"npm run start:dev:server\"",
     "lint:fix": "concurrently \"eslint \"**/*.{ts,tsx}\" --fix\" \"npx stylelint \"**/*.scss\" --fix\"",
     "start:dev:server": "node ./json-server/index.js --env apiUrl=8003",
-    "build:prod": "webpack --env mode=production",
+    "build:prod": "webpack --env mode=production apiUrl=https://project-server-llpuc1yva-pavlopichuzhkin.vercel.app",
     "build:dev": "webpack --env mode=development",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
@@ -57,6 +57,7 @@
     "babel-loader": "^9.1.2",
     "babel-plugin-i18next-extract": "^0.9.0",
     "concurrently": "^8.2.0",
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -68,6 +69,7 @@
     "eslint-plugin-storybook": "^0.6.13",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
+    "husky": "^8.0.0",
     "i18next": "^23.2.7",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-http-backend": "^2.2.1",
@@ -93,8 +95,7 @@
     "webpack": "^5.88.0",
     "webpack-bundle-analyzer": "^4.9.0",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1",
-    "husky": "^8.0.0"
+    "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",

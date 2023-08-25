@@ -11,8 +11,8 @@
   "Toggle": "Перемкнути",
   "Short Language": "Uk",
   "Sign in": "Вхід",
-  "decrement": "decrement",
-  "increment": "increment",
+  "decrement": "Зменшити",
+  "increment": "Збільшити",
   "Enter password": "Введіть пароль",
   "Enter username": "Введіть ім'я",
   "Incorrect username or password": "Неправильне ім'я користувача або пароль",
@@ -28,6 +28,6 @@
   "IT": "IT",
   "Economy": "Economy",
   "Science": "Science",
-  "Create article": "Create article",
+  "Create article": "Створити статтю",
   "Advanced React App": "Advanced React App"
 }

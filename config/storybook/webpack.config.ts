@@ -9,6 +9,8 @@ export default ({ config }: {config: webpack.Configuration}) => {
         html: '',
         entry: '',
         src: path.resolve(__dirname, '..', '..', 'src'),
+        locales: '',
+        buildLocales: '',
     };
     // https://stackoverflow.com/questions/51771077/storybook-with-absolute-paths
     // modules: [path.resolve(__dirname, 'src'), 'node_modules']
