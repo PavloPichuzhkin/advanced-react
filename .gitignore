@@ -10,3 +10,6 @@
 .loki/report.json
 /coverage
 /src/shared/assets/icons/Vector.svg
+
+# Local Netlify folder
+.netlify
