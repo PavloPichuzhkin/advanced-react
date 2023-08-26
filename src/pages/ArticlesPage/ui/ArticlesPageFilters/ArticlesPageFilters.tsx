@@ -11,9 +11,11 @@ import { Input } from 'shared/ui/Input/Input';
 import { SortOrder } from 'shared/types';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { ArticleType } from 'enteties/Article/model/types/article';
+import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import cls from './ArticlesPageFilters.module.scss';
 import {
+    getArticlesPageHasMore,
     getArticlesPageOrder, getArticlesPageSearch,
     getArticlesPageSort, getArticlesPageType,
     getArticlesPageView,
@@ -33,6 +35,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     const order = useSelector(getArticlesPageOrder);
     const search = useSelector(getArticlesPageSearch);
     const type = useSelector(getArticlesPageType);
+    const hasMore = useSelector(getArticlesPageHasMore);
 
     const fetchData = useCallback(() => {
         dispatch(fetchArticlesList({ replace: true }));
@@ -40,9 +43,21 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
 
     const debouncedFetchData = useDebounce(fetchData, 500);
 
+    // const onChangeView = useCallback((view: ArticleView) => {
+    //     dispatch(articlesPageActions.setView(view));
+    // }, [dispatch]);
+
     const onChangeView = useCallback((view: ArticleView) => {
-        dispatch(articlesPageActions.setView(view));
-    }, [dispatch]);
+        const sameView = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView === view;
+        if (!sameView && hasMore) {
+            dispatch(articlesPageActions.setView(view));
+            dispatch(articlesPageActions.setPage(1));
+            fetchData();
+        }
+        if (!sameView && !hasMore) {
+            dispatch(articlesPageActions.setView(view));
+        }
+    }, [dispatch, fetchData, hasMore]);
 
     const onChangeSort = useCallback((newSort: ArticleSortField) => {
         dispatch(articlesPageActions.setSort(newSort));

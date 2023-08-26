@@ -35,21 +35,6 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const inited = useSelector(getArticlesPageInited);
     const [searchParams] = useSearchParams();
 
-    // const onChangeView = useCallback(
-    //     (view: ArticleView) => {
-    //         const sameView = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView === view;
-    //         if (!sameView && hasMore) {
-    //             dispatch(articlesPageActions.setView(view));
-    //             dispatch(articlesPageActions.clearArticles());
-    //             dispatch(fetchArticlesList({ page: 1 }));
-    //         }
-    //
-    //         if (!sameView && !hasMore) {
-    //             dispatch(articlesPageActions.setView(view));
-    //         }
-    //     },
-    //     [dispatch, hasMore],
-    // );
     const onLoadNextPart = useCallback(() => {
         if (hasMore) {
             dispatch(fetchNextArticlesPage());

@@ -18,11 +18,12 @@ interface PageProps {
     onScrollEnd?: () => void;
 }
 
+export const PAGE_ID = 'PAGE_ID';
+
 export const Page = memo((props: PageProps) => {
     const { className, children, onScrollEnd } = props;
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
-    const scrollRef = useRef() as MutableRefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
     const scrollPosition = useSelector(
@@ -48,13 +49,12 @@ export const Page = memo((props: PageProps) => {
     return (
         <div
             className={cls.underPageWrapper}
-            // ref={wrapperRef}
         >
             <section
                 className={classNames(cls.Page, {}, [className])}
                 ref={wrapperRef}
-                // ref={scrollRef}
                 onScroll={onScroll}
+                id={PAGE_ID}
             >
                 {children}
                 {onScrollEnd ? <div ref={triggerRef} className={cls.triggerRef} /> : null}
