@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { memo, ReactNode, useCallback } from 'react';
-import { Card, CardTheme } from 'shared/ui/Card/Card';
-import { Button, ButtonTheme } from 'shared/ui/Button';
+import { Card, CardTheme } from '../Card/Card';
+import { Button, ButtonTheme } from '../Button';
 import cls from './Tabs.module.scss';
 
 export interface TabItem {

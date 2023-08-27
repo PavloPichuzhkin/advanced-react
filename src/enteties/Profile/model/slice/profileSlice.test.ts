@@ -1,9 +1,11 @@
-import {
-    profileActions, profileReducer, ProfileSchema, updateProfileData, ValidateProfileError,
-} from 'enteties/Profile';
 import { Currency } from 'enteties/CurrencySelect';
 import { Country } from 'enteties/CountrySelect';
 import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
+import { updateProfileData } from '../services/updateProfileData/updateProfileData';
+import { ProfileSchema, ValidateProfileError } from '../types/profile';
+import {
+    profileActions, profileReducer,
+} from '../slice/profileSlice';
 
 const data = {
     first: 'Pavlo',

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'shared/lib/context/ThemeContext';
-import { Text } from 'shared/ui/Text/Text';
+import { Text } from '../Text/Text';
 import { Card } from './Card';
 
 const meta: Meta<typeof Card> = {

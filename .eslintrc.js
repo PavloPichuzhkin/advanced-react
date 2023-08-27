@@ -18,6 +18,8 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'project-fsd-architecture',
+
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -51,6 +53,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'arrow-body-style': 'off',
+        'project-fsd-architecture/slice-imports-validatoin': 'error',
 
     },
     globals: {

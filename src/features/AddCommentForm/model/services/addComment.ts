@@ -2,8 +2,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { getUserAuthData } from 'enteties/User';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Comment } from 'enteties/Comments';
-import { getAddCommentFormText } from 'features/AddCommentForm/model/selectors/addCommentFormSelectors';
-import { AddCommentReqParams } from 'features/AddCommentForm/model/types/addCommentForm';
+import { getAddCommentFormText } from '../selectors/addCommentFormSelectors';
+import { AddCommentReqParams } from '../types/addCommentForm';
 
 export const addComment = createAsyncThunk<
     Comment,

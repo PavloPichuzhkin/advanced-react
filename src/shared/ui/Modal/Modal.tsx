@@ -1,9 +1,9 @@
 import React, {
     ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
-import { Portal } from 'shared/ui/Portal/Portal';
 import { classNames, Mods } from 'shared/lib/helpers/classNames/classNames';
 import { useTheme } from 'shared/lib/hooks/useTheme/useTheme';
+import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
 
 interface ModalProps {

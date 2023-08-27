@@ -1,7 +1,7 @@
 import { Currency } from 'enteties/CurrencySelect';
 import { Country } from 'enteties/CountrySelect';
 import { TestAsyncThunk } from 'shared/lib/helpers/tests/TestAsyncThunk/TestAsyncThunk';
-import { ValidateProfileError } from 'enteties/Profile';
+import { ValidateProfileError } from '../../types/profile';
 import { updateProfileData } from './updateProfileData';
 
 const data = {

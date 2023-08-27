@@ -1,11 +1,11 @@
 import type { Preview } from '@storybook/react';
-import StyleDecorator from 'shared/config/storybook/StyleDecorator';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
-import { Theme } from 'shared/lib/context/ThemeContext';
-import { RouterDecorator } from 'shared/config/storybook/RouterDecorator';
-import i18nextStoryDecorator from 'shared/config/storybook/i18nextStoryDecorator';
-import i18n from 'shared/config/i18n/i18n';
-import { StoreProviderDecorator } from 'shared/config/storybook/StoreProviderDecorator';
+import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator';
+import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator';
+import { Theme } from '../../src/shared/lib/context/ThemeContext';
+import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator';
+import i18nextStoryDecorator from '../../src/shared/config/storybook/i18nextStoryDecorator';
+import i18n from '../../src/shared/config/i18n/i18n';
+import { StoreProviderDecorator } from '../../src/shared/config/storybook/StoreProviderDecorator';
 
 const preview: Preview = {
     globalTypes: {
