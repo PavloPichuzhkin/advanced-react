@@ -1,14 +1,20 @@
 .BIG {
     .card {
-        margin-bottom: 30px;
+        // margin: 0 30px 30px 0;
+    }
+
+    .cardSkeleton {
+        margin: 0 30px 30px 0;
     }
 }
 
 .SMALL {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+
+    // justify-content: space-evenly;
     gap: 2rem;
+    margin-top: 2rem;
     margin-right: 1rem;
 
     .card {
@@ -18,7 +24,8 @@
 
     .row {
         display: flex;
-        gap: 30px;
+        gap: 2rem;
+        padding-top: 2rem;
     }
 }
 

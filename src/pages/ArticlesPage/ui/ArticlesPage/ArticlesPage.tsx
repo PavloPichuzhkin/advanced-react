@@ -29,6 +29,8 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const dispatch = useAppDispatch();
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlesPageIsLoading);
+    // const isLoading = true;
+
     const view = useSelector(getArticlesPageView);
     const page = useSelector(getArticlesPageNum);
     const hasMore = useSelector(getArticlesPageHasMore);
@@ -36,10 +38,10 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const [searchParams] = useSearchParams();
 
     const onLoadNextPart = useCallback(() => {
-        if (hasMore) {
+        if (hasMore && !isLoading) {
             dispatch(fetchNextArticlesPage());
         }
-    }, [dispatch, hasMore]);
+    }, [dispatch, hasMore, isLoading]);
 
     useInitialEffect(() => {
         if (!inited) {

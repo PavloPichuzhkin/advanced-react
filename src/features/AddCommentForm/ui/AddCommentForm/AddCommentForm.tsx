@@ -7,6 +7,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { HStack } from 'shared/ui/Stack';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice';
 import {
     getAddCommentFormError,
@@ -47,22 +48,18 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
     return (
         <DynamicModuleLoader reducers={reducers}>
             {addCommentFormIsLoading && (
-                <div>
-                    <Text
-                        theme={TextTheme.ERROR}
-                        title={t('Comment is sending')}
-                    />
-                </div>
+                <Text
+                    theme={TextTheme.ERROR}
+                    title={t('Comment is sending')}
+                />
             )}
             {error && (
-                <div>
-                    <Text
-                        theme={TextTheme.ERROR}
-                        title={t('Server error during send comment')}
-                    />
-                </div>
+                <Text
+                    theme={TextTheme.ERROR}
+                    title={t('Server error during send comment')}
+                />
             )}
-            <div className={classNames(cls.AddCommentForm, {}, [className])}>
+            <HStack max justify="between" className={classNames(cls.AddCommentForm, {}, [className])}>
                 <Input
                     className={cls.input}
                     placeholder={t('Enter comment')}
@@ -76,7 +73,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
                 >
                     {t('Send')}
                 </Button>
-            </div>
+            </HStack>
         </DynamicModuleLoader>
     );
 });

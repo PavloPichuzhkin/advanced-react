@@ -10,10 +10,9 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import AddCommentForm, { addComment } from 'features/AddCommentForm';
-import { Button, ButtonTheme } from 'shared/ui/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/Page';
-import { useHover } from 'shared/lib/hooks/useHover/useHover';
+import { VStack } from 'shared/ui/Stack';
 import { articleDetailsPageReducer } from '../../model/slice';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import {
@@ -42,12 +41,13 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const dispatch = useAppDispatch();
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+    // const commentsIsLoading = true;
     const article = useSelector(getArticleDetailsData);
     const recommendations = useSelector(getArticleRecommendations.selectAll);
     const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
+    // const recommendationsIsLoading = true;
 
     const navigate = useNavigate();
-    const [isHover, setIsHover] = useHover();
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
@@ -83,30 +83,30 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                {/* <Button {...setIsHover} theme={ButtonTheme.OUTLINE} onClick={onBackToList}> */}
-                {/*    {isHover ? t('Back to list11111') : t('Back to list')} */}
-                {/* </Button> */}
-                <ArticleDetailsPageHeader />
-                <ArticleDetails id={id} />
-                <Text
+                <VStack gap="16" max>
+                    <ArticleDetailsPageHeader />
+                    <ArticleDetails id={id} />
+                    <Text
                     // size={TextSize.L}
-                    className={cls.commentTitle}
-                    title={t('Recommended')}
-                />
-                <ArticleList
-                    articles={recommendations}
-                    isLoading={recommendationsIsLoading}
-                    className={cls.recommendations}
-                    target="_blank"
-                />
-                <Text className={cls.commentTitle} title={`${t('Comments')}:`} />
-                <AddCommentForm onSendComment={onSendComment} />
-                <CommentsList
-                    isLoading={commentsIsLoading}
-                    comments={comments}
-                />
+                        title={t('Recommended')}
+                    />
+                    <ArticleList
+                        articles={recommendations}
+                        isLoading={recommendationsIsLoading}
+                        className={cls.recommendations}
+                        target="_blank"
+                    />
+                    <Text className={cls.commentTitle} title={`${t('Comments')}:`} />
+                    <AddCommentForm onSendComment={onSendComment} />
+                    <CommentsList
+                        isLoading={commentsIsLoading}
+                        comments={comments}
+                    />
+                </VStack>
             </Page>
+
         </DynamicModuleLoader>
     );
 };

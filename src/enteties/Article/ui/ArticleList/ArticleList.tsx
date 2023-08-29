@@ -22,7 +22,7 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL
     .fill(0)
     .map((item, index) => (
         // eslint-disable-next-line react/no-array-index-key
-        <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
+        <ArticleListItemSkeleton className={cls.cardSkeleton} key={index} view={view} />
     ));
 
 export const ArticleList = memo((props: ArticleListProps) => {

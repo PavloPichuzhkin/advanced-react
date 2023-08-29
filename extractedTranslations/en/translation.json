@@ -1,7 +1,9 @@
 {
   "": "",
+  "Advanced React App": "Advanced React App",
   "All articles": "All articles",
   "Authorization form": "",
+  "Create article": "Create article",
   "Economy": "Economy",
   "Enter password": "",
   "Enter username": "",
@@ -15,12 +17,11 @@
   "Search": "Search",
   "Short Language": "",
   "Sign in": "",
+  "Sign out": "",
+  "Super React App": "Super React App",
   "There are no comments": "There are no comments",
   "decrement": "",
   "increment": "",
   "viewing": "viewing",
-  "Поиск": "",
-  "Create article": "Create article",
-  "Super React App": "Super React App",
-  "Advanced React App": "Advanced React App"
+  "Поиск": ""
 }
