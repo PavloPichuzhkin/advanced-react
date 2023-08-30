@@ -35,6 +35,22 @@ export const PrimaryRightAlign: Story = {
     },
 };
 
+export const SizeS: Story = {
+    args: {
+        title: 'Title lorem ipsun',
+        text: 'Description Description Description Description',
+        size: TextSize.S,
+    },
+};
+
+export const SizeM: Story = {
+    args: {
+        title: 'Title lorem ipsun',
+        text: 'Description Description Description Description',
+        size: TextSize.M,
+    },
+};
+
 export const SizeL: Story = {
     args: {
         title: 'Title lorem ipsun',
