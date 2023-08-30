@@ -38,7 +38,6 @@ export const Button = memo((props:ButtonProps) => {
 
     const mods: Mods = {
         [cls.square]: square,
-        // [cls[size]]: true,
         [cls.disabled]: disabled,
         [cls.h]: disabled,
     };

@@ -70,7 +70,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
     };
 
     return (
-        <VStack max className={classNames(cls.ProfileCard, mods, [className])}>
+        <VStack max gap="12" className={classNames(cls.ProfileCard, mods, [className])}>
             {data?.avatar && (
                 <HStack justify="center" max>
                     <Avatar src={data?.avatar} size={150} border="40%" />
@@ -79,7 +79,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
             <Input
                 value={data?.first}
                 placeholder={t('Your Firstname')}
-                className={cls.input}
                 onChange={onChangeFirstname}
                 readonly={readonly}
                 autofocus={!readonly}
@@ -87,47 +86,39 @@ export const ProfileCard = (props: ProfileCardProps) => {
             <Input
                 value={data?.lastname}
                 placeholder={t('Your Lastname')}
-                className={cls.input}
                 onChange={onChangeLastname}
                 readonly={readonly}
             />
             <Input
                 value={data?.age}
                 placeholder={t('Your age')}
-                className={cls.input}
                 onChange={onChangeAge}
                 readonly={readonly}
-                // type="number"
             />
             <Input
                 value={data?.city}
                 placeholder={t('City')}
-                className={cls.input}
                 onChange={onChangeCity}
                 readonly={readonly}
             />
             <Input
                 value={data?.username}
                 placeholder={t('Your username')}
-                className={cls.input}
                 onChange={onChangeUsername}
                 readonly={readonly}
             />
             <Input
                 value={data?.avatar}
                 placeholder={t('Avatar link')}
-                className={cls.input}
                 onChange={onChangeAvatar}
                 readonly={readonly}
             />
             <CurrencySelect
-                className={cls.input}
                 value={data?.currency}
                 onChange={onChangeCurrency}
                 readonly={readonly}
             />
             <CountrySelect
-                className={cls.input}
                 value={data?.country}
                 onChange={onChangeCountry}
                 readonly={readonly}

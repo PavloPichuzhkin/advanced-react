@@ -5,12 +5,15 @@
     transition: all .15s ease-in-out;
 
     &:hover {
-        font-weight: 600;
-        transform: scale(1.05);
+        &:enabled {
+            font-weight: 600;
+            transform: scale(1.05);
 
-        // opacity: 0.9;
-        // fill-opacity: 0.7;
-        // stroke-opacity: 0.8;
+            // opacity: 0.9;
+            // fill-opacity: 0.7;
+            // stroke-opacity: 0.8;
+        }
+
     }
 }
 
@@ -85,7 +88,7 @@
     opacity: 0.6;
 
     &:hover {
-        transform: scale(1.05);
+        // transform: scale(1.05);
 
     }
 }
