@@ -23,6 +23,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     square?: boolean
     size?: string
     disabled?: boolean
+    as?: 'div' // only for headless ui
 }
 
 export const Button = memo((props:ButtonProps) => {
@@ -33,14 +34,27 @@ export const Button = memo((props:ButtonProps) => {
         square,
         disabled,
         size = ButtonSize.M,
+        as,
         ...otherProps
     } = props;
 
     const mods: Mods = {
         [cls.square]: square,
         [cls.disabled]: disabled,
-        [cls.h]: disabled,
+        [cls.divDisable]: Boolean(as),
+
     };
+    if (as) {
+        return (
+            <span
+                role="button"
+                className={classNames(cls.Button, mods, [className, cls[theme], cls[size]])}
+                {...otherProps}
+            >
+                {children}
+            </span>
+        );
+    }
     return (
         <button
             type="button"

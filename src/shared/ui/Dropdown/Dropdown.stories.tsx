@@ -3,24 +3,25 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDecorator';
 import { StoryFn } from '@storybook/react';
-import { ListBox } from './ListBox';
+import { Button } from '../Button';
+import { Dropdown } from './Dropdown';
 
-const meta: Meta<typeof ListBox> = {
-    title: 'shared/ListBox',
-    component: ListBox,
+const meta: Meta<typeof Dropdown> = {
+    title: 'shared/Dropdown',
+    component: Dropdown,
     // tags: ['autodocs'],
 };
 
 export default meta;
-type Story = StoryObj<typeof ListBox>;
+type Story = StoryObj<typeof Dropdown>;
 
 export const Primary: Story = {
     args: {
-        value: 'Value',
+        trigger: <Button as="div">Value</Button>,
         items: [
-            { content: 'Some content 1', value: 'Value 1' },
-            { content: 'Some content 2', value: 'Value 2' },
-            { content: 'Some content 3', value: 'Value 3' },
+            { content: 'Some content 1' },
+            { content: 'Some content 2' },
+            { content: 'Some content 3' },
         ],
     },
     decorators: [
@@ -28,17 +29,17 @@ export const Primary: Story = {
             <div style={{ padding: '5rem' }}><Story /></div>
         )],
 };
-
 export const Dark: Story = {
     args: {
-        value: 'Value',
+        trigger: <Button as="div">Value</Button>,
         items: [
-            { content: 'Some content 1', value: 'Value 1' },
-            { content: 'Some content 2', value: 'Value 2' },
-            { content: 'Some content 3', value: 'Value 3' },
+            { content: 'Some content 1' },
+            { content: 'Some content 2' },
+            { content: 'Some content 3' },
         ],
     },
-    decorators: [ThemeDecorator(Theme.DARK),
+    decorators: [
+        ThemeDecorator(Theme.DARK),
         (Story: StoryFn) => (
             <div style={{ padding: '5rem' }}><Story /></div>
         )],
