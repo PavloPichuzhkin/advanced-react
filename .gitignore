@@ -13,3 +13,5 @@
 
 # Local Netlify folder
 .netlify
+
+/reports
