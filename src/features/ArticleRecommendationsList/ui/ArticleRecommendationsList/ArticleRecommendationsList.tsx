@@ -3,6 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { Text } from 'shared/ui/Text/Text';
 import { ArticleList } from 'enteties/Article';
+import { VirtualizedArticleList } from 'enteties/Article/ui/ArticleList/VirtualizedArticleList';
+import cls from './ArticleRecommendationsList.module.scss';
+
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
 
 interface ArticleRecommendationsListProps {
@@ -16,23 +19,30 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
         isLoading,
         data: articles,
         error,
-    } = useArticleRecommendationsList(4);
+    } = useArticleRecommendationsList(5);
 
-    // console.log(articles);
-    if (isLoading || error) {
+    if (isLoading || error || !articles) {
         return null;
     }
 
     return (
-        <div className={classNames('', {}, [className])}>
+        <>
             <Text
                 title={t('Recommended')}
             />
-            <ArticleList
+            <VirtualizedArticleList
                 isLoading={isLoading}
                 articles={articles}
                 target="_blank"
+                virtualized={false}
+                className={cls.recommendations}
             />
-        </div>
+            {/* <ArticleList */}
+            {/*    isLoading={isLoading} */}
+            {/*    articles={articles} */}
+            {/*    target="_blank" */}
+            {/*    className={cls.recommendations} */}
+            {/* /> */}
+        </>
     );
 });

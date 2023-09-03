@@ -82,12 +82,15 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 onChange={onChangeFirstname}
                 readonly={readonly}
                 autofocus={!readonly}
+                data-testid="ProfileCard.firstname"
             />
             <Input
                 value={data?.lastname}
                 placeholder={t('Your Lastname')}
                 onChange={onChangeLastname}
                 readonly={readonly}
+                data-testid="ProfileCard.lastname"
+
             />
             <Input
                 value={data?.age}

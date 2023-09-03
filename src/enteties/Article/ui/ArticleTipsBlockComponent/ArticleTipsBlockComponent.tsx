@@ -19,7 +19,7 @@ export const ArticleTipsBlockComponent = memo((props: ArticleTipsBlockComponentP
             <Text title={t(block.title)} className={cls.title} />
             {block.paragraphs.map((paragraph, index) => (
                 <Text key={paragraph} text={paragraph} className={cls.paragraph} size={TextSize.M} />
-            //     TODO TextSize S
+
             ))}
         </div>
     );

@@ -1,0 +1,11 @@
+.recommendations {
+    // display: flex;
+    margin-top: 20px;
+    padding-bottom: 16px;
+    flex-wrap: nowrap;
+    justify-content: start;
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    // width: 99%;
+}

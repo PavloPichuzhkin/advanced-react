@@ -47,13 +47,15 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <VStack gap="16" max>
+                    {/* made scroll behavior uncontrolled because of align-items prop */}
+                    {/* <div className={cls.pageContainer}> */}
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
+                    {/* </div> */}
                 </VStack>
             </Page>
-
         </DynamicModuleLoader>
     );
 };

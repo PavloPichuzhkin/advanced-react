@@ -37,7 +37,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
                 className={classNames(cls.ArticlesPage, {}, [className])}
             >
                 <ArticlesPageFilters className={cls.sticky} />
-                <ArticleInfiniteList />
+                <ArticleInfiniteList virtual={false} />
             </Page>
         </DynamicModuleLoader>
     );

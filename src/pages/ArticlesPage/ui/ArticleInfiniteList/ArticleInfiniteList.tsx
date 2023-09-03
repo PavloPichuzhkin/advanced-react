@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { ArticleList } from 'enteties/Article';
+import { ArticleList, VirtualizedArticleList } from 'enteties/Article';
 import { useSelector } from 'react-redux';
 import { Text } from 'shared/ui/Text/Text';
 import { getArticles } from '../../model/slices/articlesPageSlice';
@@ -12,9 +12,10 @@ import {
 
 interface ArticleInfiniteListProps {
     className?: string
+    virtual?: boolean
 }
 
-export const ArticleInfiniteList = memo(({ className }: ArticleInfiniteListProps) => {
+export const ArticleInfiniteList = memo(({ className, virtual = true }: ArticleInfiniteListProps) => {
     const { t } = useTranslation();
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlesPageIsLoading);
@@ -25,11 +26,21 @@ export const ArticleInfiniteList = memo(({ className }: ArticleInfiniteListProps
         return <Text text={t('An error occurred when loading articles')} />;
     }
     return (
-        <ArticleList
-            isLoading={isLoading}
-            view={view}
-            articles={articles}
-            className={className}
-        />
+        virtual ? (
+            <VirtualizedArticleList
+                isLoading={isLoading}
+                articles={articles}
+                view={view}
+                className={className}
+            />
+        )
+            : (
+                <ArticleList
+                    isLoading={isLoading}
+                    view={view}
+                    articles={articles}
+                    className={className}
+                />
+            )
     );
 });
