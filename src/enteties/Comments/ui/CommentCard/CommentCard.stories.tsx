@@ -5,7 +5,7 @@ import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDeco
 import { CommentCard } from './CommentCard';
 
 const meta: Meta<typeof CommentCard> = {
-    title: 'Enteties/CommentCard',
+    title: 'Enteties/Comments/CommentCard',
     component: CommentCard,
     // tags: ['autodocs'],
 };

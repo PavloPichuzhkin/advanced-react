@@ -4,7 +4,7 @@ import { Theme } from 'shared/lib/context/ThemeContext';
 import { LangSwitcher } from './LangSwitcher';
 
 const meta: Meta<typeof LangSwitcher> = {
-    title: 'Shared/LangSwitcher',
+    title: 'widgets/LangSwitcher',
     component: LangSwitcher,
     tags: ['autodocs'],
 };

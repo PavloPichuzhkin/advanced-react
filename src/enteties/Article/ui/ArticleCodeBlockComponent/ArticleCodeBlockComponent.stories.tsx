@@ -6,7 +6,7 @@ import { ArticleBlockType } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from './ArticleCodeBlockComponent';
 
 const meta: Meta<typeof ArticleCodeBlockComponent> = {
-    title: 'Enteties/ArticleDetails/ArticleCodeBlockComponent',
+    title: 'Enteties/Article/ArticleCodeBlockComponent',
     component: ArticleCodeBlockComponent,
     // tags: ['autodocs'],
 };

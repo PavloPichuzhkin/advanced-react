@@ -5,7 +5,7 @@ import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDeco
 import { Sidebar } from './Sidebar';
 
 const meta: Meta<typeof Sidebar> = {
-    title: 'widget/Sidebar',
+    title: 'widgets/Sidebar',
     component: Sidebar,
     tags: ['autodocs'],
 };

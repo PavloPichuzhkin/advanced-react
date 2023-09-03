@@ -5,7 +5,7 @@ import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDeco
 import { ArticleSortSelector } from './ArticleSortSelector';
 
 const meta: Meta<typeof ArticleSortSelector> = {
-    title: 'entities/Article/ArticleSortSelector',
+    title: 'Enteties/Article/ArticleSortSelector',
     component: ArticleSortSelector,
     // tags: ['autodocs'],
 };

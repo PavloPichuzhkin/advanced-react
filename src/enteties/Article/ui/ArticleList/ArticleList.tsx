@@ -36,14 +36,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     const { t } = useTranslation('articles');
 
-    // if (isLoading) {
-    //     return (
-    //         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-    //             {getSkeletons(view)}
-    //         </div>
-    //     );
-    // }
-
     const isBig = view === ArticleView.BIG;
 
     const itemsPerRow = isBig ? 1 : 3;

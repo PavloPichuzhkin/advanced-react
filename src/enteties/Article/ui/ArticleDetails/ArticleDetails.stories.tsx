@@ -5,15 +5,10 @@ import { Theme } from 'shared/lib/context/ThemeContext';
 import { Article, ArticleBlockType, ArticleType } from '../../model/types/article';
 import { ArticleDetails } from './ArticleDetails';
 
-const meta: Meta<typeof ArticleDetails> = {
-    title: 'Enteties/ArticleDetails',
-    component: ArticleDetails,
-    // tags: ['autodocs'],
+export const articleTest: any = {
+    id: '1',
+    user: 2,
 };
-
-export default meta;
-type Story = StoryObj<typeof ArticleDetails>;
-
 export const article: Article = {
     id: '1',
     user: {
@@ -89,6 +84,15 @@ export const article: Article = {
         },
     ],
 };
+const meta: Meta<typeof ArticleDetails> = {
+    title: 'Enteties/Article/ArticleDetails',
+    component: ArticleDetails,
+    // tags: ['autodocs'],
+};
+
+export default meta;
+type Story = StoryObj<typeof ArticleDetails>;
+
 export const Primary: Story = {
     args: {},
     decorators: [

@@ -5,7 +5,7 @@ import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDeco
 import ArticlesPage from './ArticlesPage';
 
 const meta: Meta<typeof ArticlesPage> = {
-    title: 'Pages/Articles/ArticlesPage',
+    title: 'Pages/ArticlesPage/ArticlesPage',
     component: ArticlesPage,
     // tags: ['autodocs'],
 };
@@ -15,12 +15,19 @@ type Story = StoryObj<typeof ArticlesPage>;
 
 export const Primary: Story = {
     args: {},
-    // decorators: [ThemeDecorator(Theme.DARK),
-    //     PartialStoreDecorator({
-    //         profile: {
-    //             form: {
-    //                 first: 'Pavlo',
-    //             },
-    //         },
-    //     })],
+    decorators: [ThemeDecorator(Theme.DARK),
+        PartialStoreDecorator({
+            // articlesPage: {
+            //     isLoading: true,
+            //     // view: 'SMALL',
+            //     page: 2,
+            //     hasMore: true,
+            //     _inited: true,
+            //     limit: 9,
+            //     // sort: 'views',
+            //     search: '',
+            //     order: 'asc',
+            //     // type: 'ALL',
+            // },
+        })],
 };

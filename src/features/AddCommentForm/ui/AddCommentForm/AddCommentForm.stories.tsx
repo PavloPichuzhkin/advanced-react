@@ -5,7 +5,7 @@ import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDeco
 import AddCommentForm from './AddCommentForm';
 
 const meta: Meta<typeof AddCommentForm> = {
-    title: 'Pages/AddCommentForm',
+    title: 'Features/AddCommentForm',
     component: AddCommentForm,
     // tags: ['autodocs'],
 };

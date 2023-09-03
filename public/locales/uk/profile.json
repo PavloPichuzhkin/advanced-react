@@ -17,5 +17,6 @@
   "Incorrect region": "Неправильний регіон",
   "Data not specified": "Дані не вказані",
   "First and last name are required": "Ім'я та прізвище обов'язкові",
-  "Incorrect age": "Неправильний вік"
+  "Incorrect age": "Неправильний вік",
+  "Profile not found": "Profile not found"
 }

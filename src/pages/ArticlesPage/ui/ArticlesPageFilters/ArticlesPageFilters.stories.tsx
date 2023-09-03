@@ -5,7 +5,7 @@ import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDeco
 import { ArticlesPageFilters } from './ArticlesPageFilters';
 
 const meta: Meta<typeof ArticlesPageFilters> = {
-    title: 'Pages/Articles/ArticlesPageFilters',
+    title: 'Pages/ArticlesPage/ArticlesPageFilters',
     component: ArticlesPageFilters,
     // tags: ['autodocs'],
 };

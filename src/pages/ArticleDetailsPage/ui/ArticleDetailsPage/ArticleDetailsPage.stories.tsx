@@ -8,7 +8,7 @@ import { article } from 'enteties/Article/ui/ArticleDetails/ArticleDetails.stori
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 const meta: Meta<typeof ArticleDetailsPage> = {
-    title: 'Pages/ArticleDetailsPage',
+    title: 'Pages/ArticleDetailsPage/ArticleDetailsPage',
     component: ArticleDetailsPage,
     // tags: ['autodocs'],
 };

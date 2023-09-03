@@ -4,7 +4,7 @@ import { Theme } from 'shared/lib/context/ThemeContext';
 import { ErrorPage } from './ErrorPage';
 
 const meta: Meta<typeof ErrorPage> = {
-    title: 'widget/ErrorPage',
+    title: 'widgets/ErrorPage',
     component: ErrorPage,
     tags: ['autodocs'],
 };

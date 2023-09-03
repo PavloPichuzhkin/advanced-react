@@ -4,7 +4,7 @@ import { Theme } from 'shared/lib/context/ThemeContext';
 import { Navbar } from './Navbar';
 
 const meta: Meta<typeof Navbar> = {
-    title: 'widget/Navbar',
+    title: 'widgets/Navbar',
     component: Navbar,
     tags: ['autodocs'],
 };

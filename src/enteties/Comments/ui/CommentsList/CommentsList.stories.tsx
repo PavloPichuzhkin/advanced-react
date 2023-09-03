@@ -5,7 +5,7 @@ import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDeco
 import { CommentsList } from './CommentsList';
 
 const meta: Meta<typeof CommentsList> = {
-    title: 'Enteties/CommentsList',
+    title: 'Enteties/Comments/CommentsList',
     component: CommentsList,
     // tags: ['autodocs'],
 };
