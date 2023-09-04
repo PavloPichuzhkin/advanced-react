@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'shared/lib/context/ThemeContext';
+import { UserRole } from 'enteties/User';
 import { Article, ArticleBlockType, ArticleType } from '../../model/types/article';
 import { ArticleDetails } from './ArticleDetails';
 
@@ -14,6 +15,7 @@ export const article: Article = {
     user: {
         id: '1',
         username: 'Gogi',
+        roles: [UserRole.ADMIN],
     },
     title: 'Javascript news',
     subtitle: "What's new in JS for 2023? Що нового в JS у 2023 році?",

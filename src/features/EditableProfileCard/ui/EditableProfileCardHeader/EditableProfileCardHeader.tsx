@@ -59,7 +59,7 @@ export const EditableProfileCardHeader = memo((props: ProfilePageHeaderProps) =>
     }, [validateErrors]);
 
     return (
-        <HStack max justify="between" className={classNames('', {}, [className])}>
+        <HStack max justify="between" align="center" className={classNames('', {}, [className])}>
             <Text title={t('Profile')} />
             {canEdit && (
                 <div>

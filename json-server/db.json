@@ -138,21 +138,45 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://as1.ftcdn.net/v2/jpg/05/56/29/10/1000_F_556291020_q2ieMiOCKYbtoLITrnt7qcSL1LJYyWrU.jpg"
     },
     {
       "id": "2",
       "username": "user1",
       "password": "123",
-      "role": "USER",
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://as1.ftcdn.net/v2/jpg/06/19/33/30/1000_F_619333024_IfgNj7pGIeoG3BUPHfEkBT15l7yi7HbG.jpg"
     },
     {
       "id": "3",
       "username": "user2",
       "password": "123",
-      "role": "USER",
+      "roles": [
+        "USER"
+      ],
+      "avatar": "https://as1.ftcdn.net/v2/jpg/01/10/87/84/1000_F_110878455_QZVeLFXBa1ZLiN7lMU8dDEtqqgOgJIRZ.jpg"
+    },
+    {
+      "id": "4",
+      "username": "manager",
+      "password": "123",
+      "roles": [
+        "MANAGER"
+      ],
+      "avatar": "https://as1.ftcdn.net/v2/jpg/01/10/87/84/1000_F_110878455_QZVeLFXBa1ZLiN7lMU8dDEtqqgOgJIRZ.jpg"
+    },
+    {
+      "id": "5",
+      "username": "sadnin",
+      "password": "123",
+      "roles": [
+        "SUPER_ADMIN"
+      ],
       "avatar": "https://as1.ftcdn.net/v2/jpg/01/10/87/84/1000_F_110878455_QZVeLFXBa1ZLiN7lMU8dDEtqqgOgJIRZ.jpg"
     }
   ],
@@ -161,9 +185,9 @@
       "id": "1",
       "first": "Pavlo",
       "lastname": "Pichuzhkin",
-      "age": 222,
+      "age": 22,
       "currency": "EUR",
-      "country": "Netherlands",
+      "country": "France",
       "city": "Kiev",
       "username": "admin",
       "avatar": "https://as1.ftcdn.net/v2/jpg/05/56/29/10/1000_F_556291020_q2ieMiOCKYbtoLITrnt7qcSL1LJYyWrU.jpg"

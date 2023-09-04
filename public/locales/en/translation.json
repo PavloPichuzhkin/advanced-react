@@ -30,5 +30,7 @@
   "Science": "Science",
   "Create article": "Create article",
   "Advanced React App": "Advanced React App",
-  "An error occurred when loading articles": "An error occurred when loading articles"
+  "An error occurred when loading articles": "An error occurred when loading articles",
+  "You have no access to this page": "You have no access to this page",
+  "Admin panel": "Admin panel"
 }

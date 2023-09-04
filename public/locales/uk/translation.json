@@ -30,5 +30,7 @@
   "Science": "Science",
   "Create article": "Створити статтю",
   "Advanced React App": "Advanced React App",
-  "An error occurred when loading articles": "An error occurred when loading articles"
+  "An error occurred when loading articles": "An error occurred when loading articles",
+  "You have no access to this page": "У вас немає доступу до цієї сторінки",
+  "Admin panel": "Панель адміністратора"
 }

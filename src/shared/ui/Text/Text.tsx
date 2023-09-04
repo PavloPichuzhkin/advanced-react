@@ -50,7 +50,7 @@ export const Text = memo((props: TextProps) => {
         size = TextSize.M,
         'data-testid': dataTestId = 't',
     } = props;
-    console.log(dataTestId);
+
     const HeaderTag = mapSizeToHeaderTag[size];
 
     const mods: Mods = {

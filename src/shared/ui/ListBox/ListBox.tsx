@@ -46,7 +46,7 @@ export function ListBox(props: ListBoxProps) {
     const optionsClasses = [mapDirectionClass[direction]];
 
     return (
-        <HStack gap="4">
+        <HStack gap="4" align="center">
             {label && <span className={classNames('', { [cls.readonly]: readonly })}>{`${label}/>`}</span>}
             <HListBox
                 disabled={readonly}
