@@ -1,5 +1,6 @@
 {
   "": "",
+  "Admin panel": "Admin panel",
   "Advanced React App": "Advanced React App",
   "All articles": "All articles",
   "An error occurred when loading articles": "An error occurred when loading articles",
@@ -23,10 +24,9 @@
   "Sign out": "",
   "Super React App": "Super React App",
   "There are no comments": "There are no comments",
+  "You have no access to this page": "You have no access to this page",
   "decrement": "",
   "increment": "",
   "viewing": "viewing",
-  "Поиск": "",
-  "You have no access to this page": "You have no access to this page",
-  "Admin panel": "Admin panel"
+  "Поиск": ""
 }
