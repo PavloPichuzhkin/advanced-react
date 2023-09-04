@@ -172,7 +172,7 @@
     },
     {
       "id": "5",
-      "username": "sadnin",
+      "username": "sadmin",
       "password": "123",
       "roles": [
         "SUPER_ADMIN"
@@ -212,7 +212,29 @@
       "country": "United States of America",
       "city": "Kiev",
       "username": "admin",
-      "avatar": "https://images.unsplash.com/photo-1573547429441-d7ef62e04b63?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=725&q=80"
+      "avatar": "https://as1.ftcdn.net/v2/jpg/01/10/87/84/1000_F_110878455_QZVeLFXBa1ZLiN7lMU8dDEtqqgOgJIRZ.jpg"
+    },
+    {
+      "id": "4",
+      "first": "Pavlo4",
+      "lastname": "Pichuzhkin",
+      "age": 222,
+      "currency": "USD",
+      "country": "United States of America",
+      "city": "Kiev",
+      "username": "admin",
+      "avatar": "https://as1.ftcdn.net/v2/jpg/05/69/12/82/1000_F_569128260_hb4UE0XkrsGH2ztyLFuGP8hIRIRPi045.jpg"
+    },
+    {
+      "id": "5",
+      "first": "Pavlo5",
+      "lastname": "Pichuzhkin",
+      "age": 222,
+      "currency": "USD",
+      "country": "United States of America",
+      "city": "Kiev",
+      "username": "admin",
+      "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg"
     }
   ],
   "articles": [
