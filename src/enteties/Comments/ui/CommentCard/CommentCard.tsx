@@ -22,7 +22,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
         return (
             <VStack gap="8" max className={classNames(cls.CommentCard, {}, [className])}>
 
-                <HStack align="center" className={cls.header}>
+                <HStack align="center" className="">
                     <Skeleton width={30} height={30} border="45%" />
                     <Skeleton height={20} width={200} className={cls.username} border="2px" />
                 </HStack>

@@ -35,8 +35,8 @@ class ErrorBoundary
         if (hasError) {
             // You can render any custom fallback UI
             return (
-                // <Suspense fallback={<Loader />}>
-                <Suspense fallback="">
+                <Suspense fallback={<Loader />}>
+                    {/* <Suspense fallback=""> */}
                     <ErrorPage className={classNames('', {}, [])} />
                 </Suspense>
             );

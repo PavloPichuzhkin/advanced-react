@@ -16,11 +16,12 @@ type Story = StoryObj<typeof ArticleDetailsPageHeader>;
 export const Primary: Story = {
     args: {},
     decorators: [ThemeDecorator(Theme.DARK),
-        PartialStoreDecorator({
-            profile: {
-                form: {
-                    first: 'Pavlo',
-                },
-            },
-        })],
+        // PartialStoreDecorator({
+        //     profile: {
+        //         form: {
+        //             first: 'Pavlo',
+        //         },
+        //     },
+        // })
+    ],
 };

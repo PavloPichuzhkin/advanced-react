@@ -15,7 +15,6 @@ interface CommentListProps {
 export const CommentsList = memo((props: CommentListProps) => {
     const { className, isLoading, comments } = props;
     const { t } = useTranslation();
-
     if (isLoading) {
         return (
             <VStack max gap="16" className={classNames('', {}, [className])}>

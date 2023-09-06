@@ -38,14 +38,12 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     const hasMore = useSelector(getArticlesPageHasMore);
 
     const fetchData = useCallback(() => {
-        dispatch(fetchArticlesList({ replace: true }));
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchArticlesList({ replace: true }));
+        }
     }, [dispatch]);
 
     const debouncedFetchData = useDebounce(fetchData, 500);
-
-    // const onChangeView = useCallback((view: ArticleView) => {
-    //     dispatch(articlesPageActions.setView(view));
-    // }, [dispatch]);
 
     const onChangeView = useCallback((view: ArticleView) => {
         const sameView = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView === view;

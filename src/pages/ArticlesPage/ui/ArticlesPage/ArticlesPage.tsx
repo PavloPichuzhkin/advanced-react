@@ -23,7 +23,11 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const [searchParams] = useSearchParams();
 
     const onLoadNextPart = useCallback(() => {
-        dispatch(fetchNextArticlesPage());
+        if (__PROJECT__ !== 'storybook'
+        // && __PROJECT__ !== 'jest'
+        ) {
+            dispatch(fetchNextArticlesPage());
+        }
     }, [dispatch]);
 
     useInitialEffect(() => {
@@ -37,7 +41,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
                 className={classNames(cls.ArticlesPage, {}, [className])}
             >
                 <ArticlesPageFilters className={cls.sticky} />
-                <ArticleInfiniteList virtual={false} />
+                <ArticleInfiniteList />
             </Page>
         </DynamicModuleLoader>
     );

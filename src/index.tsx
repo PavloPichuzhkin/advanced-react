@@ -19,13 +19,13 @@ root.render(
     // <StrictMode>
     <BrowserRouter>
         <StoreProvider>
-            <ErrorBoundary>
+            <ThemeProvider>
+                <ErrorBoundary>
 
-                <ThemeProvider>
                     <App />
-                </ThemeProvider>
 
-            </ErrorBoundary>
+                </ErrorBoundary>
+            </ThemeProvider>
         </StoreProvider>
     </BrowserRouter>
     // </StrictMode>

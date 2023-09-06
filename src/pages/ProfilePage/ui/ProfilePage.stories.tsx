@@ -5,6 +5,7 @@ import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDeco
 import { Currency } from 'enteties/CurrencySelect';
 import { Country } from 'enteties/CountrySelect';
 import avatar from 'shared/assets/tests/storybook.jpg';
+import { mockProfileData } from 'shared/assets/tests/mockProfileData';
 import ProfilePage from './ProfilePage';
 
 const meta: Meta<typeof ProfilePage> = {
@@ -20,16 +21,8 @@ export const Light: Story = {
     args: { },
     decorators: [PartialStoreDecorator({
         profile: {
-            form: {
-                first: 'Pavlo',
-                lastname: 'Pichuzhkin',
-                age: 222,
-                currency: Currency.UAH,
-                country: Country.NETHERLANDS,
-                city: 'Kiev',
-                username: 'admin',
-                avatar,
-            },
+            form: mockProfileData,
+            data: mockProfileData,
             readonly: true,
         },
     })],
@@ -41,16 +34,8 @@ export const Dark: Story = {
 Dark.decorators = [ThemeDecorator(Theme.DARK),
     PartialStoreDecorator({
         profile: {
-            form: {
-                first: 'Pavlo',
-                lastname: 'Pichuzhkin',
-                age: 222,
-                currency: Currency.UAH,
-                country: Country.NETHERLANDS,
-                city: 'Kiev',
-                username: 'admin',
-                avatar,
-            },
+            form: mockProfileData,
+            data: mockProfileData,
             readonly: undefined,
         },
     })];

@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { LOCAL_STORAGE_THEME_KEY, Theme } from 'shared/lib/context/ThemeContext';
+import { useTheme } from 'shared/lib/hooks/useTheme/useTheme';
 import cls from './ErrorPage.module.scss';
 
 interface ErrorPageProps {
@@ -15,7 +16,8 @@ export const ErrorPage = ({ className }: ErrorPageProps) => {
         // eslint-disable-next-line no-restricted-globals
         location.reload();
     };
-    const theme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT;
+    // const theme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT;
+    const { theme } = useTheme();
 
     return (
         <div className={classNames(cls.ErrorPage, {}, [className, 'app', theme])}>

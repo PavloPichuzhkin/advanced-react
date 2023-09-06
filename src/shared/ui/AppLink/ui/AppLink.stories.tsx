@@ -35,7 +35,7 @@ export const Red: Story = {
 export const PrimaryDark: Story = {
     args: {
         children: 'Link',
-        theme: AppLinkTheme.SECONDARY,
+        theme: AppLinkTheme.PRIMARY,
     },
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];

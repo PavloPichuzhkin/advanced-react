@@ -15,7 +15,9 @@ interface ArticleInfiniteListProps {
     virtual?: boolean
 }
 
-export const ArticleInfiniteList = memo(({ className, virtual = true }: ArticleInfiniteListProps) => {
+export const ArticleInfiniteList = memo(({
+    className, virtual = false,
+}: ArticleInfiniteListProps) => {
     const { t } = useTranslation();
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlesPageIsLoading);

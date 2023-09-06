@@ -27,6 +27,7 @@ export const ArticleDetailsComments = memo((
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
     // const commentsIsLoading = true;
+    // console.log(comments);
 
     const dispatch = useAppDispatch();
     const article = useSelector(getArticleDetailsData);

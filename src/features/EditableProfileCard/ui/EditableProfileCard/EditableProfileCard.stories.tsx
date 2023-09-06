@@ -3,6 +3,9 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDecorator';
 import { StoryFn } from '@storybook/react';
+import { Currency } from 'enteties/CurrencySelect';
+import { Country } from 'enteties/CountrySelect';
+import { mockProfileData } from 'shared/assets/tests/mockProfileData';
 import { EditableProfileCard } from './EditableProfileCard';
 
 const meta: Meta<typeof EditableProfileCard> = {
@@ -17,16 +20,28 @@ type Story = StoryObj<typeof EditableProfileCard>;
 export const Primary: Story = {
     args: {},
     decorators: [
-        // ThemeDecorator(Theme.DARK),
-        // PartialStoreDecorator({
-        //     profile: {
-        //         form: {
-        //             first: 'Pavlo',
-        //         },
-        //     },
-        // }),
+        PartialStoreDecorator({
+            profile: {
+                readonly: true,
+                form: mockProfileData,
+                data: mockProfileData,
+            },
+        }),
         // (Story: StoryFn) => (
         //     <div style={{ padding: '5rem' }}><Story /></div>
         // )
+    ],
+};
+export const Dark: Story = {
+    args: {},
+    decorators: [
+        ThemeDecorator(Theme.DARK),
+        PartialStoreDecorator({
+            profile: {
+                readonly: true,
+                form: mockProfileData,
+                data: mockProfileData,
+            },
+        }),
     ],
 };

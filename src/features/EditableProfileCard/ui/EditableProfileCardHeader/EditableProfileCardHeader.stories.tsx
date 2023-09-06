@@ -15,12 +15,15 @@ type Story = StoryObj<typeof EditableProfileCardHeader>;
 
 export const Primary: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK),
+    decorators: [
         PartialStoreDecorator({
             profile: {
-                form: {
-                    first: 'Pavlo',
-                },
+                readonly: true,
             },
         })],
+};
+export const Dark: Story = {
+    args: {},
+    decorators: [ThemeDecorator(Theme.DARK),
+    ],
 };
