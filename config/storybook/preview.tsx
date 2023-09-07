@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react';
+import { initialize, mswDecorator, mswLoader } from 'msw-storybook-addon';
 import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator';
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator';
 import { Theme } from '../../src/shared/lib/context/ThemeContext';
@@ -6,6 +7,10 @@ import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorat
 import i18nextStoryDecorator from '../../src/shared/config/storybook/i18nextStoryDecorator';
 import i18n from '../../src/shared/config/i18n/i18n';
 import { StoreProviderDecorator } from '../../src/shared/config/storybook/StoreProviderDecorator';
+
+initialize({
+    onUnhandledRequest: 'bypass',
+});
 
 const preview: Preview = {
     globalTypes: {
@@ -32,6 +37,8 @@ const preview: Preview = {
                 date: /Date$/,
             },
         },
+        loaders: [mswLoader],
+
     },
     decorators: [
         StyleDecorator,
@@ -39,6 +46,7 @@ const preview: Preview = {
         RouterDecorator,
         i18nextStoryDecorator,
         StoreProviderDecorator,
+        mswDecorator,
     ],
 };
 

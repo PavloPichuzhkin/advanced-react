@@ -30,6 +30,7 @@ export const CurrencySelect = memo(({
         <ListBox
             className={classNames('', {}, [className])}
             label={t('Select currency')}
+            defaultValue={t('Select currency')}
             items={options}
             value={value}
             onChange={onChangeHandler}

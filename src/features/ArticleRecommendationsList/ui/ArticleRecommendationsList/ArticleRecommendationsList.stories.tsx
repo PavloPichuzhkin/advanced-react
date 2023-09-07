@@ -3,12 +3,17 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDecorator';
 import { StoryFn } from '@storybook/react';
+import { selectEntitiesFromNormalizedData } from 'shared/lib/helpers/selectEntities/selectEntities';
+import { mockReturnArticlesPageState } from 'shared/assets/tests/mockReturnArticlesPageState';
+import { Article } from 'enteties/Article';
+import { rest } from 'msw';
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
 const meta: Meta<typeof ArticleRecommendationsList> = {
     title: 'Features/ArticleRecommendationsList',
     component: ArticleRecommendationsList,
     // tags: ['autodocs'],
+
 };
 
 export default meta;
@@ -29,4 +34,32 @@ export const Primary: Story = {
         //     <div style={{ padding: '5rem' }}><Story /></div>
         // )
     ],
+    parameters: {
+        // msw: {
+        //     handlers: [
+        //         rest.get('/user', (req, res, ctx) => {
+        //             return res(
+        //                 ctx.json(selectEntitiesFromNormalizedData(mockReturnArticlesPageState) as Article[]),
+        //             );
+        //         }),
+        //     ],
+        // },
+        msw: {
+            handlers: [
+                rest.get(`${__API__}/articles`, (_req, res, ctx) => {
+                    console.log(
+                        'handler work',
+                    );
+                    return res(ctx.json(selectEntitiesFromNormalizedData(mockReturnArticlesPageState) as Article[]));
+                }),
+            ],
+        },
+        // msw: [
+        //     rest.get('/articles', (_req, res, ctx) => {
+        //         console.log('handler work');
+        //         return res(ctx.json(selectEntitiesFromNormalizedData(mockReturnArticlesPageState) as Article[]));
+        //     }),
+        // ],
+    },
+
 };

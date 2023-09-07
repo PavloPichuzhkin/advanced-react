@@ -36,6 +36,7 @@ export const CountrySelect = memo(({
     return (
         <ListBox
             className={classNames('', {}, [className])}
+            defaultValue={t('Select country')}
             label={t('Select country')}
             items={options}
             value={value}

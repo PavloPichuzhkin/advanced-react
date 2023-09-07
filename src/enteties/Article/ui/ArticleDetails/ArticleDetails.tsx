@@ -55,9 +55,8 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             );
         case ArticleBlockType.IMAGE:
             return (
-                <HStack max justify="center">
+                <HStack max justify="center" key={block.id}>
                     <ArticleImageBlockComponent
-                        key={block.id}
                         block={block}
                     />
                 </HStack>

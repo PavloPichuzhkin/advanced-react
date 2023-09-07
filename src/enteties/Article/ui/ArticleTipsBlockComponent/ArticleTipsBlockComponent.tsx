@@ -18,7 +18,8 @@ export const ArticleTipsBlockComponent = memo((props: ArticleTipsBlockComponentP
         <div className={classNames(cls.ArticleTipsBlockComponent, {}, [className, cls[`${block.title}`]])}>
             <Text title={t(block.title)} className={cls.title} />
             {block.paragraphs.map((paragraph, index) => (
-                <Text key={paragraph} text={paragraph} className={cls.paragraph} size={TextSize.M} />
+                // eslint-disable-next-line react/no-array-index-key
+                <Text key={index} text={paragraph} className={cls.paragraph} size={TextSize.M} />
 
             ))}
         </div>
