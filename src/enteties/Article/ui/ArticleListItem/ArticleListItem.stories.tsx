@@ -7,7 +7,8 @@ import {
 
 } from 'shared/assets/tests/mockReturnArticlesPageState';
 import { selectEntitiesFromNormalizedData } from 'shared/lib/helpers/selectEntities/selectEntities';
-import { Article, ArticleView } from '../../model/types/article';
+import { ArticleView } from '../../model/consts/articleConsts';
+import { Article } from '../../model/types/article';
 import { ArticleListItem } from './ArticleListItem';
 
 const meta: Meta<typeof ArticleListItem> = {

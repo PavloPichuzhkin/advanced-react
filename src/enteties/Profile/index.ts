@@ -2,4 +2,4 @@ export {
     ProfileCard,
 } from './ui/ProfileCard';
 
-export { Profile } from 'enteties/Profile/model/types/profile';
+export type { Profile } from 'enteties/Profile/model/types/profile';

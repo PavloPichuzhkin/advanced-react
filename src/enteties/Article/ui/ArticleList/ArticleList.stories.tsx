@@ -4,7 +4,8 @@ import { Theme } from 'shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDecorator';
 import { mockReturnArticlesPageState } from 'shared/assets/tests/mockReturnArticlesPageState';
 import { selectEntitiesFromNormalizedData } from 'shared/lib/helpers/selectEntities/selectEntities';
-import { Article, ArticleView } from '../../model/types/article';
+import { ArticleView } from '../../model/consts/articleConsts';
+import { Article } from '../../model/types/article';
 import { ArticleList } from './ArticleList';
 
 const meta: Meta<typeof ArticleList> = {

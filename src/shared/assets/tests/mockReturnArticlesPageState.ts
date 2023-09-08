@@ -1,9 +1,9 @@
 /* eslint max-len: off */
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ArticleSortField, ArticleType, ArticleView } from 'enteties/Article';
-import { ArticleBlockType } from 'enteties/Article/model/types/article';
 import { UserRole } from 'enteties/User';
 import { SortOrder } from 'shared/types';
+import { ArticleBlockType } from 'enteties/Article/model/consts/articleConsts';
 
 export const mockReturnArticlesPageState = (
 

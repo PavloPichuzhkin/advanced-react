@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'enteties/User';
 import { useParams } from 'react-router-dom';
 import { ProfileCard } from 'enteties/Profile';
+import { ValidateProfileError } from '../../model/consts/consts';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import {
     getProfileIsLoading,
@@ -22,7 +23,6 @@ import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/get
 import {
     getProfileValidateErrors,
 } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
-import { ValidateProfileError } from '../../model/types/EditableProfileCardSchema';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import {
     EditableProfileCardHeader,

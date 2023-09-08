@@ -1,7 +1,7 @@
 /* eslint max-len: off */
 import { Article, ArticleType } from 'enteties/Article';
 import { UserRole } from 'enteties/User';
-import { ArticleBlockType } from 'enteties/Article/model/types/article';
+import { ArticleBlockType } from 'enteties/Article/model/consts/articleConsts';
 import image from './mockImageForArticleDetailsPage.png';
 
 export const article: Article = {
