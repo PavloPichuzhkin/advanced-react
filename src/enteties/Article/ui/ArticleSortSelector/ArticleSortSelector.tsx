@@ -5,6 +5,7 @@ import { Select, SelectOption } from 'shared/ui/Select/Select';
 import { SortOrder } from 'shared/types';
 import { ArticleSortField } from '../../model/consts/articleConsts';
 // import { ArticleSortField } from 'enteties/Article'; // for test circular dependency plugin
+// TODO consider using dependency cruiser
 import cls from './ArticleSortSelector.module.scss';
 
 interface ArticleSortSelectorProps {
