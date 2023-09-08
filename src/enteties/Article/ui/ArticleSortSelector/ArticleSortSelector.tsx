@@ -4,6 +4,7 @@ import { memo, useCallback, useMemo } from 'react';
 import { Select, SelectOption } from 'shared/ui/Select/Select';
 import { SortOrder } from 'shared/types';
 import { ArticleSortField } from '../../model/consts/articleConsts';
+// import { ArticleSortField } from 'enteties/Article'; // for test circular dependency plugin
 import cls from './ArticleSortSelector.module.scss';
 
 interface ArticleSortSelectorProps {
