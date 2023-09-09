@@ -3,11 +3,11 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDecorator';
 import { StoryFn } from '@storybook/react';
-import { Button } from '../Button';
+import { Button } from '../../../Button';
 import { Dropdown } from './Dropdown';
 
 const meta: Meta<typeof Dropdown> = {
-    title: 'shared/Dropdown',
+    title: 'Shared/Popups/Dropdown',
     component: Dropdown,
     // tags: ['autodocs'],
 };

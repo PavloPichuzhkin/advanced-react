@@ -12,9 +12,9 @@ export enum Country {
 export const CountryOptions: Record<Country, Country> = {
     [Country.GERMANY]: Country.GERMANY,
     [Country.USA]: Country.USA,
-    [Country.FRANCE]: Country.FRANCE,
     [Country.NETHERLANDS]: Country.NETHERLANDS,
     [Country.BRITAIN]: Country.BRITAIN,
     [Country.UKRAINE]: Country.UKRAINE,
+    [Country.FRANCE]: Country.FRANCE,
 
 };

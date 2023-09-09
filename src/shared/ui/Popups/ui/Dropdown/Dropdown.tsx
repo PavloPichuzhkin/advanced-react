@@ -1,10 +1,12 @@
 import { Menu } from '@headlessui/react';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { Fragment, ReactNode } from 'react';
-import { DropdownDirection } from 'shared/types/ui';
+import { DropdownDirection } from 'shared/types/dropdownDirection/dropdownDirection';
 import { Link } from 'react-router-dom';
-import { Button, ButtonTheme } from '../Button';
+import { mapDirectionClass } from '../../styles/consts';
+import { Button, ButtonTheme } from '../../../Button';
 import cls from './Dropdown.module.scss';
+import popupCls from '../../styles/popup.module.scss';
 
 export interface DropdownItem {
     disabled?: boolean;
@@ -20,13 +22,6 @@ interface DropdownProps {
     trigger: ReactNode;
 }
 
-const mapDirectionClass: Record<DropdownDirection, string> = {
-    'bottom left': cls.optionsBottomLeft,
-    'bottom right': cls.optionsBottomRight,
-    'top right': cls.optionsTopRight,
-    'top left': cls.optionsTopLeft,
-};
-
 export function Dropdown(props: DropdownProps) {
     const {
         className, trigger, items, direction = 'bottom right',
@@ -36,8 +31,8 @@ export function Dropdown(props: DropdownProps) {
 
     return (
 
-        <Menu as="div" className={classNames(cls.Dropdown, {}, [className])}>
-            <Menu.Button className={cls.btn}>
+        <Menu as="div" className={classNames(popupCls.popup, {}, [className])}>
+            <Menu.Button className={popupCls.btn}>
                 <Button as="div" theme={ButtonTheme.CLEAR}>{trigger}</Button>
             </Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
@@ -47,7 +42,10 @@ export function Dropdown(props: DropdownProps) {
                             type="button"
                             disabled={item.disabled}
                             onClick={item.onClick}
-                            className={classNames(cls.item, { [cls.active]: active })}
+                            className={classNames(cls.item, {
+                                [cls.active]: active,
+                                [cls.disabled]: item.disabled,
+                            })}
                         >
                             {item.content}
                         </button>

@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Select } from 'shared/ui/Select/Select';
 import { memo, useCallback } from 'react';
-import { ListBox } from 'shared/ui/ListBox/ListBox';
+import { ListBox } from 'shared/ui/Popups/ui/ListBox/ListBox';
 import { Country, CountryOptions } from '../../model/types/country';
 
 interface CountrySelectProps {
@@ -22,8 +22,13 @@ interface CountrySelectProps {
 //
 // ];
 const options = Object.keys(CountryOptions).map(
-    (opt) => ({ value: opt, content: opt }),
+    (opt) => ({
+        value: opt,
+        content: opt,
+        disabled: false,
+    }),
 );
+options[options.length - 1].disabled = true;
 export const CountrySelect = memo(({
     className, value, onChange, readonly,
 }: CountrySelectProps) => {

@@ -1,5 +1,4 @@
 .ListBox {
-    position: relative;
     margin-left: 12px;
 }
 
@@ -27,6 +26,7 @@
 .active {
     background: var(--bg-color);
     border-radius: 6px;
+    cursor: pointer;
 }
 
 .selected {
@@ -36,30 +36,9 @@
 }
 
 .disabled {
-    opacity: 0.9;
+    opacity: 0.7;
 }
 
 .readonly {
     opacity: 0.9;
-
-}
-
-.optionsBottomLeft {
-    top: 100%;
-    right: 0;
-}
-
-.optionsBottomRight {
-    top: 100%;
-    left: 0;
-}
-
-.optionsTopRight {
-    bottom: 100%;
-    left: 0;
-}
-
-.optionsTopLeft {
-    left: 100%;
-    bottom: 0;
 }

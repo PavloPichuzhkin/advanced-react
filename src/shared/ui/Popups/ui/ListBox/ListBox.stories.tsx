@@ -6,7 +6,7 @@ import { StoryFn } from '@storybook/react';
 import { ListBox } from './ListBox';
 
 const meta: Meta<typeof ListBox> = {
-    title: 'shared/ListBox',
+    title: 'Shared/Popups/ListBox',
     component: ListBox,
     // tags: ['autodocs'],
 };

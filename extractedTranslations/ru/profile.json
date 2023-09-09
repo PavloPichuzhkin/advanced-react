@@ -1,0 +1,22 @@
+{
+  "An error occurred while loading the profile": "An error occurred while loading the profile",
+  "Avatar link": "Avatar link",
+  "Cancel": "Cancel",
+  "City": "City",
+  "Data not specified": "Data not specified",
+  "Edit": "Edit",
+  "First and last name are required": "First and last name are required",
+  "Incorrect age": "Incorrect age",
+  "Incorrect region": "Incorrect region",
+  "Please try to refresh the page": "Please try to refresh the page",
+  "Profile": "Profile",
+  "Profile not found": "Profile not found",
+  "Save": "Save",
+  "Select country": "Select country",
+  "Select currency": "Select currency",
+  "Server error during save": "Server error during save",
+  "Your Firstname": "Your Firstname",
+  "Your Lastname": "Your Lastname",
+  "Your age": "Your age",
+  "Your username": "Your username"
+}
