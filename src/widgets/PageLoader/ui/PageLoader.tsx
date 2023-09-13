@@ -1,6 +1,6 @@
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
-import { Loader } from 'shared/ui/Loader/Loader';
-import { Spinner } from 'shared/ui/Spinner/Spinner';
+import { classNames } from '@/shared/lib/helpers/classNames/classNames';
+import { Loader } from '@/shared/ui/Loader/Loader';
+import { Spinner } from '@/shared/ui/Spinner/Spinner';
 import cls from './PageLoader.module.scss';
 
 interface PageLoaderProps {

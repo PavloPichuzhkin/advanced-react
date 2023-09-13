@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import cls from './Spinner.module.scss';
 
 interface SpinnerProps {

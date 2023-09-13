@@ -1,5 +1,5 @@
-import { Currency } from 'enteties/CurrencySelect';
-import { Country } from 'enteties/CountrySelect';
+import { Currency } from '@/entities/CurrencySelect';
+import { Country } from '@/entities/CountrySelect';
 import { ValidateProfileError } from '../../consts/consts';
 import { validateProfileData } from './validateProfileData';
 

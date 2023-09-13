@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import React, {
     memo, ReactNode, useCallback, useEffect,
 } from 'react';
-import { useAnimationLibs } from 'shared/lib/components/LibsProviders/AnimationProvider';
-import { useTheme } from 'shared/lib/hooks/useTheme/useTheme';
+import { classNames } from '@/shared/lib/helpers/classNames/classNames';
+import { useAnimationLibs } from '@/shared/lib/components/LibsProviders/AnimationProvider';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Loader } from '../../Loader/Loader';
 import { Overlay } from '../../Overlay/Overlay';
 import cls from './AnimatedDrawer.module.scss';

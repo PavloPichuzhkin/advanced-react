@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
-import { Theme } from 'shared/lib/context/ThemeContext';
-import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDecorator';
-import { UserRole } from 'enteties/User';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { Theme } from '@/shared/lib/context/ThemeContext';
+import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
+import { UserRole } from '@/entities/User';
 import { Navbar } from './Navbar';
 
 const meta: Meta<typeof Navbar> = {

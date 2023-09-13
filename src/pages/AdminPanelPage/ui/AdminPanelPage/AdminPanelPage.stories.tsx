@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
-import { Theme } from 'shared/lib/context/ThemeContext';
-import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDecorator';
 import { StoryFn } from '@storybook/react';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { Theme } from '@/shared/lib/context/ThemeContext';
+import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import AdminPanelPage from './AdminPanelPage';
 
 const meta: Meta<typeof AdminPanelPage> = {

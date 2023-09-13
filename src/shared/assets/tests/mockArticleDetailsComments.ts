@@ -1,5 +1,5 @@
-import { UserRole } from 'enteties/User';
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
+import { UserRole } from '@/entities/User';
+import { ArticleDetailsCommentsSchema } from '@/pages/ArticleDetailsPage';
 
 export const mockReturnArticleDetailsCommentsState = (
     isLoading: boolean = false,

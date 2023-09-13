@@ -1,14 +1,14 @@
-import { counterReducer } from 'widgets/Counter';
 import {
     CombinedState, configureStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { counterReducerEntity } from 'enteties/Counter';
-import { userReducer } from 'enteties/User';
-import { $api } from 'shared/api/api';
 import { NavigateOptions } from 'react-router';
 import { To } from 'react-router-dom';
-import { scrollPositionReducer } from 'features/ScrollPositionStorage';
-import { rtkApi } from 'shared/api/rtkApi';
+import { counterReducer } from '@/widgets/Counter';
+import { counterReducerEntity } from '@/entities/Counter';
+import { userReducer } from '@/entities/User';
+import { $api } from '@/shared/api/api';
+import { scrollPositionReducer } from '@/features/ScrollPositionStorage';
+import { rtkApi } from '@/shared/api/rtkApi';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { createReducerManager } from './reducerManager';
 

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { PartialStoreDecorator } from 'shared/config/storybook/StoreProviderDecorator';
-import { mockReturnArticleDetailsCommentsState } from 'shared/assets/tests/mockArticleDetailsComments';
-import { article } from 'shared/assets/tests/mockArticleData';
+import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
+import { mockReturnArticleDetailsCommentsState } from '@/shared/assets/tests/mockArticleDetailsComments';
+import { article } from '@/shared/assets/tests/mockArticleData';
 import { articleDetailsPageReducer } from '../../model/slice';
 import ArticleDetailsPage from './ArticleDetailsPage';
 

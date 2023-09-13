@@ -35,13 +35,14 @@ const config: Config = {
         '\\.s?css$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
         '\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+        '@/(.*)': '<rootDir>/src/$1',
     },
     reporters: [
         'default',
         ['jest-html-reporters', {
             publicPath: '<rootDir>/reports/unit',
             filename: 'report.html',
-            // openReport: true,
+            openReport: true,
             inlineSource: true,
         }],
     ],

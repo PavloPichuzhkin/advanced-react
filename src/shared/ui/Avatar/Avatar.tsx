@@ -1,6 +1,6 @@
-import { classNames, Mods } from 'shared/lib/helpers/classNames/classNames';
 import { CSSProperties, memo, useMemo } from 'react';
-import defaultAvatar from 'shared/assets/tests/storybook.jpg';
+import { classNames, Mods } from '@/shared/lib/helpers/classNames/classNames';
+import defaultAvatar from '@/shared/assets/tests/storybook.jpg';
 import cls from './Avatar.module.scss';
 
 interface AvatarProps {

@@ -1,15 +1,15 @@
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import React, { memo, useCallback, useState } from 'react';
-import { Icon } from 'shared/ui/Icon/Icon';
-import NotificationIcon from 'shared/assets/icons/notification-20-20.svg';
-import { NotificationList } from 'enteties/Notification';
-import { Popover } from 'shared/ui/Popups';
-import { Button, ButtonTheme } from 'shared/ui/Button';
 import { BrowserView, MobileView } from 'react-device-detect';
-import { Drawer } from 'shared/ui/Drawers/Drawer/Drawer';
-import { LoginFormAsync } from 'features/AuthByUsername/ui/LoginForm/LoginForm.async';
-import { AnimatedDrawer } from 'shared/ui/Drawers/AnimatedDrawer/AnimatedDrawer';
-import { AnimationProvider } from 'shared/lib/components/LibsProviders/AnimationProvider';
+import { classNames } from '@/shared/lib/helpers/classNames/classNames';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg';
+import { NotificationList } from '@/entities/Notification';
+import { Popover } from '@/shared/ui/Popups';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Drawer } from '@/shared/ui/Drawers/Drawer/Drawer';
+import { LoginFormAsync } from '@/features/AuthByUsername/ui/LoginForm/LoginForm.async';
+import { AnimatedDrawer } from '@/shared/ui/Drawers/AnimatedDrawer/AnimatedDrawer';
+import { AnimationProvider } from '@/shared/lib/components/LibsProviders/AnimationProvider';
 import cls from './NotificationButton.module.scss';
 
 interface NotificationButtonProps {

@@ -12,13 +12,15 @@ export default ({ config }: {config: webpack.Configuration}) => {
         locales: '',
         buildLocales: '',
     };
-    // https://stackoverflow.com/questions/51771077/storybook-with-absolute-paths
-    // modules: [path.resolve(__dirname, 'src'), 'node_modules']
-    config!.resolve!.modules = [];
-    config!.resolve!.modules!.push(paths.src);
-    config!.resolve!.modules!.push('node_modules');
+    // // https://stackoverflow.com/questions/51771077/storybook-with-absolute-paths
+    // // modules: [path.resolve(__dirname, 'src'), 'node_modules']
+    // config!.resolve!.modules = [];
+    // config!.resolve!.modules!.push(paths.src);
+    // config!.resolve!.modules!.push('node_modules');
     // console.log(config!.resolve!.modules);
+    config!.resolve!.modules!.push(paths.src);
     config!.resolve!.extensions!.push('.ts', '.tsx');
+    config!.resolve!.alias = { '@': paths.src };
 
     // eslint-disable-next-line no-param-reassign
     // @ts-ignore

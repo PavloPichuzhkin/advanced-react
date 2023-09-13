@@ -1,4 +1,4 @@
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { recommendationsAdapter } from '../slice/articleDetailsPageRecommendationsSlice';
 
 export const getArticleRecommendationsIsLoading = (state: StateSchema) => {

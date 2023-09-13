@@ -1,6 +1,6 @@
-import { Currency } from 'enteties/CurrencySelect';
-import { Country } from 'enteties/CountrySelect';
-import { Profile } from 'enteties/Profile';
+import { Currency } from '@/entities/CurrencySelect';
+import { Country } from '@/entities/CountrySelect';
+import { Profile } from '@/entities/Profile';
 import avatar from './storybook.jpg';
 
 export const mockProfileData:Profile = {

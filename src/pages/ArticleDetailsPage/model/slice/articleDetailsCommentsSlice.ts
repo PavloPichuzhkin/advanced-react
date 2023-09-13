@@ -3,7 +3,7 @@ import {
     createSlice, PayloadAction,
 } from '@reduxjs/toolkit';
 
-import { Comment } from 'enteties/Comments';
+import { Comment } from '@/entities/Comments';
 import {
     fetchCommentsByArticleId,
 } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
