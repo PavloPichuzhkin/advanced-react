@@ -47,7 +47,7 @@ export function useModal({
 
             return () => {
                 setIsOpening(false);
-                console.log(isOpening);
+                // console.log(isOpening);
                 clearTimeout(timerRef.current);
                 window.removeEventListener('keydown', onKeyDown);
             };

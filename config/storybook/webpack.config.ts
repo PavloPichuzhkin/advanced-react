@@ -17,10 +17,13 @@ export default ({ config }: {config: webpack.Configuration}) => {
     // config!.resolve!.modules = [];
     // config!.resolve!.modules!.push(paths.src);
     // config!.resolve!.modules!.push('node_modules');
-    // console.log(config!.resolve!.modules);
     config!.resolve!.modules!.push(paths.src);
+    // console.log(config!.resolve!.modules);
     config!.resolve!.extensions!.push('.ts', '.tsx');
-    config!.resolve!.alias = { '@': paths.src };
+    config!.resolve!.alias = {
+        ...config!.resolve!.alias,
+        '@': paths.src,
+    };
 
     // eslint-disable-next-line no-param-reassign
     // @ts-ignore

@@ -99,7 +99,6 @@ const DrawerContent = (props: DrawerProps) => {
 
 const DrawerAsync = (props: DrawerProps) => {
     const { isLoaded } = useAnimationLibs();
-
     if (!isLoaded) {
         return <Loader />;
     }
