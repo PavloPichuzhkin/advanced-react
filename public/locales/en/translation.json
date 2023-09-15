@@ -33,5 +33,10 @@
   "An error occurred when loading articles": "An error occurred when loading articles",
   "You have no access to this page": "You have no access to this page",
   "Admin panel": "Admin panel",
-  "An error occurred while loading the Notification": "An error occurred while loading the Notification"
+  "An error occurred while loading the Notification": "An error occurred while loading the Notification",
+  "Close": "Close",
+  "Your feedback": "Your feedback",
+  "Did you enjoy the article?": "Did you enjoy the article?",
+  "Send": "Send",
+  "Leave feedback": "Leave feedback"
 }

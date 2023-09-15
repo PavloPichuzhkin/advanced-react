@@ -14,13 +14,13 @@ export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps) {
             options: {
                 presets: ['@babel/preset-env'],
                 plugins: [
-                    [
-                        'i18next-extract',
-                        {
-                            locales: ['ru', 'en'],
-                            keyAsDefaultValue: true,
-                        },
-                    ],
+                    // [
+                    //     'i18next-extract',
+                    //     {
+                    //         locales: ['uk', 'en'],
+                    //         keyAsDefaultValue: true,
+                    //     },
+                    // ],
                     [
                         '@babel/plugin-transform-typescript',
                         {

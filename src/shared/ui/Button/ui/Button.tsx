@@ -23,6 +23,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     square?: boolean
     size?: string
     disabled?: boolean
+    fullWidth?: boolean
+
     as?: 'div' // only for headless ui
 }
 
@@ -35,6 +37,7 @@ export const Button = memo((props:ButtonProps) => {
         disabled = false,
         size = ButtonSize.M,
         as,
+        fullWidth = false,
         ...otherProps
     } = props;
 
@@ -42,6 +45,7 @@ export const Button = memo((props:ButtonProps) => {
         [cls.square]: square,
         [cls.disabled]: disabled,
         [cls.divDisable]: Boolean(as),
+        [cls.fullWidth]: fullWidth,
 
     };
     if (as) {
