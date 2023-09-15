@@ -1,6 +1,15 @@
 .notifications {
-    // min-height: 100px;
+    min-height: 100px;
     max-height: 300px;
     width: 500px;
     overflow-y: auto;
+}
+
+.notificationsMob {
+    // max-height: 400px;
+    overflow-y: auto;
+}
+
+.puller{
+    margin-bottom: 8px;
 }

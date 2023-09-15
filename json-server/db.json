@@ -1,4 +1,50 @@
 {
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "feedback": "yooo goood",
+      "id": "Y2hzfx9"
+    },
+    {
+      "userId": "2",
+      "articleId": "1",
+      "rate": 3,
+      "feedback": "yess",
+      "id": "s73zKWk"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good profile",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Good profile",
+      "userId": "1",
+      "profileId": "2"
+    }
+  ],
   "notifications": [
     {
       "id": "1",
