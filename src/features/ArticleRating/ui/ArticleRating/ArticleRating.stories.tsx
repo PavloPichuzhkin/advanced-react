@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
-import { ArticleRating } from './ArticleRating';
+import ArticleRating from './ArticleRating';
 
 const meta: Meta<typeof ArticleRating> = {
     title: 'Pages/ArticleRating',
