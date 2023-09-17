@@ -5,7 +5,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { CurrencySelect } from './CurrencySelect';
 
 const meta: Meta<typeof CurrencySelect> = {
-    title: 'Enteties/CurrencySelect',
+    title: 'Entities/CurrencySelect',
     component: CurrencySelect,
     tags: ['autodocs'],
 };

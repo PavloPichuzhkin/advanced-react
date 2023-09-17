@@ -12,7 +12,7 @@ import { Article } from '../../model/types/article';
 import { ArticleListItem } from './ArticleListItem';
 
 const meta: Meta<typeof ArticleListItem> = {
-    title: 'Enteties/Article/ArticleListItem',
+    title: 'Entities/Article/ArticleListItem',
     component: ArticleListItem,
     // tags: ['autodocs'],
 };

@@ -5,7 +5,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { CountrySelect } from './CountrySelect';
 
 const meta: Meta<typeof CountrySelect> = {
-    title: 'Enteties/CountrySelect',
+    title: 'Entities/CountrySelect',
     component: CountrySelect,
     tags: ['autodocs'],
 };

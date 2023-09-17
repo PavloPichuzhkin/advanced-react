@@ -7,7 +7,7 @@ import { mockReturnArticleDetailsCommentsState } from '@/shared/assets/tests/moc
 import { CommentCard } from './CommentCard';
 
 const meta: Meta<typeof CommentCard> = {
-    title: 'Enteties/Comments/CommentCard',
+    title: 'Entities/Comments/CommentCard',
     component: CommentCard,
     // tags: ['autodocs'],
 };

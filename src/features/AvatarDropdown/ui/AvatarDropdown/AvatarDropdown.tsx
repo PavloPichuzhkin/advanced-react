@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { Dropdown } from '@/shared/ui/Popups';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
-    getUserAuthData, isUserAdmin, isUserManager, userActions,
+    getUserAuthData, isUserAdmin, isUserManager, isUserSuperAdmin, userActions,
 } from '@/entities/User';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
@@ -22,8 +22,9 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
 
     const authData = useSelector(getUserAuthData);
     const isAdmin = useSelector(isUserAdmin);
+    const isSuperAdmin = useSelector(isUserSuperAdmin);
     const isManager = useSelector(isUserManager);
-    const isAdminPanelAvailable = isAdmin || isManager;
+    const isAdminPanelAvailable = isSuperAdmin || isAdmin || isManager;
 
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());

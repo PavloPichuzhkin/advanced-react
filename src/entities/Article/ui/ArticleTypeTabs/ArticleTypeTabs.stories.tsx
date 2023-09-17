@@ -5,7 +5,7 @@ import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDe
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 const meta: Meta<typeof ArticleTypeTabs> = {
-    title: 'Enteties/Article/ArticleTypeTabs',
+    title: 'Entities/Article/ArticleTypeTabs',
     component: ArticleTypeTabs,
     // tags: ['autodocs'],
 };

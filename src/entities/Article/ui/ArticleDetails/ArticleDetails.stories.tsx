@@ -6,7 +6,7 @@ import { article } from '@/shared/assets/tests/mockArticleData';
 import { ArticleDetails } from './ArticleDetails';
 
 const meta: Meta<typeof ArticleDetails> = {
-    title: 'Enteties/Article/ArticleDetails',
+    title: 'Entities/Article/ArticleDetails',
     component: ArticleDetails,
     // tags: ['autodocs'],
 };

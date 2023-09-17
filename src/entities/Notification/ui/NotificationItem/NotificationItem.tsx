@@ -12,7 +12,6 @@ interface NotificationItemProps {
 
 export const NotificationItem = memo((props: NotificationItemProps) => {
     const { className, item } = props;
-
     const content = (
         <Card
             theme={CardTheme.OUTLINED}

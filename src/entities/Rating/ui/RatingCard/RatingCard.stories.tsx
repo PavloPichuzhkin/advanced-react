@@ -14,13 +14,28 @@ export default meta;
 type Story = StoryObj<typeof RatingCard>;
 
 export const Primary: Story = {
-    args: {},
-    decorators: [ThemeDecorator(Theme.DARK),
-        PartialStoreDecorator({
-            profile: {
-                form: {
-                    first: 'Pavlo',
-                },
-            },
-        })],
+    args: {
+        feedbackTitle: 'WOW what is...',
+        hasFeedback: true,
+        title: 'WOW I can click here',
+    },
+};
+
+export const Dark: Story = {
+    args: {
+        feedbackTitle: 'WOW what is...',
+        hasFeedback: true,
+        title: 'WOW I can click here',
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const DarkWithRating: Story = {
+    args: {
+        feedbackTitle: 'WOW what is...',
+        hasFeedback: true,
+        title: 'WOW I can click here',
+        rate: 4,
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

@@ -37,7 +37,8 @@ export const Primary: Story = {
     parameters: {
         // msw: {
         //     handlers: [
-        //         rest.get('/user', (req, res, ctx) => {
+        //         rest.get('/articles?_limit=6', (req, res, ctx) => {
+        //             console.log('handler work');
         //             return res(
         //                 ctx.json(selectEntitiesFromNormalizedData(mockReturnArticlesPageState) as Article[]),
         //             );
@@ -47,19 +48,10 @@ export const Primary: Story = {
         msw: {
             handlers: [
                 rest.get(`${__API__}/articles`, (_req, res, ctx) => {
-                    console.log(
-                        'handler work',
-                    );
+                    // console.log('handler work');
                     return res(ctx.json(selectEntitiesFromNormalizedData(mockReturnArticlesPageState) as Article[]));
                 }),
             ],
         },
-        // msw: [
-        //     rest.get('/articles', (_req, res, ctx) => {
-        //         console.log('handler work');
-        //         return res(ctx.json(selectEntitiesFromNormalizedData(mockReturnArticlesPageState) as Article[]));
-        //     }),
-        // ],
     },
-
 };

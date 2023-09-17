@@ -1,13 +1,27 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { rest } from 'msw';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { NotificationList } from './NotificationList';
+import { selectEntitiesFromNormalizedData } from '@/shared/lib/helpers/selectEntities/selectEntities';
+import { mockReturnArticlesPageState } from '@/shared/assets/tests/mockReturnArticlesPageState';
+import { Article } from '@/entities/Article';
+import { mockNotifications } from '@/shared/assets/tests/mockNotifications';
 
 const meta: Meta<typeof NotificationList> = {
-    title: 'entity/Notification/NotificationList',
+    title: 'Entities/Notification/NotificationList',
     component: NotificationList,
     // tags: ['autodocs'],
+    parameters: {
+        msw: {
+            handlers: [
+                rest.get(`${__API__}/notifications`, (_req, res, ctx) => {
+                    return res(ctx.json(mockNotifications));
+                }),
+            ],
+        },
+    },
 };
 
 export default meta;
@@ -15,12 +29,17 @@ type Story = StoryObj<typeof NotificationList>;
 
 export const Primary: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK),
-        PartialStoreDecorator({
-            profile: {
-                form: {
-                    first: 'Pavlo',
-                },
-            },
-        })],
+    decorators: [],
+};
+export const Dark: Story = {
+    args: {},
+    decorators: [
+        ThemeDecorator(Theme.DARK),
+    ],
+};
+export const Danger: Story = {
+    args: {},
+    decorators: [
+        ThemeDecorator(Theme.DANGER),
+    ],
 };

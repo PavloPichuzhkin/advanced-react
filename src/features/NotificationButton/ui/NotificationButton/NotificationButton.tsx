@@ -8,8 +8,6 @@ import { Popover } from '@/shared/ui/Popups';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { AnimatedDrawer } from '@/shared/ui/Drawers/AnimatedDrawer/AnimatedDrawer';
 import cls from './NotificationButton.module.scss';
-import { HStack } from '@/shared/ui/Stack';
-import { Text, TextSize } from '@/shared/ui/Text/Text';
 
 interface NotificationButtonProps {
     className?: string;
@@ -49,12 +47,6 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
                 {trigger}
                 {isOpen && (
                     <AnimatedDrawer isOpen={isOpen} onClose={onCloseDrawer}>
-                        <HStack
-                            justify="center"
-                            className={cls.puller}
-                        >
-                            <Text title="----" size={TextSize.XL} />
-                        </HStack>
                         <NotificationList className={cls.notificationsMob} />
                     </AnimatedDrawer>
                 )}

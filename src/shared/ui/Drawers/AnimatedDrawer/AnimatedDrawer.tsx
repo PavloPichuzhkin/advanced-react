@@ -8,6 +8,8 @@ import { Loader } from '../../Loader/Loader';
 import { Overlay } from '../../Overlay/Overlay';
 import cls from './AnimatedDrawer.module.scss';
 import { Portal } from '../../Portal/Portal';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { HStack } from '@/shared/ui/Stack';
 
 interface DrawerProps {
     className?: string;
@@ -90,6 +92,12 @@ const DrawerContent = (props: DrawerProps) => {
                     style={{ display, bottom: `calc(-100vh + ${height - 100}px)`, y }}
                     {...bind()}
                 >
+                    <HStack
+                        justify="center"
+                        className={cls.puller}
+                    >
+                        <Text title="----" size={TextSize.XL} />
+                    </HStack>
                     {children}
                 </Spring.a.div>
             </div>

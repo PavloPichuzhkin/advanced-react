@@ -7,7 +7,7 @@ import { mockReturnArticleDetailsCommentsState } from '@/shared/assets/tests/moc
 import { CommentsList } from './CommentsList';
 
 const meta: Meta<typeof CommentsList> = {
-    title: 'Enteties/Comments/CommentsList',
+    title: 'Entities/Comments/CommentsList',
     component: CommentsList,
     // tags: ['autodocs'],
 };

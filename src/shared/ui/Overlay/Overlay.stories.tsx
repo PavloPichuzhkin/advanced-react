@@ -5,7 +5,7 @@ import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDe
 import { Overlay } from './Overlay';
 
 const meta: Meta<typeof Overlay> = {
-    title: 'Pages/Overlay',
+    title: 'Shared/Overlay',
     component: Overlay,
     // tags: ['autodocs'],
 };
@@ -15,12 +15,4 @@ type Story = StoryObj<typeof Overlay>;
 
 export const Primary: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK),
-        PartialStoreDecorator({
-            profile: {
-                form: {
-                    first: 'Pavlo',
-                },
-            },
-        })],
 };
