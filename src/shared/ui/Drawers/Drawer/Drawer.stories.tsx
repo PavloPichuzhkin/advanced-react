@@ -3,8 +3,8 @@ import React from 'react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Drawer } from './Drawer';
-import { Text, TextSize } from '@/shared/ui/Text/Text';
-import { VStack } from '@/shared/ui/Stack';
+import { Text, TextSize } from '../../Text/Text';
+import { VStack } from '../../Stack';
 
 const meta: Meta<typeof Drawer> = {
     title: 'Shared/Drawers/Drawer',

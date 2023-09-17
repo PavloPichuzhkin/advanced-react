@@ -8,8 +8,8 @@ import { Loader } from '../../Loader/Loader';
 import { Overlay } from '../../Overlay/Overlay';
 import cls from './AnimatedDrawer.module.scss';
 import { Portal } from '../../Portal/Portal';
-import { Text, TextSize } from '@/shared/ui/Text/Text';
-import { HStack } from '@/shared/ui/Stack';
+import { Text, TextSize } from '../../Text/Text';
+import { HStack } from '../../Stack';
 
 interface DrawerProps {
     className?: string;
