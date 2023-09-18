@@ -53,7 +53,8 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'arrow-body-style': 'off',
-        'project-fsd-architecture/slice-imports-validatoin': ['error', { alias: '@' }],
+        'project-fsd-architecture/slice-imports-validation': ['error', { alias: '@' }],
+        'project-fsd-architecture/public-api-imports-validation': ['error', { alias: '@' }],
 
     },
     globals: {

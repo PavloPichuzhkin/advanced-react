@@ -1,5 +1,5 @@
 import React, { ErrorInfo, ReactNode, Suspense } from 'react';
-import { ErrorPage } from '@/widgets/ErrorPage/ui/ErrorPage';
+import { ErrorPage } from '@/widgets/ErrorPage';
 import { Loader } from '@/shared/ui/Loader/Loader';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 

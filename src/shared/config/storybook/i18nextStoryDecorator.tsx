@@ -1,8 +1,7 @@
 import { StoryContext, StoryFn } from '@storybook/react';
 import { Suspense, useEffect } from 'react';
 import { I18nextProvider } from 'react-i18next';
-// eslint-disable-next-line project-fsd-architecture/slice-imports-validatoin
-import i18n from '@/shared/config/i18n/i18n';
+import i18n from '../i18n/i18n';
 
 const i18nextStoryDecorator = (Story: StoryFn, context: StoryContext) => {
     const { locale } = context.globals;

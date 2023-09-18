@@ -24,6 +24,8 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
+// eslint-disable-next-line project-fsd-architecture/public-api-imports-validation
+// import { ArticleBlock } from '@/entities/Article/model/types/article';
 import { ArticleBlock } from '../../model/types/article';
 
 interface ArticleDetailsProps {

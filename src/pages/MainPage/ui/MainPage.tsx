@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 import { Text } from '@/shared/ui/Text/Text';
 import { RatingCard } from '@/entities/Rating';
 import { VStack } from '@/shared/ui/Stack';
