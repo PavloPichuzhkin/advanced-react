@@ -54,7 +54,13 @@ module.exports = {
         'no-undef': 'off',
         'arrow-body-style': 'off',
         'project-fsd-architecture/slice-imports-validation': ['error', { alias: '@' }],
-        'project-fsd-architecture/public-api-imports-validation': ['error', { alias: '@' }],
+        'project-fsd-architecture/public-api-imports-validation':
+            [
+                'error', {
+                    alias: '@',
+                    testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreProviderDecorator.tsx'],
+                },
+            ],
 
     },
     globals: {
