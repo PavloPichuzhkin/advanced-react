@@ -12,12 +12,15 @@ import { Country } from '@/entities/CountrySelect';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from '@/entities/User';
 import { ProfileCard } from '@/entities/Profile';
+// import { ProfileCard } from '@/entities/Profile/ui/ProfileCard'; // for testing ESLint plugin 'project-fsd-architecture/public-api-imports-validation'
+import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
+// import { getProfileForm } from '@/features/EditableProfileCard/model/selectors/getProfileForm/getProfileForm';
+
 import { ValidateProfileError } from '../../model/consts/consts';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import {
     getProfileIsLoading,
 } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
-import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import {
