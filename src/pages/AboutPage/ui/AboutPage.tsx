@@ -1,5 +1,6 @@
 import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+// eslint-disable-next-line project-fsd-architecture/layer-imports
 import { ThrowErrorButton } from '@/app/providers/ErrorBoundary/ui/ThrowErrorButton';
 import { Counter } from '@/widgets/Counter';
 import { CounterEntity } from '@/entities/Counter';

@@ -61,6 +61,14 @@ module.exports = {
                     testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreProviderDecorator.tsx'],
                 },
             ],
+        'project-fsd-architecture/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing', '**/router'],
+                testFilesPatterns: ['**/tests/*'],
+            },
+        ],
 
     },
     globals: {

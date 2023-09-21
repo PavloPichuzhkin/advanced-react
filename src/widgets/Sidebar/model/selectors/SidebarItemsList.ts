@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { getUserAuthData } from '@/entities/User';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/app/providers/router';
 import MainIcon from '@/shared/assets/icons/Home.svg';
 import AboutIcon from '@/shared/assets/icons/about.svg';
 import ProfileIcon from '@/shared/assets/icons/profile.svg';

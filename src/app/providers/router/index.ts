@@ -1,3 +1,4 @@
-import AppRouter from '@/app/providers/router/ui/AppRouter';
+import AppRouter from './ui/AppRouter';
+import { RoutePath } from './routeConfig/routeConfig';
 
-export { AppRouter };
+export { AppRouter, RoutePath };
