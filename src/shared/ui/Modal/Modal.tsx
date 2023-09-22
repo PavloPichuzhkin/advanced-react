@@ -1,5 +1,5 @@
 import React, {
-    ReactNode, useCallback, useEffect, useRef, useState,
+    ReactNode,
 } from 'react';
 import { classNames, Mods } from '@/shared/lib/helpers/classNames/classNames';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';

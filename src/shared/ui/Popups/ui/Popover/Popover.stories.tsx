@@ -3,7 +3,6 @@ import React from 'react';
 import { StoryFn } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
-import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { Popover } from './Popover';
 import { Button, ButtonTheme } from '../../../Button';
 import { Icon } from '../../../Icon/Icon';

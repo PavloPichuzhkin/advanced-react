@@ -19,6 +19,7 @@ module.exports = {
         'i18next',
         'react-hooks',
         'project-fsd-architecture',
+        'unused-imports',
 
     ],
     rules: {
@@ -69,6 +70,7 @@ module.exports = {
                 testFilesPatterns: ['**/tests/*'],
             },
         ],
+        'unused-imports/no-unused-imports': 'error',
 
     },
     globals: {

@@ -2,9 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
-import { Currency } from '@/entities/CurrencySelect';
-import { Country } from '@/entities/CountrySelect';
-import avatar from '@/shared/assets/tests/storybook.jpg';
 import { mockProfileData } from '@/shared/assets/tests/mockProfileData';
 import ProfilePage from './ProfilePage';
 

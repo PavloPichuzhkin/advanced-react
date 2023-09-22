@@ -1,6 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Currency } from '@/entities/CurrencySelect';
 import { Country } from '@/entities/CountrySelect';
 import avatar from '@/shared/assets/tests/storybook.jpg';

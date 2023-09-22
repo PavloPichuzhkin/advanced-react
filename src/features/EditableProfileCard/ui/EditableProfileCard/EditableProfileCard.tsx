@@ -27,7 +27,6 @@ import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import {
     EditableProfileCardHeader,
 } from '../../ui/EditableProfileCardHeader/EditableProfileCardHeader';
-import cls from './EditableProfileCard.module.scss';
 
 interface EditableProfileCardProps {
     className?: string;

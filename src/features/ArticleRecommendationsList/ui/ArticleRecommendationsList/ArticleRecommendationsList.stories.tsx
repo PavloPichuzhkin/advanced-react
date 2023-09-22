@@ -1,9 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StoryFn } from '@storybook/react';
 import { rest } from 'msw';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
-import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { selectEntitiesFromNormalizedData } from '@/shared/lib/helpers/selectEntities/selectEntities';
 import { mockReturnArticlesPageState } from '@/shared/assets/tests/mockReturnArticlesPageState';
 import { Article } from '@/entities/Article';

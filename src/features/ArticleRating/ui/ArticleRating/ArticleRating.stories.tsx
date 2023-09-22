@@ -1,11 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { rest } from 'msw';
-import { QueryStatus } from '@reduxjs/toolkit/dist/query/core/apiState';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import ArticleRating from './ArticleRating';
-import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
-import { rtkApi } from '@/shared/api/rtkApi';
 
 const meta: Meta<typeof ArticleRating> = {
     title: 'Features/ArticleRating',

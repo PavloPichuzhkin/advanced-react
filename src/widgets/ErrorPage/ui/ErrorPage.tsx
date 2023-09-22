@@ -1,10 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import cls from './ErrorPage.module.scss';
-import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localstorage';
 
 interface ErrorPageProps {
     className?: string;

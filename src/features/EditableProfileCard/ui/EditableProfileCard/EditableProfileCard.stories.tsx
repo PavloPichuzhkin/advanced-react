@@ -1,10 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StoryFn } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
-import { Currency } from '@/entities/CurrencySelect';
-import { Country } from '@/entities/CountrySelect';
 import { mockProfileData } from '@/shared/assets/tests/mockProfileData';
 import { EditableProfileCard } from './EditableProfileCard';
 

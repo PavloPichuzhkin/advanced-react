@@ -2,11 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { rest } from 'msw';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
-import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { NotificationList } from './NotificationList';
-import { selectEntitiesFromNormalizedData } from '@/shared/lib/helpers/selectEntities/selectEntities';
-import { mockReturnArticlesPageState } from '@/shared/assets/tests/mockReturnArticlesPageState';
-import { Article } from '@/entities/Article';
 import { mockNotifications } from '@/shared/assets/tests/mockNotifications';
 
 const meta: Meta<typeof NotificationList> = {
