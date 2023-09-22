@@ -4,7 +4,7 @@ import {
     memo, useCallback, useState, useEffect,
 } from 'react';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from '@/entities/User';

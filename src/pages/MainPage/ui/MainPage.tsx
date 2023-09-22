@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { Page } from '@/widgets/Page';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { RatingCard } from '@/entities/Rating';
 import { VStack } from '@/shared/ui/Stack';
-import { StarRating } from '@/shared/ui/StarRating/StarRating';
+import { StarRating } from '@/shared/ui/StarRating';
 
 const MainPage = () => {
     const { t } = useTranslation();

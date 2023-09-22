@@ -3,14 +3,14 @@ import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import cls from './RatingCard.module.scss';
-import { Card } from '@/shared/ui/Card/Card';
+import { Card } from '@/shared/ui/Card';
 import { HStack, VStack } from '@/shared/ui/Stack';
-import { Text } from '@/shared/ui/Text/Text';
-import { StarRating } from '@/shared/ui/StarRating/StarRating';
-import { Modal } from '@/shared/ui/Modal/Modal';
-import { Input } from '@/shared/ui/Input/Input';
+import { Text } from '@/shared/ui/Text';
+import { StarRating } from '@/shared/ui/StarRating';
+import { Modal } from '@/shared/ui/Modal';
+import { Input } from '@/shared/ui/Input';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
-import { AnimatedDrawer } from '@/shared/ui/Drawers/AnimatedDrawer/AnimatedDrawer';
+import { AnimatedDrawer } from '@/shared/ui/Drawers';
 
 interface RatingCardProps {
     className?: string;

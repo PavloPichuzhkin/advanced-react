@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { LoginModal } from '@/features/AuthByUsername';
 import { getUserAuthData } from '@/entities/User';
-import { Text, TextSize, TextTheme } from '@/shared/ui/Text/Text';
+import { Text, TextSize, TextTheme } from '@/shared/ui/Text';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { RoutePath } from '@/app/providers/router';
 import { NotificationButton } from '@/features/NotificationButton';

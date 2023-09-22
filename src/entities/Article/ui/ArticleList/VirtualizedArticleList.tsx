@@ -8,8 +8,8 @@ import { useTranslation } from 'react-i18next';
 // at failureErrorWithLog (E:\advanced-react\node_modules\esbuild\lib\main.js:1649:15)
 
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
-import { Text, TextSize } from '@/shared/ui/Text/Text';
-import { Card } from '@/shared/ui/Card/Card';
+import { Text, TextSize } from '@/shared/ui/Text';
+import { Card } from '@/shared/ui/Card';
 import { ArticleView } from '../../model/consts/articleConsts';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';

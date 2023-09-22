@@ -8,7 +8,7 @@ import {
     getUserAuthData, isUserAdmin, isUserManager, isUserSuperAdmin, userActions,
 } from '@/entities/User';
 import { RoutePath } from '@/app/providers/router';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/Avatar';
 import cls from './AvatarDropdown.module.scss';
 
 interface AvatarDropdownProps {

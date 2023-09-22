@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/Stack';
 import { EditableProfileCard } from '@/features/EditableProfileCard';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 
 interface ProfilePageProps {
     className?: string;
