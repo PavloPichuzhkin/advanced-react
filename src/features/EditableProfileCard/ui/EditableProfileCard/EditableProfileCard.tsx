@@ -11,7 +11,7 @@ import { getUserAuthData } from '@/entities/User';
 import { ProfileCard } from '@/entities/Profile';
 // import { ProfileCard } from '@/entities/Profile/ui/ProfileCard'; // for testing ESLint plugin 'project-fsd-architecture/public-api-imports-validation'
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
-// import { getProfileForm } from '@/features/EditableProfileCard/model/selectors/getProfileForm/getProfileForm';
+// import { getProfileForm } from '@/features/EditableProfileCard/model/selectors/getProfileForm/getProfileForm'; // layer-imports rule should not work
 
 import { ValidateProfileError } from '../../model/consts/consts';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
