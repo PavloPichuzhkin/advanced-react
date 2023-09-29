@@ -219,7 +219,7 @@ export const mockReturnArticlesPageState = (
                 // userId: '1',
                 title: 'Python news',
                 subtitle: 'What\'s new in Python for 2023? Що нового в Python у 2023 році?',
-                img: 'https://scontent.fiev8-2.fna.fbcdn.net/v/t1.6435-9/157657003_1087050955149490_1862413444576549321_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd63ad&_nc_ohc=p2SRD5-ZLjMAX_fGM_h&_nc_ht=scontent.fiev8-2.fna&oh=00_AfA-41911tUldvVLGvm8rwASLuJLY7fwTP1D9Zy8w3RVOg&oe=65020A14',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/1200px-Python.svg.png',
                 views: 1023,
                 createdAt: '26.02.2023',
                 type: [
@@ -575,7 +575,7 @@ export const mockReturnArticlesPageState = (
                 // userId: '1',
                 title: 'Python news',
                 subtitle: 'What\'s new in Python for 2023? Що нового в Python у 2023 році?',
-                img: 'https://scontent.fiev8-2.fna.fbcdn.net/v/t1.6435-9/157657003_1087050955149490_1862413444576549321_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd63ad&_nc_ohc=p2SRD5-ZLjMAX_fGM_h&_nc_ht=scontent.fiev8-2.fna&oh=00_AfA-41911tUldvVLGvm8rwASLuJLY7fwTP1D9Zy8w3RVOg&oe=65020A14',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/1200px-Python.svg.png',
                 views: 1023,
                 createdAt: '26.02.2023',
                 type: [

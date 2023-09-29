@@ -28,6 +28,20 @@ const preview: Preview = {
                 dynamicTitle: true,
             },
         },
+        // theme: {
+        //     description: 'Global theme for components',
+        //     defaultValue: Theme.LIGHT,
+        //     toolbar: {
+        //         title: 'Theme',
+        //         icon: 'circlehollow',
+        //         items: [
+        //             { value: Theme.LIGHT, title: 'Light' },
+        //             { value: Theme.DARK, title: 'Dark' },
+        //             { value: Theme.DANGER, title: 'Danger' },
+        //         ],
+        //         dynamicTitle: true,
+        //     },
+        // },
     },
     parameters: {
         actions: { argTypesRegex: '^on[A-Z].*' },
@@ -38,16 +52,16 @@ const preview: Preview = {
             },
         },
         loaders: [mswLoader],
-
+        layout: 'fullscreen',
     },
     decorators: [
         StyleDecorator,
         ThemeDecorator(Theme.LIGHT),
+        // withThemeProvider,
         RouterDecorator,
         i18nextStoryDecorator,
         StoreProviderDecorator,
         mswDecorator,
     ],
 };
-
 export default preview;

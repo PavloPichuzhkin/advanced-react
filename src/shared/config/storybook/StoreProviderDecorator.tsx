@@ -14,7 +14,6 @@ export const StoreProviderDecorator = (StoryComponent: StoryFn) => (
     </StoreProvider>
 );
 
-// @ts-ignore
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
     profile: profileReducer,

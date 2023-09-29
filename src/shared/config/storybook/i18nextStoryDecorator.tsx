@@ -5,6 +5,7 @@ import i18n from '../i18n/i18n';
 
 const i18nextStoryDecorator = (Story: StoryFn, context: StoryContext) => {
     const { locale } = context.globals;
+    // console.log(context);
 
     // When the locale global changes
     // Set the new locale in i18n
