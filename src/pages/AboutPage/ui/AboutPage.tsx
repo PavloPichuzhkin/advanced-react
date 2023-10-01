@@ -10,7 +10,7 @@ const AboutPage = () => {
     const { t } = useTranslation('about');
     const [test, setTest] = useState(0);
     return (
-        <Page>
+        <Page data-testid="AboutPage">
             <div>
                 {t('About Page')}
             </div>

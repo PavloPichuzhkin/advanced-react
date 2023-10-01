@@ -10,7 +10,7 @@ const MainPage = () => {
     const { t } = useTranslation();
 
     return (
-        <Page>
+        <Page data-testid="MainPage">
             <VStack gap="24">
                 <Text title={t('Main page')} />
                 <RatingCard
