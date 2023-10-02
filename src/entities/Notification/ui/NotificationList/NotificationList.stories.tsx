@@ -27,6 +27,7 @@ export const Primary: Story = {
     args: {},
     decorators: [],
 };
+
 export const Dark: Story = {
     args: {},
     decorators: [

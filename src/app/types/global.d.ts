@@ -29,3 +29,11 @@ type DeepPartial<T> = T extends object ? {
 type OptionalRecord<K extends keyof any, T> = {
     [P in K]?: T;
 };
+
+declare module '@loki/create-async-callback' {
+    export default function createAsyncCallback(): () => void;
+}
+
+declare module '@loki/is-loki-running' {
+    export default function isLokiRunning(): boolean;
+}
