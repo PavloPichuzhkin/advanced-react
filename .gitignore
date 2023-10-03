@@ -13,4 +13,4 @@
 # Local Netlify folder
 .netlify
 
-/reports
+/reports/unit
