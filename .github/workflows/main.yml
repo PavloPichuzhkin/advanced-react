@@ -38,6 +38,9 @@ jobs:
       - name: screenshot testing
         run: npm run test:ui:ci
         if: always()
+      - name: unit testing
+        run: npm run test:unit
+        if: always()
       - name: Generate HTML report
         run: npm run test:ui:report
       - name: move loki
@@ -74,6 +77,4 @@ jobs:
         if: always()
       - name: linting css
         run: npm run lint:scss
-      - name: unit testing
         if: always()
-        run: npm run test:unit
