@@ -37,28 +37,7 @@ export const PrimaryWithRating: Story = {
         },
     },
 };
-// export const PrimaryIsLoading: Story = {
-//     args: {},
-//     decorators: [ThemeDecorator(Theme.DARK),
-//         PartialStoreDecorator({
-//             [rtkApi.reducerPath]: {
-//                 queries: {
-//                     'getArticleRating({"articleId":"1","userId":"2"})': {
-//                         status: QueryStatus.pending,
-//                         endpointName: 'getArticleRating',
-//                         requestId: 'RJY6Av0EZChYePh0laDRW',
-//                         originalArgs: {
-//                             articleId: '1',
-//                             userId: '2',
-//                         },
-//                         startedTimeStamp: 1694952589477,
-//                     },
-//                 },
-//
-//             },
-//         }),
-//     ],
-// };
+
 export const Dark: Story = {
     args: {},
     decorators: [

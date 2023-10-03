@@ -8,6 +8,11 @@ import ProfilePage from './ProfilePage';
 const meta: Meta<typeof ProfilePage> = {
     title: 'Pages/ProfilePage',
     component: ProfilePage,
+    parameters: {
+        loki: {
+            captureDelay: 5000,
+        },
+    },
     // tags: ['autodocs'],
 };
 
@@ -27,12 +32,12 @@ export const Light: Story = {
 
 export const Dark: Story = {
     args: { },
+    decorators: [ThemeDecorator(Theme.DARK),
+        PartialStoreDecorator({
+            profile: {
+                form: mockProfileData,
+                data: mockProfileData,
+                readonly: undefined,
+            },
+        })],
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK),
-    PartialStoreDecorator({
-        profile: {
-            form: mockProfileData,
-            data: mockProfileData,
-            readonly: undefined,
-        },
-    })];

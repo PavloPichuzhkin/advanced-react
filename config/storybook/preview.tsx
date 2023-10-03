@@ -7,8 +7,7 @@ import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorat
 import i18nextStoryDecorator from '../../src/shared/config/storybook/i18nextStoryDecorator';
 import i18n from '../../src/shared/config/i18n/i18n';
 import { StoreProviderDecorator } from '../../src/shared/config/storybook/StoreProviderDecorator';
-import { TestDecorator } from '../../src/shared/config/storybook/TestDecorator';
-import AsyncStoryDecorator from '../../src/shared/config/storybook/AsyncStoryDecorator';
+import { AsyncStoryDecorator } from '../../src/shared/config/storybook/AsyncStoryDecorator';
 
 initialize({
     onUnhandledRequest: 'bypass',
@@ -55,9 +54,11 @@ const preview: Preview = {
         },
         loaders: [mswLoader],
         layout: 'fullscreen',
+        loki: {
+            captureDelay: 3000,
+        },
     },
     decorators: [
-        TestDecorator('TestDecorator 111'),
         StyleDecorator,
         ThemeDecorator(Theme.LIGHT),
         // withThemeProvider,
@@ -65,8 +66,7 @@ const preview: Preview = {
         i18nextStoryDecorator,
         StoreProviderDecorator,
         mswDecorator,
-        TestDecorator('TestDecorator 222'),
-        AsyncStoryDecorator(3000),
+        AsyncStoryDecorator,
     ],
 };
 export default preview;

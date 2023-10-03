@@ -10,6 +10,11 @@ import { ArticleList } from './ArticleList';
 const meta: Meta<typeof ArticleList> = {
     title: 'Entities/Article/ArticleList',
     component: ArticleList,
+    parameters: {
+        loki: {
+            captureDelay: 5000,
+        },
+    },
     // tags: ['autodocs'],
 };
 
