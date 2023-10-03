@@ -29,9 +29,11 @@ export default ({ config }: {config: webpack.Configuration}) => {
     // @ts-ignore
     config!.module!.rules = config.module!.rules!.map((rule: RuleSetRule) => {
         if (/svg/.test(rule.test as string)) {
-            return { ...rule, exclude: /\.svg$/i };
+            return { ...rule, exclude: /\.(svg|png|jpe?g|gif|woff2|woff)$/i };
         }
-
+        // if (/png|jpe?g|gif|woff2|woff/.test(rule.test as string)) {
+        //     return { ...rule, exclude: /\.(png|jpe?g|gif|woff2|woff)$/i }; /// \.(png|jpe?g|gif|woff2|woff)$/i
+        // }
         return rule;
     });
 
@@ -39,8 +41,24 @@ export default ({ config }: {config: webpack.Configuration}) => {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
     });
+    config!.module!.rules.push({
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    });
+    // {
+    //     test: /\.(svg|ico|jpg|jpeg|png|apng|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/,
+    //         type: 'asset/resource',
+    //     generator: { filename: 'static/media/[path][name][ext]' },
+    //     exclude: /\.svg$/i
+    // },
 
     config!.module!.rules.push(buildCssLoader(true));
+    console.log(config!.module!.rules);
+
     config!.plugins!.push(new webpack.DefinePlugin({
         __IS_DEV__: JSON.stringify(true),
         __API__: JSON.stringify(''),
