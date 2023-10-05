@@ -7,7 +7,8 @@ import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorat
 import i18nextStoryDecorator from '../../src/shared/config/storybook/i18nextStoryDecorator';
 import i18n from '../../src/shared/config/i18n/i18n';
 import { StoreProviderDecorator } from '../../src/shared/config/storybook/StoreProviderDecorator';
-import { AsyncStoryDecorator } from '../../src/shared/config/storybook/AsyncStoryDecorator';
+import { AsyncStoryDecorator } from '@/shared/config/storybook/AsyncStoryDecorator';
+// import { AsyncStoryDecorator } from '../../src/shared/config/storybook/AsyncStoryDecorator';
 
 initialize({
     onUnhandledRequest: 'bypass',

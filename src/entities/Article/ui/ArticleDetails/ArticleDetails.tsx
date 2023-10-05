@@ -17,8 +17,6 @@ import { ArticleTipsBlockComponent } from '../ArticleTipsBlockComponent/ArticleT
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import {
     getArticleDetailsData,
     getArticleDetailsError,
@@ -27,6 +25,11 @@ import {
 // eslint-disable-next-line project-fsd-architecture/public-api-imports-validation
 // import { ArticleBlock } from '@/entities/Article/model/types/article'; // for testing ESLint plugin 'project-fsd-architecture/slice-imports-validation'
 import { ArticleBlock } from '../../model/types/article';
+// import {fetchArticleById} from "@/entities/Article/model/services/fetchArticleById/fetchArticleById";
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
+// import { articleDetailsReducer } from '../../testing'; // for testing ESLint plugin 'project-fsd-architecture/slice-imports-validation'
+// import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 
 interface ArticleDetailsProps {
     className?: string;

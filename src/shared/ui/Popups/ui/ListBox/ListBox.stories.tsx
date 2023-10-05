@@ -8,6 +8,11 @@ const meta: Meta<typeof ListBox> = {
     title: 'Shared/Popups/ListBox',
     component: ListBox,
     // tags: ['autodocs'],
+    parameters: {
+        loki: {
+            captureDelay: 5000,
+        },
+    },
 };
 
 export default meta;
