@@ -3,7 +3,7 @@ import { StoryFn } from '@storybook/react';
 import isLokiRunning from '@loki/is-loki-running';
 import createAsyncCallback from '@loki/create-async-callback';
 
-const DELAY = 4000;
+const DELAY = 4000;//
 /**
  * Makes a delay between capturing a screenshot. Useful when you need to wait until some async actions are done or image is loaded.
  * @param delay - Delay in milliseconds.
