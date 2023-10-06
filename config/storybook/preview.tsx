@@ -67,8 +67,8 @@ const preview: Preview = {
         i18nextStoryDecorator,
         StoreProviderDecorator,
         mswDecorator,
-        // AsyncStoryDecorator,
-        AsyncStoryDecorator(),
+        AsyncStoryDecorator,
+        // AsyncStoryDecorator(),
 
     ],
 };
