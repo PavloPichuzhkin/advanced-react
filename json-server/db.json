@@ -44,6 +44,15 @@
         "SUPER_ADMIN"
       ],
       "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg"
+    },
+    {
+      "id": "6",
+      "username": "tuser",
+      "password": "123",
+      "roles": [
+        "SUPER_ADMIN"
+      ],
+      "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg"
     }
   ],
   "article-ratings": [
@@ -81,6 +90,12 @@
       "rate": 3,
       "feedback": "",
       "id": "sJVk88I"
+    },
+    {
+      "userId": "1",
+      "articleId": "19",
+      "rate": 4,
+      "id": "sP8in2t"
     }
   ],
   "profile-ratings": [

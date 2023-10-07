@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import { ReducersMapObject } from '@reduxjs/toolkit';
 import { createReduxStore } from '../config/store';
 import { StateSchema } from '../config/StateSchema';
-// TODO add to rule slice-imports-validation 'app' layer
 // import { createReduxStore } from '@/app/providers/StoreProvider/config/store';
 // import { StateSchema } from '@/app/providers/StoreProvider/config/StateSchema';
 

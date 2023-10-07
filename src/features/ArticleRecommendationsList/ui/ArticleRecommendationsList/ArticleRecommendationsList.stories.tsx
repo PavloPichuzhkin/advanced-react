@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { rest } from 'msw';
+import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 import { selectEntitiesFromNormalizedData } from '@/shared/lib/helpers/selectEntities/selectEntities';
 import { mockReturnArticlesPageState } from '@/shared/assets/tests/mockReturnArticlesPageState';
 import { Article } from '@/entities/Article';
-import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
 const meta: Meta<typeof ArticleRecommendationsList> = {
     title: 'Features/ArticleRecommendationsList',
@@ -41,13 +41,13 @@ export const Primary: Story = {
         //         }),
         //     ],
         // },
-        msw: {
-            handlers: [
-                rest.get(`${__API__}/articles`, (_req, res, ctx) => {
-                    // console.log('handler work');
-                    return res(ctx.json(selectEntitiesFromNormalizedData(mockReturnArticlesPageState) as Article[]));
-                }),
-            ],
-        },
+        // msw: {
+        //     handlers: [
+        //         rest.get(`${__API__}/articles`, (_req, res, ctx) => {
+        //             // console.log('handler work');
+        //             return res(ctx.json(selectEntitiesFromNormalizedData(mockReturnArticlesPageState) as Article[]));
+        //         }),
+        //     ],
+        // },
     },
 };

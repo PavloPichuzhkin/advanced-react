@@ -11,7 +11,9 @@
 //
 //
 // -- This is a parent command --
-Cypress.Commands.add('login', (email, password) => { });
+import { login } from './commands/login';
+
+Cypress.Commands.add('login', login);
 //
 //
 // -- This is a child command --
@@ -28,7 +30,7 @@ Cypress.Commands.add('dismiss', { prevSubject: 'optional' }, (subject, options) 
 declare global {
   namespace Cypress {
     interface Chainable {
-      login(email: string, password: string): Chainable<void>
+      login(email?: string, password?: string): Chainable<void>
       drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
       dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
       // visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>

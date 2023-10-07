@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react';
 import { initialize, mswDecorator, mswLoader } from 'msw-storybook-addon';
+import { rest } from 'msw';
 import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator';
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator';
 import { Theme } from '../../src/shared/lib/context/ThemeContext';
@@ -8,6 +9,9 @@ import i18nextStoryDecorator from '../../src/shared/config/storybook/i18nextStor
 import i18n from '../../src/shared/config/i18n/i18n';
 import { StoreProviderDecorator } from '../../src/shared/config/storybook/StoreProviderDecorator';
 import { AsyncStoryDecorator } from '@/shared/config/storybook/AsyncStoryDecorator';
+import { selectEntitiesFromNormalizedData } from '@/shared/lib/helpers/selectEntities/selectEntities';
+import { mockReturnArticlesPageState } from '@/shared/assets/tests/mockReturnArticlesPageState';
+import { Article } from '@/entities/Article';
 // import { AsyncStoryDecorator } from '../../src/shared/config/storybook/AsyncStoryDecorator';
 
 initialize({
@@ -57,6 +61,28 @@ const preview: Preview = {
         layout: 'fullscreen',
         loki: {
             captureDelay: 3000,
+        },
+        msw: {
+            handlers: {
+                test: [rest.get(`${__API__}/articles`, (_req, res, ctx) => {
+                    // console.log('handler work');
+                    return res(ctx.json(selectEntitiesFromNormalizedData(mockReturnArticlesPageState) as Article[]));
+                })],
+                test2: [
+                    rest.get(`${__API__}/article-ratings`, (_req, res, ctx) => {
+                        return res(ctx.json(null));
+                    }),
+                ],
+                //
+                // profile: profileHandlers,
+                // articleDetails: articleDetailsHandlers,
+                // articles: articleHandlers,
+                // comments: commentHandlers,
+                // image: imageHandlers,
+                // notification: notificationHandlers,
+                // rating: ratingHandlers,
+                // user: userHandlers,
+            },
         },
     },
     decorators: [

@@ -9,13 +9,13 @@ const meta: Meta<typeof ArticleRating> = {
     component: ArticleRating,
     // tags: ['autodocs'],
     parameters: {
-        msw: {
-            handlers: [
-                rest.get(`${__API__}/article-ratings`, (_req, res, ctx) => {
-                    return res(ctx.json(null));
-                }),
-            ],
-        },
+        // msw: {
+        //     handlers: [
+        //         rest.get(`${__API__}/article-ratings`, (_req, res, ctx) => {
+        //             return res(ctx.json(null));
+        //         }),
+        //     ],
+        // },
     },
 };
 
