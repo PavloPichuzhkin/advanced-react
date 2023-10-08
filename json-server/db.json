@@ -293,7 +293,7 @@
       "id": "1",
       "first": "Pavlo",
       "lastname": "Pichuzhkin",
-      "age": 22,
+      "age": 221,
       "currency": "USD",
       "country": "Great Britain",
       "city": "Kiev",
@@ -342,6 +342,17 @@
       "country": "United States of America",
       "city": "Kiev",
       "username": "admin",
+      "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg"
+    },
+    {
+      "id": "6",
+      "first": "test",
+      "lastname": "user",
+      "age": 222,
+      "currency": "USD",
+      "country": "United States of America",
+      "city": "Kiev",
+      "username": "tuser",
       "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg"
     }
   ],

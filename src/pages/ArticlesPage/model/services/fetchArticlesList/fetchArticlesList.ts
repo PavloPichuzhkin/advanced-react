@@ -32,7 +32,8 @@ export const fetchArticlesList = createAsyncThunk<
         });
         const response = await extra.api.get<Article[]>('/articles', {
             params: {
-                // _expand: 'user',
+                _expand: 'user', /// VERY bad work sourceMap, User uses only ArticleListItem BIG View,
+                // so if it will be removed - any consoleinform about error
                 _limit: limit,
                 _page: page,
                 _sort: sort,

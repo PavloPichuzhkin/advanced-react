@@ -8,5 +8,10 @@
     "sourceMap": false
   },
   "extends": "../tsconfig.json",
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": [
+    "node_modules",
+    "cypress",
+    "./cypress.config.ts"
+  ]
 }
