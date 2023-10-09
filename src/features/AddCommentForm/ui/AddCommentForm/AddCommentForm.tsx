@@ -59,14 +59,22 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
                     title={t('Server error during send comment')}
                 />
             )}
-            <HStack max justify="between" align="center" className={classNames(cls.AddCommentForm, {}, [className])}>
+            <HStack
+                data-testid="AddCommentForm"
+                max
+                justify="between"
+                align="center"
+                className={classNames(cls.AddCommentForm, {}, [className])}
+            >
                 <Input
+                    data-testid="AddCommentForm.Input"
                     className={cls.input}
                     placeholder={t('Enter comment')}
                     value={text}
                     onChange={onCommentTextChange}
                 />
                 <Button
+                    data-testid="AddCommentForm.Button"
                     theme={ButtonTheme.OUTLINE}
                     onClick={onSendHandler}
                     disabled={addCommentFormIsLoading}

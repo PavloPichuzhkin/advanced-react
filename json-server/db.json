@@ -96,6 +96,13 @@
       "articleId": "19",
       "rate": 4,
       "id": "sP8in2t"
+    },
+    {
+      "userId": "1",
+      "articleId": "if1QRmR",
+      "rate": 3,
+      "feedback": "oooohh woooww",
+      "id": "Km39exh"
     }
   ],
   "profile-ratings": [
@@ -1763,6 +1770,32 @@
           ]
         }
       ]
+    },
+    {
+      "userId": "1",
+      "title": "Chemistry",
+      "subtitle": "What's new in Chemistry for 2023? Що нового в хімії у 2023 році?",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 1023,
+      "createdAt": "26.02.2023",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "if1QRmR"
+    },
+    {
+      "userId": "1",
+      "title": "Chemistry",
+      "subtitle": "What's new in Chemistry for 2023? Що нового в хімії у 2023 році?",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 1023,
+      "createdAt": "26.02.2023",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "-Lo9OFZ"
     }
   ]
 }

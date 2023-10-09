@@ -5,6 +5,8 @@ import { VirtualizedArticleList } from '@/entities/Article';
 import cls from './ArticleRecommendationsList.module.scss';
 
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
+import { VStack } from '@/shared/ui/Stack';
+import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 
 interface ArticleRecommendationsListProps {
     className?: string;
@@ -24,7 +26,10 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
     }
 
     return (
-        <>
+        <VStack
+            data-testid="ArticleRecommendationsList"
+            className={classNames('', {}, [className])}
+        >
             <Text
                 title={t('Recommended')}
             />
@@ -41,6 +46,6 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
             {/*    target="_blank" */}
             {/*    className={cls.recommendations} */}
             {/* /> */}
-        </>
+        </VStack>
     );
 });
