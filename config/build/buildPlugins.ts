@@ -43,6 +43,7 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
         plugins.push(new webpack.HotModuleReplacementPlugin());
         plugins.push(new BundleAnalyzerPlugin({
             openAnalyzer: false,
+            analyzerPort: 8800,
         }));
     }
 

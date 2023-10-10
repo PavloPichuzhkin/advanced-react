@@ -20,4 +20,20 @@ Cypress.Commands.addAll(articleCommands);
 Cypress.Commands.addAll(commentsCommands);
 Cypress.Commands.addAll(ratingCommands);
 
+// Cypress.Commands.overwrite('intercept', () => {
+//     const { FIXTURE_MODE } = process.env;
+//
+//     // example how to create fixture name and keep it fresh
+//     // const fixtureName = req.method + req.url + hash(req.body);
+//
+//     if (FIXTURE_MODE === 'READ') {
+//         // readFixture(fixtureName);
+//     }
+//
+//     if (FIXTURE_MODE === 'WRITE') {
+//         // example how to create fixture
+//         // createFixture(fixtureName, req.body);
+//     }
+// });
+
 export {};

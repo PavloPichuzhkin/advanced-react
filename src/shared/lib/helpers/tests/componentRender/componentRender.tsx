@@ -5,29 +5,67 @@ import { MemoryRouter } from 'react-router-dom';
 import { ReducersMapObject } from '@reduxjs/toolkit';
 import i18nForTests from '@/shared/config/i18n/i18nForTests';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
+import { Theme } from '../../../context/ThemeContext';
+// eslint-disable-next-line project-fsd-architecture/layer-imports
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
+// eslint-disable-next-line project-fsd-architecture/layer-imports
+import '@/app/styles/index.scss';
 
 export interface componentRenderOptions {
     route?: string;
     initialState?: DeepPartial<StateSchema>
     asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>
+    theme?: Theme
 
 }
+interface TestProviderProps {
+    children: ReactNode;
+    options?: componentRenderOptions;
+}
 
-export function componentRender(component: ReactNode, options: componentRenderOptions = {}) {
+export function TestProvider(props: TestProviderProps) {
+    const { children, options = {} } = props;
     const {
         route = '/',
         initialState,
         asyncReducers,
-
+        theme = Theme.LIGHT,
     } = options;
 
-    return render(
-        <StoreProvider asyncReducers={asyncReducers} initialState={initialState}>
-            <MemoryRouter initialEntries={[route]}>
+    return (
+        <MemoryRouter initialEntries={[route]}>
+            <StoreProvider asyncReducers={asyncReducers} initialState={initialState}>
                 <I18nextProvider i18n={i18nForTests}>
-                    {component}
+                    <ThemeProvider initialTheme={theme}>
+                        <div className={`app ${theme}`}>
+                            {children}
+                        </div>
+                    </ThemeProvider>
                 </I18nextProvider>
-            </MemoryRouter>
-        </StoreProvider>,
+            </StoreProvider>
+        </MemoryRouter>
     );
 }
+
+export function componentRender(component: ReactNode, options: componentRenderOptions = {}) {
+    return render(<TestProvider options={options}>{component}</TestProvider>);
+}
+
+// export function componentRender(component: ReactNode, options: componentRenderOptions = {}) {
+//     const {
+//         route = '/',
+//         initialState,
+//         asyncReducers,
+//
+//     } = options;
+//
+//     return render(
+//         <StoreProvider asyncReducers={asyncReducers} initialState={initialState}>
+//             <MemoryRouter initialEntries={[route]}>
+//                 <I18nextProvider i18n={i18nForTests}>
+//                     {component}
+//                 </I18nextProvider>
+//             </MemoryRouter>
+//         </StoreProvider>,
+//     );
+// }
