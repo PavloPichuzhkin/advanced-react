@@ -16,7 +16,7 @@ type Story = StoryObj<typeof Dropdown>;
 
 export const Primary: Story = {
     args: {
-        trigger: <Button as="div">Value</Button>,
+        trigger: <Button as='div'>Value</Button>,
         items: [
             { content: 'Some content 1' },
             { content: 'Some content 2' },
@@ -25,12 +25,15 @@ export const Primary: Story = {
     },
     decorators: [
         (Story: StoryFn) => (
-            <div style={{ padding: '5rem' }}><Story /></div>
-        )],
+            <div style={{ padding: '5rem' }}>
+                <Story />
+            </div>
+        ),
+    ],
 };
 export const Dark: Story = {
     args: {
-        trigger: <Button as="div">Value</Button>,
+        trigger: <Button as='div'>Value</Button>,
         items: [
             { content: 'Some content 1' },
             { content: 'Some content 2' },
@@ -40,6 +43,9 @@ export const Dark: Story = {
     decorators: [
         ThemeDecorator(Theme.DARK),
         (Story: StoryFn) => (
-            <div style={{ padding: '5rem' }}><Story /></div>
-        )],
+            <div style={{ padding: '5rem' }}>
+                <Story />
+            </div>
+        ),
+    ],
 };

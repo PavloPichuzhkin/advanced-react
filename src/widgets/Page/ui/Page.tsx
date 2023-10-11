@@ -1,19 +1,20 @@
-import {
-    memo, MutableRefObject, ReactNode, UIEvent, useRef,
-} from 'react';
+import { memo, MutableRefObject, ReactNode, UIEvent, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { getScrollPositionByPath, scrollPositionActions } from '@/features/ScrollPositionStorage';
+import {
+    getScrollPositionByPath,
+    scrollPositionActions,
+} from '@/features/ScrollPositionStorage';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './Page.module.scss';
 import { DataTestId } from '@/shared/types';
 
-interface PageProps extends DataTestId{
+interface PageProps extends DataTestId {
     className?: string;
     children: ReactNode;
     onScrollEnd?: () => void;
@@ -27,8 +28,8 @@ export const Page = memo((props: PageProps) => {
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
-    const scrollPosition = useSelector(
-        (state: StateSchema) => getScrollPositionByPath(state, pathname),
+    const scrollPosition = useSelector((state: StateSchema) =>
+        getScrollPositionByPath(state, pathname),
     );
     useInfiniteScroll({
         triggerRef,
@@ -41,16 +42,16 @@ export const Page = memo((props: PageProps) => {
     });
 
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-        dispatch(scrollPositionActions.setScrollPosition({
-            position: e.currentTarget.scrollTop,
-            path: pathname,
-        }));
+        dispatch(
+            scrollPositionActions.setScrollPosition({
+                position: e.currentTarget.scrollTop,
+                path: pathname,
+            }),
+        );
     }, 400);
 
     return (
-        <div
-            className={cls.underPageWrapper}
-        >
+        <div className={cls.underPageWrapper}>
             <main
                 className={classNames(cls.Page, {}, [className])}
                 ref={wrapperRef}
@@ -59,7 +60,9 @@ export const Page = memo((props: PageProps) => {
                 data-testid={props['data-testid'] ?? 'Page'}
             >
                 {children}
-                {onScrollEnd ? <div ref={triggerRef} className={cls.triggerRef} /> : null}
+                {onScrollEnd ? (
+                    <div ref={triggerRef} className={cls.triggerRef} />
+                ) : null}
             </main>
         </div>
     );

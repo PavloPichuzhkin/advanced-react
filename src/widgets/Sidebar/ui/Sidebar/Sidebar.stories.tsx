@@ -19,15 +19,18 @@ export const AuthLight: Story = {
 AuthLight.decorators = [
     PartialStoreDecorator({
         user: { authData: {} },
-    })];
+    }),
+];
 
 export const AuthDark: Story = {
     args: {},
 };
-AuthDark.decorators = [ThemeDecorator(Theme.DARK),
+AuthDark.decorators = [
+    ThemeDecorator(Theme.DARK),
     PartialStoreDecorator({
         user: { authData: {} },
-    })];
+    }),
+];
 
 export const Light: Story = {
     args: {},

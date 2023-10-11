@@ -33,8 +33,7 @@ export const PrimaryDark: Story = {
         width: '100%',
         height: 200,
     },
-    decorators: [ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const CircleDark: Story = {
@@ -43,8 +42,7 @@ export const CircleDark: Story = {
         width: 150,
         height: 150,
     },
-    decorators: [ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const PrimaryDanger: Story = {
@@ -52,8 +50,7 @@ export const PrimaryDanger: Story = {
         width: '100%',
         height: 200,
     },
-    decorators: [ThemeDecorator(Theme.DANGER),
-    ],
+    decorators: [ThemeDecorator(Theme.DANGER)],
 };
 export const CircleDanger: Story = {
     args: {
@@ -61,6 +58,5 @@ export const CircleDanger: Story = {
         width: 150,
         height: 150,
     },
-    decorators: [ThemeDecorator(Theme.DANGER),
-    ],
+    decorators: [ThemeDecorator(Theme.DANGER)],
 };

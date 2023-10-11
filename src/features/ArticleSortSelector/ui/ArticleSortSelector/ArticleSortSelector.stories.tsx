@@ -14,7 +14,8 @@ type Story = StoryObj<typeof ArticleSortSelector>;
 
 export const Primary: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK),
+    decorators: [
+        ThemeDecorator(Theme.DARK),
         // PartialStoreDecorator({
         //     profile: {
         //         form: {

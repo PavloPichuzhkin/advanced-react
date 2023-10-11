@@ -20,10 +20,10 @@ export const Primary: Story = {
             profile: {
                 readonly: true,
             },
-        })],
+        }),
+    ],
 };
 export const Dark: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

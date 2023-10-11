@@ -6,4 +6,6 @@ import { buildSelector } from '@/shared/lib/store';
 //     (counterEntity: CounterSchemaEntity) => counterEntity.valueEntity,
 // );
 
-export const [useCounterEntityValue, getCounterValue] = buildSelector((state) => state.counterEntity.valueEntity);
+export const [useCounterEntityValue, getCounterValue] = buildSelector(
+    (state) => state.counterEntity.valueEntity,
+);

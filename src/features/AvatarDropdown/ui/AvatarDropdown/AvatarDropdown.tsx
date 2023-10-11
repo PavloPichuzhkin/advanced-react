@@ -5,14 +5,22 @@ import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { Dropdown } from '@/shared/ui/Popups';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
-    getUserAuthData, isUserAdmin, isUserManager, isUserSuperAdmin, userActions,
+    getUserAuthData,
+    isUserAdmin,
+    isUserManager,
+    isUserSuperAdmin,
+    userActions,
 } from '@/entities/User';
 import { Avatar } from '@/shared/ui/Avatar';
 import cls from './AvatarDropdown.module.scss';
-import { getRouteAdmin, getRouteMain, getRouteProfile } from '@/shared/const/router';
+import {
+    getRouteAdmin,
+    getRouteMain,
+    getRouteProfile,
+} from '@/shared/const/router';
 
 interface AvatarDropdownProps {
-    className?: string
+    className?: string;
 }
 
 export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
@@ -36,13 +44,17 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
 
     return (
         <Dropdown
-            direction="bottom left"
+            direction='bottom left'
             className={classNames(cls.AvatarDropdown, {}, [className])}
             items={[
-                ...(isAdminPanelAvailable ? [{
-                    content: t('Admin panel'),
-                    href: getRouteAdmin(),
-                }] : []),
+                ...(isAdminPanelAvailable
+                    ? [
+                          {
+                              content: t('Admin panel'),
+                              href: getRouteAdmin(),
+                          },
+                      ]
+                    : []),
                 {
                     content: t('Profile'),
                     href: getRouteProfile(authData.id),
@@ -58,7 +70,9 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
                     disabled: true,
                 },
             ]}
-            trigger={<Avatar fallbackInverted size={30} src={authData.avatar} />}
+            trigger={
+                <Avatar fallbackInverted size={30} src={authData.avatar} />
+            }
         />
     );
 });

@@ -1,6 +1,10 @@
 import { screen } from '@testing-library/react';
 import AppRouter from './AppRouter';
-import { getRouteAbout, getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import {
+    getRouteAbout,
+    getRouteAdmin,
+    getRouteProfile,
+} from '@/shared/const/router';
 import { componentRender } from '@/shared/lib/helpers/tests/componentRender/componentRender';
 import { UserRole } from '@/entities/User';
 

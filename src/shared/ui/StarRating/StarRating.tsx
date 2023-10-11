@@ -3,6 +3,7 @@ import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import cls from './StarRating.module.scss';
 import { Icon } from '../Icon/Icon';
 import StarIcon from '@/shared/assets/icons/star.svg';
+
 // import StarIcon from '@/shared/assets/icons/eye-20-20.svg';
 
 interface StarRatingProps {
@@ -15,9 +16,7 @@ interface StarRatingProps {
 const stars = [1, 2, 3, 4, 5];
 
 export const StarRating = memo((props: StarRatingProps) => {
-    const {
-        className, size = 50, selectedStars = 0, onSelect,
-    } = props;
+    const { className, size = 50, selectedStars = 0, onSelect } = props;
     const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars);
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
 

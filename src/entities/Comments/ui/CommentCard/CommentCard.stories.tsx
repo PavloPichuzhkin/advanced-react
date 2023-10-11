@@ -15,45 +15,55 @@ export default meta;
 type Story = StoryObj<typeof CommentCard>;
 
 export const Primary: Story = {
-    args: { comment: selectEntitiesFromNormalizedData(mockReturnArticleDetailsCommentsState)[0] },
-
+    args: {
+        comment: selectEntitiesFromNormalizedData(
+            mockReturnArticleDetailsCommentsState,
+        )[0],
+    },
 };
 
 export const LightLoading: Story = {
     args: {
-        comment: selectEntitiesFromNormalizedData(mockReturnArticleDetailsCommentsState)[0],
+        comment: selectEntitiesFromNormalizedData(
+            mockReturnArticleDetailsCommentsState,
+        )[0],
         isLoading: true,
     },
-
 };
 export const Dark: Story = {
-    args: { comment: selectEntitiesFromNormalizedData(mockReturnArticleDetailsCommentsState)[0] },
-    decorators: [ThemeDecorator(Theme.DARK),
-    ],
+    args: {
+        comment: selectEntitiesFromNormalizedData(
+            mockReturnArticleDetailsCommentsState,
+        )[0],
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const DarkLoading: Story = {
     args: {
-        comment: selectEntitiesFromNormalizedData(mockReturnArticleDetailsCommentsState)[0],
+        comment: selectEntitiesFromNormalizedData(
+            mockReturnArticleDetailsCommentsState,
+        )[0],
         isLoading: true,
     },
-    decorators: [ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const Danger: Story = {
     args: {
-        comment: selectEntitiesFromNormalizedData(mockReturnArticleDetailsCommentsState)[0],
+        comment: selectEntitiesFromNormalizedData(
+            mockReturnArticleDetailsCommentsState,
+        )[0],
     },
-    decorators: [ThemeDecorator(Theme.DANGER),
-    ],
+    decorators: [ThemeDecorator(Theme.DANGER)],
 };
 
 export const DangerLoading: Story = {
     args: {
-        comment: selectEntitiesFromNormalizedData(mockReturnArticleDetailsCommentsState)[0],
+        comment: selectEntitiesFromNormalizedData(
+            mockReturnArticleDetailsCommentsState,
+        )[0],
         isLoading: true,
     },
-    decorators: [ThemeDecorator(Theme.DANGER),
-    ],
+    decorators: [ThemeDecorator(Theme.DANGER)],
 };

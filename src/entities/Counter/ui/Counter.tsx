@@ -21,24 +21,20 @@ export const CounterEntity = memo(() => {
 
     return (
         <div>
-            <h1 data-testid="value-title-entity">{counterValueEntity}</h1>
+            <h1 data-testid='value-title-entity'>{counterValueEntity}</h1>
             <Button
                 onClick={incrementHandler}
-                data-testid="increment-btn-entity"
+                data-testid='increment-btn-entity'
             >
                 {t('increment')}
             </Button>
             <Button
-                data-testid="decrement-btn-entity"
+                data-testid='decrement-btn-entity'
                 onClick={decrementHandler}
             >
                 {t('decrement')}
             </Button>
-            <Button
-                onClick={() => add(2)}
-            >
-                {t('add')}
-            </Button>
+            <Button onClick={() => add(2)}>{t('add')}</Button>
         </div>
     );
 });

@@ -13,6 +13,7 @@ export enum TextAlign {
     LEFT = 'left',
     CENTER = 'center',
 }
+
 export enum TextSize {
     S = 'size_s',
     M = 'size_m',
@@ -59,7 +60,14 @@ export const Text = memo((props: TextProps) => {
     };
 
     return (
-        <div className={classNames(cls.Text, mods, [className, cls[theme], cls[align], cls[size]])}>
+        <div
+            className={classNames(cls.Text, mods, [
+                className,
+                cls[theme],
+                cls[align],
+                cls[size],
+            ])}
+        >
             {title && (
                 <HeaderTag
                     className={cls.title}
@@ -69,10 +77,7 @@ export const Text = memo((props: TextProps) => {
                 </HeaderTag>
             )}
             {text && (
-                <p
-                    className={cls.text}
-                    data-testid={`${dataTestId}.Paragraph`}
-                >
+                <p className={cls.text} data-testid={`${dataTestId}.Paragraph`}>
                     {text}
                 </p>
             )}

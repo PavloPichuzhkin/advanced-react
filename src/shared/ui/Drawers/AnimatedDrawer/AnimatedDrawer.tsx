@@ -1,8 +1,9 @@
-import React, {
-    memo, ReactNode, useCallback, useEffect,
-} from 'react';
+import React, { memo, ReactNode, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
-import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/LibsProviders/AnimationProvider';
+import {
+    AnimationProvider,
+    useAnimationLibs,
+} from '@/shared/lib/components/LibsProviders/AnimationProvider';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Loader } from '../../Loader/Loader';
 import { Overlay } from '../../Overlay/Overlay';
@@ -25,13 +26,7 @@ const DrawerContent = (props: DrawerProps) => {
     const { Spring, Gesture } = useAnimationLibs();
     const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
     const { theme } = useTheme();
-    const {
-        className,
-        children,
-        onClose,
-        isOpen,
-        lazy,
-    } = props;
+    const { className, children, onClose, isOpen, lazy } = props;
 
     const openDrawer = useCallback(() => {
         api.start({ y: 0, immediate: false });
@@ -73,7 +68,10 @@ const DrawerContent = (props: DrawerProps) => {
             }
         },
         {
-            from: () => [0, y.get()], filterTaps: true, bounds: { top: 0 }, rubberband: true,
+            from: () => [0, y.get()],
+            filterTaps: true,
+            bounds: { top: 0 },
+            rubberband: true,
         },
     );
 
@@ -85,18 +83,24 @@ const DrawerContent = (props: DrawerProps) => {
 
     return (
         <Portal>
-            <div className={classNames(cls.AnimatedDrawer, {}, [className, theme])}>
+            <div
+                className={classNames(cls.AnimatedDrawer, {}, [
+                    className,
+                    theme,
+                ])}
+            >
                 <Overlay onClick={close} />
                 <Spring.a.div
                     className={cls.sheet}
-                    style={{ display, bottom: `calc(-100vh + ${height - 100}px)`, y }}
+                    style={{
+                        display,
+                        bottom: `calc(-100vh + ${height - 100}px)`,
+                        y,
+                    }}
                     {...bind()}
                 >
-                    <HStack
-                        justify="center"
-                        className={cls.puller}
-                    >
-                        <Text title="----" size={TextSize.XL} />
+                    <HStack justify='center' className={cls.puller}>
+                        <Text title='----' size={TextSize.XL} />
                     </HStack>
                     {children}
                 </Spring.a.div>

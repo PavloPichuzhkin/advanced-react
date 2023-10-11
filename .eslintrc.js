@@ -9,6 +9,7 @@ module.exports = {
         'airbnb',
         'plugin:i18next/recommended',
         'plugin:storybook/recommended',
+        'plugin:prettier/recommended',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -25,15 +26,18 @@ module.exports = {
         'react-hooks',
         'project-fsd-architecture',
         // 'unused-imports',
-
+        'prettier',
     ],
     rules: {
-        'react/jsx-indent': [2, 4],
-        'react/jsx-indent-props': [2, 4],
-        indent: [2, 4],
-        'react/jsx-filename-extension': [2, {
-            extensions: ['.js', '.jsx', '.tsx'],
-        }],
+        // 'react/jsx-indent': [2, 4],
+        // 'react/jsx-indent-props': [2, 4],
+        // indent: [2, 4],
+        'react/jsx-filename-extension': [
+            2,
+            {
+                extensions: ['.js', '.jsx', '.tsx'],
+            },
+        ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
         'no-unused-vars': 'warn',
@@ -45,13 +49,19 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': ['error', {
-            markupOnly: true,
-        }],
-        'max-len': ['error', {
-            comments: 160,
-            code: 150,
-        }],
+        'i18next/no-literal-string': [
+            'error',
+            {
+                markupOnly: true,
+            },
+        ],
+        'max-len': [
+            'error',
+            {
+                comments: 160,
+                code: 150,
+            },
+        ],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
@@ -59,14 +69,21 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'arrow-body-style': 'off',
-        'project-fsd-architecture/slice-imports-validation': ['error', { alias: '@' }],
-        'project-fsd-architecture/public-api-imports-validation':
-            [
-                'error', {
-                    alias: '@',
-                    testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreProviderDecorator.tsx'],
-                },
-            ],
+        'project-fsd-architecture/slice-imports-validation': [
+            'error',
+            { alias: '@' },
+        ],
+        'project-fsd-architecture/public-api-imports-validation': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: [
+                    '**/*.test.*',
+                    '**/*.story.*',
+                    '**/StoreProviderDecorator.tsx',
+                ],
+            },
+        ],
         'project-fsd-architecture/layer-imports': [
             'error',
             {
@@ -76,13 +93,20 @@ module.exports = {
             },
         ],
         // 'unused-imports/no-unused-imports': 'error',
-
+        // 'prettier/prettier': 'error',
+        'prettier/prettier': [
+            'error',
+            {
+                endOfLine: 'auto',
+            },
+        ],
+        'react/jsx-max-props-per-line': ['error', { maximum: 3 }],
+        'react/no-array-index-key': 'off',
     },
     globals: {
         __IS_DEV__: true,
         __API__: true,
         __PROJECT__: true,
-
     },
     overrides: [
         {

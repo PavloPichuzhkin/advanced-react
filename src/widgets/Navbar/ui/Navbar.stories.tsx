@@ -21,9 +21,10 @@ export const Light: Story = {
             user: {
                 authData: { roles: [UserRole.ADMIN] },
             },
-        })],
+        }),
+    ],
 };
-export const Dark : Story = {
+export const Dark: Story = {
     args: {},
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

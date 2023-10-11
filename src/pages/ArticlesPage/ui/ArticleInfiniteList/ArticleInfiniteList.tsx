@@ -11,38 +11,35 @@ import {
 } from '../../model/selectors/articlesPageSelectors';
 
 interface ArticleInfiniteListProps {
-    className?: string
-    virtual?: boolean
+    className?: string;
+    virtual?: boolean;
 }
 
-export const ArticleInfiniteList = memo(({
-    className, virtual = false,
-}: ArticleInfiniteListProps) => {
-    const { t } = useTranslation();
-    const articles = useSelector(getArticles.selectAll);
-    const isLoading = useSelector(getArticlesPageIsLoading);
-    const view = useSelector(getArticlesPageView);
-    const error = useSelector(getArticlesPageError);
+export const ArticleInfiniteList = memo(
+    ({ className, virtual = false }: ArticleInfiniteListProps) => {
+        const { t } = useTranslation();
+        const articles = useSelector(getArticles.selectAll);
+        const isLoading = useSelector(getArticlesPageIsLoading);
+        const view = useSelector(getArticlesPageView);
+        const error = useSelector(getArticlesPageError);
 
-    if (error) {
-        return <Text text={t('An error occurred when loading articles')} />;
-    }
-    return (
-        virtual ? (
+        if (error) {
+            return <Text text={t('An error occurred when loading articles')} />;
+        }
+        return virtual ? (
             <VirtualizedArticleList
                 isLoading={isLoading}
                 articles={articles}
                 view={view}
                 className={className}
             />
-        )
-            : (
-                <ArticleList
-                    isLoading={isLoading}
-                    view={view}
-                    articles={articles}
-                    className={className}
-                />
-            )
-    );
-});
+        ) : (
+            <ArticleList
+                isLoading={isLoading}
+                view={view}
+                articles={articles}
+                className={className}
+            />
+        );
+    },
+);

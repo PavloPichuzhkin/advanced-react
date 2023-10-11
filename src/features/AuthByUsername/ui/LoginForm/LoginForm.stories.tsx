@@ -15,35 +15,43 @@ export default meta;
 type Story = StoryObj<typeof LoginForm>;
 
 export const Primary: Story = {
-    args: {
-    },
+    args: {},
 };
-Primary.decorators = [PartialStoreDecorator({
-    loginForm: { username: '123', password: 'asd' },
-})];
+Primary.decorators = [
+    PartialStoreDecorator({
+        loginForm: { username: '123', password: 'asd' },
+    }),
+];
 
 export const Dark: Story = {
-    args: {
-    },
+    args: {},
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK), PartialStoreDecorator({
-    loginForm: { username: '123', password: 'asd' },
-}, { loginForm: loginReducer })];
+Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    PartialStoreDecorator(
+        {
+            loginForm: { username: '123', password: 'asd' },
+        },
+        { loginForm: loginReducer },
+    ),
+];
 
 export const withError: Story = {
-    args: {
-    },
+    args: {},
 };
 withError.args = {};
-withError.decorators = [PartialStoreDecorator({
-    loginForm: { username: '123', password: 'asd', error: 'ERROR' },
-})];
+withError.decorators = [
+    PartialStoreDecorator({
+        loginForm: { username: '123', password: 'asd', error: 'ERROR' },
+    }),
+];
 
 export const Loading: Story = {
-    args: {
-    },
+    args: {},
 };
 Loading.args = {};
-Loading.decorators = [PartialStoreDecorator({
-    loginForm: { isLoading: true },
-})];
+Loading.decorators = [
+    PartialStoreDecorator({
+        loginForm: { isLoading: true },
+    }),
+];

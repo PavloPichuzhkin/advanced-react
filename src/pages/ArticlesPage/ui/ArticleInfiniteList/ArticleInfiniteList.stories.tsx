@@ -17,32 +17,44 @@ type Story = StoryObj<typeof ArticleInfiniteList>;
 
 export const Primary: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK),
+    decorators: [
+        ThemeDecorator(Theme.DARK),
         PartialStoreDecorator({
             articlesPage: mockReturnArticlesPageState(),
-        })],
+        }),
+    ],
 };
 
 export const Loading: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK),
+    decorators: [
+        ThemeDecorator(Theme.DARK),
         PartialStoreDecorator({
             articlesPage: mockReturnArticlesPageState(true),
-        })],
+        }),
+    ],
 };
 
 export const Error: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK),
+    decorators: [
+        ThemeDecorator(Theme.DARK),
         PartialStoreDecorator({
-            articlesPage: mockReturnArticlesPageState(false, ArticleView.SMALL, 'ooo'),
-        })],
+            articlesPage: mockReturnArticlesPageState(
+                false,
+                ArticleView.SMALL,
+                'ooo',
+            ),
+        }),
+    ],
 };
 
 export const Big: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK),
+    decorators: [
+        ThemeDecorator(Theme.DARK),
         PartialStoreDecorator({
             articlesPage: mockReturnArticlesPageState(false, ArticleView.BIG),
-        })],
+        }),
+    ],
 };

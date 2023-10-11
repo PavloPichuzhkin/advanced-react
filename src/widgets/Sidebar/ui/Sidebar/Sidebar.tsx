@@ -10,7 +10,7 @@ import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 
 interface SidebarProps {
-    className?: string
+    className?: string;
 }
 
 export const Sidebar = ({ className }: SidebarProps) => {
@@ -21,33 +21,39 @@ export const Sidebar = ({ className }: SidebarProps) => {
         setCollapsed((prev) => !prev);
     };
 
-    const itemsList = useMemo(() => sidebarItemsList.map((item) => (
-        <SidebarItem
-            item={item}
-            collapsed={collapsed}
-            key={item.path}
-        />
-    )), [collapsed, sidebarItemsList]);
+    const itemsList = useMemo(
+        () =>
+            sidebarItemsList.map((item) => (
+                <SidebarItem
+                    item={item}
+                    collapsed={collapsed}
+                    key={item.path}
+                />
+            )),
+        [collapsed, sidebarItemsList],
+    );
 
     return (
         <aside
-            data-testid="sidebar"
-            className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
+            data-testid='sidebar'
+            className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
+                className,
+            ])}
         >
             <Button
                 theme={ButtonTheme.BACKGROUND_INVERTED}
                 onClick={onToggle}
-                data-testid="sidebar-toggle"
+                data-testid='sidebar-toggle'
                 className={cls.collapseBtn}
                 size={ButtonSize.L}
                 square
             >
                 {collapsed ? '\u003e' : '\u003c'}
             </Button>
-            <VStack role="navigation" gap="4" className={cls.items}>
+            <VStack role='navigation' gap='4' className={cls.items}>
                 {itemsList}
             </VStack>
-            <HStack justify="center" max className={cls.switchers}>
+            <HStack justify='center' max className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher short={collapsed} className={cls.lang} />
             </HStack>

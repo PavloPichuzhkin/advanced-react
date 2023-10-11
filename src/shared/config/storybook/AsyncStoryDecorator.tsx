@@ -23,7 +23,9 @@ import createAsyncCallback from '@loki/create-async-callback';
 // };
 
 const useLokiCaptureDelay = (delay = 0) => {
-    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+    const timerRef = useRef() as MutableRefObject<
+        ReturnType<typeof setTimeout>
+    >;
     useEffect(() => {
         if (isLokiRunning() && delay) {
             const onDone = createAsyncCallback();
@@ -35,7 +37,10 @@ const useLokiCaptureDelay = (delay = 0) => {
         };
     }, [delay]);
 };
-export const AsyncStoryDecorator = (StoryComponent: StoryFn, { parameters }: StoryContext) => {
+export const AsyncStoryDecorator = (
+    StoryComponent: StoryFn,
+    { parameters }: StoryContext,
+) => {
     const { loki } = parameters;
     useLokiCaptureDelay(loki.captureDelay);
 

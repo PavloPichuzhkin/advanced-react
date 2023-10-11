@@ -4,10 +4,10 @@ import { Country } from '@/entities/CountrySelect';
 export interface Profile {
     first?: string;
     lastname?: string;
-    age?: number,
-    currency?: Currency,
+    age?: number;
+    currency?: Currency;
     country?: Country;
-    city?: string,
+    city?: string;
     username?: string;
     avatar?: string;
     id?: string;

@@ -20,34 +20,34 @@ interface CountrySelectProps {
 //     { value: Country.FRANCE, content: Country.FRANCE },
 //
 // ];
-const options = Object.keys(CountryOptions).map(
-    (opt) => ({
-        value: opt,
-        content: opt,
-        disabled: false,
-    }),
-);
+const options = Object.keys(CountryOptions).map((opt) => ({
+    value: opt,
+    content: opt,
+    disabled: false,
+}));
 options[options.length - 1].disabled = true;
-export const CountrySelect = memo(({
-    className, value, onChange, readonly,
-}: CountrySelectProps) => {
-    const { t } = useTranslation('profile');
+export const CountrySelect = memo(
+    ({ className, value, onChange, readonly }: CountrySelectProps) => {
+        const { t } = useTranslation('profile');
 
-    const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Country);
-    }, [onChange]);
+        const onChangeHandler = useCallback(
+            (value: string) => {
+                onChange?.(value as Country);
+            },
+            [onChange],
+        );
 
-    return (
-        <ListBox
-            className={classNames('', {}, [className])}
-            defaultValue={t('Select country')}
-            label={t('Select country')}
-            items={options}
-            value={value}
-            onChange={onChangeHandler}
-            readonly={readonly}
-            direction="top right"
-
-        />
-    );
-});
+        return (
+            <ListBox
+                className={classNames('', {}, [className])}
+                defaultValue={t('Select country')}
+                label={t('Select country')}
+                items={options}
+                value={value}
+                onChange={onChangeHandler}
+                readonly={readonly}
+                direction='top right'
+            />
+        );
+    },
+);

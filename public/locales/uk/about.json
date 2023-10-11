@@ -1,8 +1,8 @@
 {
-  "About Page": "Про нас",
-  "description": {
-    "part1": "Для початку ..."
-  },
-  "Test": "Тест",
-  "some": "Щось"
+    "About Page": "Про нас",
+    "description": {
+        "part1": "Для початку ..."
+    },
+    "Test": "Тест",
+    "some": "Щось"
 }

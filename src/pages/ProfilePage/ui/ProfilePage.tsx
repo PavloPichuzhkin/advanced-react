@@ -14,7 +14,9 @@ interface ProfilePageProps {
 const ProfilePage = ({ className }: ProfilePageProps) => {
     const { t } = useTranslation('profile');
     let { id } = useParams<{ id: string }>();
-    if (__PROJECT__ === 'storybook') { id = '1'; }
+    if (__PROJECT__ === 'storybook') {
+        id = '1';
+    }
     if (!id) {
         return <Text text={t('Profile not found')} />;
     }
@@ -22,9 +24,9 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     return (
         <Page
             className={classNames('', {}, [className])}
-            data-testid="ProfilePage"
+            data-testid='ProfilePage'
         >
-            <VStack gap="16" max>
+            <VStack gap='16' max>
                 <EditableProfileCard id={id} />
             </VStack>
         </Page>

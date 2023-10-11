@@ -10,13 +10,9 @@ const AboutPage = () => {
     const { t } = useTranslation('about');
     const [test, setTest] = useState(0);
     return (
-        <Page data-testid="AboutPage">
-            <div>
-                {t('About Page')}
-            </div>
-            <div>
-                {t('description.part1')}
-            </div>
+        <Page data-testid='AboutPage'>
+            <div>{t('About Page')}</div>
+            <div>{t('description.part1')}</div>
             {/* <button type="button" onClick={() => setTest((t) => t + 1)}>Test</button> */}
             <ThrowErrorButton />
             <Counter />

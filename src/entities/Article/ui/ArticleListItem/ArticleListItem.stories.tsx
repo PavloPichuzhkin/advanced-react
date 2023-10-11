@@ -1,10 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
-import {
-    mockReturnArticlesPageState,
-
-} from '@/shared/assets/tests/mockReturnArticlesPageState';
+import { mockReturnArticlesPageState } from '@/shared/assets/tests/mockReturnArticlesPageState';
 import { selectEntitiesFromNormalizedData } from '@/shared/lib/helpers/selectEntities/selectEntities';
 import { ArticleView } from '../../model/consts/articleConsts';
 import { ArticleListItem } from './ArticleListItem';
@@ -17,7 +14,9 @@ const meta: Meta<typeof ArticleListItem> = {
 
 export default meta;
 type Story = StoryObj<typeof ArticleListItem>;
-const article = selectEntitiesFromNormalizedData(mockReturnArticlesPageState)[0];
+const article = selectEntitiesFromNormalizedData(
+    mockReturnArticlesPageState,
+)[0];
 export const Primary: Story = {
     args: { article, view: ArticleView.SMALL },
 };
@@ -27,18 +26,15 @@ export const Big: Story = {
 };
 export const SmallDark: Story = {
     args: { article, view: ArticleView.SMALL },
-    decorators: [ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const BigDark: Story = {
     args: { article, view: ArticleView.BIG },
-    decorators: [ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const Danger: Story = {
     args: { article, view: ArticleView.BIG },
-    decorators: [ThemeDecorator(Theme.DANGER),
-    ],
+    decorators: [ThemeDecorator(Theme.DANGER)],
 };

@@ -12,26 +12,27 @@ const meta: Meta<typeof Code> = {
 export default meta;
 type Story = StoryObj<typeof Code>;
 
-const code = 'import type { Meta, StoryObj } from \'@storybook/react\';\n'
-    + '\n'
-    + 'import { ThemeDecorator } from \'shared/config/storybook/ThemeDecorator\';\n'
-    + 'import { Theme } from \'shared/lib/context/ThemeContext\';\n'
-    + 'import { Button, ButtonSize, ButtonTheme } from \'./Button\';\n'
-    + '\n'
-    + 'const meta: Meta<typeof Button> = {\n'
-    + '    title: \'Shared/Button\',\n'
-    + '    component: Button,\n'
-    + '    tags: [\'autodocs\'],\n'
-    + '};\n'
-    + '\n'
-    + 'export default meta;\n'
-    + 'type Story = StoryObj<typeof Button>;\n'
-    + '\n'
-    + 'export const Primary: Story = {\n'
-    + '    args: {\n'
-    + '        children: \'Text\',\n'
-    + '    },\n'
-    + '};';
+const code =
+    "import type { Meta, StoryObj } from '@storybook/react';\n" +
+    '\n' +
+    "import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';\n" +
+    "import { Theme } from 'shared/lib/context/ThemeContext';\n" +
+    "import { Button, ButtonSize, ButtonTheme } from './Button';\n" +
+    '\n' +
+    'const meta: Meta<typeof Button> = {\n' +
+    "    title: 'Shared/Button',\n" +
+    '    component: Button,\n' +
+    "    tags: ['autodocs'],\n" +
+    '};\n' +
+    '\n' +
+    'export default meta;\n' +
+    'type Story = StoryObj<typeof Button>;\n' +
+    '\n' +
+    'export const Primary: Story = {\n' +
+    '    args: {\n' +
+    "        children: 'Text',\n" +
+    '    },\n' +
+    '};';
 
 export const Primary: Story = {
     args: {

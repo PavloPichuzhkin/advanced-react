@@ -20,24 +20,28 @@ export default meta;
 type Story = StoryObj<typeof ProfilePage>;
 
 export const Light: Story = {
-    args: { },
-    decorators: [PartialStoreDecorator({
-        profile: {
-            form: mockProfileData,
-            data: mockProfileData,
-            readonly: true,
-        },
-    })],
+    args: {},
+    decorators: [
+        PartialStoreDecorator({
+            profile: {
+                form: mockProfileData,
+                data: mockProfileData,
+                readonly: true,
+            },
+        }),
+    ],
 };
 
 export const Dark: Story = {
-    args: { },
-    decorators: [ThemeDecorator(Theme.DARK),
+    args: {},
+    decorators: [
+        ThemeDecorator(Theme.DARK),
         PartialStoreDecorator({
             profile: {
                 form: mockProfileData,
                 data: mockProfileData,
                 readonly: undefined,
             },
-        })],
+        }),
+    ],
 };

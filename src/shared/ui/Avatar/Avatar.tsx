@@ -16,35 +16,47 @@ interface AvatarProps {
     fallbackInverted?: boolean;
 }
 
-export const Avatar = memo(({
-    className,
-    // src = defaultAvatar,
-    src,
-    size,
-    alt,
-    border,
-    fallbackInverted,
-}: AvatarProps) => {
-    const mods: Mods = {};
+export const Avatar = memo(
+    ({
+        className,
+        // src = defaultAvatar,
+        src,
+        size,
+        alt,
+        border,
+        fallbackInverted,
+    }: AvatarProps) => {
+        const mods: Mods = {};
 
-    const styles = useMemo<CSSProperties>(() => ({
-        width: size || 100,
-        height: size || 100,
-        borderRadius: border || '50%',
-    }), [border, size]);
+        const styles = useMemo<CSSProperties>(
+            () => ({
+                width: size || 100,
+                height: size || 100,
+                borderRadius: border || '50%',
+            }),
+            [border, size],
+        );
 
-    const fallback = <Skeleton width={size} height={size} border="50%" />;
-    const errorFallback = <Icon inverted={fallbackInverted} width={size} height={size} Svg={UserIcon} />;
-    // broke in LocalStorage user - avatar link to check errorFallback for example in AvatarDropdown
+        const fallback = <Skeleton width={size} height={size} border='50%' />;
+        const errorFallback = (
+            <Icon
+                inverted={fallbackInverted}
+                width={size}
+                height={size}
+                Svg={UserIcon}
+            />
+        );
+        // broke in LocalStorage user - avatar link to check errorFallback for example in AvatarDropdown
 
-    return (
-        <AppImage
-            fallback={fallback}
-            errorFallback={errorFallback}
-            src={src}
-            alt={alt}
-            style={styles}
-            className={classNames(cls.Avatar, mods, [className])}
-        />
-    );
-});
+        return (
+            <AppImage
+                fallback={fallback}
+                errorFallback={errorFallback}
+                src={src}
+                alt={alt}
+                style={styles}
+                className={classNames(cls.Avatar, mods, [className])}
+            />
+        );
+    },
+);

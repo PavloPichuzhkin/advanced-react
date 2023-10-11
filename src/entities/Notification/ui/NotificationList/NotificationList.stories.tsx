@@ -30,13 +30,9 @@ export const Primary: Story = {
 
 export const Dark: Story = {
     args: {},
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 export const Danger: Story = {
     args: {},
-    decorators: [
-        ThemeDecorator(Theme.DANGER),
-    ],
+    decorators: [ThemeDecorator(Theme.DANGER)],
 };

@@ -18,19 +18,23 @@ import { Article } from '../../model/types/article';
 
 interface ArticleListProps {
     className?: string;
-    articles: Article[]
+    articles: Article[];
     isLoading?: boolean;
     view?: ArticleView;
     target?: HTMLAttributeAnchorTarget;
-    virtualized?:boolean;
+    virtualized?: boolean;
 }
 
-const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
-    .fill(0)
-    .map((item, index) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <ArticleListItemSkeleton className={cls.cardSkeleton} key={index} view={view} />
-    ));
+const getSkeletons = (view: ArticleView) =>
+    new Array(view === ArticleView.SMALL ? 9 : 3)
+        .fill(0)
+        .map((item, index) => (
+            <ArticleListItemSkeleton
+                className={cls.cardSkeleton}
+                key={index}
+                view={view}
+            />
+        ));
 
 export const VirtualizedArticleList = memo((props: ArticleListProps) => {
     const {
@@ -81,7 +85,9 @@ export const VirtualizedArticleList = memo((props: ArticleListProps) => {
     if (!isLoading && !articles.length) {
         return (
             <div className={classNames(cls.noArticles, {}, [className])}>
-                <Card><Text size={TextSize.L} title={t('No articles found')} /></Card>
+                <Card>
+                    <Text size={TextSize.L} title={t('No articles found')} />
+                </Card>
             </div>
         );
     }

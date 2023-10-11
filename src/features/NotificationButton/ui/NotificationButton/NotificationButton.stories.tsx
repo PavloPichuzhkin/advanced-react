@@ -12,11 +12,12 @@ const meta: Meta<typeof NotificationButton> = {
     // tags: ['autodocs'],
     decorators: [
         (Story: StoryFn) => (
-            <div style={{
-                padding: '0 15rem',
-                display: 'flex',
-                justifyContent: 'end',
-            }}
+            <div
+                style={{
+                    padding: '0 15rem',
+                    display: 'flex',
+                    justifyContent: 'end',
+                }}
             >
                 <Story />
             </div>
@@ -51,13 +52,9 @@ export const Primary: Story = {
 };
 export const Dark: Story = {
     args: {},
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 export const Danger: Story = {
     args: {},
-    decorators: [
-        ThemeDecorator(Theme.DANGER),
-    ],
+    decorators: [ThemeDecorator(Theme.DANGER)],
 };

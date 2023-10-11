@@ -15,10 +15,7 @@ export const ThrowErrorButton = () => {
     }, [error]);
 
     return (
-        <Button
-            onClick={onThrow}
-            theme={ButtonTheme.BACKGROUND_INVERTED}
-        >
+        <Button onClick={onThrow} theme={ButtonTheme.BACKGROUND_INVERTED}>
             {t('Throw error')}
         </Button>
     );

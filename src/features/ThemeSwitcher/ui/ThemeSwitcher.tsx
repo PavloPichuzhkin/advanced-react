@@ -7,7 +7,7 @@ import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 
 interface ThemeSwitcherProps {
-    className?: string
+    className?: string;
 }
 
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {

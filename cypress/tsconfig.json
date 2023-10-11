@@ -1,17 +1,13 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "lib": ["es5", "dom"],
-    "types": ["cypress", "node"],
-    "allowJs": true,
-    "isolatedModules": false,
-    "sourceMap": false
-  },
-  "extends": "../tsconfig.json",
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": [
-    "node_modules",
-    "cypress",
-    "./cypress.config.ts"
-  ]
+    "compilerOptions": {
+        "target": "es5",
+        "lib": ["es5", "dom"],
+        "types": ["cypress", "node"],
+        "allowJs": true,
+        "isolatedModules": false,
+        "sourceMap": false
+    },
+    "extends": "../tsconfig.json",
+    "include": ["**/*.ts", "**/*.tsx"],
+    "exclude": ["node_modules", "cypress", "./cypress.config.ts"]
 }

@@ -19,7 +19,9 @@ export const ErrorPage = ({ className }: ErrorPageProps) => {
     const { theme } = useTheme();
 
     return (
-        <div className={classNames(cls.ErrorPage, {}, [className, 'app', theme])}>
+        <div
+            className={classNames(cls.ErrorPage, {}, [className, 'app', theme])}
+        >
             <p>{t('An unexpected error occurred')}</p>
             <Button
                 onClick={reloadPage}

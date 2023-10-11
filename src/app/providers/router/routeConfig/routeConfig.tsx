@@ -38,12 +38,12 @@ import {
 //     [AppRoutes.NOT_FOUND]: '*',
 // };
 
-export interface AppRouteProps { // import {RouteProps} from "react-router-dom";
-    path: string
-    element: ReactNode
-    authOnly?: boolean
+export interface AppRouteProps {
+    // import {RouteProps} from "react-router-dom";
+    path: string;
+    element: ReactNode;
+    authOnly?: boolean;
     roles?: UserRole[];
-
 }
 
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {

@@ -29,8 +29,11 @@ export const Primary: Story = {
     },
     decorators: [
         (Story: StoryFn) => (
-            <div style={{ padding: '5rem' }}><Story /></div>
-        )],
+            <div style={{ padding: '5rem' }}>
+                <Story />
+            </div>
+        ),
+    ],
 };
 
 export const Dark: Story = {
@@ -42,8 +45,12 @@ export const Dark: Story = {
             { content: 'Some content 3', value: 'Value 3' },
         ],
     },
-    decorators: [ThemeDecorator(Theme.DARK),
+    decorators: [
+        ThemeDecorator(Theme.DARK),
         (Story: StoryFn) => (
-            <div style={{ padding: '5rem' }}><Story /></div>
-        )],
+            <div style={{ padding: '5rem' }}>
+                <Story />
+            </div>
+        ),
+    ],
 };

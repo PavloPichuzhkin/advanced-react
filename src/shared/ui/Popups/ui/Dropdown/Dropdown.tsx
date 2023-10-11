@@ -23,23 +23,22 @@ interface DropdownProps {
 }
 
 export function Dropdown(props: DropdownProps) {
-    const {
-        className, trigger, items, direction = 'bottom right',
-    } = props;
+    const { className, trigger, items, direction = 'bottom right' } = props;
 
     const menuClasses = [mapDirectionClass[direction]];
 
     return (
-
-        <Menu as="div" className={classNames(popupCls.popup, {}, [className])}>
+        <Menu as='div' className={classNames(popupCls.popup, {}, [className])}>
             <Menu.Button className={popupCls.btn}>
-                <Button as="div" theme={ButtonTheme.CLEAR}>{trigger}</Button>
+                <Button as='div' theme={ButtonTheme.CLEAR}>
+                    {trigger}
+                </Button>
             </Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
                 {items.map((item, index) => {
-                    const content = ({ active }: {active: boolean}) => (
+                    const content = ({ active }: { active: boolean }) => (
                         <button
-                            type="button"
+                            type='button'
                             disabled={item.disabled}
                             onClick={item.onClick}
                             className={classNames(cls.item, {
@@ -53,16 +52,23 @@ export function Dropdown(props: DropdownProps) {
 
                     if (item.href) {
                         return (
-                            // eslint-disable-next-line react/no-array-index-key
-                            <Menu.Item key={index} as={Link} to={item.href} disabled={item.disabled}>
+                            <Menu.Item
+                                key={index}
+                                as={Link}
+                                to={item.href}
+                                disabled={item.disabled}
+                            >
                                 {content}
                             </Menu.Item>
                         );
                     }
 
                     return (
-                        // eslint-disable-next-line react/no-array-index-key
-                        <Menu.Item key={index} as={Fragment} disabled={item.disabled}>
+                        <Menu.Item
+                            key={index}
+                            as={Fragment}
+                            disabled={item.disabled}
+                        >
                             {content}
                         </Menu.Item>
                     );

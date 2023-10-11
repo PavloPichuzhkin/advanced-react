@@ -10,18 +10,28 @@ interface ArticleTipsBlockComponentProps {
     block: ArticleTipsBlock;
 }
 
-export const ArticleTipsBlockComponent = memo((props: ArticleTipsBlockComponentProps) => {
-    const { className, block } = props;
-    const { t } = useTranslation('articles');
+export const ArticleTipsBlockComponent = memo(
+    (props: ArticleTipsBlockComponentProps) => {
+        const { className, block } = props;
+        const { t } = useTranslation('articles');
 
-    return (
-        <div className={classNames(cls.ArticleTipsBlockComponent, {}, [className, cls[`${block.title}`]])}>
-            <Text title={t(block.title)} className={cls.title} />
-            {block.paragraphs.map((paragraph, index) => (
-                // eslint-disable-next-line react/no-array-index-key
-                <Text key={index} text={paragraph} className={cls.paragraph} size={TextSize.M} />
-
-            ))}
-        </div>
-    );
-});
+        return (
+            <div
+                className={classNames(cls.ArticleTipsBlockComponent, {}, [
+                    className,
+                    cls[`${block.title}`],
+                ])}
+            >
+                <Text title={t(block.title)} className={cls.title} />
+                {block.paragraphs.map((paragraph, index) => (
+                    <Text
+                        key={index}
+                        text={paragraph}
+                        className={cls.paragraph}
+                        size={TextSize.M}
+                    />
+                ))}
+            </div>
+        );
+    },
+);

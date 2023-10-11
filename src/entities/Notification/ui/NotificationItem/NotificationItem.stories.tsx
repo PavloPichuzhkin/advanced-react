@@ -17,18 +17,14 @@ export default meta;
 type Story = StoryObj<typeof NotificationItem>;
 
 export const Primary: Story = {
-    args: { },
+    args: {},
     decorators: [],
 };
 export const Dark: Story = {
     args: {},
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 export const Danger: Story = {
     args: {},
-    decorators: [
-        ThemeDecorator(Theme.DANGER),
-    ],
+    decorators: [ThemeDecorator(Theme.DANGER)],
 };

@@ -3,7 +3,10 @@ import { memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { ArticleDetails } from '@/entities/Article';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from '@/widgets/Page';
@@ -17,7 +20,7 @@ import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByAr
 import { ArticleRating } from '@/features/ArticleRating';
 
 interface ArticleDetailsPageProps {
-    className?: string
+    className?: string;
 }
 
 const reducers: ReducersList = {
@@ -34,10 +37,14 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         dispatch(fetchCommentsByArticleId(id));
     });
 
-    if (__PROJECT__ === 'storybook') { id = '1'; }
+    if (__PROJECT__ === 'storybook') {
+        id = '1';
+    }
     if (!id) {
         return (
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
                 {t('Article not found')}
             </Page>
         );
@@ -45,9 +52,10 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <VStack gap="16" max>
+            <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
+                <VStack gap='16' max>
                     {/* made scroll behavior uncontrolled because of align-items prop */}
                     {/* <div className={cls.pageContainer}> */}
                     <ArticleDetailsPageHeader />

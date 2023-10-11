@@ -46,7 +46,15 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <HStack justify="center" max align="center" className={classNames(cls.ProfileCard, { }, [className, cls.loading])}>
+            <HStack
+                justify='center'
+                max
+                align='center'
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.loading,
+                ])}
+            >
                 <Spinner />
             </HStack>
         );
@@ -54,7 +62,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (error) {
         return (
-            <HStack justify="center" max className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <HStack
+                justify='center'
+                max
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.error,
+                ])}
+            >
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('An error occurred while loading the profile')}
@@ -70,10 +85,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
     };
 
     return (
-        <VStack max gap="12" className={classNames(cls.ProfileCard, mods, [className])}>
+        <VStack
+            max
+            gap='12'
+            className={classNames(cls.ProfileCard, mods, [className])}
+        >
             {data?.avatar && (
-                <HStack justify="center" max>
-                    <Avatar src={data?.avatar} size={150} border="40%" />
+                <HStack justify='center' max>
+                    <Avatar src={data?.avatar} size={150} border='40%' />
                 </HStack>
             )}
             <Input
@@ -82,15 +101,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 onChange={onChangeFirstname}
                 readonly={readonly}
                 autofocus={!readonly}
-                data-testid="ProfileCard.firstname"
+                data-testid='ProfileCard.firstname'
             />
             <Input
                 value={data?.lastname}
                 placeholder={t('Your Lastname')}
                 onChange={onChangeLastname}
                 readonly={readonly}
-                data-testid="ProfileCard.lastname"
-
+                data-testid='ProfileCard.lastname'
             />
             <Input
                 value={data?.age}

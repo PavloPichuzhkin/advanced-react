@@ -21,34 +21,31 @@ const meta: Meta<typeof ArticleList> = {
 export default meta;
 type Story = StoryObj<typeof ArticleList>;
 
-const articles = selectEntitiesFromNormalizedData(mockReturnArticlesPageState) as Article[];
+const articles = selectEntitiesFromNormalizedData(
+    mockReturnArticlesPageState,
+) as Article[];
 
 export const Primary: Story = {
     args: { articles },
-    decorators: [ThemeDecorator(Theme.LIGHT),
-    ],
+    decorators: [ThemeDecorator(Theme.LIGHT)],
 };
 
 export const Loading: Story = {
     args: { articles: [], isLoading: true },
-    decorators: [ThemeDecorator(Theme.LIGHT),
-    ],
+    decorators: [ThemeDecorator(Theme.LIGHT)],
 };
 
 export const Big: Story = {
     args: { articles, view: ArticleView.BIG },
-    decorators: [ThemeDecorator(Theme.LIGHT),
-    ],
+    decorators: [ThemeDecorator(Theme.LIGHT)],
 };
 
 export const BigLoading: Story = {
     args: { articles: [], isLoading: true, view: ArticleView.BIG },
-    decorators: [ThemeDecorator(Theme.LIGHT),
-    ],
+    decorators: [ThemeDecorator(Theme.LIGHT)],
 };
 
 export const Danger: Story = {
     args: { articles },
-    decorators: [ThemeDecorator(Theme.DANGER),
-    ],
+    decorators: [ThemeDecorator(Theme.DANGER)],
 };

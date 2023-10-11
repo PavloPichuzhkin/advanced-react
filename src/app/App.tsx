@@ -20,17 +20,15 @@ function App() {
     }, [dispatch]);
 
     return (
-
         <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback="">
+            <Suspense fallback=''>
                 {/* for i18next */}
                 <Navbar />
-                <div className="content-page">
+                <div className='content-page'>
                     <Sidebar />
                     {inited && <AppRouter />}
                 </div>
             </Suspense>
-
         </div>
     );
 }

@@ -20,7 +20,9 @@ const meta: Meta<typeof AvatarDropdown> = {
             },
         }),
         (Story: StoryFn) => (
-            <div style={{ padding: '8rem 12rem', display: 'flex' }}><Story /></div>
+            <div style={{ padding: '8rem 12rem', display: 'flex' }}>
+                <Story />
+            </div>
         ),
     ],
 };
@@ -33,13 +35,9 @@ export const Primary: Story = {
 };
 export const Dark: Story = {
     args: {},
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 export const Danger: Story = {
     args: {},
-    decorators: [
-        ThemeDecorator(Theme.DANGER),
-    ],
+    decorators: [ThemeDecorator(Theme.DANGER)],
 };

@@ -4,11 +4,17 @@ import { useSelector } from 'react-redux';
 import { Input } from '@/shared/ui/Input';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { HStack } from '@/shared/ui/Stack';
-import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice';
+import {
+    addCommentFormActions,
+    addCommentFormReducer,
+} from '../../model/slice/addCommentFormSlice';
 import {
     getAddCommentFormError,
     getAddCommentFormIsLoading,
@@ -33,9 +39,12 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
     const addCommentFormIsLoading = useSelector(getAddCommentFormIsLoading);
     const dispatch = useAppDispatch();
 
-    const onCommentTextChange = useCallback((value: string) => {
-        dispatch(addCommentFormActions.setText(value));
-    }, [dispatch]);
+    const onCommentTextChange = useCallback(
+        (value: string) => {
+            dispatch(addCommentFormActions.setText(value));
+        },
+        [dispatch],
+    );
 
     const onSendHandler = useCallback(async () => {
         const resultOnSendComment = await onSendComment();
@@ -48,10 +57,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
     return (
         <DynamicModuleLoader reducers={reducers}>
             {addCommentFormIsLoading && (
-                <Text
-                    theme={TextTheme.ERROR}
-                    title={t('Comment is sending')}
-                />
+                <Text theme={TextTheme.ERROR} title={t('Comment is sending')} />
             )}
             {error && (
                 <Text
@@ -60,21 +66,21 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
                 />
             )}
             <HStack
-                data-testid="AddCommentForm"
+                data-testid='AddCommentForm'
                 max
-                justify="between"
-                align="center"
+                justify='between'
+                align='center'
                 className={classNames(cls.AddCommentForm, {}, [className])}
             >
                 <Input
-                    data-testid="AddCommentForm.Input"
+                    data-testid='AddCommentForm.Input'
                     className={cls.input}
                     placeholder={t('Enter comment')}
                     value={text}
                     onChange={onCommentTextChange}
                 />
                 <Button
-                    data-testid="AddCommentForm.Button"
+                    data-testid='AddCommentForm.Button'
                     theme={ButtonTheme.OUTLINE}
                     onClick={onSendHandler}
                     disabled={addCommentFormIsLoading}

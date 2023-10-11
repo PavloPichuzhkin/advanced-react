@@ -13,28 +13,31 @@ const meta: Meta<typeof Popover> = {
     component: Popover,
     // tags: ['autodocs'],
     args: {
-        trigger:
-    <Button as="div" theme={ButtonTheme.CLEAR}>
-        <Icon Svg={NotificationIcon} inverted />
-    </Button>,
+        trigger: (
+            <Button as='div' theme={ButtonTheme.CLEAR}>
+                <Icon Svg={NotificationIcon} inverted />
+            </Button>
+        ),
         direction: 'bottom right',
         // children: <NotificationList className={cls.notifications} />,
-        children:
-    <>
-        <div>Some child 1</div>
-        <div>Some child 2</div>
-        <div>Some child 3</div>
-        <div>Some child 4</div>
-    </>,
+        children: (
+            <>
+                <div>Some child 1</div>
+                <div>Some child 2</div>
+                <div>Some child 3</div>
+                <div>Some child 4</div>
+            </>
+        ),
     },
     decorators: [
         (Story: StoryFn) => (
-            <div style={{
-                whiteSpace: 'nowrap',
-                padding: '0 15rem',
-                display: 'flex',
-                justifyContent: 'end',
-            }}
+            <div
+                style={{
+                    whiteSpace: 'nowrap',
+                    padding: '0 15rem',
+                    display: 'flex',
+                    justifyContent: 'end',
+                }}
             >
                 <Story />
             </div>
@@ -54,14 +57,10 @@ export const Primary: Story = {
     decorators: [],
 };
 export const Dark: Story = {
-    args: { },
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+    args: {},
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 export const Danger: Story = {
-    args: { },
-    decorators: [
-        ThemeDecorator(Theme.DANGER),
-    ],
+    args: {},
+    decorators: [ThemeDecorator(Theme.DANGER)],
 };

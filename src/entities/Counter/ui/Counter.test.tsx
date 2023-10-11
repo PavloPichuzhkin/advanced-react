@@ -8,7 +8,9 @@ describe('Counter', () => {
         componentRender(<CounterEntity />, {
             initialState: { counterEntity: { valueEntity: 10 } },
         });
-        expect(screen.getByTestId('value-title-entity')).toHaveTextContent('10');
+        expect(screen.getByTestId('value-title-entity')).toHaveTextContent(
+            '10',
+        );
     });
 
     test('increment', () => {
@@ -17,7 +19,9 @@ describe('Counter', () => {
         });
         fireEvent.click(screen.getByTestId('increment-btn-entity'));
         // userEvent.click(screen.getByTestId('increment-btn'));
-        expect(screen.getByTestId('value-title-entity')).toHaveTextContent('11');
+        expect(screen.getByTestId('value-title-entity')).toHaveTextContent(
+            '11',
+        );
     });
 
     test('decrement', async () => {

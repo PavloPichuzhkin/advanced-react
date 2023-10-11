@@ -14,5 +14,4 @@ export const CountryOptions: Record<Country, Country> = {
     [Country.BRITAIN]: Country.BRITAIN,
     [Country.UKRAINE]: Country.UKRAINE,
     [Country.FRANCE]: Country.FRANCE,
-
 };

@@ -14,7 +14,10 @@ describe('The user goes to the ArticleDetailsPage', () => {
     describe('Work with API', () => {
         it('There are article details ', () => {
             cy.getByTestId('ArticleDetails.Info').should('exist');
-            cy.getByTestId('ArticleDetails.Header').should('have.text', 'Chemistry TEST');
+            cy.getByTestId('ArticleDetails.Header').should(
+                'have.text',
+                'Chemistry TEST',
+            );
         });
         it('Here is the list of recommended articles', () => {
             cy.getByTestId('ArticleRecommendationsList').should('exist');
@@ -34,7 +37,9 @@ describe('The user goes to the ArticleDetailsPage', () => {
     });
     describe('Work with fixtures', () => {
         it('User gives an estimate (example with stubs and fixtures)', () => {
-            cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
+            cy.intercept('GET', '**/articles/*', {
+                fixture: 'article-details.json',
+            });
             cy.getByTestId('ArticleDetails.Info');
             cy.getByTestId('RatingCard').scrollIntoView();
             cy.setRate(4, 'feedback');

@@ -17,7 +17,7 @@ export interface ArticleImageBlock extends ArticleBlockBase {
     title: string;
 }
 
-type TipsTitleType= 'Tips' | 'Note' | 'Warning';
+type TipsTitleType = 'Tips' | 'Note' | 'Warning';
 export interface ArticleTextBlock extends ArticleBlockBase {
     type: ArticleBlockType.TEXT;
     paragraphs: string[];

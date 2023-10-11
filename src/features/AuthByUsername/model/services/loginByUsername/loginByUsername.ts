@@ -15,10 +15,7 @@ export const loginByUsername = createAsyncThunk<
 >('login/loginByUsername', async (authData: LoginByUsernameProps, thunkAPI) => {
     const { extra, dispatch, rejectWithValue } = thunkAPI;
     try {
-        const response = await extra.api.post<User>(
-            '/login',
-            authData,
-        );
+        const response = await extra.api.post<User>('/login', authData);
         // const responseD = () => response.data;
         // type responseData= ReturnType<typeof responseD>
         // const responseData:User = response.data;
@@ -36,7 +33,10 @@ export const loginByUsername = createAsyncThunk<
             throw new Error();
         }
 
-        localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data)); // can set wrong data
+        localStorage.setItem(
+            USER_LOCALSTORAGE_KEY,
+            JSON.stringify(response.data),
+        ); // can set wrong data
 
         dispatch(userActions.setAuthData(response.data));
 

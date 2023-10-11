@@ -20,13 +20,10 @@ root.render(
         <StoreProvider>
             <ThemeProvider>
                 <ErrorBoundary>
-
                     <App />
-
                 </ErrorBoundary>
             </ThemeProvider>
         </StoreProvider>
-    </BrowserRouter>
+    </BrowserRouter>,
     // </StrictMode>
-    ,
 );

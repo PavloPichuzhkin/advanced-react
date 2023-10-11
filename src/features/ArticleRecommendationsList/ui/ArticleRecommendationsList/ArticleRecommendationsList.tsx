@@ -12,40 +12,40 @@ interface ArticleRecommendationsListProps {
     className?: string;
 }
 
-export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
-    const { className } = props;
-    const { t } = useTranslation('articles');
-    const {
-        isLoading,
-        data: articles,
-        error,
-    } = useArticleRecommendationsList(6);
+export const ArticleRecommendationsList = memo(
+    (props: ArticleRecommendationsListProps) => {
+        const { className } = props;
+        const { t } = useTranslation('articles');
+        const {
+            isLoading,
+            data: articles,
+            error,
+        } = useArticleRecommendationsList(6);
 
-    if (isLoading || error || !articles) {
-        return null;
-    }
+        if (isLoading || error || !articles) {
+            return null;
+        }
 
-    return (
-        <VStack
-            data-testid="ArticleRecommendationsList"
-            className={classNames('', {}, [className])}
-        >
-            <Text
-                title={t('Recommended')}
-            />
-            <VirtualizedArticleList
-                isLoading={isLoading}
-                articles={articles}
-                target="_blank"
-                virtualized={false}
-                className={cls.recommendations}
-            />
-            {/* <ArticleList */}
-            {/*    isLoading={isLoading} */}
-            {/*    articles={articles} */}
-            {/*    target="_blank" */}
-            {/*    className={cls.recommendations} */}
-            {/* /> */}
-        </VStack>
-    );
-});
+        return (
+            <VStack
+                data-testid='ArticleRecommendationsList'
+                className={classNames('', {}, [className])}
+            >
+                <Text title={t('Recommended')} />
+                <VirtualizedArticleList
+                    isLoading={isLoading}
+                    articles={articles}
+                    target='_blank'
+                    virtualized={false}
+                    className={cls.recommendations}
+                />
+                {/* <ArticleList */}
+                {/*    isLoading={isLoading} */}
+                {/*    articles={articles} */}
+                {/*    target="_blank" */}
+                {/*    className={cls.recommendations} */}
+                {/* /> */}
+            </VStack>
+        );
+    },
+);

@@ -20,7 +20,6 @@ interface RatingCardProps {
     onCancel?: (starsCount: number) => void;
     onAccept?: (starsCount: number, feedback?: string) => void;
     rate?: number;
-
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
@@ -38,14 +37,17 @@ export const RatingCard = memo((props: RatingCardProps) => {
     const [starsCount, setStarsCount] = useState(rate);
     const [feedback, setFeedback] = useState('');
 
-    const onSelectStars = useCallback((selectedStarsCount: number) => {
-        setStarsCount(selectedStarsCount);
-        if (hasFeedback) {
-            setIsModalOpen(true);
-        } else {
-            onAccept?.(selectedStarsCount);
-        }
-    }, [hasFeedback, onAccept]);
+    const onSelectStars = useCallback(
+        (selectedStarsCount: number) => {
+            setStarsCount(selectedStarsCount);
+            if (hasFeedback) {
+                setIsModalOpen(true);
+            } else {
+                onAccept?.(selectedStarsCount);
+            }
+        },
+        [hasFeedback, onAccept],
+    );
 
     const acceptHandle = useCallback(() => {
         setIsModalOpen(false);
@@ -59,11 +61,9 @@ export const RatingCard = memo((props: RatingCardProps) => {
 
     const modalContent = (
         <>
-            <Text
-                title={feedbackTitle}
-            />
+            <Text title={feedbackTitle} />
             <Input
-                data-testid="RatingCard.Input"
+                data-testid='RatingCard.Input'
                 value={feedback}
                 onChange={setFeedback}
                 placeholder={t('Your feedback')}
@@ -74,20 +74,26 @@ export const RatingCard = memo((props: RatingCardProps) => {
 
     return (
         <Card
-            data-testid="RatingCard"
+            data-testid='RatingCard'
             className={classNames(cls.RatingCard, {}, [className])}
         >
-            <VStack align="center" gap="8">
-                <Text title={starsCount ? t('Thanks for the rating!') : title} />
-                <StarRating size={40} onSelect={onSelectStars} selectedStars={starsCount} />
+            <VStack align='center' gap='8'>
+                <Text
+                    title={starsCount ? t('Thanks for the rating!') : title}
+                />
+                <StarRating
+                    size={40}
+                    onSelect={onSelectStars}
+                    selectedStars={starsCount}
+                />
             </VStack>
             <BrowserView>
                 <Modal isOpen={isModalOpen} lazy>
-                    <VStack max gap="24" className={cls.form}>
+                    <VStack max gap='24' className={cls.form}>
                         {modalContent}
-                        <HStack max gap="16" justify="end">
+                        <HStack max gap='16' justify='end'>
                             <Button
-                                data-testid="RatingCard.Close"
+                                data-testid='RatingCard.Close'
                                 onClick={cancelHandle}
                                 theme={ButtonTheme.OUTLINE_RED}
                             >
@@ -95,7 +101,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
                             </Button>
                             <Button
                                 onClick={acceptHandle}
-                                data-testid="RatingCard.Send"
+                                data-testid='RatingCard.Send'
                             >
                                 {t('Send')}
                             </Button>
@@ -104,10 +110,18 @@ export const RatingCard = memo((props: RatingCardProps) => {
                 </Modal>
             </BrowserView>
             <MobileView>
-                <AnimatedDrawer isOpen={isModalOpen} lazy onClose={cancelHandle}>
-                    <VStack gap="32">
+                <AnimatedDrawer
+                    isOpen={isModalOpen}
+                    lazy
+                    onClose={cancelHandle}
+                >
+                    <VStack gap='32'>
                         {modalContent}
-                        <Button fullWidth onClick={acceptHandle} size={ButtonSize.L}>
+                        <Button
+                            fullWidth
+                            onClick={acceptHandle}
+                            size={ButtonSize.L}
+                        >
                             {t('Send')}
                         </Button>
                     </VStack>

@@ -1,6 +1,4 @@
-import {
-    CSSProperties, HTMLAttributes, memo, ReactNode, useMemo,
-} from 'react';
+import { CSSProperties, HTMLAttributes, memo, ReactNode, useMemo } from 'react';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import cls from './Card.module.scss';
 
@@ -24,9 +22,12 @@ export const Card = memo((props: CardProps) => {
         theme = CardTheme.NORMAL,
         ...otherProps
     } = props;
-    const styles = useMemo<CSSProperties>(() => ({
-        borderRadius: border || '8px',
-    }), [border]);
+    const styles = useMemo<CSSProperties>(
+        () => ({
+            borderRadius: border || '8px',
+        }),
+        [border],
+    );
 
     return (
         <div

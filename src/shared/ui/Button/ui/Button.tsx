@@ -18,17 +18,17 @@ export enum ButtonSize {
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    className?: string
-    theme?: ButtonTheme
-    square?: boolean
-    size?: string
-    disabled?: boolean
-    fullWidth?: boolean
+    className?: string;
+    theme?: ButtonTheme;
+    square?: boolean;
+    size?: string;
+    disabled?: boolean;
+    fullWidth?: boolean;
 
-    as?: 'div' // only for headless ui
+    as?: 'div'; // only for headless ui
 }
 
-export const Button = memo((props:ButtonProps) => {
+export const Button = memo((props: ButtonProps) => {
     const {
         className,
         children,
@@ -46,13 +46,16 @@ export const Button = memo((props:ButtonProps) => {
         [cls.disabled]: disabled,
         [cls.divDisable]: Boolean(as),
         [cls.fullWidth]: fullWidth,
-
     };
     if (as) {
         return (
             <span
-                role="button"
-                className={classNames(cls.Button, mods, [className, cls[theme], cls[size]])}
+                role='button'
+                className={classNames(cls.Button, mods, [
+                    className,
+                    cls[theme],
+                    cls[size],
+                ])}
                 {...otherProps}
             >
                 {children}
@@ -61,8 +64,12 @@ export const Button = memo((props:ButtonProps) => {
     }
     return (
         <button
-            type="button"
-            className={classNames(cls.Button, mods, [className, cls[theme], cls[size]])}
+            type='button'
+            className={classNames(cls.Button, mods, [
+                className,
+                cls[theme],
+                cls[size],
+            ])}
             disabled={disabled}
             {...otherProps}
         >

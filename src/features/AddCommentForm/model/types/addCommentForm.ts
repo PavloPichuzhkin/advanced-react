@@ -5,9 +5,9 @@ export interface AddCommentFormSchema {
 }
 
 export interface AddCommentReqParams {
-    reqUrl: string,
+    reqUrl: string;
     commentForId: {
-        articleId?: string,
-        productId?: string,
-    },
+        articleId?: string;
+        productId?: string;
+    };
 }

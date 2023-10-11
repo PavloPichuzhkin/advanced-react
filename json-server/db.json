@@ -1,1846 +1,1779 @@
 {
-  "users": [
-    {
-      "id": "1",
-      "username": "admin",
-      "password": "123",
-      "roles": [
-        "ADMIN"
-      ],
-      "avatar": "https://as1.ftcdn.net/v2/jpg/05/56/29/10/1000_F_556291020_q2ieMiOCKYbtoLITrnt7qcSL1LJYyWrU.jpg"
-    },
-    {
-      "id": "2",
-      "username": "user1",
-      "password": "123",
-      "roles": [
-        "USER"
-      ],
-      "avatar": "https://as1.ftcdn.net/v2/jpg/06/19/33/30/1000_F_619333024_IfgNj7pGIeoG3BUPHfEkBT15l7yi7HbG.jpg"
-    },
-    {
-      "id": "3",
-      "username": "user2",
-      "password": "123",
-      "roles": [
-        "USER"
-      ],
-      "avatar": "https://as1.ftcdn.net/v2/jpg/01/10/87/84/1000_F_110878455_QZVeLFXBa1ZLiN7lMU8dDEtqqgOgJIRZ.jpg"
-    },
-    {
-      "id": "4",
-      "username": "manager",
-      "password": "123",
-      "roles": [
-        "MANAGER"
-      ],
-      "avatar": "https://as1.ftcdn.net/v2/jpg/05/69/12/82/1000_F_569128260_hb4UE0XkrsGH2ztyLFuGP8hIRIRPi045.jpg"
-    },
-    {
-      "id": "5",
-      "username": "sadmin",
-      "password": "123",
-      "roles": [
-        "SUPER_ADMIN"
-      ],
-      "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg"
-    },
-    {
-      "id": "6",
-      "username": "tuser",
-      "password": "123",
-      "roles": [
-        "SUPER_ADMIN"
-      ],
-      "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg"
-    }
-  ],
-  "article-ratings": [
-    {
-      "id": "1",
-      "rate": 4,
-      "feedback": "Good article",
-      "userId": "1",
-      "articleId": "1"
-    },
-    {
-      "id": "2",
-      "rate": 4,
-      "feedback": "Good article",
-      "userId": "1",
-      "articleId": "2"
-    },
-    {
-      "userId": "1",
-      "articleId": "3",
-      "rate": 3,
-      "feedback": "yooo goood",
-      "id": "Y2hzfx9"
-    },
-    {
-      "userId": "2",
-      "articleId": "1",
-      "rate": 3,
-      "feedback": "yess",
-      "id": "s73zKWk"
-    },
-    {
-      "userId": "1",
-      "articleId": "17",
-      "rate": 3,
-      "feedback": "",
-      "id": "sJVk88I"
-    },
-    {
-      "userId": "1",
-      "articleId": "19",
-      "rate": 4,
-      "id": "sP8in2t"
-    },
-    {
-      "userId": "1",
-      "articleId": "if1QRmR",
-      "rate": 3,
-      "feedback": "oooohh woooww",
-      "id": "Km39exh"
-    }
-  ],
-  "profile-ratings": [
-    {
-      "id": "1",
-      "rate": 4,
-      "feedback": "Good profile",
-      "userId": "1",
-      "profileId": "1"
-    },
-    {
-      "id": "2",
-      "rate": 4,
-      "feedback": "Good profile",
-      "userId": "1",
-      "profileId": "2"
-    }
-  ],
-  "notifications": [
-    {
-      "id": "1",
-      "title": "Notification 1",
-      "description": "An event has occurred",
-      "userId": "1"
-    },
-    {
-      "id": "2",
-      "title": "Notification 2",
-      "description": "An event has occurred",
-      "userId": "1",
-      "href": "http://localhost:3003/admin"
-    },
-    {
-      "id": "3",
-      "title": "Notification 3",
-      "description": "An event has occurred",
-      "userId": "1",
-      "href": "http://localhost:3003/main"
-    },
-    {
-      "id": "4",
-      "title": "Notification 4",
-      "description": "An event has occurred",
-      "userId": "1"
-    },
-    {
-      "id": "5",
-      "title": "Notification 5",
-      "description": "An event has occurred",
-      "userId": "2"
-    }
-  ],
-  "posts": [
-    {
-      "id": "1",
-      "title": "json-server",
-      "userId": "1"
-    },
-    {
-      "id": "2",
-      "title": "json-server",
-      "userId": "2"
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "text": "some comment",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "id": "2",
-      "text": "some comment 2",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "id": "3",
-      "text": "some comment 3",
-      "articleId": "1",
-      "userId": "2"
-    },
-    {
-      "id": "4",
-      "text": "some comment 4 WTF",
-      "articleId": "1",
-      "userId": "3"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "1111111",
-      "id": "eLPSKEz"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "gcgcgcc",
-      "id": "kSbqneQ"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "n,b",
-      "id": "VXwEFdp"
-    },
-    {
-      "articleId": "7",
-      "userId": "1",
-      "text": "dfhgdfh",
-      "id": "Y8MDHX0"
-    },
-    {
-      "articleId": "2",
-      "userId": "2",
-      "text": "ooooooo",
-      "id": "3KZf9-u"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "0",
-      "id": "Gjx95Md"
-    },
-    {
-      "articleId": "16",
-      "userId": "2",
-      "text": "sdfsd",
-      "id": "Hm6-k84"
-    },
-    {
-      "articleId": "16",
-      "userId": "2",
-      "text": "sdfsdfsdf",
-      "id": "awA4U8y"
-    },
-    {
-      "articleId": "15",
-      "userId": "1",
-      "text": "dsfagasdgsadgsadg",
-      "id": "Pkgzmpa"
-    },
-    {
-      "articleId": "15",
-      "userId": "1",
-      "text": "dsfgdsf",
-      "id": "JxjK2Fn"
-    },
-    {
-      "articleId": "15",
-      "userId": "1",
-      "text": "sxgvfsdfg",
-      "id": "vIw1_E5"
-    },
-    {
-      "articleId": "15",
-      "userId": "1",
-      "text": "nnnn",
-      "id": "p80sEjF"
-    },
-    {
-      "articleId": "19",
-      "userId": "2",
-      "text": "zSDFsdf",
-      "id": "enhuptB"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "kl;'l'",
-      "id": "-B9mkDo"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "xfb",
-      "id": "ZoN1Y45"
-    },
-    {
-      "articleId": "19",
-      "userId": "1",
-      "text": "asdas",
-      "id": "PFLc180"
-    },
-    {
-      "articleId": "19",
-      "userId": "1",
-      "text": ",.h",
-      "id": "3nbyKYV"
-    },
-    {
-      "articleId": "-aV_vgE",
-      "userId": "6",
-      "text": "text",
-      "id": "IBPM2-g"
-    }
-  ],
-  "profile": [
-    {
-      "id": "1",
-      "first": "Pavlo",
-      "lastname": "Pichuzhkin",
-      "age": 221,
-      "currency": "USD",
-      "country": "Great Britain",
-      "city": "Kiev",
-      "username": "admin",
-      "avatar": "https://as1.ftcdn.net/v2/jpg/05/56/29/10/1000_F_556291020_q2ieMiOCKYbtoLITrnt7qcSL1LJYyWrU.jpg"
-    },
-    {
-      "id": "2",
-      "first": "Pavlo2",
-      "lastname": "Pichuzhkin",
-      "age": 121,
-      "currency": "USD",
-      "country": "United States of America",
-      "city": "Kiev",
-      "username": "admin",
-      "avatar": "https://as1.ftcdn.net/v2/jpg/06/19/33/30/1000_F_619333024_IfgNj7pGIeoG3BUPHfEkBT15l7yi7HbG.jpg"
-    },
-    {
-      "id": "3",
-      "first": "Pavlo3",
-      "lastname": "Pichuzhkin",
-      "age": 222,
-      "currency": "USD",
-      "country": "United States of America",
-      "city": "Kiev",
-      "username": "admin",
-      "avatar": "https://as1.ftcdn.net/v2/jpg/01/10/87/84/1000_F_110878455_QZVeLFXBa1ZLiN7lMU8dDEtqqgOgJIRZ.jpg"
-    },
-    {
-      "id": "4",
-      "first": "Pavlo4",
-      "lastname": "Pichuzhkin",
-      "age": 222,
-      "currency": "USD",
-      "country": "United States of America",
-      "city": "Kiev",
-      "username": "admin",
-      "avatar": "https://as1.ftcdn.net/v2/jpg/05/69/12/82/1000_F_569128260_hb4UE0XkrsGH2ztyLFuGP8hIRIRPi045.jpg"
-    },
-    {
-      "id": "5",
-      "first": "Pavlo5",
-      "lastname": "Pichuzhkin",
-      "age": 222,
-      "currency": "USD",
-      "country": "United States of America",
-      "city": "Kiev",
-      "username": "admin",
-      "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg"
-    },
-    {
-      "id": "6",
-      "first": "test",
-      "lastname": "user",
-      "age": 222,
-      "currency": "USD",
-      "country": "United States of America",
-      "city": "Kiev",
-      "username": "tuser",
-      "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg"
-    }
-  ],
-  "articles": [
-    {
-      "id": "1",
-      "userId": "1",
-      "title": "Javascript news",
-      "subtitle": "What's new in JS for 2023? Що нового в JS у 2023 році?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1023,
-      "createdAt": "26.02.2023",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
+    "users": [
         {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
+            "id": "1",
+            "username": "admin",
+            "password": "123",
+            "roles": ["ADMIN"],
+            "avatar": "https://as1.ftcdn.net/v2/jpg/05/56/29/10/1000_F_556291020_q2ieMiOCKYbtoLITrnt7qcSL1LJYyWrU.jpg"
         },
         {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
+            "id": "2",
+            "username": "user1",
+            "password": "123",
+            "roles": ["USER"],
+            "avatar": "https://as1.ftcdn.net/v2/jpg/06/19/33/30/1000_F_619333024_IfgNj7pGIeoG3BUPHfEkBT15l7yi7HbG.jpg"
         },
         {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+            "id": "3",
+            "username": "user2",
+            "password": "123",
+            "roles": ["USER"],
+            "avatar": "https://as1.ftcdn.net/v2/jpg/01/10/87/84/1000_F_110878455_QZVeLFXBa1ZLiN7lMU8dDEtqqgOgJIRZ.jpg"
         },
         {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
+            "id": "4",
+            "username": "manager",
+            "password": "123",
+            "roles": ["MANAGER"],
+            "avatar": "https://as1.ftcdn.net/v2/jpg/05/69/12/82/1000_F_569128260_hb4UE0XkrsGH2ztyLFuGP8hIRIRPi045.jpg"
         },
         {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Figure 1 - a screenshot of the site"
+            "id": "5",
+            "username": "sadmin",
+            "password": "123",
+            "roles": ["SUPER_ADMIN"],
+            "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg"
         },
         {
-          "id": "11",
-          "type": "TIPS",
-          "title": "Note",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
-        },
-        {
-          "id": "12",
-          "type": "TIPS",
-          "title": "Tips",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "7",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a scripting or programming language that allows you to implement complex features on web pages.",
-            "Every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved."
-          ]
-        },
-        {
-          "id": "8",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Figure 1 - a screenshot of the site"
-        },
-        {
-          "id": "9",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a scripting or programming language that allows you to implement complex features on web pages."
-          ]
+            "id": "6",
+            "username": "tuser",
+            "password": "123",
+            "roles": ["SUPER_ADMIN"],
+            "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg"
         }
-      ]
-    },
-    {
-      "id": "2",
-      "userId": "1",
-      "title": "Kotlin news",
-      "subtitle": "What's new in Kotlin for 2023? Що нового в Kotlin у 2023 році?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 1023,
-      "createdAt": "26.02.2023",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
+    ],
+    "article-ratings": [
         {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
+            "id": "1",
+            "rate": 4,
+            "feedback": "Good article",
+            "userId": "1",
+            "articleId": "1"
         },
         {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
+            "id": "2",
+            "rate": 4,
+            "feedback": "Good article",
+            "userId": "1",
+            "articleId": "2"
         },
         {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+            "userId": "1",
+            "articleId": "3",
+            "rate": 3,
+            "feedback": "yooo goood",
+            "id": "Y2hzfx9"
         },
         {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
+            "userId": "2",
+            "articleId": "1",
+            "rate": 3,
+            "feedback": "yess",
+            "id": "s73zKWk"
         },
         {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Figure 1 - a screenshot of the site"
+            "userId": "1",
+            "articleId": "17",
+            "rate": 3,
+            "feedback": "",
+            "id": "sJVk88I"
+        },
+        {
+            "userId": "1",
+            "articleId": "19",
+            "rate": 4,
+            "id": "sP8in2t"
+        },
+        {
+            "userId": "1",
+            "articleId": "if1QRmR",
+            "rate": 3,
+            "feedback": "oooohh woooww",
+            "id": "Km39exh"
         }
-      ]
-    },
-    {
-      "id": "3",
-      "userId": "1",
-      "title": "Python news",
-      "subtitle": "What's new in Python for 2023? Що нового в Python у 2023 році?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/1200px-Python.svg.png",
-      "views": 1023,
-      "createdAt": "26.02.2023",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
+    ],
+    "profile-ratings": [
         {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
+            "id": "1",
+            "rate": 4,
+            "feedback": "Good profile",
+            "userId": "1",
+            "profileId": "1"
         },
         {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Figure 1 - a screenshot of the site"
-        },
-        {
-          "id": "11",
-          "type": "TIPS",
-          "title": "Note",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
-        },
-        {
-          "id": "12",
-          "type": "TIPS",
-          "title": "Tips",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "7",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a scripting or programming language that allows you to implement complex features on web pages.",
-            "Every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved."
-          ]
-        },
-        {
-          "id": "8",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Figure 1 - a screenshot of the site"
-        },
-        {
-          "id": "9",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a scripting or programming language that allows you to implement complex features on web pages."
-          ]
+            "id": "2",
+            "rate": 4,
+            "feedback": "Good profile",
+            "userId": "1",
+            "profileId": "2"
         }
-      ]
-    },
-    {
-      "id": "4",
-      "userId": "1",
-      "title": "Ruby news",
-      "subtitle": "What's new in Ruby for 2023? Що нового в Ruby у 2023 році?",
-      "img": "https://www.devteam.space/wp-content/uploads/2022/05/What-is-Ruby-660x371.jpg",
-      "views": 1023,
-      "createdAt": "26.02.2023",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
+    ],
+    "notifications": [
         {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
+            "id": "1",
+            "title": "Notification 1",
+            "description": "An event has occurred",
+            "userId": "1"
         },
         {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
+            "id": "2",
+            "title": "Notification 2",
+            "description": "An event has occurred",
+            "userId": "1",
+            "href": "http://localhost:3003/admin"
         },
         {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+            "id": "3",
+            "title": "Notification 3",
+            "description": "An event has occurred",
+            "userId": "1",
+            "href": "http://localhost:3003/main"
         },
         {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
+            "id": "4",
+            "title": "Notification 4",
+            "description": "An event has occurred",
+            "userId": "1"
         },
         {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Figure 1 - a screenshot of the site"
-        },
-        {
-          "id": "11",
-          "type": "TIPS",
-          "title": "Note",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
-        },
-        {
-          "id": "12",
-          "type": "TIPS",
-          "title": "Tips",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
+            "id": "5",
+            "title": "Notification 5",
+            "description": "An event has occurred",
+            "userId": "2"
         }
-      ]
-    },
-    {
-      "id": "5",
-      "userId": "1",
-      "title": "C news",
-      "subtitle": "What's new in JS for 2023? Що нового в JS у 2023 році?",
-      "img": "https://www.trainingnepal.com/wp-content/uploads/2023/04/C-Programming.png",
-      "views": 1043,
-      "createdAt": "16.08.2023",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
+    ],
+    "posts": [
         {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
+            "id": "1",
+            "title": "json-server",
+            "userId": "1"
         },
         {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
+            "id": "2",
+            "title": "json-server",
+            "userId": "2"
         }
-      ]
-    },
-    {
-      "id": "6",
-      "userId": "2",
-      "title": "PHP news",
-      "subtitle": "What's new in PHP for 2023? Що нового в PHP у 2023 році?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1920px-PHP-logo.svg.png",
-      "views": 1043,
-      "createdAt": "16.08.2023",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
+    ],
+    "comments": [
         {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
+            "id": "1",
+            "text": "some comment",
+            "articleId": "1",
+            "userId": "1"
         },
         {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
+            "id": "2",
+            "text": "some comment 2",
+            "articleId": "1",
+            "userId": "1"
         },
         {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+            "id": "3",
+            "text": "some comment 3",
+            "articleId": "1",
+            "userId": "2"
         },
         {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
+            "id": "4",
+            "text": "some comment 4 WTF",
+            "articleId": "1",
+            "userId": "3"
+        },
+        {
+            "articleId": "1",
+            "userId": "2",
+            "text": "1111111",
+            "id": "eLPSKEz"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "gcgcgcc",
+            "id": "kSbqneQ"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "n,b",
+            "id": "VXwEFdp"
+        },
+        {
+            "articleId": "7",
+            "userId": "1",
+            "text": "dfhgdfh",
+            "id": "Y8MDHX0"
+        },
+        {
+            "articleId": "2",
+            "userId": "2",
+            "text": "ooooooo",
+            "id": "3KZf9-u"
+        },
+        {
+            "articleId": "1",
+            "userId": "2",
+            "text": "0",
+            "id": "Gjx95Md"
+        },
+        {
+            "articleId": "16",
+            "userId": "2",
+            "text": "sdfsd",
+            "id": "Hm6-k84"
+        },
+        {
+            "articleId": "16",
+            "userId": "2",
+            "text": "sdfsdfsdf",
+            "id": "awA4U8y"
+        },
+        {
+            "articleId": "15",
+            "userId": "1",
+            "text": "dsfagasdgsadgsadg",
+            "id": "Pkgzmpa"
+        },
+        {
+            "articleId": "15",
+            "userId": "1",
+            "text": "dsfgdsf",
+            "id": "JxjK2Fn"
+        },
+        {
+            "articleId": "15",
+            "userId": "1",
+            "text": "sxgvfsdfg",
+            "id": "vIw1_E5"
+        },
+        {
+            "articleId": "15",
+            "userId": "1",
+            "text": "nnnn",
+            "id": "p80sEjF"
+        },
+        {
+            "articleId": "19",
+            "userId": "2",
+            "text": "zSDFsdf",
+            "id": "enhuptB"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "kl;'l'",
+            "id": "-B9mkDo"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "xfb",
+            "id": "ZoN1Y45"
+        },
+        {
+            "articleId": "19",
+            "userId": "1",
+            "text": "asdas",
+            "id": "PFLc180"
+        },
+        {
+            "articleId": "19",
+            "userId": "1",
+            "text": ",.h",
+            "id": "3nbyKYV"
+        },
+        {
+            "articleId": "-aV_vgE",
+            "userId": "6",
+            "text": "text",
+            "id": "IBPM2-g"
         }
-      ]
-    },
-    {
-      "id": "7",
-      "userId": "2",
-      "title": "Java news",
-      "subtitle": "What's new in Java for 2023? Що нового в Java у 2023 році?",
-      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/800px-Java_programming_language_logo.svg.png",
-      "views": 1043,
-      "createdAt": "16.08.2023",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
+    ],
+    "profile": [
         {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
+            "id": "1",
+            "first": "Pavlo",
+            "lastname": "Pichuzhkin",
+            "age": 221,
+            "currency": "USD",
+            "country": "Great Britain",
+            "city": "Kiev",
+            "username": "admin",
+            "avatar": "https://as1.ftcdn.net/v2/jpg/05/56/29/10/1000_F_556291020_q2ieMiOCKYbtoLITrnt7qcSL1LJYyWrU.jpg"
         },
         {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
+            "id": "2",
+            "first": "Pavlo2",
+            "lastname": "Pichuzhkin",
+            "age": 121,
+            "currency": "USD",
+            "country": "United States of America",
+            "city": "Kiev",
+            "username": "admin",
+            "avatar": "https://as1.ftcdn.net/v2/jpg/06/19/33/30/1000_F_619333024_IfgNj7pGIeoG3BUPHfEkBT15l7yi7HbG.jpg"
         },
         {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+            "id": "3",
+            "first": "Pavlo3",
+            "lastname": "Pichuzhkin",
+            "age": 222,
+            "currency": "USD",
+            "country": "United States of America",
+            "city": "Kiev",
+            "username": "admin",
+            "avatar": "https://as1.ftcdn.net/v2/jpg/01/10/87/84/1000_F_110878455_QZVeLFXBa1ZLiN7lMU8dDEtqqgOgJIRZ.jpg"
         },
         {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
+            "id": "4",
+            "first": "Pavlo4",
+            "lastname": "Pichuzhkin",
+            "age": 222,
+            "currency": "USD",
+            "country": "United States of America",
+            "city": "Kiev",
+            "username": "admin",
+            "avatar": "https://as1.ftcdn.net/v2/jpg/05/69/12/82/1000_F_569128260_hb4UE0XkrsGH2ztyLFuGP8hIRIRPi045.jpg"
+        },
+        {
+            "id": "5",
+            "first": "Pavlo5",
+            "lastname": "Pichuzhkin",
+            "age": 222,
+            "currency": "USD",
+            "country": "United States of America",
+            "city": "Kiev",
+            "username": "admin",
+            "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg"
+        },
+        {
+            "id": "6",
+            "first": "test",
+            "lastname": "user",
+            "age": 222,
+            "currency": "USD",
+            "country": "United States of America",
+            "city": "Kiev",
+            "username": "tuser",
+            "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg"
         }
-      ]
-    },
-    {
-      "id": "8",
-      "userId": "1",
-      "title": "Javascript news",
-      "subtitle": "What's new in JS for 2022? Що нового в JS у 2022 році?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 102322,
-      "createdAt": "26.02.2022",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
+    ],
+    "articles": [
         {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
+            "id": "1",
+            "userId": "1",
+            "title": "Javascript news",
+            "subtitle": "What's new in JS for 2023? Що нового в JS у 2023 році?",
+            "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+            "views": 1023,
+            "createdAt": "26.02.2023",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Figure 1 - a screenshot of the site"
+                },
+                {
+                    "id": "11",
+                    "type": "TIPS",
+                    "title": "Note",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+                },
+                {
+                    "id": "12",
+                    "type": "TIPS",
+                    "title": "Tips",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "7",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a scripting or programming language that allows you to implement complex features on web pages.",
+                        "Every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved."
+                    ]
+                },
+                {
+                    "id": "8",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Figure 1 - a screenshot of the site"
+                },
+                {
+                    "id": "9",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a scripting or programming language that allows you to implement complex features on web pages."
+                    ]
+                }
+            ]
         },
         {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
+            "id": "2",
+            "userId": "1",
+            "title": "Kotlin news",
+            "subtitle": "What's new in Kotlin for 2023? Що нового в Kotlin у 2023 році?",
+            "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+            "views": 1023,
+            "createdAt": "26.02.2023",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Figure 1 - a screenshot of the site"
+                }
+            ]
         },
         {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+            "id": "3",
+            "userId": "1",
+            "title": "Python news",
+            "subtitle": "What's new in Python for 2023? Що нового в Python у 2023 році?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/1200px-Python.svg.png",
+            "views": 1023,
+            "createdAt": "26.02.2023",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Figure 1 - a screenshot of the site"
+                },
+                {
+                    "id": "11",
+                    "type": "TIPS",
+                    "title": "Note",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+                },
+                {
+                    "id": "12",
+                    "type": "TIPS",
+                    "title": "Tips",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "7",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a scripting or programming language that allows you to implement complex features on web pages.",
+                        "Every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved."
+                    ]
+                },
+                {
+                    "id": "8",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Figure 1 - a screenshot of the site"
+                },
+                {
+                    "id": "9",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a scripting or programming language that allows you to implement complex features on web pages."
+                    ]
+                }
+            ]
         },
         {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
+            "id": "4",
+            "userId": "1",
+            "title": "Ruby news",
+            "subtitle": "What's new in Ruby for 2023? Що нового в Ruby у 2023 році?",
+            "img": "https://www.devteam.space/wp-content/uploads/2022/05/What-is-Ruby-660x371.jpg",
+            "views": 1023,
+            "createdAt": "26.02.2023",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Figure 1 - a screenshot of the site"
+                },
+                {
+                    "id": "11",
+                    "type": "TIPS",
+                    "title": "Note",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+                },
+                {
+                    "id": "12",
+                    "type": "TIPS",
+                    "title": "Tips",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                }
+            ]
         },
         {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Figure 1 - a screenshot of the site"
+            "id": "5",
+            "userId": "1",
+            "title": "C news",
+            "subtitle": "What's new in JS for 2023? Що нового в JS у 2023 році?",
+            "img": "https://www.trainingnepal.com/wp-content/uploads/2023/04/C-Programming.png",
+            "views": 1043,
+            "createdAt": "16.08.2023",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                }
+            ]
         },
         {
-          "id": "11",
-          "type": "TIPS",
-          "title": "Note",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
+            "id": "6",
+            "userId": "2",
+            "title": "PHP news",
+            "subtitle": "What's new in PHP for 2023? Що нового в PHP у 2023 році?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1920px-PHP-logo.svg.png",
+            "views": 1043,
+            "createdAt": "16.08.2023",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                }
+            ]
         },
         {
-          "id": "3",
-          "type": "CODE",
-          "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+            "id": "7",
+            "userId": "2",
+            "title": "Java news",
+            "subtitle": "What's new in Java for 2023? Що нового в Java у 2023 році?",
+            "img": "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/800px-Java_programming_language_logo.svg.png",
+            "views": 1043,
+            "createdAt": "16.08.2023",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                }
+            ]
         },
         {
-          "id": "12",
-          "type": "TIPS",
-          "title": "Tips",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
+            "id": "8",
+            "userId": "1",
+            "title": "Javascript news",
+            "subtitle": "What's new in JS for 2022? Що нового в JS у 2022 році?",
+            "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+            "views": 102322,
+            "createdAt": "26.02.2022",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Figure 1 - a screenshot of the site"
+                },
+                {
+                    "id": "11",
+                    "type": "TIPS",
+                    "title": "Note",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+                },
+                {
+                    "id": "12",
+                    "type": "TIPS",
+                    "title": "Tips",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "7",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a scripting or programming language that allows you to implement complex features on web pages.",
+                        "Every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved."
+                    ]
+                },
+                {
+                    "id": "8",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Figure 1 - a screenshot of the site"
+                },
+                {
+                    "id": "9",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a scripting or programming language that allows you to implement complex features on web pages."
+                    ]
+                }
+            ]
         },
         {
-          "id": "7",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a scripting or programming language that allows you to implement complex features on web pages.",
-            "Every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved."
-          ]
+            "id": "9",
+            "userId": "1",
+            "title": "Kotlin news",
+            "subtitle": "What's new in Kotlin for 2021? Що нового в Kotlin у 2021 році?",
+            "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+            "views": 1111,
+            "createdAt": "26.02.2021",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Figure 1 - a screenshot of the site"
+                }
+            ]
         },
         {
-          "id": "8",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Figure 1 - a screenshot of the site"
+            "id": "10",
+            "userId": "1",
+            "title": "Python news",
+            "subtitle": "What's new in Python for 2020? Що нового в Python у 2020 році?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/1200px-Python.svg.png",
+            "views": 102300,
+            "createdAt": "26.02.2020",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Figure 1 - a screenshot of the site"
+                },
+                {
+                    "id": "11",
+                    "type": "TIPS",
+                    "title": "Note",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+                },
+                {
+                    "id": "12",
+                    "type": "TIPS",
+                    "title": "Tips",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "7",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a scripting or programming language that allows you to implement complex features on web pages.",
+                        "Every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved."
+                    ]
+                },
+                {
+                    "id": "8",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Figure 1 - a screenshot of the site"
+                },
+                {
+                    "id": "9",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a scripting or programming language that allows you to implement complex features on web pages."
+                    ]
+                }
+            ]
         },
         {
-          "id": "9",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a scripting or programming language that allows you to implement complex features on web pages."
-          ]
+            "id": "11",
+            "userId": "1",
+            "title": "Ruby news",
+            "subtitle": "What's new in Ruby for 2019? Що нового в Ruby у 2019 році?",
+            "img": "https://www.devteam.space/wp-content/uploads/2022/05/What-is-Ruby-660x371.jpg",
+            "views": 102399,
+            "createdAt": "26.02.2019",
+            "type": ["IT", "SCIENCE"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Figure 1 - a screenshot of the site"
+                },
+                {
+                    "id": "11",
+                    "type": "TIPS",
+                    "title": "Note",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+                },
+                {
+                    "id": "12",
+                    "type": "TIPS",
+                    "title": "Tips",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "12",
+            "userId": "1",
+            "title": "C++ news",
+            "subtitle": "What's new in C++ for 2019? Що нового в C++ у 2019 році?",
+            "img": "https://www.trainingnepal.com/wp-content/uploads/2023/04/C-Programming.png",
+            "views": 10431212,
+            "createdAt": "16.08.2019",
+            "type": ["SCIENCE"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "13",
+            "userId": "2",
+            "title": "PHP news",
+            "subtitle": "What's new in PHP for 2023? Що нового в PHP у 2023 році?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1920px-PHP-logo.svg.png",
+            "views": 1043,
+            "createdAt": "16.08.2023",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "14",
+            "userId": "2",
+            "title": "Java news",
+            "subtitle": "What's new in Java for 20231? Що нового в Java у 20231 році?",
+            "img": "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/800px-Java_programming_language_logo.svg.png",
+            "views": 10431,
+            "createdAt": "16.08.20231",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "15",
+            "userId": "1",
+            "title": "Javascript news",
+            "subtitle": "What's new in JS for 2018? Що нового в JS у 2018 році?",
+            "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+            "views": 102,
+            "createdAt": "26.02.2018",
+            "type": ["ECONOMICS"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Figure 1 - a screenshot of the site"
+                },
+                {
+                    "id": "11",
+                    "type": "TIPS",
+                    "title": "Note",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+                },
+                {
+                    "id": "12",
+                    "type": "TIPS",
+                    "title": "Tips",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "7",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a scripting or programming language that allows you to implement complex features on web pages.",
+                        "Every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved."
+                    ]
+                },
+                {
+                    "id": "8",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Figure 1 - a screenshot of the site"
+                },
+                {
+                    "id": "9",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a scripting or programming language that allows you to implement complex features on web pages."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "16",
+            "userId": "1",
+            "title": "Kotli news",
+            "subtitle": "What's new in Kotlin for 2023? Що нового в Kotlin у 2023 році?",
+            "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+            "views": 102355,
+            "createdAt": "26.02.2023",
+            "type": ["IT", "ECONOMICS"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Figure 1 - a screenshot of the site"
+                }
+            ]
+        },
+        {
+            "id": "17",
+            "userId": "1",
+            "title": "Python news",
+            "subtitle": "What's new in Python for 2023? Що нового в Python у 2023 році?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/1200px-Python.svg.png",
+            "views": 1023,
+            "createdAt": "26.02.2023",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Figure 1 - a screenshot of the site"
+                },
+                {
+                    "id": "11",
+                    "type": "TIPS",
+                    "title": "Note",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+                },
+                {
+                    "id": "12",
+                    "type": "TIPS",
+                    "title": "Tips",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "7",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a scripting or programming language that allows you to implement complex features on web pages.",
+                        "Every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved."
+                    ]
+                },
+                {
+                    "id": "8",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Figure 1 - a screenshot of the site"
+                },
+                {
+                    "id": "9",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a scripting or programming language that allows you to implement complex features on web pages."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "18",
+            "userId": "1",
+            "title": "Ruby+ news",
+            "subtitle": "What's new in Ruby for 2023? Що нового в Ruby у 2023 році?",
+            "img": "https://www.devteam.space/wp-content/uploads/2022/05/What-is-Ruby-660x371.jpg",
+            "views": 1023121,
+            "createdAt": "26.02.2023",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Figure 1 - a screenshot of the site"
+                },
+                {
+                    "id": "11",
+                    "type": "TIPS",
+                    "title": "Note",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+                },
+                {
+                    "id": "12",
+                    "type": "TIPS",
+                    "title": "Tips",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "19",
+            "userId": "1",
+            "title": "C+ news",
+            "subtitle": "What's new in JS for 2023? Що нового в JS у 2023 році?",
+            "img": "https://www.trainingnepal.com/wp-content/uploads/2023/04/C-Programming.png",
+            "views": 10,
+            "createdAt": "16.08.2023",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "20",
+            "userId": "2",
+            "title": "PHP+ news",
+            "subtitle": "What's new in PHP for 2023? Що нового в PHP у 2023 році?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1920px-PHP-logo.svg.png",
+            "views": 109,
+            "createdAt": "16.08.2023",
+            "type": ["IT", "ECONOMICS"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "21",
+            "userId": "2",
+            "title": "Java+ news",
+            "subtitle": "What's new in Java for 2018? Що нового в Java у 2018 році?",
+            "img": "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/800px-Java_programming_language_logo.svg.png",
+            "views": 1043,
+            "createdAt": "16.08.2018",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
+                        "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
+                    ]
+                },
+                {
+                    "id": "10",
+                    "type": "TIPS",
+                    "title": "Warning",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. "
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "The title of this block",
+                    "paragraphs": [
+                        "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
+                        "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "userId": "1",
+            "title": "Chemistry",
+            "subtitle": "What's new in Chemistry for 2023? Що нового в хімії у 2023 році?",
+            "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+            "views": 1023,
+            "createdAt": "26.02.2023",
+            "type": ["IT"],
+            "blocks": [],
+            "id": "if1QRmR"
+        },
+        {
+            "userId": "1",
+            "title": "Chemistry",
+            "subtitle": "What's new in Chemistry for 2023? Що нового в хімії у 2023 році?",
+            "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+            "views": 1023,
+            "createdAt": "26.02.2023",
+            "type": ["IT"],
+            "blocks": [],
+            "id": "-Lo9OFZ"
+        },
+        {
+            "userId": "1",
+            "title": "Chemistry TEST",
+            "subtitle": "What's new in Chemistry for 2023? Що нового в хімії у 2023 році?",
+            "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+            "views": 1023,
+            "createdAt": "26.02.2023",
+            "type": ["IT"],
+            "blocks": [],
+            "id": "-aV_vgE"
+        },
+        {
+            "userId": "1",
+            "title": "Chemistry TEST",
+            "subtitle": "What's new in Chemistry for 2023? Що нового в хімії у 2023 році?",
+            "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+            "views": 1023,
+            "createdAt": "26.02.2023",
+            "type": ["IT"],
+            "blocks": [],
+            "id": "K0EBx6E"
+        },
+        {
+            "userId": "1",
+            "title": "Chemistry TEST",
+            "subtitle": "What's new in Chemistry for 2023? Що нового в хімії у 2023 році?",
+            "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+            "views": 1023,
+            "createdAt": "26.02.2023",
+            "type": ["IT"],
+            "blocks": [],
+            "id": "8S1jtUg"
         }
-      ]
-    },
-    {
-      "id": "9",
-      "userId": "1",
-      "title": "Kotlin news",
-      "subtitle": "What's new in Kotlin for 2021? Що нового в Kotlin у 2021 році?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 1111,
-      "createdAt": "26.02.2021",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
-        },
-        {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Figure 1 - a screenshot of the site"
-        }
-      ]
-    },
-    {
-      "id": "10",
-      "userId": "1",
-      "title": "Python news",
-      "subtitle": "What's new in Python for 2020? Що нового в Python у 2020 році?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/1200px-Python.svg.png",
-      "views": 102300,
-      "createdAt": "26.02.2020",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
-        },
-        {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Figure 1 - a screenshot of the site"
-        },
-        {
-          "id": "11",
-          "type": "TIPS",
-          "title": "Note",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
-        },
-        {
-          "id": "12",
-          "type": "TIPS",
-          "title": "Tips",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "7",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a scripting or programming language that allows you to implement complex features on web pages.",
-            "Every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved."
-          ]
-        },
-        {
-          "id": "8",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Figure 1 - a screenshot of the site"
-        },
-        {
-          "id": "9",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a scripting or programming language that allows you to implement complex features on web pages."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "11",
-      "userId": "1",
-      "title": "Ruby news",
-      "subtitle": "What's new in Ruby for 2019? Що нового в Ruby у 2019 році?",
-      "img": "https://www.devteam.space/wp-content/uploads/2022/05/What-is-Ruby-660x371.jpg",
-      "views": 102399,
-      "createdAt": "26.02.2019",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
-        },
-        {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Figure 1 - a screenshot of the site"
-        },
-        {
-          "id": "11",
-          "type": "TIPS",
-          "title": "Note",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
-        },
-        {
-          "id": "12",
-          "type": "TIPS",
-          "title": "Tips",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        }
-      ]
-    },
-    {
-      "id": "12",
-      "userId": "1",
-      "title": "C++ news",
-      "subtitle": "What's new in C++ for 2019? Що нового в C++ у 2019 році?",
-      "img": "https://www.trainingnepal.com/wp-content/uploads/2023/04/C-Programming.png",
-      "views": 10431212,
-      "createdAt": "16.08.2019",
-      "type": [
-        "SCIENCE"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
-        },
-        {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "13",
-      "userId": "2",
-      "title": "PHP news",
-      "subtitle": "What's new in PHP for 2023? Що нового в PHP у 2023 році?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1920px-PHP-logo.svg.png",
-      "views": 1043,
-      "createdAt": "16.08.2023",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
-        },
-        {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "14",
-      "userId": "2",
-      "title": "Java news",
-      "subtitle": "What's new in Java for 20231? Що нового в Java у 20231 році?",
-      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/800px-Java_programming_language_logo.svg.png",
-      "views": 10431,
-      "createdAt": "16.08.20231",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
-        },
-        {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "15",
-      "userId": "1",
-      "title": "Javascript news",
-      "subtitle": "What's new in JS for 2018? Що нового в JS у 2018 році?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 102,
-      "createdAt": "26.02.2018",
-      "type": [
-        "ECONOMICS"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
-        },
-        {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Figure 1 - a screenshot of the site"
-        },
-        {
-          "id": "11",
-          "type": "TIPS",
-          "title": "Note",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
-        },
-        {
-          "id": "12",
-          "type": "TIPS",
-          "title": "Tips",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "7",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a scripting or programming language that allows you to implement complex features on web pages.",
-            "Every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved."
-          ]
-        },
-        {
-          "id": "8",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Figure 1 - a screenshot of the site"
-        },
-        {
-          "id": "9",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a scripting or programming language that allows you to implement complex features on web pages."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "16",
-      "userId": "1",
-      "title": "Kotli news",
-      "subtitle": "What's new in Kotlin for 2023? Що нового в Kotlin у 2023 році?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 102355,
-      "createdAt": "26.02.2023",
-      "type": [
-        "IT",
-        "ECONOMICS"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
-        },
-        {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Figure 1 - a screenshot of the site"
-        }
-      ]
-    },
-    {
-      "id": "17",
-      "userId": "1",
-      "title": "Python news",
-      "subtitle": "What's new in Python for 2023? Що нового в Python у 2023 році?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/1200px-Python.svg.png",
-      "views": 1023,
-      "createdAt": "26.02.2023",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
-        },
-        {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Figure 1 - a screenshot of the site"
-        },
-        {
-          "id": "11",
-          "type": "TIPS",
-          "title": "Note",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
-        },
-        {
-          "id": "12",
-          "type": "TIPS",
-          "title": "Tips",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "7",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a scripting or programming language that allows you to implement complex features on web pages.",
-            "Every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved."
-          ]
-        },
-        {
-          "id": "8",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Figure 1 - a screenshot of the site"
-        },
-        {
-          "id": "9",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a scripting or programming language that allows you to implement complex features on web pages."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "18",
-      "userId": "1",
-      "title": "Ruby+ news",
-      "subtitle": "What's new in Ruby for 2023? Що нового в Ruby у 2023 році?",
-      "img": "https://www.devteam.space/wp-content/uploads/2022/05/What-is-Ruby-660x371.jpg",
-      "views": 1023121,
-      "createdAt": "26.02.2023",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
-        },
-        {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Figure 1 - a screenshot of the site"
-        },
-        {
-          "id": "11",
-          "type": "TIPS",
-          "title": "Note",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
-        },
-        {
-          "id": "12",
-          "type": "TIPS",
-          "title": "Tips",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        }
-      ]
-    },
-    {
-      "id": "19",
-      "userId": "1",
-      "title": "C+ news",
-      "subtitle": "What's new in JS for 2023? Що нового в JS у 2023 році?",
-      "img": "https://www.trainingnepal.com/wp-content/uploads/2023/04/C-Programming.png",
-      "views": 10,
-      "createdAt": "16.08.2023",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
-        },
-        {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "20",
-      "userId": "2",
-      "title": "PHP+ news",
-      "subtitle": "What's new in PHP for 2023? Що нового в PHP у 2023 році?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1920px-PHP-logo.svg.png",
-      "views": 109,
-      "createdAt": "16.08.2023",
-      "type": [
-        "IT",
-        "ECONOMICS"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
-        },
-        {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "21",
-      "userId": "2",
-      "title": "Java+ news",
-      "subtitle": "What's new in Java for 2018? Що нового в Java у 2018 році?",
-      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/800px-Java_programming_language_logo.svg.png",
-      "views": 1043,
-      "createdAt": "16.08.2018",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n",
-            "Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript offers seven primitive types"
-          ]
-        },
-        {
-          "id": "10",
-          "type": "TIPS",
-          "title": "Warning",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. "
-          ]
-        },
-        {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1 id=\"myH\"></h1>\n<p id=\"myP\"></p>\n\n<script>\n// Change heading:\ndocument.getElementById(\"myH\").innerHTML = \"JavaScript Comments\";\n// Change paragraph:\ndocument.getElementById(\"myP\").innerHTML = \"My first paragraph.\";\n</script>\n\n</body>\n</html>\n"
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "title": "The title of this block",
-          "paragraphs": [
-            "JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.",
-            "JavaScript supports object-oriented programming with object prototypes and classes. It also supports functional programming since functions are first-class that can be easily created via expressions and passed around like any other object.\n\n"
-          ]
-        }
-      ]
-    },
-    {
-      "userId": "1",
-      "title": "Chemistry",
-      "subtitle": "What's new in Chemistry for 2023? Що нового в хімії у 2023 році?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1023,
-      "createdAt": "26.02.2023",
-      "type": [
-        "IT"
-      ],
-      "blocks": [],
-      "id": "if1QRmR"
-    },
-    {
-      "userId": "1",
-      "title": "Chemistry",
-      "subtitle": "What's new in Chemistry for 2023? Що нового в хімії у 2023 році?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1023,
-      "createdAt": "26.02.2023",
-      "type": [
-        "IT"
-      ],
-      "blocks": [],
-      "id": "-Lo9OFZ"
-    },
-    {
-      "userId": "1",
-      "title": "Chemistry TEST",
-      "subtitle": "What's new in Chemistry for 2023? Що нового в хімії у 2023 році?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1023,
-      "createdAt": "26.02.2023",
-      "type": [
-        "IT"
-      ],
-      "blocks": [],
-      "id": "-aV_vgE"
-    },
-    {
-      "userId": "1",
-      "title": "Chemistry TEST",
-      "subtitle": "What's new in Chemistry for 2023? Що нового в хімії у 2023 році?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1023,
-      "createdAt": "26.02.2023",
-      "type": [
-        "IT"
-      ],
-      "blocks": [],
-      "id": "K0EBx6E"
-    },
-    {
-      "userId": "1",
-      "title": "Chemistry TEST",
-      "subtitle": "What's new in Chemistry for 2023? Що нового в хімії у 2023 році?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1023,
-      "createdAt": "26.02.2023",
-      "type": [
-        "IT"
-      ],
-      "blocks": [],
-      "id": "8S1jtUg"
-    }
-  ]
+    ]
 }

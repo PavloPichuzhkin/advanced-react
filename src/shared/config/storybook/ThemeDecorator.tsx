@@ -11,7 +11,10 @@ export const ThemeDecorator = (theme: Theme) => (StoryComponent: StoryFn) => (
     </ThemeProvider>
 );
 
-export const withThemeProvider = (StoryComponent: StoryFn, context: StoryContext) => {
+export const withThemeProvider = (
+    StoryComponent: StoryFn,
+    context: StoryContext,
+) => {
     const { theme } = context.globals;
     // console.log(theme);
     return (

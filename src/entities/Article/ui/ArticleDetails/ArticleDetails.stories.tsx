@@ -21,34 +21,41 @@ export const Primary: Story = {
             articleDetails: {
                 data: article,
             },
-        })],
+        }),
+    ],
 };
 export const Dark: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK),
+    decorators: [
+        ThemeDecorator(Theme.DARK),
         PartialStoreDecorator({
             articleDetails: {
                 data: article,
             },
-        })],
+        }),
+    ],
 };
 
 export const Loading: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK),
+    decorators: [
+        ThemeDecorator(Theme.DARK),
         PartialStoreDecorator({
             articleDetails: {
                 isLoading: true,
             },
-        })],
+        }),
+    ],
 };
 
 export const Error: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK),
+    decorators: [
+        ThemeDecorator(Theme.DARK),
         PartialStoreDecorator({
             articleDetails: {
                 error: 'error',
             },
-        })],
+        }),
+    ],
 };

@@ -1,7 +1,10 @@
 import { memo, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from '@/widgets/Page';
@@ -14,8 +17,9 @@ import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 
 interface ArticlesPageProps {
-    className?: string
+    className?: string;
 }
+
 const reducers: ReducersList = {
     articlesPage: articlesPageReducer,
 };
@@ -24,8 +28,9 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const [searchParams] = useSearchParams();
 
     const onLoadNextPart = useCallback(() => {
-        if (__PROJECT__ !== 'storybook'
-        // && __PROJECT__ !== 'jest'
+        if (
+            __PROJECT__ !== 'storybook'
+            // && __PROJECT__ !== 'jest'
         ) {
             dispatch(fetchNextArticlesPage());
         }
@@ -38,7 +43,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page
-                data-testid="ArticlesPage"
+                data-testid='ArticlesPage'
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.ArticlesPage, {}, [className])}
             >

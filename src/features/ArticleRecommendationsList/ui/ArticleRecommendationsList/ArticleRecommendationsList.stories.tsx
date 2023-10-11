@@ -9,7 +9,6 @@ const meta: Meta<typeof ArticleRecommendationsList> = {
     title: 'Features/ArticleRecommendationsList',
     component: ArticleRecommendationsList,
     // tags: ['autodocs'],
-
 };
 
 export default meta;

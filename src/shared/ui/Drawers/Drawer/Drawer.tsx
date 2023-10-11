@@ -15,21 +15,10 @@ interface DrawerProps {
 }
 
 export const Drawer = memo((props: DrawerProps) => {
-    const {
-        className,
-        children,
-        onClose,
-        isOpen,
-        lazy,
-    } = props;
+    const { className, children, onClose, isOpen, lazy } = props;
     const { theme } = useTheme();
 
-    const {
-        isOpening,
-        close,
-        isClosing,
-        isMounted,
-    } = useModal({
+    const { isOpening, close, isClosing, isMounted } = useModal({
         animationDelay: 500,
         onClose,
         isOpen,
@@ -49,11 +38,7 @@ export const Drawer = memo((props: DrawerProps) => {
         <Portal>
             <div className={classNames(cls.Drawer, mods, [className, theme])}>
                 <Overlay onClick={close} />
-                <div
-                    className={cls.content}
-                >
-                    {children}
-                </div>
+                <div className={cls.content}>{children}</div>
             </div>
         </Portal>
     );

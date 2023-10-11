@@ -15,45 +15,55 @@ export default meta;
 type Story = StoryObj<typeof CommentsList>;
 
 export const Primary: Story = {
-    args: { comments: selectEntitiesFromNormalizedData(mockReturnArticleDetailsCommentsState) },
-
+    args: {
+        comments: selectEntitiesFromNormalizedData(
+            mockReturnArticleDetailsCommentsState,
+        ),
+    },
 };
 
 export const LightLoading: Story = {
     args: {
-        comments: selectEntitiesFromNormalizedData(mockReturnArticleDetailsCommentsState),
+        comments: selectEntitiesFromNormalizedData(
+            mockReturnArticleDetailsCommentsState,
+        ),
         isLoading: true,
     },
-
 };
 export const Dark: Story = {
-    args: { comments: selectEntitiesFromNormalizedData(mockReturnArticleDetailsCommentsState) },
-    decorators: [ThemeDecorator(Theme.DARK),
-    ],
+    args: {
+        comments: selectEntitiesFromNormalizedData(
+            mockReturnArticleDetailsCommentsState,
+        ),
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const DarkLoading: Story = {
     args: {
-        comments: selectEntitiesFromNormalizedData(mockReturnArticleDetailsCommentsState),
+        comments: selectEntitiesFromNormalizedData(
+            mockReturnArticleDetailsCommentsState,
+        ),
         isLoading: true,
     },
-    decorators: [ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const Danger: Story = {
     args: {
-        comments: selectEntitiesFromNormalizedData(mockReturnArticleDetailsCommentsState),
+        comments: selectEntitiesFromNormalizedData(
+            mockReturnArticleDetailsCommentsState,
+        ),
     },
-    decorators: [ThemeDecorator(Theme.DANGER),
-    ],
+    decorators: [ThemeDecorator(Theme.DANGER)],
 };
 
 export const DangerLoading: Story = {
     args: {
-        comments: selectEntitiesFromNormalizedData(mockReturnArticleDetailsCommentsState),
+        comments: selectEntitiesFromNormalizedData(
+            mockReturnArticleDetailsCommentsState,
+        ),
         isLoading: true,
     },
-    decorators: [ThemeDecorator(Theme.DANGER),
-    ],
+    decorators: [ThemeDecorator(Theme.DANGER)],
 };

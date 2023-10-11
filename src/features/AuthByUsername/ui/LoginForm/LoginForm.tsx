@@ -7,7 +7,10 @@ import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import { getPassword } from '../../model/selectors/getPassword/getPassword';
 import { getUsername } from '../../model/selectors/getUsername/getUsername';
@@ -18,10 +21,10 @@ import { loginByUsername } from '../../model/services/loginByUsername/loginByUse
 
 export interface LoginFormProps {
     className?: string;
-    onSuccess:()=>void
+    onSuccess: () => void;
 }
 
-const reducers:ReducersList = {
+const reducers: ReducersList = {
     loginForm: loginReducer,
 };
 
@@ -57,11 +60,14 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         }
     }, [dispatch, onSuccess, password, username]);
 
-    const onKeyDown = useCallback((e: KeyboardEvent) => {
-        if (e.key === 'Enter') {
-            onLoginClick();
-        }
-    }, [onLoginClick]);
+    const onKeyDown = useCallback(
+        (e: KeyboardEvent) => {
+            if (e.key === 'Enter') {
+                onLoginClick();
+            }
+        },
+        [onLoginClick],
+    );
 
     useEffect(() => {
         if (username && password) {
@@ -85,14 +91,14 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                 )}
                 <Input
                     autofocus
-                    type="text"
+                    type='text'
                     className={cls.input}
                     placeholder={t('Enter username')}
                     onChange={onChangeUsername}
                     value={username}
                 />
                 <Input
-                    type="text"
+                    type='text'
                     className={cls.input}
                     placeholder={t('Enter password')}
                     onChange={onChangePassword}

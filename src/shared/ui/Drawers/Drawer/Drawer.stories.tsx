@@ -13,13 +13,30 @@ const meta: Meta<typeof Drawer> = {
     args: {
         isOpen: true,
         lazy: false,
-        children:
-    <VStack gap="16" align="center">
-        <Text title="Some child 1" text="Some child text 1" size={TextSize.S} />
-        <Text title="Some child 2" text="Some child text 1" size={TextSize.M} />
-        <Text title="Some child 3" text="Some child text 1" size={TextSize.L} />
-        <Text title="Some child 4" text="Some child text 1" size={TextSize.XL} />
-    </VStack>,
+        children: (
+            <VStack gap='16' align='center'>
+                <Text
+                    title='Some child 1'
+                    text='Some child text 1'
+                    size={TextSize.S}
+                />
+                <Text
+                    title='Some child 2'
+                    text='Some child text 1'
+                    size={TextSize.M}
+                />
+                <Text
+                    title='Some child 3'
+                    text='Some child text 1'
+                    size={TextSize.L}
+                />
+                <Text
+                    title='Some child 4'
+                    text='Some child text 1'
+                    size={TextSize.XL}
+                />
+            </VStack>
+        ),
     },
 };
 
@@ -32,13 +49,9 @@ export const Primary: Story = {
 };
 export const Dark: Story = {
     args: {},
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 export const Danger: Story = {
     args: {},
-    decorators: [
-        ThemeDecorator(Theme.DANGER),
-    ],
+    decorators: [ThemeDecorator(Theme.DANGER)],
 };

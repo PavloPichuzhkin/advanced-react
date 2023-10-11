@@ -1,6 +1,6 @@
 import { Notification } from '@/entities/Notification';
 
-export const mockNotifications:Notification[] = [
+export const mockNotifications: Notification[] = [
     {
         id: '1',
         title: 'Notification 1',

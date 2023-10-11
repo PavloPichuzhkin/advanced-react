@@ -17,11 +17,15 @@ type Story = StoryObj<typeof ArticleDetailsComments>;
 
 export const Primary: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK),
-        PartialStoreDecorator({
-            articleDetailsPage: {
-                comments: mockReturnArticleDetailsCommentsState(),
+    decorators: [
+        ThemeDecorator(Theme.DARK),
+        PartialStoreDecorator(
+            {
+                articleDetailsPage: {
+                    comments: mockReturnArticleDetailsCommentsState(),
+                },
             },
-        }, { articleDetailsPage: articleDetailsPageReducer }),
+            { articleDetailsPage: articleDetailsPageReducer },
+        ),
     ],
 };

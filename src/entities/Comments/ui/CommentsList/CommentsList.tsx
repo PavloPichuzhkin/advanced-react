@@ -17,7 +17,7 @@ export const CommentsList = memo((props: CommentListProps) => {
     const { t } = useTranslation();
     if (isLoading) {
         return (
-            <VStack max gap="16" className={classNames('', {}, [className])}>
+            <VStack max gap='16' className={classNames('', {}, [className])}>
                 <CommentCard isLoading />
                 <CommentCard isLoading />
                 <CommentCard isLoading />
@@ -26,16 +26,18 @@ export const CommentsList = memo((props: CommentListProps) => {
     }
 
     return (
-        <VStack max gap="16" className={classNames('', {}, [className])}>
-            {comments?.length
-                ? comments.map((comment) => (
+        <VStack max gap='16' className={classNames('', {}, [className])}>
+            {comments?.length ? (
+                comments.map((comment) => (
                     <CommentCard
                         key={comment.id}
                         isLoading={isLoading}
                         comment={comment}
                     />
                 ))
-                : <Text text={t('There are no comments')} />}
+            ) : (
+                <Text text={t('There are no comments')} />
+            )}
         </VStack>
     );
 });

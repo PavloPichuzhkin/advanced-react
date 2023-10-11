@@ -13,10 +13,10 @@ export default meta;
 type Story = StoryObj<typeof LangSwitcher>;
 
 export const Light: Story = {
-    args: { },
+    args: {},
 };
 
 export const Dark: Story = {
-    args: { },
+    args: {},
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

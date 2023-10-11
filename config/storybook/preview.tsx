@@ -64,10 +64,18 @@ const preview: Preview = {
         },
         msw: {
             handlers: {
-                test: [rest.get(`${__API__}/articles`, (_req, res, ctx) => {
-                    // console.log('handler work');
-                    return res(ctx.json(selectEntitiesFromNormalizedData(mockReturnArticlesPageState) as Article[]));
-                })],
+                test: [
+                    rest.get(`${__API__}/articles`, (_req, res, ctx) => {
+                        // console.log('handler work');
+                        return res(
+                            ctx.json(
+                                selectEntitiesFromNormalizedData(
+                                    mockReturnArticlesPageState,
+                                ) as Article[],
+                            ),
+                        );
+                    }),
+                ],
                 test2: [
                     rest.get(`${__API__}/article-ratings`, (_req, res, ctx) => {
                         return res(ctx.json(null));
@@ -95,7 +103,6 @@ const preview: Preview = {
         mswDecorator,
         AsyncStoryDecorator,
         // AsyncStoryDecorator(),
-
     ],
 };
 export default preview;

@@ -14,18 +14,23 @@ export default meta;
 type Story = StoryObj<typeof CurrencySelect>;
 
 export const Primary: Story = {
-    args: { },
+    args: {},
 };
 Primary.decorators = [
     (Story: StoryFn) => (
-        <div style={{ padding: '8rem' }}><Story /></div>
+        <div style={{ padding: '8rem' }}>
+            <Story />
+        </div>
     ),
 ];
 export const Dark: Story = {
-    args: { },
+    args: {},
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK),
+Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
     (Story: StoryFn) => (
-        <div style={{ padding: '8rem' }}><Story /></div>
+        <div style={{ padding: '8rem' }}>
+            <Story />
+        </div>
     ),
 ];
