@@ -5,35 +5,55 @@
             "username": "admin",
             "password": "123",
             "roles": ["ADMIN"],
-            "avatar": "https://as1.ftcdn.net/v2/jpg/05/56/29/10/1000_F_556291020_q2ieMiOCKYbtoLITrnt7qcSL1LJYyWrU.jpg"
+            "avatar": "https://as1.ftcdn.net/v2/jpg/05/56/29/10/1000_F_556291020_q2ieMiOCKYbtoLITrnt7qcSL1LJYyWrU.jpg",
+            "features": {
+                "isArticleRatingEnabled": true,
+                "isCounterEnabled": true
+            }
         },
         {
             "id": "2",
             "username": "user1",
             "password": "123",
             "roles": ["USER"],
-            "avatar": "https://as1.ftcdn.net/v2/jpg/06/19/33/30/1000_F_619333024_IfgNj7pGIeoG3BUPHfEkBT15l7yi7HbG.jpg"
+            "avatar": "https://as1.ftcdn.net/v2/jpg/06/19/33/30/1000_F_619333024_IfgNj7pGIeoG3BUPHfEkBT15l7yi7HbG.jpg",
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCounterEnabled": true
+            }
         },
         {
             "id": "3",
             "username": "user2",
             "password": "123",
             "roles": ["USER"],
-            "avatar": "https://as1.ftcdn.net/v2/jpg/01/10/87/84/1000_F_110878455_QZVeLFXBa1ZLiN7lMU8dDEtqqgOgJIRZ.jpg"
+            "avatar": "https://as1.ftcdn.net/v2/jpg/01/10/87/84/1000_F_110878455_QZVeLFXBa1ZLiN7lMU8dDEtqqgOgJIRZ.jpg",
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCounterEnabled": true
+            }
         },
         {
             "id": "4",
             "username": "manager",
             "password": "123",
             "roles": ["MANAGER"],
-            "avatar": "https://as1.ftcdn.net/v2/jpg/05/69/12/82/1000_F_569128260_hb4UE0XkrsGH2ztyLFuGP8hIRIRPi045.jpg"
+            "avatar": "https://as1.ftcdn.net/v2/jpg/05/69/12/82/1000_F_569128260_hb4UE0XkrsGH2ztyLFuGP8hIRIRPi045.jpg",
+            "features": {
+                "isArticleRatingEnabled": true,
+                "isCounterEnabled": true
+            }
         },
         {
             "id": "5",
             "username": "sadmin",
             "password": "123",
             "roles": ["SUPER_ADMIN"],
-            "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg"
+            "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg",
+            "features": {
+                "isArticleRatingEnabled": true,
+                "isCounterEnabled": true
+            }
         },
         {
             "id": "6",

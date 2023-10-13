@@ -18,6 +18,8 @@ import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDet
 import cls from './ArticleDetailsPage.module.scss';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { ArticleRating } from '@/features/ArticleRating';
+import { Card } from '@/shared/ui/Card';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -50,6 +52,17 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         );
     }
 
+    // const articleRatingCard = toggleFeatures({
+    //     name: 'isArticleRatingEnabled',
+    //     on: () => <ArticleRating articleId={id ?? ''} />,
+    //     off: () => <Card>{t('Article rating will be available soon!')}</Card>,
+    // });
+    const articleRatingCard = toggleFeatures({
+        name: 'isArticleRatingEnabled',
+        on: () => <ArticleRating articleId={id ?? ''} />,
+        off: () => <Card>{t('Article rating will be available soon!')}</Card>,
+    });
+
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page
@@ -60,7 +73,8 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                     {/* <div className={cls.pageContainer}> */}
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    <ArticleRating articleId={id} />
+                    {/* <ArticleRating articleId={id} /> */}
+                    {articleRatingCard}
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                     {/* </div> */}
