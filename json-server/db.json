@@ -9,6 +9,12 @@
             "features": {
                 "isArticleRatingEnabled": true,
                 "isCounterEnabled": true
+            },
+            "jsonSettings": {
+                "theme": "app_danger_theme",
+                "isFirstVisit": true,
+                "settingsPageHasBeenOpen": false,
+                "isArticlesPageWasOpened": false
             }
         },
         {
@@ -20,6 +26,12 @@
             "features": {
                 "isArticleRatingEnabled": false,
                 "isCounterEnabled": true
+            },
+            "jsonSettings": {
+                "theme": "app_light_dark",
+                "isFirstVisit": true,
+                "settingsPageHasBeenOpen": false,
+                "isArticlesPageWasOpened": false
             }
         },
         {
@@ -31,6 +43,12 @@
             "features": {
                 "isArticleRatingEnabled": false,
                 "isCounterEnabled": true
+            },
+            "jsonSettings": {
+                "theme": "app_light_danger",
+                "isFirstVisit": true,
+                "settingsPageHasBeenOpen": false,
+                "isArticlesPageWasOpened": false
             }
         },
         {
@@ -42,6 +60,12 @@
             "features": {
                 "isArticleRatingEnabled": true,
                 "isCounterEnabled": true
+            },
+            "jsonSettings": {
+                "theme": "app_light_danger",
+                "isFirstVisit": true,
+                "settingsPageHasBeenOpen": false,
+                "isArticlesPageWasOpened": false
             }
         },
         {
@@ -53,6 +77,12 @@
             "features": {
                 "isArticleRatingEnabled": true,
                 "isCounterEnabled": true
+            },
+            "jsonSettings": {
+                "theme": "app_light_danger",
+                "isFirstVisit": true,
+                "settingsPageHasBeenOpen": false,
+                "isArticlesPageWasOpened": false
             }
         },
         {
@@ -60,7 +90,17 @@
             "username": "tuser",
             "password": "123",
             "roles": ["SUPER_ADMIN"],
-            "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg"
+            "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg",
+            "features": {
+                "isArticleRatingEnabled": true,
+                "isCounterEnabled": true
+            },
+            "jsonSettings": {
+                "theme": "app_light_danger",
+                "isFirstVisit": true,
+                "settingsPageHasBeenOpen": false,
+                "isArticlesPageWasOpened": false
+            }
         }
     ],
     "article-ratings": [

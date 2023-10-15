@@ -6,8 +6,9 @@ import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { Navbar } from '@/widgets/Navbar';
 import { AppRouter } from './providers/router';
 import { Sidebar } from '@/widgets/Sidebar';
-import { getUserInited, userActions } from '@/entities/User';
+import { getUserInited, initAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Spinner } from '@/shared/ui/Spinner';
 
 function App() {
     const { theme } = useTheme();
@@ -15,9 +16,25 @@ function App() {
     const inited = useSelector(getUserInited);
 
     useEffect(() => {
-        dispatch(userActions.initAuthData());
+        dispatch(initAuthData());
         // console.log('userActions.initAuthData()');
     }, [dispatch]);
+
+    if (!inited) {
+        return (
+            <div
+                className={classNames('app', {}, [theme])}
+                style={{
+                    height: '100vh',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}
+            >
+                <Spinner />
+            </div>
+        );
+    }
 
     return (
         <div className={classNames('app', {}, [theme])}>

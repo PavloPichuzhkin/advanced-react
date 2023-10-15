@@ -4,15 +4,15 @@ const removedFeatureName = process.argv[2]; // example isArticleEnabled
 const featureState = process.argv[3]; // example off\on
 
 if (!removedFeatureName) {
-    throw new Error('Укажите название фича-флага');
+    throw new Error('Specify the name of the feature flag');
 }
 
 if (!featureState) {
-    throw new Error('Укажите состояние фичи (on или off)');
+    throw new Error('Specify the state of the feature (on or off)');
 }
 
 if (featureState !== 'on' && featureState !== 'off') {
-    throw new Error('Некорректное значение состояния фичи (on или off)');
+    throw new Error('Incorrect state of the feature (on or off)');
 }
 
 const project = new Project({});

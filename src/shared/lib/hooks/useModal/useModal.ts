@@ -19,11 +19,18 @@ export function useModal({ animationDelay, isOpen, onClose }: UseModalProps) {
     const timerRef = useRef() as MutableRefObject<
         ReturnType<typeof setTimeout>
     >;
+    const timerRefForOpening = useRef() as MutableRefObject<
+        ReturnType<typeof setTimeout>
+    >;
 
     useEffect(() => {
         if (isOpen) {
             setIsMounted(true);
-            setTimeout(() => setIsOpening(true), 0);
+            // setIsOpening(true);
+            timerRefForOpening.current = setTimeout(
+                () => setIsOpening(true),
+                0,
+            );
         }
     }, [isOpen]);
 
@@ -55,6 +62,7 @@ export function useModal({ animationDelay, isOpen, onClose }: UseModalProps) {
             return () => {
                 setIsOpening(false);
                 clearTimeout(timerRef.current);
+                clearTimeout(timerRefForOpening.current);
                 window.removeEventListener('keydown', onKeyDown);
             };
         }, // eslint-disable-next-line
