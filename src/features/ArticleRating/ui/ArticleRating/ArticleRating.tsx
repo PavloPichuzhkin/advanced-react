@@ -26,9 +26,9 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     const [rateArticleMutation] = useRateArticle();
 
     const handleRateArticle = useCallback(
-        (starsCount: number, feedback?: string) => {
+        async (starsCount: number, feedback?: string) => {
             try {
-                rateArticleMutation({
+                await rateArticleMutation({
                     userId: userData?.id ?? '',
                     articleId,
                     rate: starsCount,

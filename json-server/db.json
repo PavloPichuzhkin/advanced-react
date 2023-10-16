@@ -151,6 +151,13 @@
             "rate": 3,
             "feedback": "oooohh woooww",
             "id": "Km39exh"
+        },
+        {
+            "userId": "1",
+            "articleId": "21",
+            "rate": 3,
+            "feedback": "gdf",
+            "id": "UxP6L4_"
         }
     ],
     "profile-ratings": [
@@ -354,7 +361,7 @@
             "id": "1",
             "first": "Pavlo",
             "lastname": "Pichuzhkin",
-            "age": 221,
+            "age": 21,
             "currency": "USD",
             "country": "Great Britain",
             "city": "Kiev",

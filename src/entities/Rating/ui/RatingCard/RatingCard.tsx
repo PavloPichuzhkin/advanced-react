@@ -48,16 +48,18 @@ export const RatingCard = memo((props: RatingCardProps) => {
         },
         [hasFeedback, onAccept],
     );
-
-    const acceptHandle = useCallback(() => {
+    const onCloseModal = useCallback(() => {
         setIsModalOpen(false);
+    }, []);
+    const acceptHandle = useCallback(() => {
         onAccept?.(starsCount, feedback);
-    }, [feedback, onAccept, starsCount]);
+        onCloseModal();
+    }, [feedback, onAccept, onCloseModal, starsCount]);
 
     const cancelHandle = useCallback(() => {
-        setIsModalOpen(false);
         onCancel?.(starsCount);
-    }, [onCancel, starsCount]);
+        onCloseModal();
+    }, [onCancel, onCloseModal, starsCount]);
 
     const modalContent = (
         <>
@@ -88,7 +90,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
                 />
             </VStack>
             <BrowserView>
-                <Modal isOpen={isModalOpen} lazy>
+                <Modal onClose={onCloseModal} isOpen={isModalOpen} lazy>
                     <VStack max gap='24' className={cls.form}>
                         {modalContent}
                         <HStack max gap='16' justify='end'>
