@@ -19,7 +19,7 @@ import cls from './ArticleDetailsPage.module.scss';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { ArticleRating } from '@/features/ArticleRating';
 import { Card } from '@/shared/ui/Card';
-import { toggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -74,7 +74,16 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
                     {/* <ArticleRating articleId={id} /> */}
-                    {articleRatingCard}
+                    {/* {articleRatingCard} */}
+                    <ToggleFeatures
+                        feature='isArticleRatingEnabled'
+                        on={<ArticleRating articleId={id} />}
+                        off={
+                            <Card>
+                                {t('Article rating will be available soon!')}
+                            </Card>
+                        }
+                    />
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                     {/* </div> */}

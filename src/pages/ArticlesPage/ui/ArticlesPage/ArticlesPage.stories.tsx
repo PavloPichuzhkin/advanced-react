@@ -21,6 +21,9 @@ export const Primary: Story = {
         ThemeDecorator(Theme.DARK),
         PartialStoreDecorator({
             articlesPage: mockReturnArticlesPageState(),
+            user: {
+                authData: { jsonSettings: { isArticlesPageWasOpened: true } },
+            },
         }),
     ],
 };
@@ -31,6 +34,9 @@ export const Loading: Story = {
         ThemeDecorator(Theme.DARK),
         PartialStoreDecorator({
             articlesPage: mockReturnArticlesPageState(true),
+            user: {
+                authData: { jsonSettings: { isArticlesPageWasOpened: true } },
+            },
         }),
     ],
 };
@@ -45,6 +51,9 @@ export const Error: Story = {
                 ArticleView.SMALL,
                 'ooo',
             ),
+            user: {
+                authData: { jsonSettings: { isArticlesPageWasOpened: true } },
+            },
         }),
     ],
 };
@@ -55,6 +64,9 @@ export const Big: Story = {
         ThemeDecorator(Theme.DARK),
         PartialStoreDecorator({
             articlesPage: mockReturnArticlesPageState(false, ArticleView.BIG),
+            user: {
+                authData: { jsonSettings: { isArticlesPageWasOpened: true } },
+            },
         }),
     ],
 };
