@@ -87,6 +87,7 @@ const DrawerContent = (props: DrawerProps) => {
                 className={classNames(cls.AnimatedDrawer, {}, [
                     className,
                     theme,
+                    'app_drawer',
                 ])}
             >
                 <Overlay onClick={close} />

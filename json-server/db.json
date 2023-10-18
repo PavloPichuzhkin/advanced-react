@@ -11,7 +11,7 @@
                 "isCounterEnabled": true
             },
             "jsonSettings": {
-                "theme": "app_danger_theme",
+                "theme": "app_dark_theme",
                 "isFirstVisit": true,
                 "settingsPageHasBeenOpen": false,
                 "isArticlesPageWasOpened": true
@@ -76,13 +76,14 @@
             "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg",
             "features": {
                 "isArticleRatingEnabled": true,
-                "isCounterEnabled": true
+                "isCounterEnabled": true,
+                "isAppRedesigned": true
             },
             "jsonSettings": {
-                "theme": "app_light_danger",
+                "theme": "app_light_theme",
                 "isFirstVisit": true,
                 "settingsPageHasBeenOpen": false,
-                "isArticlesPageWasOpened": false
+                "isArticlesPageWasOpened": true
             }
         },
         {

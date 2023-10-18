@@ -1,5 +1,5 @@
 // :root,
-.app_light_theme{
+.app_light_theme {
     --bg-color: #e8e8ea;
     --inverted-bg-color: #2c2c82;
     --primary-color: #2658c4;
@@ -9,6 +9,17 @@
 
     --red-light: #f91c1c;
     --red-dark: #d80404;
+
+    // redesigned
+    --dark-bg-redesigned: #FFFFFF;
+    --bg-redesigned: #EFF5F6;
+    --light-bg-redesigned: #E2EEF1;
+    --text-redesigned: #141C1F;
+    --hint-redesigned: #ADBCC0;
+    --cancel-redesigned: #FF7777;
+    --save-redesigned: #62DE85;
+    --icon-redesigned: #5ED3F3;
+    --accent-redesigned: #00C8FF;
 
     // skeleton
     --skeleton-color: #fcfcfc;
@@ -26,6 +37,4 @@
     --card-bg: #dddde0;
 
     --listbox-bg: #dcdce2;
-
-
 }

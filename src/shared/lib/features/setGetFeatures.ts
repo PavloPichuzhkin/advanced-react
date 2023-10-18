@@ -15,5 +15,5 @@ export function getFeatureFlag(flag: keyof FeatureFlags) {
     if (__PROJECT__ === 'storybook') {
         return true;
     }
-    return featureFlags[flag];
+    return featureFlags?.[flag];
 }
