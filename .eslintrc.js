@@ -100,7 +100,7 @@ module.exports = {
                 endOfLine: 'auto',
             },
         ],
-        'react/jsx-max-props-per-line': ['error', { maximum: 3 }],
+        'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
         'react/no-array-index-key': 'off',
         'react/no-unstable-nested-components': 'warn',
     },

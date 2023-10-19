@@ -1,4 +1,11 @@
-import { memo, MutableRefObject, ReactNode, UIEvent, useRef } from 'react';
+import {
+    memo,
+    MutableRefObject,
+    ReactNode,
+    Suspense,
+    UIEvent,
+    useRef,
+} from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
@@ -13,6 +20,7 @@ import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './Page.module.scss';
 import { DataTestId } from '@/shared/types';
+import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features';
 
 interface PageProps extends DataTestId {
     className?: string;
@@ -51,19 +59,54 @@ export const Page = memo((props: PageProps) => {
     }, 400);
 
     return (
-        <div className={cls.underPageWrapper}>
-            <main
-                className={classNames(cls.Page, {}, [className])}
-                ref={wrapperRef}
-                onScroll={onScroll}
-                id={PAGE_ID}
-                data-testid={props['data-testid'] ?? 'Page'}
-            >
-                {children}
-                {onScrollEnd ? (
-                    <div ref={triggerRef} className={cls.triggerRef} />
-                ) : null}
-            </main>
-        </div>
+        <ToggleFeatures
+            feature='isAppRedesigned'
+            on={
+                <>
+                    <div className={cls.pageWrapper}>
+                        <div className={cls.underPageRedesigned} />
+                    </div>
+                    <main
+                        className={classNames(cls.PageRedesigned, {}, [
+                            className,
+                        ])}
+                        ref={wrapperRef}
+                        onScroll={onScroll}
+                        id={PAGE_ID}
+                        data-testid={props['data-testid'] ?? 'Page'}
+                    >
+                        {children}
+                        {onScrollEnd ? (
+                            <div ref={triggerRef} className={cls.triggerRef} />
+                        ) : null}
+                    </main>
+                </>
+            }
+            off={
+                <div className={cls.underPageWrapper}>
+                    <main
+                        className={classNames(
+                            // toggleFeatures({
+                            //     name: 'isAppRedesigned',
+                            //     on: () => cls.PageRedesigned,
+                            //     off: () => cls.Page,
+                            // }),
+                            cls.Page,
+                            {},
+                            [className],
+                        )}
+                        ref={wrapperRef}
+                        onScroll={onScroll}
+                        id={PAGE_ID}
+                        data-testid={props['data-testid'] ?? 'Page'}
+                    >
+                        {children}
+                        {onScrollEnd ? (
+                            <div ref={triggerRef} className={cls.triggerRef} />
+                        ) : null}
+                    </main>
+                </div>
+            }
+        />
     );
 });

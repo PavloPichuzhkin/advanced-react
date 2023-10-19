@@ -2,9 +2,7 @@
     // flex-grow: 1;
     padding: 20px 20px 20px 36px;
     border-top-left-radius: var(--border-top-left-radius);
-
-    // background: var(--bg-color);
-
+    background: var(--bg-color);
     height: 100%;
     width: 100%;
     overflow-y: auto;
@@ -13,15 +11,45 @@
 
 .underPageWrapper {
     flex-grow: 1;
-
-    // background: var(--inverted-bg-color);
+    background: var(--inverted-bg-color);
     height: calc(100vh - var(--navbar-height));
     width: 100%;
-    overflow-y: auto;
 
 }
 
 .triggerRef {
     height: 16px;
     margin: 16px;
+}
+
+.triggerWrapper {
+    height: calc(100vh - 64px);
+    width: 100%;
+}
+
+.underPageRedesigned {
+    background: var(--inverted-bg-color);
+    height: calc(100vh - 64px);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.pageWrapper {
+    // background: var(--inverted-bg-color);
+    height: max-content;
+    width: 100%;
+    position: sticky;
+    top: 32px;
+}
+
+.PageRedesigned {
+    // height: 100%;
+    width: 100%;
+    z-index: 5;
+    position: relative;
+    top: 0;
+    left: 0;
+
 }

@@ -92,7 +92,12 @@ export const ProfileCard = (props: ProfileCardProps) => {
         >
             {data?.avatar && (
                 <HStack justify='center' max>
-                    <Avatar src={data?.avatar} size={150} border='40%' />
+                    <Avatar
+                        src={data?.avatar}
+                        size={150}
+                        border='40%'
+                        fallbackInverted
+                    />
                 </HStack>
             )}
             <Input

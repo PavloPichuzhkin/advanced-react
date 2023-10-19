@@ -27,7 +27,12 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
     }, []);
 
     const trigger = (
-        <Button onClick={onOpenDrawer} as='div' theme={ButtonTheme.CLEAR}>
+        <Button
+            className={cls.trigger}
+            onClick={onOpenDrawer}
+            as='div'
+            theme={ButtonTheme.CLEAR}
+        >
             <Icon Svg={NotificationIcon} inverted />
         </Button>
     );

@@ -1,9 +1,10 @@
 .MainLayout {
-    min-height: 100vh;
+    max-height: 100vh;
     display: grid;
     grid-template-areas:
             'sidebar content rightbar';
     grid-template-columns: 284px 1fr 176px;
+    overflow-y: auto;
 }
 
 
@@ -18,6 +19,8 @@
     max-width: 1200px;
     justify-self: center;
     padding: 32px;
+    height: max-content;
+
 }
 
 .rightbar {

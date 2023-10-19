@@ -7,6 +7,7 @@ import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { saveJsonSettings } from '@/entities/User';
+import { Icon } from '@/shared/ui/Icon';
 
 interface ThemeSwitcherProps {
     className?: string;
@@ -28,7 +29,8 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
             className={classNames('', {}, [className])}
             onClick={onToggleHandler}
         >
-            {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
+            <Icon Svg={DarkIcon} width={40} height={40} inverted />
+            {/* {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />} */}
         </Button>
     );
 });
