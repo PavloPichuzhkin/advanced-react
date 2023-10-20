@@ -1,11 +1,13 @@
-.PageLoader{
+.PageLoader {
     flex-grow: 1;
     background: var(--inverted-bg-color);
-    width: 100%;
+
+    // width: 100%;
+    width: calc(100vw - var(--sidebar-width));
 
 }
 
-.beneathPageLoader{
+.beneathPageLoader {
     background: var(--bg-color);
     height: calc(100vh - var(--navbar-height));
     display: flex;

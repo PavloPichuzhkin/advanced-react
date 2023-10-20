@@ -9,6 +9,11 @@ const meta: Meta<typeof ArticleDetailsPage> = {
     title: 'Pages/ArticleDetailsPage/ArticleDetailsPage',
     component: ArticleDetailsPage,
     // tags: ['autodocs'],
+    parameters: {
+        loki: {
+            captureDelay: 5000,
+        },
+    },
 };
 
 export default meta;

@@ -6,8 +6,8 @@
 /storybook-static
 /build
 #.loki
-/.loki/report.html
-/.loki/report.json
+.loki/report.html
+.loki/report.json
 /coverage
 
 # Local Netlify folder

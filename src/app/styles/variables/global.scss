@@ -24,7 +24,9 @@
     --font-xxl: var(--font-size-xxl) / var(--font-line-xxl) var(--font-family-main);
 
     --navbar-height: 60px;
-    --sidebar-width: 300px;
+
+    // --sidebar-width: 300px;
+    --sidebar-width: calc(100vw * 0.15);
     --sidebar-width-collapsed: 90px;
 
     --border-radius: 5px;
