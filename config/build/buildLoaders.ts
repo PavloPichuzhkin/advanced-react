@@ -28,22 +28,24 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
 
     const svgLoader = {
         test: /\.svg$/,
-        use: [{
-            loader: '@svgr/webpack',
-            options: {
-                icon: true,
-                svgoConfig: {
-                    plugins: [
-                        {
-                            name: 'convertColors',
-                            params: {
-                                currentColor: true,
+        use: [
+            // '@svgr/webpack'
+            {
+                loader: '@svgr/webpack',
+                options: {
+                    icon: true,
+                    svgoConfig: {
+                        plugins: [
+                            {
+                                name: 'convertColors',
+                                params: {
+                                    currentColor: true,
+                                }
                             }
-                        }
-                    ]
+                        ]
+                    }
                 }
-            }
-        }],
+            }],
     };
 
     return [

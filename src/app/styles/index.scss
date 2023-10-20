@@ -11,13 +11,16 @@ body {
 
 }
 
+.app {
+    background: var(--bg-color);
+    overflow: hidden;
+}
+
 .app,
 .app_modal,
 .app_drawer {
-    background: var(--bg-color);
     color: var(--primary-color);
     font: var(--font-m);
-    overflow: hidden;
 }
 
 .app_redesigned {

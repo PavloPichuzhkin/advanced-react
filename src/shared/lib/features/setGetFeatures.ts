@@ -13,6 +13,9 @@ export function setFeatureFlags(newFeatureFlags?: FeatureFlags) {
 
 export function getFeatureFlag(flag: keyof FeatureFlags) {
     if (__PROJECT__ === 'storybook') {
+        if (flag === 'isAppRedesigned') {
+            return false;
+        }
         return true;
     }
     return featureFlags?.[flag];
