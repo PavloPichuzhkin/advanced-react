@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
-import { Text, TextSize } from '@/shared/ui/Text';
+import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import cls from './ArticleTipsBlockComponent.module.scss';
 import { ArticleTipsBlock } from '../../model/types/article';
 

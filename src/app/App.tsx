@@ -8,7 +8,7 @@ import { AppRouter } from './providers/router';
 import { Sidebar } from '@/widgets/Sidebar';
 import { getUserInited, initAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Spinner } from '@/shared/ui/Spinner';
+import { Spinner } from '@/shared/ui/deprecated/Spinner';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts';
 

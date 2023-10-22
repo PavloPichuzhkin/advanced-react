@@ -1,6 +1,6 @@
 import React, { ErrorInfo, ReactNode, Suspense } from 'react';
 import { ErrorPage } from '@/widgets/ErrorPage';
-import { Loader } from '@/shared/ui/Loader';
+import { Loader } from '@/shared/ui/deprecated/Loader';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 
 interface ErrorBoundaryProps {

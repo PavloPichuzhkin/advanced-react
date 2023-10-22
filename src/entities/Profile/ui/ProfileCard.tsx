@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { classNames, Mods } from '@/shared/lib/helpers/classNames/classNames';
-import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
-import { Input } from '@/shared/ui/Input';
-import { Spinner } from '@/shared/ui/Spinner';
-import { Avatar } from '@/shared/ui/Avatar';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Input } from '@/shared/ui/deprecated/Input';
+import { Spinner } from '@/shared/ui/deprecated/Spinner';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Country, CountrySelect } from '@/entities/CountrySelect';
 import { Currency, CurrencySelect } from '@/entities/CurrencySelect';
-import { HStack, VStack } from '@/shared/ui/Stack';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 import { Profile } from '../model/types/profile';
 import cls from './ProfileCard.module.scss';
 

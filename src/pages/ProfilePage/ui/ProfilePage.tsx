@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { Page } from '@/widgets/Page';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 import { EditableProfileCard } from '@/features/EditableProfileCard';
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/deprecated/Text';
 
 interface ProfilePageProps {
     className?: string;

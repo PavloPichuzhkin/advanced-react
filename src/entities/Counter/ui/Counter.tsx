@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 // import { useSelector } from 'react-redux';
-import { Button } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/deprecated/Button';
 import { useCounterEntityActions } from '../model/slice/counterSlice';
 import { useCounterEntityValue } from '../model/selectors/getCounterValue/getCounterValue';
 // import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
