@@ -5,7 +5,7 @@ import { VirtualizedArticleList } from '@/entities/Article';
 import cls from './ArticleRecommendationsList.module.scss';
 
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 
 interface ArticleRecommendationsListProps {

@@ -14,6 +14,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     disabled?: boolean;
     children?: ReactNode;
     fullWidth?: boolean;
+
+    as?: 'span'; // only for headless ui
 }
 
 export const Button = memo((props: ButtonProps) => {
@@ -25,6 +27,7 @@ export const Button = memo((props: ButtonProps) => {
         disabled,
         fullWidth,
         size = 'm',
+        as,
         ...otherProps
     } = props;
 
@@ -32,8 +35,23 @@ export const Button = memo((props: ButtonProps) => {
         [cls.square]: square,
         [cls.disabled]: disabled,
         [cls.fullWidth]: fullWidth,
+        [cls.spanDisable]: Boolean(as),
     };
-
+    if (as) {
+        return (
+            <span
+                role='button'
+                className={classNames(cls.Button, mods, [
+                    className,
+                    cls[variant],
+                    cls[size],
+                ])}
+                {...otherProps}
+            >
+                {children}
+            </span>
+        );
+    }
     return (
         <button
             type='button'

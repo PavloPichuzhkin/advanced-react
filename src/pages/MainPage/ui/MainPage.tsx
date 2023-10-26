@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { Page } from '@/widgets/Page';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { RatingCard } from '@/entities/Rating';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { StarRating } from '@/shared/ui/deprecated/StarRating';
 
 const MainPage = () => {

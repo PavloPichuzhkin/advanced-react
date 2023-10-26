@@ -3,7 +3,7 @@ import React from 'react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { AnimatedDrawer } from './AnimatedDrawer';
-import { VStack } from '../../Stack';
+import { VStack } from '../../../redesigned/Stack';
 import { Text, TextSize } from '../../Text';
 
 const meta: Meta<typeof AnimatedDrawer> = {

@@ -6,7 +6,7 @@ import { Spinner } from '@/shared/ui/deprecated/Spinner';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Country, CountrySelect } from '@/entities/CountrySelect';
 import { Currency, CurrencySelect } from '@/entities/CurrencySelect';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Profile } from '../model/types/profile';
 import cls from './ProfileCard.module.scss';
 

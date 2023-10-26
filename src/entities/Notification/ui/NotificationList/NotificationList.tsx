@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { t } from 'i18next';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 import { Text, TextAlign } from '@/shared/ui/deprecated/Text';
 import { useNotifications } from '../../api/notificationApi';

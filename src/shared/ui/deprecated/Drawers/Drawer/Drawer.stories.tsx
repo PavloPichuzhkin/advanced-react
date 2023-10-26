@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Drawer } from './Drawer';
 import { Text, TextSize } from '../../Text';
-import { VStack } from '../../Stack';
+import { VStack } from '../../../redesigned/Stack';
 
 const meta: Meta<typeof Drawer> = {
     title: 'Shared/Drawers/Drawer',

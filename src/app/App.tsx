@@ -9,7 +9,7 @@ import { Sidebar } from '@/widgets/Sidebar';
 import { getUserInited, initAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Spinner } from '@/shared/ui/deprecated/Spinner';
-import { ToggleFeatures } from '@/shared/lib/features';
+import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts';
 
 function App() {
@@ -26,6 +26,15 @@ function App() {
         return (
             <div
                 className={classNames('app', {}, [theme])}
+                // className={classNames(
+                //     toggleFeatures({
+                //         name: 'isAppRedesigned',
+                //         on: () => 'app_redesigned',
+                //         off: () => 'app_redesigned',
+                //     }),
+                //     {},
+                //     [theme],
+                // )}
                 style={{
                     height: '100vh',
                     display: 'flex',

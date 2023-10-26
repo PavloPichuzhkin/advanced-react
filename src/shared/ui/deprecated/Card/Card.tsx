@@ -26,6 +26,7 @@ export const Card = memo((props: CardProps) => {
         theme = CardTheme.NORMAL,
         ...otherProps
     } = props;
+
     const styles = useMemo<CSSProperties>(
         () => ({
             borderRadius: border || '8px',

@@ -6,11 +6,11 @@ import {
 } from '@/shared/lib/components/LibsProviders/AnimationProvider';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Loader } from '../../Loader';
-import { Overlay } from '../../Overlay';
+import { Overlay } from '../../../redesigned/Overlay';
 import cls from './AnimatedDrawer.module.scss';
-import { Portal } from '../../Portal';
+import { Portal } from '../../../redesigned/Portal';
 import { Text, TextSize } from '../../Text';
-import { HStack } from '../../Stack';
+import { HStack } from '../../../redesigned/Stack';
 
 interface DrawerProps {
     className?: string;
