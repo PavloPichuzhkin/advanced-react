@@ -6,7 +6,7 @@ import { Button } from '../../../Button';
 import { Dropdown } from './Dropdown';
 
 const meta: Meta<typeof Dropdown> = {
-    title: 'Shared/redesigned/Popups/Dropdown',
+    title: 'Shared/Redesigned/Popups/Dropdown',
     component: Dropdown,
     // tags: ['autodocs'],
 };

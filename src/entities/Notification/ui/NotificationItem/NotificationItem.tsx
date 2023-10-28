@@ -7,6 +7,7 @@ import { Notification } from '../../model/types/notification';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { AppText } from '@/shared/ui/redesigned/Text';
+import { useHover } from '@/shared/lib/hooks/useHover/useHover';
 
 interface NotificationItemProps {
     className?: string;
@@ -15,6 +16,9 @@ interface NotificationItemProps {
 
 export const NotificationItem = memo((props: NotificationItemProps) => {
     const { className, item } = props;
+
+    const [isHover, { onMouseEnter, onMouseLeave }] = useHover();
+
     const content = (
         <ToggleFeatures
             feature='isAppRedesigned'
@@ -25,7 +29,11 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
                         className,
                     ])}
                 >
-                    <AppText title={item.title} text={item.description} />
+                    <AppText
+                        title={item.title}
+                        text={item.description}
+                        hover={isHover}
+                    />
                 </Card>
             }
             off={
@@ -47,6 +55,8 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
     if (item.href) {
         return (
             <a
+                onMouseLeave={onMouseLeave}
+                onMouseEnter={onMouseEnter}
                 className={cls.link}
                 target='_blank'
                 href={item.href}

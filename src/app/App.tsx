@@ -54,9 +54,9 @@ function App() {
                 <div className={classNames('app_redesigned', {}, [theme])}>
                     <Suspense fallback=''>
                         <MainLayout
-                            header={<Navbar />}
-                            content={<AppRouter />}
                             sidebar={<Sidebar />}
+                            content={<AppRouter />}
+                            header={<Navbar />}
                             toolbar={<div>1111111111</div>}
                         />
                     </Suspense>

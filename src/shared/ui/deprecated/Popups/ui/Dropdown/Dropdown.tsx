@@ -15,10 +15,6 @@ export interface DropdownItem {
     href?: string;
 }
 
-/**
- * Use new components from the redesigned folder
- * @deprecated
- */
 interface DropdownProps {
     className?: string;
     items: DropdownItem[];
@@ -26,6 +22,10 @@ interface DropdownProps {
     trigger: ReactNode;
 }
 
+/**
+ * Use new components from the redesigned folder
+ * @deprecated
+ */
 export function Dropdown(props: DropdownProps) {
     const { className, trigger, items, direction = 'bottom right' } = props;
 

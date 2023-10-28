@@ -37,6 +37,7 @@ export const Button = memo((props: ButtonProps) => {
         [cls.fullWidth]: fullWidth,
         [cls.spanDisable]: Boolean(as),
     };
+
     if (as) {
         return (
             <span

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
+import { memo, useCallback, useMemo } from 'react';
 // import { useSelector } from 'react-redux';
 import { Button } from '@/shared/ui/deprecated/Button';
 import { useCounterEntityActions } from '../model/slice/counterSlice';
@@ -11,13 +11,17 @@ export const CounterEntity = memo(() => {
     const counterValueEntity = useCounterEntityValue();
     const { t } = useTranslation();
     const { increment, decrement, add } = useCounterEntityActions();
-    const incrementHandler = () => {
-        increment();
-    };
 
-    const decrementHandler = () => {
+    const incrementHandler = useCallback(() => {
+        // without useCallback Button memo work
+        increment();
+    }, [increment]);
+
+    const decrementHandler = useCallback(() => {
         decrement();
-    };
+    }, [decrement]);
+
+    const buttonChild = useMemo(() => <div>{t('add')}</div>, [t]);
 
     return (
         <div>
@@ -34,7 +38,16 @@ export const CounterEntity = memo(() => {
             >
                 {t('decrement')}
             </Button>
-            <Button onClick={() => add(2)}>{t('add')}</Button>
+            <Button
+                onClick={useCallback(() => {
+                    add(2);
+                }, [add])}
+            >
+                {buttonChild}
+                {/* memoized object - Button memo works! */}
+                {/* <div>{t('add')}</div> */}
+                {/* /!* Button memo test - do not work b of object*!/ */}
+            </Button>
         </div>
     );
 });

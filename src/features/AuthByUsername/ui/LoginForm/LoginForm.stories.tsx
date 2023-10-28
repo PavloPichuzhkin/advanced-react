@@ -9,6 +9,11 @@ const meta: Meta<typeof LoginForm> = {
     title: 'features/AuthByUsername/LoginForm',
     component: LoginForm,
     tags: ['autodocs'],
+    parameters: {
+        loki: {
+            captureDelay: 5000,
+        },
+    },
 };
 
 export default meta;

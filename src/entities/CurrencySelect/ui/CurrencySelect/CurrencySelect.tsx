@@ -1,8 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
-import { ListBox } from '@/shared/ui/deprecated/Popups';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Currency } from '../../model/types/currency';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
 
 interface CurrencySelectProps {
     className?: string;
@@ -29,15 +31,32 @@ export const CurrencySelect = memo(
         );
 
         return (
-            <ListBox
-                className={classNames('', {}, [className])}
-                label={t('Select currency')}
-                defaultValue={t('Select currency')}
-                items={options}
-                value={value}
-                onChange={onChangeHandler}
-                readonly={readonly}
-                direction='top right'
+            <ToggleFeatures
+                feature='isAppRedesigned'
+                on={
+                    <ListBox
+                        className={classNames('', {}, [className])}
+                        label={t('Select currency')}
+                        defaultValue={t('Select currency')}
+                        items={options}
+                        value={value}
+                        onChange={onChangeHandler}
+                        readonly={readonly}
+                        direction='top right'
+                    />
+                }
+                off={
+                    <ListBoxDeprecated
+                        className={classNames('', {}, [className])}
+                        label={t('Select currency')}
+                        defaultValue={t('Select currency')}
+                        items={options}
+                        value={value}
+                        onChange={onChangeHandler}
+                        readonly={readonly}
+                        direction='top right'
+                    />
+                }
             />
         );
     },

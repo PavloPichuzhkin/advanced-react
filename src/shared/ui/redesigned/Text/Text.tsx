@@ -31,6 +31,7 @@ interface TextProps {
     variant?: TextVariant;
     align?: TextAlign;
     size?: TextSize;
+    hover?: boolean;
 
     'data-testid'?: string;
 }
@@ -43,6 +44,7 @@ export const Text = memo((props: TextProps) => {
         variant = 'primary',
         align = 'left',
         size = 'm',
+        hover,
         'data-testid': dataTestId = 't',
     } = props;
 
@@ -50,8 +52,7 @@ export const Text = memo((props: TextProps) => {
     const sizeClass = mapSizeToClass[size];
 
     const mods: Mods = {
-        // [cls[theme]]: true,
-        // [cls[align]]: true,
+        [cls.accent]: hover,
     };
 
     return (

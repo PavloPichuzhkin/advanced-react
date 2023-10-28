@@ -26,14 +26,15 @@
 
 .active {
     background: var(--light-bg-redesigned);
-    border-radius: 6px;
+
+    // border-radius: 6px;
     cursor: pointer;
 }
 
 .selected {
-    background: var(--bg-color);
+    background: var(--light-bg-redesigned);
     border-radius: 6px;
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--accent-redesigned);
 }
 
 .disabled {

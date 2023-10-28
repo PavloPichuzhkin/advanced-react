@@ -1,8 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
-import { ListBox } from '@/shared/ui/deprecated/Popups';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Country, CountryOptions } from '../../model/types/country';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
 
 interface CountrySelectProps {
     className?: string;
@@ -38,15 +40,32 @@ export const CountrySelect = memo(
         );
 
         return (
-            <ListBox
-                className={classNames('', {}, [className])}
-                defaultValue={t('Select country')}
-                label={t('Select country')}
-                items={options}
-                value={value}
-                onChange={onChangeHandler}
-                readonly={readonly}
-                direction='top right'
+            <ToggleFeatures
+                feature='isAppRedesigned'
+                on={
+                    <ListBox
+                        className={classNames('', {}, [className])}
+                        defaultValue={t('Select country')}
+                        label={t('Select country')}
+                        items={options}
+                        value={value}
+                        onChange={onChangeHandler}
+                        readonly={readonly}
+                        direction='top right'
+                    />
+                }
+                off={
+                    <ListBoxDeprecated
+                        className={classNames('', {}, [className])}
+                        defaultValue={t('Select country')}
+                        label={t('Select country')}
+                        items={options}
+                        value={value}
+                        onChange={onChangeHandler}
+                        readonly={readonly}
+                        direction='top right'
+                    />
+                }
             />
         );
     },

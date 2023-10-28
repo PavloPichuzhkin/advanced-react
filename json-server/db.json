@@ -80,7 +80,7 @@
                 "isAppRedesigned": true
             },
             "jsonSettings": {
-                "theme": "app_dark_theme",
+                "theme": "app_light_theme",
                 "isFirstVisit": true,
                 "settingsPageHasBeenOpen": false,
                 "isArticlesPageWasOpened": true
@@ -407,8 +407,8 @@
             "first": "Pavlo5",
             "lastname": "Pichuzhkin",
             "age": 22,
-            "currency": "USD",
-            "country": "United States of America",
+            "currency": "EUR",
+            "country": "Germany",
             "city": "Kiev",
             "username": "admin",
             "avatar": "https://as1.ftcdn.net/v2/jpg/01/07/31/92/1000_F_107319263_QZBJEv23YDU6XjyPusAypDR2FiJiSv0j.jpg"

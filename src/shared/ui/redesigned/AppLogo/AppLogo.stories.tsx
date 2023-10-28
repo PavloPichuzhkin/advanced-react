@@ -5,7 +5,7 @@ import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDe
 import { AppLogo } from './AppLogo';
 
 const meta: Meta<typeof AppLogo> = {
-    title: 'Shared/AppLogo',
+    title: 'Shared/Redesigned/AppLogo',
     component: AppLogo,
     // tags: ['autodocs'],
 };

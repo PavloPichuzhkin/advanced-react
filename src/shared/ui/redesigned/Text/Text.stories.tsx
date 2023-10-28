@@ -4,7 +4,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Text } from './Text';
 
 const meta: Meta<typeof Text> = {
-    title: 'Shared/redesigned/Text',
+    title: 'Shared/Redesigned/Text',
     component: Text,
     tags: ['autodocs'],
 };

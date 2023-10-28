@@ -5,7 +5,7 @@ const meta: Meta<typeof AppLink> = {
     title: 'Shared/Redesigned/AppLink',
     component: AppLink,
     // tags: ['autodocs'],
-    // args: { to: '/' },
+    args: { to: '/' },
 };
 
 export default meta;

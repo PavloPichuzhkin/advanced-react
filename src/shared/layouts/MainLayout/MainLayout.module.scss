@@ -24,7 +24,10 @@
 }
 
 .rightbar {
-    grid-area: rightbar;
+    // grid-area: rightbar;
+    // background: var(--light-bg-redesigned);
+
+    border-radius: 32px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;

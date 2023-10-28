@@ -1,7 +1,9 @@
 .Button {
     cursor: pointer;
     color: var(--text-redesigned);
-    padding: 6px 15px;
+    padding: 8px 16px;
+    border-radius: 16px;
+    border: 1px solid var(--accent-redesigned);
 
     &:hover {
         color: var(--accent-redesigned);
@@ -17,6 +19,8 @@
 
 .square {
     padding: 0;
+    border-radius: 2px;
+
 }
 
 .square.m {
@@ -48,6 +52,11 @@
 
 .disabled {
     opacity: 0.5;
+
+    &:hover {
+        color: var(--text-redesigned);
+        cursor: text;
+    }
 }
 
 .fullWidth {
@@ -56,4 +65,6 @@
 
 .spanDisable {
     display: block;
+
+
 }
