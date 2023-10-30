@@ -1,5 +1,4 @@
 .ListBox {
-    margin-left: 12px;
 }
 
 .trigger {
@@ -33,8 +32,9 @@
 
 .selected {
     background: var(--light-bg-redesigned);
-    border-radius: 6px;
-    border: 1px solid var(--accent-redesigned);
+    
+    // border-radius: 6px;
+    // border: 1px solid var(--accent-redesigned);
 }
 
 .disabled {

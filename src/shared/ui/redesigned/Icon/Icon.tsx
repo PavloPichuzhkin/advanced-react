@@ -32,7 +32,7 @@ export const Icon = memo((props: IconProps) => {
 
     const icon = (
         <Svg
-            className={classNames(cls.Icon, {}, [])}
+            className={classNames(cls.Icon, {}, [className])}
             width={width}
             height={height}
             {...otherProps}
@@ -44,7 +44,7 @@ export const Icon = memo((props: IconProps) => {
         return (
             <button
                 type='button'
-                className={classNames(cls.button, {}, [className])}
+                className={classNames(cls.button, {}, [])}
                 onClick={props.onClick}
                 style={{ height, width }}
             >

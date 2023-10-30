@@ -17,6 +17,13 @@
     outline: none;
 }
 
+.filled {
+    background-color: var(--light-bg-redesigned);
+    border: none;
+    border-radius: 24px;
+
+}
+
 .square {
     padding: 0;
     border-radius: 2px;

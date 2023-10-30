@@ -4,6 +4,7 @@ import cls from './Card.module.scss';
 
 type CardVariant = 'primary' | 'outlined' | 'light';
 type CardPadding = '0' | '8' | '16' | '20' | '24';
+type CardBorder = 'round' | 'normal';
 type CardBorderRadius =
     | '2px'
     | '8px'
@@ -11,12 +12,14 @@ type CardBorderRadius =
     | '16px'
     | '20px'
     | '24px'
-    | '28px';
+    | '28px'
+    | '50%';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
     className?: string;
     children: ReactNode;
-    borderRadius?: CardBorderRadius;
+    // borderRadius?: CardBorderRadius;
+    border?: CardBorder;
     variant?: CardVariant;
     padding?: CardPadding;
     max?: boolean;
@@ -34,29 +37,31 @@ export const Card = memo((props: CardProps) => {
     const {
         className,
         children,
-        borderRadius,
+        // borderRadius,
+        border = 'normal',
         variant = 'primary',
         padding = '8',
         max,
         ...otherProps
     } = props;
 
-    const styles = useMemo<CSSProperties>(
-        () => ({
-            borderRadius: borderRadius || '8px',
-        }),
-        [borderRadius],
-    );
+    // const styles = useMemo<CSSProperties>(
+    //     () => ({
+    //         borderRadius: borderRadius || '8px',
+    //     }),
+    //     [borderRadius],
+    // );
 
     const paddingClass = mapPaddingToClass[padding];
 
     return (
         <div
-            style={styles}
+            // style={styles}
             className={classNames(cls.Card, {}, [
                 className,
                 cls[variant],
                 cls[paddingClass],
+                cls[border],
             ])}
             {...otherProps}
         >

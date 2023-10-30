@@ -7,6 +7,10 @@ import { ArticleSortField } from '../../../../entities/Article/model/consts/arti
 // import { ArticleSortField } from 'entities/Article'; // for test circular dependency plugin
 // TODO consider using dependency cruiser
 import cls from './ArticleSortSelector.module.scss';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { AppText } from '@/shared/ui/redesigned/Text';
 
 interface ArticleSortSelectorProps {
     className?: string;
@@ -61,20 +65,53 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     // }, [onChangeOrder]);
 
     return (
-        <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
-            <Select<ArticleSortField>
-                options={sortFieldOptions}
-                label={t('Sort by')}
-                value={sort}
-                onChange={onChangeSort}
-            />
-            <Select<SortOrder>
-                options={orderOptions}
-                label={t('by')}
-                value={order}
-                onChange={onChangeOrder}
-                className={cls.order}
-            />
-        </div>
+        <ToggleFeatures
+            feature='isAppRedesigned'
+            on={
+                <div
+                    className={classNames(cls.ArticleSortSelector, {}, [
+                        className,
+                    ])}
+                >
+                    <VStack gap='12'>
+                        <AppText text={`${t('Sort by')}:`} />
+                        <ListBox<ArticleSortField>
+                            items={sortFieldOptions}
+                            // label={t('Sort by')}
+                            value={sort}
+                            onChange={onChangeSort}
+                        />
+                        <ListBox<SortOrder>
+                            items={orderOptions}
+                            // label={t('by')}
+                            value={order}
+                            onChange={onChangeOrder}
+                            // className={cls.order}
+                        />
+                    </VStack>
+                </div>
+            }
+            off={
+                <div
+                    className={classNames(cls.ArticleSortSelector, {}, [
+                        className,
+                    ])}
+                >
+                    <Select<ArticleSortField>
+                        options={sortFieldOptions}
+                        label={t('Sort by')}
+                        value={sort}
+                        onChange={onChangeSort}
+                    />
+                    <Select<SortOrder>
+                        options={orderOptions}
+                        label={t('by')}
+                        value={order}
+                        onChange={onChangeOrder}
+                        className={cls.order}
+                    />
+                </div>
+            }
+        />
     );
 });
