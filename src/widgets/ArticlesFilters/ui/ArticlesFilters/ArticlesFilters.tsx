@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
-import { Input } from '@/shared/ui/deprecated/Input';
 import cls from './ArticlesFilters.module.scss';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
@@ -9,6 +8,9 @@ import { ArticleSortField, ArticleType } from '@/entities/Article';
 import { SortOrder } from '@/shared/types';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Icon } from '@/shared/ui/redesigned/Icon';
+import SearchIcon from '@/shared/assets/icons/redesigned/search.svg';
+import { Input } from '@/shared/ui/redesigned/Input';
 
 interface ArticlesFiltersProps {
     className?: string;
@@ -38,7 +40,7 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
 
     return (
         <Card
-            className={classNames(cls.ArticlesPageFilters, {}, [className])}
+            className={classNames(cls.ArticlesFilters, {}, [className])}
             padding='20'
         >
             <VStack gap='24'>
@@ -46,6 +48,7 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
                     onChange={onChangeSearch}
                     value={search}
                     placeholder={t('Search')}
+                    addonLeft={<Icon Svg={SearchIcon} />}
                 />
                 <ArticleSortSelector
                     order={order}

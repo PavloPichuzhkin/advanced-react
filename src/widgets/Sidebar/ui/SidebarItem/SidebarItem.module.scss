@@ -45,13 +45,14 @@
         margin-left: 10px;
         opacity: 1;
         white-space: nowrap;
-        transition: opacity 0.4s;
 
-        // &:hover {
-        //    color: var(--accent-redesigned);
-        // }
+        // transition: opacity 0.4s;
+
     }
 
+    &:hover svg {
+        color: var(--accent-redesigned);
+    }
 
 }
 

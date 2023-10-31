@@ -40,7 +40,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
                 >
                     <Icon
                         Svg={item.Icon}
-                        clickable
+                        // clickable
                         // onClick={() => {
                         //     console.log('Click On Icon');
                         // }}
