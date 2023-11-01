@@ -8,20 +8,27 @@ import React, {
 } from 'react';
 import { classNames, Mods } from '@/shared/lib/helpers/classNames/classNames';
 import cls from './Input.module.scss';
+import { HStack } from '../Stack';
+import { AppText } from '../Text';
 
 type HTMLInputProps = Omit<
     InputHTMLAttributes<HTMLInputElement>,
-    'value' | 'onChange'
+    'value' | 'onChange' | 'size'
 >;
+type LabelWhiteSpace = 'labelWhiteSpaceNowrap' | '';
+type InputSize = 's' | 'm' | 'l';
 
 interface InputProps extends HTMLInputProps {
     className?: string;
     value?: string | number;
+    label?: string;
+    labelWhiteSpace?: LabelWhiteSpace;
     onChange?: (value: string) => void;
     autofocus?: boolean;
     readonly?: boolean;
     addonLeft?: ReactNode;
     addonRight?: ReactNode;
+    size?: InputSize;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -35,8 +42,12 @@ export const Input = memo((props: InputProps) => {
         readonly,
         addonLeft,
         addonRight,
+        label,
+        labelWhiteSpace = '',
+        size = 'm',
         ...otherProps
     } = props;
+
     const ref = useRef<HTMLInputElement>(null);
     const [isFocused, setIsFocused] = useState(false);
 
@@ -68,14 +79,20 @@ export const Input = memo((props: InputProps) => {
         [cls.withAddonRight]: Boolean(addonRight),
     };
 
-    return (
-        <div className={classNames(cls.InputWrapper, mods, [className])}>
+    const input = (
+        <div
+            className={classNames(cls.InputWrapper, mods, [
+                className,
+                cls[size],
+            ])}
+        >
             {addonLeft && <div className={cls.addonLeft}>{addonLeft}</div>}
             <input
                 ref={ref}
                 type={type}
                 value={value}
                 placeholder={placeholder}
+                readOnly={readonly}
                 onChange={onChangeHandler}
                 className={cls.input}
                 onFocus={onFocus}
@@ -85,4 +102,18 @@ export const Input = memo((props: InputProps) => {
             {addonRight && <div className={cls.addonRight}>{addonRight}</div>}
         </div>
     );
+
+    if (label) {
+        return (
+            <HStack max gap='8' align='center'>
+                <AppText
+                    text={label}
+                    className={classNames('', {}, [cls[labelWhiteSpace]])}
+                />
+                {input}
+            </HStack>
+        );
+    }
+
+    return input;
 });

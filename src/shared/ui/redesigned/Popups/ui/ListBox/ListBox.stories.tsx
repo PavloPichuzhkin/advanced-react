@@ -20,7 +20,7 @@ type Story = StoryObj<typeof ListBox>;
 
 export const Primary: Story = {
     args: {
-        value: 'Value',
+        value: 'Value 2',
         items: [
             { content: 'Some content 1', value: 'Value 1' },
             { content: 'Some content 2', value: 'Value 2' },

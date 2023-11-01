@@ -12,12 +12,12 @@
     "Server error during send comment": "Server error during send comment",
     "Read more": "Read more",
     "Back to list": "Back to list",
-    "increasing": "increasing",
-    "descending": "descending",
-    "date of creation": "date of creation",
-    "by name": "by name",
-    "name": "name",
-    "viewing": "viewing",
+    "increasing": "Increasing",
+    "descending": "Descending",
+    "date of creation": "Date of creation",
+    "by name": "By name",
+    "name": "Name",
+    "viewing": "Viewing",
     "by": "by",
     "Sort by": "Sort by",
     "Search": "Search",
@@ -34,5 +34,6 @@
     "Edit article with ID = ": "Edit article with ID = ",
     "Article rating will be available soon!": "Article rating will be available soon!",
     "Welcome to the articles page!": "Welcome to the articles page!",
-    "Here you can search and view articles on various topics": "Here you can search and view articles on various topics."
+    "Here you can search and view articles on various topics": "Here you can search and view articles on various topics.",
+    "Types": "Types"
 }

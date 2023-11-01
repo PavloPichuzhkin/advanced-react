@@ -29,34 +29,22 @@ export const CurrencySelect = memo(
             },
             [onChange],
         );
-
+        const props = {
+            className: classNames('', {}, [className]),
+            label: t('Select currency'),
+            defaultValue: t('Select currency'),
+            items: options,
+            value,
+            onChange: onChangeHandler,
+            readonly,
+            direction: 'top right' as const,
+            showArrow: false,
+        };
         return (
             <ToggleFeatures
                 feature='isAppRedesigned'
-                on={
-                    <ListBox
-                        className={classNames('', {}, [className])}
-                        label={t('Select currency')}
-                        defaultValue={t('Select currency')}
-                        items={options}
-                        value={value}
-                        onChange={onChangeHandler}
-                        readonly={readonly}
-                        direction='top right'
-                    />
-                }
-                off={
-                    <ListBoxDeprecated
-                        className={classNames('', {}, [className])}
-                        label={t('Select currency')}
-                        defaultValue={t('Select currency')}
-                        items={options}
-                        value={value}
-                        onChange={onChangeHandler}
-                        readonly={readonly}
-                        direction='top right'
-                    />
-                }
+                on={<ListBox {...props} />}
+                off={<ListBoxDeprecated {...props} />}
             />
         );
     },

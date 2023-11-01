@@ -1,10 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
+import {
+    LOCAL_STORAGE_THEME_KEY,
+    USER_LOCALSTORAGE_KEY,
+} from '@/shared/const/localstorage';
 import { User, UserSchema } from '../types/user';
 import { setFeatureFlags } from '@/shared/lib/features';
 import { saveJsonSettings } from '../services/saveJsonSettings';
 import { JsonSettings } from '../types/jsonSettings';
 import { initAuthData } from '../services/initAuthData';
+import { Theme } from '@/shared/lib/context/ThemeContext';
 
 const initialState: UserSchema = {
     _inited: false,
@@ -47,6 +51,11 @@ export const userSlice = createSlice({
             (state, { payload }: PayloadAction<User>) => {
                 state.authData = payload;
                 setFeatureFlags(payload.features);
+                localStorage.setItem(
+                    LOCAL_STORAGE_THEME_KEY,
+                    payload.jsonSettings?.theme as Theme,
+                );
+
                 state._inited = true;
             },
         );

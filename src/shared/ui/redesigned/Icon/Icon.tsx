@@ -7,6 +7,7 @@ type SvgProps = Omit<React.SVGProps<SVGSVGElement>, 'onClick'>;
 interface IconBaseProps extends SvgProps {
     className?: string;
     Svg: FC<SVGProps<SVGSVGElement>>;
+    selected?: boolean;
 }
 
 interface NonClickableIconProps extends IconBaseProps {
@@ -27,12 +28,15 @@ export const Icon = memo((props: IconProps) => {
         width = 32,
         height = 32,
         clickable,
+        selected = false,
         ...otherProps
     } = props;
 
     const icon = (
         <Svg
-            className={classNames(cls.Icon, {}, [className])}
+            className={classNames(cls.Icon, { [cls.selected]: selected }, [
+                !clickable ? className : '',
+            ])}
             width={width}
             height={height}
             {...otherProps}
@@ -44,7 +48,7 @@ export const Icon = memo((props: IconProps) => {
         return (
             <button
                 type='button'
-                className={classNames(cls.button, {}, [])}
+                className={classNames(cls.button, {}, [className])}
                 onClick={props.onClick}
                 style={{ height, width }}
             >

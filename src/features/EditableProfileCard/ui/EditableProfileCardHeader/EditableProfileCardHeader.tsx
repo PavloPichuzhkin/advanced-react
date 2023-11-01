@@ -77,7 +77,9 @@ export const EditableProfileCardHeader = memo(
                                     theme={ButtonTheme.OUTLINE}
                                     onClick={onSave}
                                     disabled={
-                                        !!validateErrors?.length && myTimeout
+                                        // !!validateErrors?.length && myTimeout
+                                        Boolean(validateErrors?.length) &&
+                                        myTimeout
                                     }
                                     data-testid='EditableProfileCardHeader.SaveButton'
                                 >

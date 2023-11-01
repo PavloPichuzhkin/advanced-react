@@ -25,6 +25,7 @@ interface ListBoxProps<T extends string> {
     readonly?: boolean;
     direction?: DropdownDirection;
     label?: string;
+    showArrow?: boolean;
 }
 
 export function ListBox<T extends string>(props: ListBoxProps<T>) {
@@ -37,6 +38,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
         readonly,
         direction = 'bottom right',
         label,
+        showArrow = true,
     } = props;
 
     const optionsClasses = [mapDirectionClass[direction], popupCls.menu];
@@ -67,7 +69,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                         variant='filled'
                         as='span'
                         disabled={readonly}
-                        addonRight={<Icon Svg={ArrowIcon} />}
+                        addonRight={showArrow ? <Icon Svg={ArrowIcon} /> : null}
                     >
                         {selectedItemContent ?? defaultValue}
                     </Button>

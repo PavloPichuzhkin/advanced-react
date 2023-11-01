@@ -12,12 +12,12 @@
     "Server error during send comment": "Серверна помилка під час відправки коментаря",
     "Read more": "Читати більше",
     "Back to list": "Назад да списку",
-    "increasing": "збільшенню",
-    "descending": "спаданню",
-    "date of creation": "даті створення",
+    "increasing": "Збільшенню",
+    "descending": "Спаданню",
+    "date of creation": "Даті створення",
     "by name": "по назві",
-    "name": "назві",
-    "viewing": "переглядам",
+    "name": "Назві",
+    "viewing": "Переглядам",
     "by": "по",
     "Sort by": "Сортувати по",
     "Search": "Пошук",
@@ -34,5 +34,6 @@
     "Edit article with ID = ": "Редагувати статтю з ID = ",
     "Article rating will be available soon!": "Рейтинг статті буде доступний найближчим часом!",
     "Welcome to the articles page!": "Ласкаво просимо на сторінку статей!",
-    "Here you can search and view articles on various topics": "Тут ви можете шукати та переглядати статті на різні теми."
+    "Here you can search and view articles on various topics": "Тут ви можете шукати та переглядати статті на різні теми.",
+    "Types": "Типи"
 }

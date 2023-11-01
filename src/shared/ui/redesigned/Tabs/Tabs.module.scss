@@ -6,6 +6,11 @@
 
 .tab {
     cursor: pointer;
+
+    &:hover {
+        color: var(--accent-redesigned);
+
+    }
 }
 
 .selected {

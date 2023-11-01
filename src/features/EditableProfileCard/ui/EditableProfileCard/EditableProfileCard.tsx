@@ -90,6 +90,9 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     const onChangeAge = useCallback(
         (value?: string) => {
+            console.log(value);
+            console.log('Number(value)', Number(value));
+
             if (Number.isInteger(Number(value))) {
                 dispatch(
                     profileActions.updateProfile({ age: Number(value || 0) }),
@@ -131,8 +134,8 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <VStack gap='16' max>
                 <EditableProfileCardHeader />
-                {validateErrors?.length &&
-                    validateErrors.map((err) => (
+                {!!validateErrors?.length &&
+                    validateErrors?.map((err) => (
                         <Text
                             key={err}
                             theme={TextTheme.ERROR}

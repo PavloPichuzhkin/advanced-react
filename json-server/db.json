@@ -11,7 +11,7 @@
                 "isCounterEnabled": true
             },
             "jsonSettings": {
-                "theme": "app_danger_theme",
+                "theme": "app_dark_theme",
                 "isFirstVisit": true,
                 "settingsPageHasBeenOpen": false,
                 "isArticlesPageWasOpened": true
@@ -80,7 +80,7 @@
                 "isAppRedesigned": true
             },
             "jsonSettings": {
-                "theme": "app_light_theme",
+                "theme": "app_dark_theme",
                 "isFirstVisit": true,
                 "settingsPageHasBeenOpen": false,
                 "isArticlesPageWasOpened": true
@@ -362,7 +362,7 @@
             "id": "1",
             "first": "Pavlo",
             "lastname": "Pichuzhkin",
-            "age": 2111222,
+            "age": 111,
             "currency": "USD",
             "country": "Great Britain",
             "city": "Kiev",

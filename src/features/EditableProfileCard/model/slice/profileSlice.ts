@@ -3,6 +3,7 @@ import { Profile } from '@/entities/Profile';
 import { ProfileSchema } from '../types/EditableProfileCardSchema';
 import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
+import { validateProfileData } from '../services/validateProfileData/validateProfileData';
 
 const initialState: ProfileSchema = {
     readonly: true,
@@ -28,6 +29,7 @@ export const profileSlice = createSlice({
                 ...state.form,
                 ...action.payload,
             };
+            // state.validateErrors = validateProfileData(state.form);
         },
     },
     extraReducers: (builder) => {
