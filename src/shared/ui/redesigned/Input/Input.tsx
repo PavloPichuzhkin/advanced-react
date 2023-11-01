@@ -108,7 +108,9 @@ export const Input = memo((props: InputProps) => {
             <HStack max gap='8' align='center'>
                 <AppText
                     text={label}
-                    className={classNames('', {}, [cls[labelWhiteSpace]])}
+                    className={classNames(cls.label, {}, [
+                        cls[labelWhiteSpace],
+                    ])}
                 />
                 {input}
             </HStack>

@@ -48,11 +48,11 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
     );
 
     return (
-        <HStack gap='4' align='center'>
+        <HStack gap='24' align='center'>
             {label && (
                 <span
                     className={classNames('', { [cls.readonly]: readonly })}
-                >{`${label}/>`}</span>
+                >{`${label}`}</span>
             )}
             <HListBox
                 disabled={readonly}
