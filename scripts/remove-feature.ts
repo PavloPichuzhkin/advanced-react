@@ -20,10 +20,10 @@ if (featureState !== 'on' && featureState !== 'off') {
 
 const project = new Project({});
 
-// project.addSourceFilesAtPaths('src/**/*.ts');
-// project.addSourceFilesAtPaths('src/**/*.tsx');
+project.addSourceFilesAtPaths('src/**/*.ts');
+project.addSourceFilesAtPaths('src/**/*.tsx');
 // project.addSourceFilesAtPaths('src/**/ArticleDetailsPage.ts');
-project.addSourceFilesAtPaths('src/**/ArticleDetailsPage.tsx');
+// project.addSourceFilesAtPaths('src/**/ArticleDetailsPage.tsx');
 
 const files = project.getSourceFiles();
 
@@ -132,17 +132,21 @@ const replaceComponent = (node: Node) => {
 
 files.forEach((sourceFile) => {
     sourceFile.forEachDescendant((node) => {
-        // if (node.isKind(SyntaxKind.CallExpression) && isToggleFunction(node)) {
-        //     replaceToggleFunction(node);
-        // }
+        if (node.isKind(SyntaxKind.CallExpression) && isToggleFunction(node)) {
+            return replaceToggleFunction(node);
+        }
 
         if (
             node.isKind(SyntaxKind.JsxSelfClosingElement) &&
             isToggleComponent(node)
         ) {
-            replaceComponent(node);
+            return replaceComponent(node);
         }
+        return null;
     });
 });
 
 project.save();
+
+// ts-node ./scripts/remove-feature.ts isArticleRatingEnabled on
+// ts-node ./scripts/remove-feature.ts isAppRedesigned on

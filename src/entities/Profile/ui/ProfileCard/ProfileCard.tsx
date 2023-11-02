@@ -1,22 +1,12 @@
 import { useTranslation } from 'react-i18next';
-import { classNames, Mods } from '@/shared/lib/helpers/classNames/classNames';
-import { Text, TextAlign, TextTheme } from '@/shared/ui/deprecated/Text';
-import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
-import { Spinner } from '@/shared/ui/deprecated/Spinner';
-import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
-import { Country, CountrySelect } from '@/entities/CountrySelect';
-import { Currency, CurrencySelect } from '@/entities/CurrencySelect';
-import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { Country } from '@/entities/CountrySelect';
+import { Currency } from '@/entities/CurrencySelect';
 import { Profile } from '../../model/types/profile';
-import cls from './ProfileCard.module.scss';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { Input } from '@/shared/ui/redesigned/Input';
-import { Card } from '@/shared/ui/redesigned/Card';
-import { Avatar } from '@/shared/ui/redesigned/Avatar';
 import {
     ProfileCardErrorRedesigned,
-    ProfileCardRedesignedSkeleton,
     ProfileCardRedesigned,
+    ProfileCardRedesignedSkeleton,
 } from '../ProfileCardRedesigned/ProfileCardRedesigned';
 import {
     ProfileCardDeprecated,
@@ -42,14 +32,14 @@ export interface ProfileCardProps {
 
 export const ProfileCard = (props: ProfileCardProps) => {
     const { t } = useTranslation('profile');
-    const { isLoading, error } = props;
+    const { isLoading, error, className } = props;
 
     if (isLoading) {
         return (
             <ToggleFeatures
                 feature='isAppRedesigned'
-                on={<ProfileCardRedesignedSkeleton {...props} />}
-                off={<ProfileCardLoaderDeprecated {...props} />}
+                on={<ProfileCardRedesignedSkeleton className={className} />}
+                off={<ProfileCardLoaderDeprecated className={className} />}
             />
         );
     }
@@ -58,8 +48,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
         return (
             <ToggleFeatures
                 feature='isAppRedesigned'
-                on={<ProfileCardErrorRedesigned {...props} />}
-                off={<ProfileCardErrorDeprecated {...props} />}
+                on={<ProfileCardErrorRedesigned className={className} />}
+                off={<ProfileCardErrorDeprecated className={className} />}
             />
         );
     }

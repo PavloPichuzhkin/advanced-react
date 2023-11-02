@@ -2,11 +2,14 @@ import { memo } from 'react';
 import { t } from 'i18next';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { VStack } from '@/shared/ui/redesigned/Stack';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
 import { Text, TextAlign } from '@/shared/ui/deprecated/Text';
 import { useNotifications } from '../../api/notificationApi';
 import cls from './NotificationList.module.scss';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { AppText } from '@/shared/ui/redesigned/Text';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 
 interface NotificationListProps {
     className?: string;
@@ -23,23 +26,75 @@ export const NotificationList = memo((props: NotificationListProps) => {
 
     if (isLoading) {
         return (
-            <VStack
-                gap='16'
-                max
-                className={classNames(cls.NotificationList, {}, [className])}
-            >
-                <Skeleton width='100%' border='8px' height='80px' />
-                <Skeleton width='100%' border='8px' height='80px' />
-                <Skeleton width='100%' border='8px' height='80px' />
-            </VStack>
+            <ToggleFeatures
+                feature='isAppRedesigned'
+                on={
+                    <VStack
+                        gap='16'
+                        max
+                        className={classNames(cls.NotificationList, {}, [
+                            className,
+                        ])}
+                    >
+                        <Skeleton width='100%' border='8px' height='80px' />
+                        <Skeleton width='100%' border='8px' height='80px' />
+                        <Skeleton width='100%' border='8px' height='80px' />
+                    </VStack>
+                }
+                off={
+                    <VStack
+                        gap='16'
+                        max
+                        className={classNames(cls.NotificationList, {}, [
+                            className,
+                        ])}
+                    >
+                        <SkeletonDeprecated
+                            width='100%'
+                            border='8px'
+                            height='80px'
+                        />
+                        <SkeletonDeprecated
+                            width='100%'
+                            border='8px'
+                            height='80px'
+                        />
+                        <SkeletonDeprecated
+                            width='100%'
+                            border='8px'
+                            height='80px'
+                        />
+                    </VStack>
+                }
+            />
         );
     }
     if (error) {
         return (
-            <Text
-                className={classNames(cls.NotificationList, {}, [className])}
-                align={TextAlign.CENTER}
-                title={t('An error occurred while loading the Notification')}
+            <ToggleFeatures
+                feature='isAppRedesigned'
+                on={
+                    <AppText
+                        className={classNames(cls.NotificationList, {}, [
+                            className,
+                        ])}
+                        align={TextAlign.CENTER}
+                        title={t(
+                            'An error occurred while loading the Notification',
+                        )}
+                    />
+                }
+                off={
+                    <Text
+                        className={classNames(cls.NotificationList, {}, [
+                            className,
+                        ])}
+                        align={TextAlign.CENTER}
+                        title={t(
+                            'An error occurred while loading the Notification',
+                        )}
+                    />
+                }
             />
         );
     }

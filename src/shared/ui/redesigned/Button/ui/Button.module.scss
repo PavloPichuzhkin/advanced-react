@@ -1,11 +1,13 @@
 .Button {
+    // outline variant
     cursor: pointer;
     color: var(--text-redesigned);
     padding: 8px 16px;
-    border-radius: 16px;
+    border-radius: 24px;
     border: 1px solid var(--accent-redesigned);
     display: flex;
     align-items: center;
+    background: none;
 
     .addonRight svg, .addonLeft svg {
         color: var(--hint-redesigned);

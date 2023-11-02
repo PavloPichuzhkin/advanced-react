@@ -58,8 +58,6 @@ export const ProfileCardDeprecated = memo((props: ProfileCardProps) => {
     const {
         className,
         data,
-        isLoading,
-        error,
         readonly,
         onChangeFirstname,
         onChangeLastname,
