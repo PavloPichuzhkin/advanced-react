@@ -32,6 +32,7 @@ interface TextProps {
     align?: TextAlign;
     size?: TextSize;
     hover?: boolean;
+    bolt?: boolean;
 
     'data-testid'?: string;
 }
@@ -45,6 +46,7 @@ export const Text = memo((props: TextProps) => {
         align = 'left',
         size = 'm',
         hover,
+        bolt,
         'data-testid': dataTestId = 't',
     } = props;
 
@@ -53,6 +55,7 @@ export const Text = memo((props: TextProps) => {
 
     const mods: Mods = {
         [cls.accent]: hover,
+        [cls.bolt]: bolt,
     };
 
     return (

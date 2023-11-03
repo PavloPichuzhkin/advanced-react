@@ -4,7 +4,7 @@ import { FeatureFlags } from '@/shared/types';
 
 interface ToggleFeaturesProps {
     feature: keyof FeatureFlags;
-    on?: ReactElement | null;
+    on: ReactElement | null;
     off: ReactElement;
 }
 

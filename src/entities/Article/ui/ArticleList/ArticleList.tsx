@@ -8,6 +8,7 @@ import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkele
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
 import { Article } from '../../model/types/article';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface ArticleListProps {
     className?: string;
@@ -43,7 +44,12 @@ export const ArticleList = memo((props: ArticleListProps) => {
         <ArticleListItem
             article={article}
             view={view}
-            className={cls.card}
+            // className={cls.card}
+            className={toggleFeatures({
+                name: 'isAppRedesigned',
+                on: () => cls.cardRedesigned,
+                off: () => cls.card,
+            })}
             key={article.id}
             target={target}
         />
