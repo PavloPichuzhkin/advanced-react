@@ -32,10 +32,12 @@ export const DesignSwitcher = memo((props: DesignSwitcherProps) => {
         {
             content: t('New'),
             value: 'new',
+            disabled: false,
         },
         {
             content: t('Old'),
             value: 'old',
+            disabled: false,
         },
     ];
 
@@ -49,15 +51,21 @@ export const DesignSwitcher = memo((props: DesignSwitcherProps) => {
                         isAppRedesigned: value === 'new',
                     },
                 }),
-            )
-                .unwrap()
-                .then
-                //     () => {
-                //     setIsLoading(false);
-                // }
-                ();
+            );
+            // .unwrap()
+            // .then
+            // //     () => {
+            // //     setIsLoading(false);
+            // // }
+            // ();
         }
     };
+
+    const selectedValue = isAppRedesigned ? 'new' : 'old';
+    const itemsWithDisabledValue = items.map((item) => ({
+        ...item,
+        disabled: item.value === selectedValue,
+    }));
 
     return (
         <HStack align='center' gap='8'>
@@ -71,8 +79,8 @@ export const DesignSwitcher = memo((props: DesignSwitcherProps) => {
                         ) : (
                             <ListBox
                                 onChange={onChange}
-                                items={items}
-                                value={isAppRedesigned ? 'new' : 'old'}
+                                items={itemsWithDisabledValue}
+                                value={selectedValue}
                                 className={className}
                             />
                         )}
@@ -86,8 +94,8 @@ export const DesignSwitcher = memo((props: DesignSwitcherProps) => {
                         ) : (
                             <ListBoxDeprecated
                                 onChange={onChange}
-                                items={items}
-                                value={isAppRedesigned ? 'new' : 'old'}
+                                items={itemsWithDisabledValue}
+                                value={selectedValue}
                                 className={className}
                             />
                         )}

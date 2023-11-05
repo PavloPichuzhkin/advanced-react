@@ -6,6 +6,7 @@ import { Text } from '@/shared/ui/deprecated/Text';
 import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { DesignSwitcher } from '@/features/DesignSwitcher';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface SettingsPageProps {
     className?: string;
@@ -18,7 +19,12 @@ const SettingsPage = memo((props: SettingsPageProps) => {
     return (
         <Page>
             <VStack gap='16'>
-                <AppText title={t('User settings')} />
+                <ToggleFeatures
+                    feature='isAppRedesigned'
+                    on={<AppText title={t('User settings')} />}
+                    off={<Text title={t('User settings')} />}
+                />
+
                 <DesignSwitcher />
             </VStack>
         </Page>
