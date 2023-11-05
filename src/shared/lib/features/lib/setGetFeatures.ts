@@ -20,3 +20,7 @@ export function getFeatureFlag(flag: keyof FeatureFlags) {
     }
     return Boolean(featureFlags?.[flag]);
 }
+
+export function getAllFeatureFlags() {
+    return featureFlags;
+}

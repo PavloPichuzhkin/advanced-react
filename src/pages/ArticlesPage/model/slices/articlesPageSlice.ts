@@ -14,6 +14,10 @@ import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 import { SortOrder } from '@/shared/types';
 import { ArticlesPageSchema } from '../types/articlesPageSchema';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import {
+    ARTICLES_COUNT_BIG_VIEW,
+    ARTICLES_COUNT_SMALL_VIEW,
+} from '@/shared/const/articlesPage';
 
 const articlesAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id,
@@ -34,7 +38,7 @@ const articlesPageSlice = createSlice({
         page: 1,
         hasMore: true,
         _inited: false,
-        limit: 9,
+        limit: ARTICLES_COUNT_SMALL_VIEW,
         sort: ArticleSortField.VIEWS,
         search: '',
         order: 'asc',
@@ -43,6 +47,10 @@ const articlesPageSlice = createSlice({
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
             state.view = action.payload;
+            state.limit =
+                state.view === ArticleView.BIG
+                    ? ARTICLES_COUNT_BIG_VIEW
+                    : ARTICLES_COUNT_SMALL_VIEW;
             localStorage.setItem(
                 ARTICLES_VIEW_LOCALSTORAGE_KEY,
                 action.payload,
@@ -65,7 +73,10 @@ const articlesPageSlice = createSlice({
         },
         clearArticles: (state) => {
             articlesAdapter.setAll(state, {});
-            state.limit = state.view === ArticleView.BIG ? 6 : 9;
+            state.limit =
+                state.view === ArticleView.BIG
+                    ? ARTICLES_COUNT_BIG_VIEW
+                    : ARTICLES_COUNT_SMALL_VIEW;
             state.page = 1;
         },
         initState: (state) => {
@@ -74,7 +85,10 @@ const articlesPageSlice = createSlice({
                     ARTICLES_VIEW_LOCALSTORAGE_KEY,
                 ) as ArticleView) || ArticleView.SMALL;
             state.view = view;
-            state.limit = view === ArticleView.BIG ? 6 : 9;
+            state.limit =
+                view === ArticleView.BIG
+                    ? ARTICLES_COUNT_BIG_VIEW
+                    : ARTICLES_COUNT_SMALL_VIEW;
             state._inited = true;
         },
     },

@@ -1,0 +1,2 @@
+export const ARTICLES_COUNT_BIG_VIEW = 6;
+export const ARTICLES_COUNT_SMALL_VIEW = 9;

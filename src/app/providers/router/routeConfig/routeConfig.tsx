@@ -20,7 +20,9 @@ import {
     getRouteForbidden,
     getRouteMain,
     getRouteProfile,
+    getRouteSettings,
 } from '@/shared/const/router';
+import { SettingsPage } from '@/pages/SettingsPage';
 
 // export const RoutePath: Record<AppRoutes, string> = {
 //     [AppRoutes.MAIN]: '/',
@@ -89,6 +91,10 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     [AppRoutes.FORBIDDEN]: {
         path: getRouteForbidden(),
         element: <ForbiddenPage />,
+    },
+    [AppRoutes.SETTINGS]: {
+        path: getRouteSettings(),
+        element: <SettingsPage />,
     },
 
     [AppRoutes.NOT_FOUND]: {

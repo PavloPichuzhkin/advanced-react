@@ -17,6 +17,7 @@ import {
     getRouteAdmin,
     getRouteMain,
     getRouteProfile,
+    getRouteSettings,
 } from '@/shared/const/router';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Dropdown } from '@/shared/ui/redesigned/Popups';
@@ -56,6 +57,11 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
         {
             content: t('Profile'),
             href: getRouteProfile(authData.id),
+        },
+        {
+            content: t('Settings'),
+            href: getRouteSettings(),
+            // disabled: true,
         },
         {
             content: t('Sign out'),

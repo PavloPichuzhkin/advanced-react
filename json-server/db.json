@@ -8,7 +8,8 @@
             "avatar": "https://as1.ftcdn.net/v2/jpg/05/56/29/10/1000_F_556291020_q2ieMiOCKYbtoLITrnt7qcSL1LJYyWrU.jpg",
             "features": {
                 "isArticleRatingEnabled": true,
-                "isCounterEnabled": true
+                "isCounterEnabled": true,
+                "isAppRedesigned": false
             },
             "jsonSettings": {
                 "theme": "app_dark_theme",
@@ -80,7 +81,7 @@
                 "isAppRedesigned": true
             },
             "jsonSettings": {
-                "theme": "app_light_theme",
+                "theme": "app_dark_theme",
                 "isFirstVisit": true,
                 "settingsPageHasBeenOpen": false,
                 "isArticlesPageWasOpened": true
