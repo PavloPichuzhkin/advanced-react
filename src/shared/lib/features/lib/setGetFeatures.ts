@@ -19,6 +19,7 @@ export function getFeatureFlag(flag: keyof FeatureFlags) {
         return true;
     }
     return Boolean(featureFlags?.[flag]);
+    // return true;
 }
 
 export function getAllFeatureFlags() {

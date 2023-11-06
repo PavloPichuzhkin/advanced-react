@@ -10,7 +10,7 @@ import {
     Button as ButtonDeprecated,
     ButtonTheme,
 } from '@/shared/ui/deprecated/Button';
-import { AnimatedDrawer } from '@/shared/ui/deprecated/Drawers';
+import { AnimatedDrawer } from '@/shared/ui/redesigned/Drawers';
 import cls from './NotificationButton.module.scss';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Icon } from '@/shared/ui/redesigned/Icon';

@@ -11,12 +11,25 @@
 
 .content {
     padding: 20px;
-    border-radius: var(--border-radius) ;
-    border: 1px  solid var(--inverted-bg-color);
-    background: var(--bg-color);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--inverted-bg-color);
+
+    // background: var(--bg-color);
     transition: 0.5s transform;
     transform: scale(0.8);
     max-width: 50%;
+}
+
+.modalNew {
+    .content {
+        background: var(--light-bg-redesigned);
+    }
+}
+
+.modalOld {
+    .content {
+        background: var(--bg-color);
+    }
 }
 
 .opened {

@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { AnimatedDrawer } from './AnimatedDrawer';
 import { VStack } from '../../../redesigned/Stack';
-import { Text, TextSize } from '../../Text';
+import { Text, TextSize } from '../../../deprecated/Text';
 
 const meta: Meta<typeof AnimatedDrawer> = {
     title: 'Shared/Drawers/AnimatedDrawer',

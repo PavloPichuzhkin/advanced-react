@@ -15,14 +15,10 @@ body {
 .app {
     background: var(--bg-color);
     overflow: hidden;
-}
-
-.app,
-.app_modal,
-.app_drawer {
     color: var(--primary-color);
     font: var(--font-m);
 }
+
 
 .app_redesigned {
     background: var(--bg-redesigned);

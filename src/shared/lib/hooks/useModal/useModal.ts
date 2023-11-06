@@ -61,6 +61,8 @@ export function useModal({ animationDelay, isOpen, onClose }: UseModalProps) {
 
             return () => {
                 setIsOpening(false);
+                // setIsMounted(false);
+
                 clearTimeout(timerRef.current);
                 clearTimeout(timerRefForOpening.current);
                 window.removeEventListener('keydown', onKeyDown);

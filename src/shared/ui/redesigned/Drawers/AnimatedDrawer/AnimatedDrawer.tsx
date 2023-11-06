@@ -5,12 +5,13 @@ import {
     useAnimationLibs,
 } from '@/shared/lib/components/LibsProviders/AnimationProvider';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
-import { Loader } from '../../Loader';
 import { Overlay } from '../../../redesigned/Overlay';
 import cls from './AnimatedDrawer.module.scss';
 import { Portal } from '../../../redesigned/Portal';
-import { Text, TextSize } from '../../Text';
+import { Text, TextSize } from '../../../deprecated/Text';
 import { HStack } from '../../../redesigned/Stack';
+import { Loader } from '../../../deprecated/Loader';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface DrawerProps {
     className?: string;
@@ -21,10 +22,7 @@ interface DrawerProps {
 }
 
 const height = window.innerHeight - 100;
-/**
- * Use new components from the redesigned folder
- * @deprecated
- */
+
 const DrawerContent = (props: DrawerProps) => {
     const { Spring, Gesture } = useAnimationLibs();
     const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
@@ -85,12 +83,16 @@ const DrawerContent = (props: DrawerProps) => {
     const display = y.to((py) => (py < height ? 'block' : 'none'));
 
     return (
-        <Portal>
+        <Portal element={document.getElementById('app') ?? document.body}>
             <div
                 className={classNames(cls.AnimatedDrawer, {}, [
                     className,
                     theme,
-                    'app_drawer',
+                    toggleFeatures({
+                        name: 'isAppRedesigned',
+                        on: () => cls.drawerNew,
+                        off: () => cls.drawerOld,
+                    }),
                 ])}
             >
                 <Overlay onClick={close} />

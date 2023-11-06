@@ -7,6 +7,7 @@ import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { DesignSwitcher } from '@/features/DesignSwitcher';
 import { ToggleFeatures } from '@/shared/lib/features';
+import { CreateGreeting } from '@/features/ArticlePageGreeting';
 
 interface SettingsPageProps {
     className?: string;
@@ -26,6 +27,7 @@ const SettingsPage = memo((props: SettingsPageProps) => {
                 />
 
                 <DesignSwitcher />
+                <CreateGreeting />
             </VStack>
         </Page>
     );

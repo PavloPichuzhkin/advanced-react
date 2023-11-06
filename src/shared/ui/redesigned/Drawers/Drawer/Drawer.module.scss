@@ -15,20 +15,32 @@
 
 .content {
     height: 70%;
-    background: var(--bg-color);
+
+    // background: var(--bg-color);
+    position: relative;
     bottom: 0;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    position: relative;
     width: 100%;
     min-height: 100px;
     padding: 20px;
-    transition: 0.6s transform;
+    transition: 0.7s transform;
     transform: translateY(100%);
     overflow-y: auto;
     overflow-x: hidden;
 }
 
+.drawerNew {
+    .content {
+        background: var(--light-bg-redesigned);
+    }
+}
+
+.drawerOld {
+    .content {
+        background: var(--bg-color);
+    }
+}
 
 .opened {
     pointer-events: auto;
@@ -39,7 +51,7 @@
 
 .isOpening {
     .content {
-        transform: translateY(0%);
+        transform: translateY(1%);
     }
 }
 
