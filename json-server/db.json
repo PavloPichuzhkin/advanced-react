@@ -78,7 +78,7 @@
             "features": {
                 "isArticleRatingEnabled": true,
                 "isCounterEnabled": true,
-                "isAppRedesigned": true
+                "isAppRedesigned": false
             },
             "jsonSettings": {
                 "theme": "app_dark_theme",
@@ -363,7 +363,7 @@
             "id": "1",
             "first": "Pavlo",
             "lastname": "Pichuzhkin",
-            "age": 111,
+            "age": 22,
             "currency": "USD",
             "country": "Great Britain",
             "city": "Kiev",

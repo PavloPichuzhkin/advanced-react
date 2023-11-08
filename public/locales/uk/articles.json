@@ -11,7 +11,7 @@
     "Enter comment": "Введіть комент",
     "Server error during send comment": "Серверна помилка під час відправки коментаря",
     "Read more": "Читати більше",
-    "Back to list": "Назад да списку",
+    "Back to list": "Назад до списку",
     "increasing": "Збільшенню",
     "descending": "Спаданню",
     "date of creation": "Даті створення",
@@ -36,7 +36,12 @@
     "Welcome to the articles page!": "Ласкаво просимо на сторінку статей!",
     "Here you can search and view articles on various topics": "Тут ви можете шукати та переглядати статті на різні теми.",
     "Types": "Типи",
-    "Create": "Create",
-    "You can create greeting for Articles Page": "You can create greeting for Articles Page",
-    "Ready": "Ready"
+    "Create": "Створити",
+    "You can create greeting for Articles Page": "Ви маєте чудову можливість створити привітання на сторанці статей",
+    "Ready": "Готово",
+    "{{count}} views_zero": "{{count}} переглядів",
+    "{{count}} views_one": "{{count}} перегляд",
+    "{{count}} views_few": "{{count}} перегляди",
+    "{{count}} views_many": "{{count}} переглядів",
+    "{{count}} views": "{{count}} переглядів"
 }

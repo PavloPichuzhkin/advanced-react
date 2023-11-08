@@ -20,6 +20,9 @@ import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByAr
 import { ArticleRating } from '@/features/ArticleRating';
 import { Card } from '@/shared/ui/deprecated/Card';
 import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features';
+import { StickyContentLayout } from '@/shared/layouts';
+import { ArticleDetailsContainer } from '../ArticleDetailsContainer/ArticleDetailsContainer';
+import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -52,11 +55,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         );
     }
 
-    // const articleRatingCard = toggleFeatures({
-    //     name: 'isArticleRatingEnabled',
-    //     on: () => <ArticleRating articleId={id ?? ''} />,
-    //     off: () => <Card>{t('Article rating will be available soon!')}</Card>,
-    // });
     const articleRatingCard = toggleFeatures({
         name: 'isArticleRatingEnabled',
         on: () => <ArticleRating articleId={id ?? ''} />,
@@ -65,30 +63,57 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <Page
-                className={classNames(cls.ArticleDetailsPage, {}, [className])}
-            >
-                <VStack gap='16' max>
-                    {/* made scroll behavior uncontrolled because of align-items prop */}
-                    {/* <div className={cls.pageContainer}> */}
-                    <ArticleDetailsPageHeader />
-                    <ArticleDetails id={id} />
-                    {/* <ArticleRating articleId={id} /> */}
-                    {/* {articleRatingCard} */}
-                    <ToggleFeatures
-                        feature='isArticleRatingEnabled'
-                        on={<ArticleRating articleId={id} />}
-                        off={
-                            <Card>
-                                {t('Article rating will be available soon!')}
-                            </Card>
+            <ToggleFeatures
+                feature='isAppRedesigned'
+                on={
+                    <StickyContentLayout
+                        content={
+                            <Page
+                                className={classNames(
+                                    cls.ArticleDetailsPage,
+                                    {},
+                                    [className],
+                                )}
+                            >
+                                <VStack gap='16' max>
+                                    <ArticleDetailsContainer />
+                                    <ArticleRating articleId={id} />
+                                    <ArticleRecommendationsList />
+                                    <ArticleDetailsComments id={id} />
+                                </VStack>
+                            </Page>
                         }
+                        right={<AdditionalInfoContainer />}
                     />
-                    <ArticleRecommendationsList />
-                    <ArticleDetailsComments id={id} />
-                    {/* </div> */}
-                </VStack>
-            </Page>
+                }
+                off={
+                    <Page
+                        className={classNames(cls.ArticleDetailsPage, {}, [
+                            className,
+                        ])}
+                    >
+                        <VStack gap='16'>
+                            <ArticleDetailsPageHeader />
+                            <ArticleDetails id={id} />
+                            {/* <ArticleRating articleId={id} /> */}
+                            {/* {articleRatingCard} */}
+                            <ToggleFeatures
+                                feature='isArticleRatingEnabled'
+                                on={<ArticleRating articleId={id} />}
+                                off={
+                                    <Card>
+                                        {t(
+                                            'Article rating will be available soon!',
+                                        )}
+                                    </Card>
+                                }
+                            />
+                            <ArticleRecommendationsList />
+                            <ArticleDetailsComments id={id} />
+                        </VStack>
+                    </Page>
+                }
+            />
         </DynamicModuleLoader>
     );
 };

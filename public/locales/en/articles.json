@@ -38,5 +38,9 @@
     "Types": "Types",
     "Create": "Create",
     "You can create greeting for Articles Page": "You can create greeting for Articles Page",
-    "Ready": "Ready"
+    "Ready": "Ready",
+    "{{count}} views_zero": "{{count}} views",
+    "{{count}} views_one": "{{count}} view",
+    "{{count}} views_other": "{{count}} views",
+    "{{count}} views": "{{count}} views"
 }

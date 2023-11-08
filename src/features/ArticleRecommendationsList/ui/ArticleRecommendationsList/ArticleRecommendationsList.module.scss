@@ -1,12 +1,40 @@
+.ArticleRecommendationsList {
+    // width: 100%;
+}
+
 .recommendations {
-    // display: flex;
+    display: flex;
     height: max-content;
     margin-top: 20px;
     padding-bottom: 16px;
     flex-wrap: nowrap;
     justify-content: start;
-    overflow-y: hidden;
+    overflow-x: scroll;
+    width: 100%;
+
+}
+
+.recommendationsRedesigned {
+    grid-area: content;
+    display: flex;
+    height: max-content;
+    margin-top: 20px;
+    padding-bottom: 16px;
+    flex-wrap: nowrap;
+    justify-content: start;
     overflow-x: scroll;
 
-    // width: 99%;
+    // max-width: 62vw;
+    // min-width: 0;
+    // max-width: 100%;
+    scrollbar-width: none;
+
+}
+
+.recommendationsWrapper {
+    display: grid;
+    grid-template-areas:
+            'content';
+    grid-template-columns: 1fr;
+    overflow: hidden;
 }

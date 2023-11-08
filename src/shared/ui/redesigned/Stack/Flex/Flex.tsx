@@ -56,7 +56,7 @@ export const Flex = (props: FlexProps) => {
         className,
         children,
         justify = 'start',
-        align,
+        align = 'center',
         wrap = 'nowrap',
         direction = 'row',
         gap,

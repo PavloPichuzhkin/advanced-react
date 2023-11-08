@@ -57,12 +57,13 @@ export const Card = memo((props: CardProps) => {
     return (
         <div
             // style={styles}
-            className={classNames(cls.Card, {}, [
-                className,
-                cls[variant],
-                cls[paddingClass],
-                cls[border],
-            ])}
+            className={classNames(
+                cls.Card,
+                {
+                    [cls.max]: max,
+                },
+                [className, cls[variant], cls[paddingClass], cls[border]],
+            )}
             {...otherProps}
         >
             {children}

@@ -49,8 +49,6 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
             feature='isAppRedesigned'
             on={
                 <StickyContentLayout
-                    // left={<ViewSelectorContainer />}
-                    // right={<FiltersContainer />}
                     left={<ArticleViewSelectorContainer />}
                     right={<ArticlesFiltersContainer />}
                     content={
