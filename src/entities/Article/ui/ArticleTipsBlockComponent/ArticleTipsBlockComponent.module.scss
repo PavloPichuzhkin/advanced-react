@@ -1,6 +1,14 @@
 .ArticleTipsBlockComponent {
     padding: 20px;
     width: 100%;
+    
+}
+
+.ArticleTipsBlockRedesigned {
+    padding: 20px;
+    width: 100%;
+    border: 1px solid var(--accent-redesigned);
+    border-radius: 16px;
 }
 
 .paragraph {
@@ -16,5 +24,17 @@
 }
 
 .Warning {
+    background: var(--warning-bg);
+}
+
+.TipsRedesigned {
+    background: var(--tips-bg);
+}
+
+.NoteRedesigned {
+    background: var(--note-bg);
+}
+
+.WarningRedesigned {
     background: var(--warning-bg);
 }

@@ -4,6 +4,7 @@ import { Text } from '@/shared/ui/deprecated/Text';
 import cls from './ArticleTextBlockComponent.module.scss';
 import { ArticleTextBlock } from '../../model/types/article';
 import { ToggleFeatures } from '@/shared/lib/features';
+import { AppText } from '@/shared/ui/redesigned/Text';
 
 interface ArticleTextBlockComponentProps {
     className?: string;
@@ -15,30 +16,44 @@ export const ArticleTextBlockComponent = memo(
         const { className, block } = props;
 
         return (
-            <ToggleFeatures
-                feature='isAppRedesigned'
-                on={null}
-                off={
-                    <div
-                        className={classNames(
-                            cls.ArticleTextBlockComponent,
-                            {},
-                            [className],
-                        )}
-                    >
-                        {block.title && (
-                            <Text title={block.title} className={cls.title} />
-                        )}
-                        {block.paragraphs.map((paragraph, index) => (
-                            <Text
-                                key={index}
+            <div
+                className={classNames(cls.ArticleTextBlockComponent, {}, [
+                    className,
+                ])}
+            >
+                {block.title && (
+                    <ToggleFeatures
+                        feature='isAppRedesigned'
+                        on={
+                            <AppText
+                                title={block.title}
+                                className={cls.title}
+                            />
+                        }
+                        off={<Text title={block.title} className={cls.title} />}
+                    />
+                )}
+                {block.paragraphs.map((paragraph, index) => (
+                    <ToggleFeatures
+                        key={index}
+                        feature='isAppRedesigned'
+                        on={
+                            <AppText
+                                // key={index}
                                 text={paragraph}
                                 className={cls.paragraph}
                             />
-                        ))}
-                    </div>
-                }
-            />
+                        }
+                        off={
+                            <Text
+                                // key={index}
+                                text={paragraph}
+                                className={cls.paragraph}
+                            />
+                        }
+                    />
+                ))}
+            </div>
         );
     },
 );

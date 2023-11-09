@@ -55,11 +55,11 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         );
     }
 
-    const articleRatingCard = toggleFeatures({
-        name: 'isArticleRatingEnabled',
-        on: () => <ArticleRating articleId={id ?? ''} />,
-        off: () => <Card>{t('Article rating will be available soon!')}</Card>,
-    });
+    // const articleRatingCard = toggleFeatures({
+    //     name: 'isArticleRatingEnabled',
+    //     on: () => <ArticleRating articleId={id ?? ''} />,
+    //     off: () => <Card>{t('Article rating will be available soon!')}</Card>,
+    // });
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

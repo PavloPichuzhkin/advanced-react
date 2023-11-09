@@ -22,10 +22,8 @@ export const ProfileCardRedesignedSkeleton = memo(
                     className,
                 ])}
             >
-                <VStack max gap='32'>
-                    <HStack max>
-                        <Skeleton border='40%' width={120} height={120} />
-                    </HStack>
+                <VStack max gap='32' align='center'>
+                    <Skeleton border='40%' width={120} height={120} />
                     <HStack gap='32' max>
                         <VStack gap='24' max>
                             <Skeleton width='100%' height={38} />

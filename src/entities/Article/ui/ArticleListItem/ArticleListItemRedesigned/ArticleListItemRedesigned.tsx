@@ -129,8 +129,12 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
                     {/*    <div className={cls.infoWrapper}>{types}</div> */}
                     {/*    <AppText text={article.title} className={cls.title} /> */}
                     {/* </HStack> */}
-                    <HStack gap='12' align='center'>
-                        <Avatar size={30} src={article.user.avatar} />
+                    <HStack gap='12' align='center' className={cls.Avatar}>
+                        <Avatar
+                            size={30}
+                            src={article.user.avatar}
+                            // className={cls.Avatar}
+                        />
                         <AppText text={article.user.username} bolt />
                         <AppText text={article.createdAt} />
                     </HStack>

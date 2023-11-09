@@ -4,6 +4,8 @@ import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import cls from './ArticleTipsBlockComponent.module.scss';
 import { ArticleTipsBlock } from '../../model/types/article';
+import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
+import { AppText } from '@/shared/ui/redesigned/Text';
 
 interface ArticleTipsBlockComponentProps {
     className?: string;
@@ -17,18 +19,50 @@ export const ArticleTipsBlockComponent = memo(
 
         return (
             <div
-                className={classNames(cls.ArticleTipsBlockComponent, {}, [
-                    className,
-                    cls[`${block.title}`],
-                ])}
+                // className={classNames(cls.ArticleTipsBlockComponent, {}, [
+                //     className,
+                //     cls[`${block.title}`],
+                // ])}
+                className={toggleFeatures({
+                    name: 'isAppRedesigned',
+                    on: () =>
+                        classNames(cls.ArticleTipsBlockRedesigned, {}, [
+                            className,
+                            cls[`${block.title}Redesigned`],
+                        ]),
+                    off: () =>
+                        classNames(cls.ArticleTipsBlockComponent, {}, [
+                            className,
+                            cls[`${block.title}`],
+                        ]),
+                })}
             >
-                <Text title={t(block.title)} className={cls.title} />
+                <ToggleFeatures
+                    feature='isAppRedesigned'
+                    on={
+                        <AppText title={t(block.title)} className={cls.title} />
+                    }
+                    off={<Text title={t(block.title)} className={cls.title} />}
+                />
                 {block.paragraphs.map((paragraph, index) => (
-                    <Text
-                        key={index}
-                        text={paragraph}
-                        className={cls.paragraph}
-                        size={TextSize.M}
+                    <ToggleFeatures
+                        feature='isAppRedesigned'
+                        on={
+                            <AppText
+                                key={index}
+                                text={paragraph}
+                                className={cls.paragraph}
+                                size='m'
+                            />
+                        }
+                        off={
+                            <Text
+                                key={index}
+                                text={paragraph}
+                                className={cls.paragraph}
+                                size={TextSize.M}
+                            />
+                        }
                     />
                 ))}
             </div>

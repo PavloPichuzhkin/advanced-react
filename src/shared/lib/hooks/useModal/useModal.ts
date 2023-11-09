@@ -2,6 +2,7 @@ import {
     MutableRefObject,
     useCallback,
     useEffect,
+    useMemo,
     useRef,
     useState,
 } from 'react';
@@ -77,4 +78,12 @@ export function useModal({ animationDelay, isOpen, onClose }: UseModalProps) {
         isMounted,
         close,
     };
+    // return useMemo(() => {
+    //     return {
+    //         isOpening,
+    //         isClosing,
+    //         isMounted,
+    //         close,
+    //     };
+    // }, [close, isClosing, isMounted, isOpening]);
 }

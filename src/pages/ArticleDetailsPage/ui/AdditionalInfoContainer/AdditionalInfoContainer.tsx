@@ -5,7 +5,11 @@ import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import cls from './AdditionalInfoContainer.module.scss';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { ArticleAdditionalInfo } from '@/widgets/ArticleAdditionalInfo';
-import { getArticleDetailsData } from '@/entities/Article';
+import {
+    getArticleDetailsData,
+    getArticleDetailsIsLoading,
+    getArticleDetailsError,
+} from '@/entities/Article';
 import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 import { getCanUserEditArticle } from '../../model/selectors/getCanUserEditArticle';
 
@@ -18,6 +22,8 @@ export const AdditionalInfoContainer = memo(
         const article = useSelector(getArticleDetailsData);
         const navigate = useNavigate();
         const canEdit = useSelector(getCanUserEditArticle);
+        const isLoading = useSelector(getArticleDetailsIsLoading);
+        const error = useSelector(getArticleDetailsError);
 
         const onBackToList = useCallback(() => {
             navigate(getRouteArticles());
@@ -29,9 +35,9 @@ export const AdditionalInfoContainer = memo(
             }
         }, [article, navigate]);
 
-        if (!article) {
-            return null;
-        }
+        // if (!article || error) {
+        //     return null;
+        // }
 
         return (
             <Card
@@ -42,12 +48,15 @@ export const AdditionalInfoContainer = memo(
                 ])}
             >
                 <ArticleAdditionalInfo
-                    author={article?.user}
-                    createdAt={article.createdAt}
-                    views={article.views}
+                    article={article}
+                    // author={article?.user}
+                    // createdAt={article.createdAt}
+                    // views={article.views}
                     onEditArticle={onEdit}
                     onBackToList={onBackToList}
                     canEdit={canEdit}
+                    isLoading={isLoading}
+                    error={error}
                 />
             </Card>
         );
