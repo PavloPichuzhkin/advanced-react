@@ -1,7 +1,7 @@
 .ArticleTipsBlockComponent {
     padding: 20px;
     width: 100%;
-    
+
 }
 
 .ArticleTipsBlockRedesigned {
@@ -28,13 +28,23 @@
 }
 
 .TipsRedesigned {
-    background: var(--tips-bg);
+    background: var(--tips-bg-redesigned);
 }
 
 .NoteRedesigned {
-    background: var(--note-bg);
+    background: var(--note-bg-redesigned);
+
+    // .title * {
+    //    color: var(--bg-redesigned);
+    // }
+    // .paragraph p {
+    //    color: var(--bg-redesigned);
+    // }
+
 }
 
 .WarningRedesigned {
-    background: var(--warning-bg);
+    background: var(--warning-bg-redesigned);
+
 }
+

@@ -1,14 +1,17 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { Input } from '@/shared/ui/deprecated/Input';
+import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
     DynamicModuleLoader,
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import {
+    Button as ButtonDeprecated,
+    ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import {
@@ -21,6 +24,11 @@ import {
     getAddCommentFormText,
 } from '../../model/selectors/addCommentFormSelectors';
 import cls from './AddCommentForm.module.scss';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Input } from '@/shared/ui/redesigned/Input';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { Card } from '@/shared/ui/redesigned/Card';
+import { AppText } from '@/shared/ui/redesigned/Text';
 
 export interface AddCommentFormProps {
     className?: string;
@@ -56,38 +64,84 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            {addCommentFormIsLoading && (
-                <Text theme={TextTheme.ERROR} title={t('Comment is sending')} />
-            )}
             {error && (
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('Server error during send comment')}
                 />
             )}
-            <HStack
-                data-testid='AddCommentForm'
-                max
-                justify='between'
-                align='center'
-                className={classNames(cls.AddCommentForm, {}, [className])}
-            >
-                <Input
-                    data-testid='AddCommentForm.Input'
-                    className={cls.input}
-                    placeholder={t('Enter comment')}
-                    value={text}
-                    onChange={onCommentTextChange}
-                />
-                <Button
-                    data-testid='AddCommentForm.Button'
-                    theme={ButtonTheme.OUTLINE}
-                    onClick={onSendHandler}
-                    disabled={addCommentFormIsLoading}
-                >
-                    {t('Send')}
-                </Button>
-            </HStack>
+            {/* {addCommentFormIsLoading && ( */}
+            {/*    <Text theme={TextTheme.ERROR} title={t('Comment is sending')} /> */}
+            {/* )} */}
+            <ToggleFeatures
+                feature='isAppRedesigned'
+                on={
+                    <Card border='round' max padding='24'>
+                        {addCommentFormIsLoading ? (
+                            <AppText
+                                variant='error'
+                                title={t('Comment is sending')}
+                            />
+                        ) : (
+                            <HStack
+                                data-testid='AddCommentForm'
+                                max
+                                gap='32'
+                                justify='between'
+                                align='center'
+                                className={classNames(
+                                    cls.AddCommentFormRedesigned,
+                                    {},
+                                    [className],
+                                )}
+                            >
+                                <Input
+                                    data-testid='AddCommentForm.Input'
+                                    className={cls.input}
+                                    placeholder={t('Enter comment')}
+                                    value={text}
+                                    onChange={onCommentTextChange}
+                                />
+                                <Button
+                                    data-testid='AddCommentForm.Button'
+                                    variant='outline'
+                                    onClick={onSendHandler}
+                                    disabled={addCommentFormIsLoading}
+                                >
+                                    {t('Send')}
+                                </Button>
+                            </HStack>
+                        )}
+                    </Card>
+                }
+                off={
+                    <HStack
+                        data-testid='AddCommentForm'
+                        max
+                        justify='between'
+                        align='center'
+                        className={classNames(cls.AddCommentForm, {}, [
+                            className,
+                        ])}
+                    >
+                        <InputDeprecated
+                            data-testid='AddCommentForm.Input'
+                            className={cls.input}
+                            placeholder={t('Enter comment')}
+                            value={text}
+                            onChange={onCommentTextChange}
+                        />
+                        <ButtonDeprecated
+                            data-testid='AddCommentForm.Button'
+                            theme={ButtonTheme.OUTLINE}
+                            onClick={onSendHandler}
+                            disabled={addCommentFormIsLoading}
+                        >
+                            {t('Send')}
+                        </ButtonDeprecated>
+                    </HStack>
+                }
+            />
         </DynamicModuleLoader>
     );
 });

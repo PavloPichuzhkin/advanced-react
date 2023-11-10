@@ -14,6 +14,8 @@ import {
     getArticleComments,
     getArticleCommentsIsLoading,
 } from '../../model/selectors/getComments';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { AppText } from '@/shared/ui/redesigned/Text';
 
 interface ArticleDetailsCommentsProps {
     className?: string;
@@ -52,7 +54,11 @@ export const ArticleDetailsComments = memo(
 
         return (
             <VStack gap='16' max className={classNames('', {}, [className])}>
-                <Text className='' title={`${t('Comments')}:`} />
+                <ToggleFeatures
+                    feature='isAppRedesigned'
+                    on={<AppText className='' title={`${t('Comments')}:`} />}
+                    off={<Text className='' title={`${t('Comments')}:`} />}
+                />
                 <AddCommentForm onSendComment={onSendComment} />
                 <CommentsList
                     isLoading={commentsIsLoading}

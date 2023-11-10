@@ -12,7 +12,7 @@
                 "isAppRedesigned": true
             },
             "jsonSettings": {
-                "theme": "app_danger_theme",
+                "theme": "app_light_theme",
                 "isFirstVisit": true,
                 "settingsPageHasBeenOpen": false,
                 "isArticlesPageWasOpened": true
@@ -81,7 +81,7 @@
                 "isAppRedesigned": false
             },
             "jsonSettings": {
-                "theme": "app_dark_theme",
+                "theme": "app_light_theme",
                 "isFirstVisit": true,
                 "settingsPageHasBeenOpen": false,
                 "isArticlesPageWasOpened": true
@@ -160,6 +160,34 @@
             "rate": 3,
             "feedback": "gdf",
             "id": "UxP6L4_"
+        },
+        {
+            "userId": "1",
+            "articleId": "20",
+            "rate": 4,
+            "feedback": "xc xc xc xxxxx ",
+            "id": "aZQCy15"
+        },
+        {
+            "userId": "5",
+            "articleId": "15",
+            "rate": 3,
+            "feedback": "",
+            "id": "WlZ37gC"
+        },
+        {
+            "userId": "1",
+            "articleId": "15",
+            "rate": 3,
+            "feedback": "sdfgedged",
+            "id": "5i7SzWb"
+        },
+        {
+            "userId": "5",
+            "articleId": "19",
+            "rate": 3,
+            "feedback": "",
+            "id": "freEvRy"
         }
     ],
     "profile-ratings": [
@@ -356,6 +384,84 @@
             "userId": "6",
             "text": "text",
             "id": "IBPM2-g"
+        },
+        {
+            "articleId": "17",
+            "userId": "1",
+            "text": "kjgkjgb",
+            "id": "bJTBhHG"
+        },
+        {
+            "articleId": "20",
+            "userId": "1",
+            "text": "xzdc",
+            "id": "Xrn0_hg"
+        },
+        {
+            "articleId": "20",
+            "userId": "1",
+            "text": "fvbd",
+            "id": "22yZDoa"
+        },
+        {
+            "articleId": "20",
+            "userId": "1",
+            "text": "hgjhgh",
+            "id": "3KL1GfA"
+        },
+        {
+            "articleId": "20",
+            "userId": "1",
+            "text": "gfch",
+            "id": "MH_cwzu"
+        },
+        {
+            "articleId": "20",
+            "userId": "1",
+            "text": "cvxbcv",
+            "id": "Pip9U0a"
+        },
+        {
+            "articleId": "20",
+            "userId": "1",
+            "text": "rfgh",
+            "id": "-KoeEfq"
+        },
+        {
+            "articleId": "20",
+            "userId": "1",
+            "text": "fgjcfgj",
+            "id": "Nmhlh6X"
+        },
+        {
+            "articleId": "20",
+            "userId": "1",
+            "text": "fgjhcfgj",
+            "id": "IOqzZxg"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "cfgjcfgj",
+            "id": "S5CvVbG"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "cfgj",
+            "id": "XpcexK4"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "m,.bnm,",
+            "id": "RK371k6"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem delectus dignissimos                             dolores, ea eveniet expedita explicabo fuga in ipsum laboriosam laborum magnam modi optio                             perferendis perspiciatis quasi soluta voluptates voluptatibus",
+            "id": "6sW5s_h"
         }
     ],
     "profile": [

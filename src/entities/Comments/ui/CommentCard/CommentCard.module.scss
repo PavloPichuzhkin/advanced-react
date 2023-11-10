@@ -3,6 +3,13 @@
     border: 1px solid var(--primary-color);
 }
 
+.CommentCardRedesigned {
+    .header:hover * {
+        color: var(--accent-redesigned);
+    }
+
+}
+
 .header {
     display: flex;
     align-items: center;

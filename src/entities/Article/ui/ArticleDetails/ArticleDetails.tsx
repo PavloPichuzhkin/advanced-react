@@ -12,7 +12,7 @@ import {
     TextAlign,
     TextSize,
 } from '@/shared/ui/deprecated/Text';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
@@ -34,6 +34,7 @@ import { AppText } from '@/shared/ui/redesigned/Text';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import cls from './ArticleDetails.module.scss';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 // import { articleDetailsReducer } from '../../testing'; // for testing ESLint plugin 'project-fsd-architecture/slice-imports-validation'
 // import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 
@@ -91,7 +92,7 @@ const Redesigned = () => {
                 // size='xl'
             />
             <AppImage
-                fallback={<Skeleton width='100%' height={420} border='16px' />}
+                fallback={<Skeleton width='100%' height={400} border='16px' />}
                 src={article?.img}
                 className={cls.img}
             />
@@ -108,7 +109,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const isLoading = useSelector(getArticleDetailsIsLoading);
     // const isLoading = true;
 
-    const article = useSelector(getArticleDetailsData);
     const error = useSelector(getArticleDetailsError);
 
     useInitialEffect(() => {
@@ -119,21 +119,66 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     if (isLoading) {
         content = (
-            <>
-                <HStack max justify='center'>
-                    <Skeleton width={200} height={200} border='45%' />
-                </HStack>
-                <Skeleton width='45%' height={28} border='3px' />
-                <Skeleton width='70%' height={24} border='3px' />
-                <Skeleton width='100%' height={250} border='5px' />
-                <Skeleton width='100%' height={200} border='5px' />
-            </>
+            <ToggleFeatures
+                feature='isAppRedesigned'
+                on={
+                    <>
+                        <Skeleton width='60%' height={40} border='3px' />
+                        <Skeleton width='90%' height={64} border='3px' />
+                        <Skeleton width='100%' height={300} border='3px' />
+                        <Skeleton width='100%' height={250} border='3px' />
+                        <Skeleton width='100%' height={200} border='3px' />
+                    </>
+                }
+                off={
+                    <>
+                        <HStack max justify='center'>
+                            <SkeletonDeprecated
+                                width={200}
+                                height={200}
+                                border='45%'
+                            />
+                        </HStack>
+                        <SkeletonDeprecated
+                            width='45%'
+                            height={28}
+                            border='3px'
+                        />
+                        <SkeletonDeprecated
+                            width='70%'
+                            height={24}
+                            border='3px'
+                        />
+                        <SkeletonDeprecated
+                            width='100%'
+                            height={250}
+                            border='5px'
+                        />
+                        <SkeletonDeprecated
+                            width='100%'
+                            height={200}
+                            border='5px'
+                        />
+                    </>
+                }
+            />
         );
     } else if (error) {
         content = (
-            <TextDeprecated
-                align={TextAlign.CENTER}
-                title={t('An error occurred while loading the article')}
+            <ToggleFeatures
+                feature='isAppRedesigned'
+                on={
+                    <AppText
+                        align={TextAlign.CENTER}
+                        title={t('An error occurred while loading the article')}
+                    />
+                }
+                off={
+                    <TextDeprecated
+                        align={TextAlign.CENTER}
+                        title={t('An error occurred while loading the article')}
+                    />
+                }
             />
         );
     } else {

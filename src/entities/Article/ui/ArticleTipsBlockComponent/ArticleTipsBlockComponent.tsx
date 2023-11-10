@@ -19,10 +19,6 @@ export const ArticleTipsBlockComponent = memo(
 
         return (
             <div
-                // className={classNames(cls.ArticleTipsBlockComponent, {}, [
-                //     className,
-                //     cls[`${block.title}`],
-                // ])}
                 className={toggleFeatures({
                     name: 'isAppRedesigned',
                     on: () =>
@@ -46,10 +42,11 @@ export const ArticleTipsBlockComponent = memo(
                 />
                 {block.paragraphs.map((paragraph, index) => (
                     <ToggleFeatures
+                        key={index}
                         feature='isAppRedesigned'
                         on={
                             <AppText
-                                key={index}
+                                // key={index}
                                 text={paragraph}
                                 className={cls.paragraph}
                                 size='m'
@@ -57,7 +54,7 @@ export const ArticleTipsBlockComponent = memo(
                         }
                         off={
                             <Text
-                                key={index}
+                                // key={index}
                                 text={paragraph}
                                 className={cls.paragraph}
                                 size={TextSize.M}

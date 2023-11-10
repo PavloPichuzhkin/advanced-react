@@ -44,9 +44,11 @@ export const ArticleAdditionalInfo = memo(
                     gap='24'
                     className={classNames('', {}, [className])}
                 >
-                    <Skeleton width='70%' height={32} />
+                    <Skeleton width='70%' height={42} border='40px' />
 
-                    {canEdit && <Skeleton width='70%' height={32} />}
+                    {/* {canEdit && */}
+                    <Skeleton width='70%' height={42} border='40px' />
+                    {/* } */}
                     <HStack align='center' gap='12'>
                         <Skeleton border='50%' width={32} height={32} />
                         <Skeleton width={150} height={24} />
@@ -63,9 +65,11 @@ export const ArticleAdditionalInfo = memo(
                 <Button variant='outline' onClick={onBackToList}>
                     {t('Back to list')}
                 </Button>
-                {canEdit && (
-                    <Button onClick={onEditArticle}>{t('Edit article')}</Button>
-                )}
+                {/* {canEdit && ( */}
+                <Button disabled={!canEdit} onClick={onEditArticle}>
+                    {t('Edit article')}
+                </Button>
+                {/* )} */}
                 <HStack align='center' gap='12'>
                     <Avatar src={article.user.avatar} size={32} />
                     <AppText text={article.user.username} bolt />
