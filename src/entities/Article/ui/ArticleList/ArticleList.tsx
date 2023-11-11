@@ -44,7 +44,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
         <ArticleListItem
             article={article}
             view={view}
-            // className={cls.card}
             className={toggleFeatures({
                 name: 'isAppRedesigned',
                 on: () => cls.cardRedesigned,
@@ -69,7 +68,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             data-testid='ArticleList'
         >
             {articles.length > 0 ? articles.map(renderArticle) : null}
-            {isLoading && getSkeletons(view)}
+            {true && getSkeletons(view)}
         </div>
     );
 });

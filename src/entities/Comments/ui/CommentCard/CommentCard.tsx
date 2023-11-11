@@ -29,31 +29,44 @@ export const CommentCard = memo((props: CommentCardProps) => {
         on: () => SkeletonRedesigned,
         off: () => SkeletonDeprecated,
     });
-
-    if (isLoading) {
-        return (
-            <VStack
-                data-testid='CommentCard.Loading'
-                gap='8'
-                max
-                className={classNames(cls.CommentCard, {}, [className])}
-            >
-                <HStack align='center' className=''>
-                    <Skeleton width={30} height={30} border='45%' />
-                    <Skeleton
-                        height={20}
-                        width={200}
-                        className={cls.username}
-                        border='2px'
-                    />
-                </HStack>
+    const isLoadingContent = (
+        <VStack
+            data-testid='CommentCard.Loading'
+            gap='16'
+            max
+            className={classNames(
+                toggleFeatures({
+                    name: 'isAppRedesigned',
+                    on: () => cls.CommentCardRedesigned,
+                    off: () => cls.CommentCard,
+                }),
+                {},
+                [className],
+            )}
+        >
+            <HStack align='center' className=''>
+                <Skeleton width={30} height={30} border='45%' />
                 <Skeleton
-                    className={cls.text}
-                    width='100%'
-                    height={30}
+                    height={32}
+                    width={200}
+                    className={cls.username}
                     border='2px'
                 />
-            </VStack>
+            </HStack>
+            <Skeleton width='100%' height={24} border='2px' />
+        </VStack>
+    );
+    if (isLoading) {
+        return (
+            <ToggleFeatures
+                feature='isAppRedesigned'
+                on={
+                    <Card border='round' max padding='24'>
+                        {isLoadingContent}
+                    </Card>
+                }
+                off={isLoadingContent}
+            />
         );
     }
 

@@ -12,7 +12,7 @@
                 "isAppRedesigned": true
             },
             "jsonSettings": {
-                "theme": "app_light_theme",
+                "theme": "app_danger_theme",
                 "isFirstVisit": true,
                 "settingsPageHasBeenOpen": false,
                 "isArticlesPageWasOpened": true
@@ -1765,7 +1765,7 @@
             "userId": "1",
             "title": "C+ news",
             "subtitle": "What's new in JS for 2023? Що нового в JS у 2023 році?",
-            "img": "https://www.trainingnepal.com/wp-content/uploads/2023/04/C-Programming.png",
+            "img": "https://www.trainingnepal.com/wp-content/uploads/2023/04/C-Programming.png111",
             "views": 10,
             "createdAt": "16.08.2023",
             "type": ["IT"],

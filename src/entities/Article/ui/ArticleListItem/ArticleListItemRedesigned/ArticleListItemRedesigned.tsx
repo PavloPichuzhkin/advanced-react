@@ -22,18 +22,17 @@ import { Button } from '@/shared/ui/redesigned/Button';
 // import cls from '../ArticleListItem.module.scss';
 import cls from './ArticleListItemRedesigned.module.scss';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { ImageErrorFallback } from '@/shared/ui/redesigned/ImageErrorFallback';
 
 export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
     const { className, article, view, target } = props;
     const { t } = useTranslation('articles');
 
-    const types = (
-        <AppText title={article.type.join(', ')} className={cls.types} />
-    );
+    const types = <AppText title={article.type.join(', ')} />;
     const views = (
         <HStack gap='8' align='center'>
             <Icon Svg={EyeIcon} />
-            <AppText text={String(article.views)} className={cls.views} />
+            <AppText text={String(article.views)} />
         </HStack>
     );
 
@@ -54,16 +53,21 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
                 // border='6px'
             >
                 <VStack gap='16'>
-                    <HStack gap='12' align='center'>
-                        <Avatar size={30} src={article.user.avatar} />
-                        <AppText text={article.user.username} bolt />
+                    <HStack max gap='12' justify='between'>
+                        <HStack gap='12'>
+                            <Avatar size={30} src={article.user.avatar} />
+                            <AppText text={article.user.username} bolt />
+                        </HStack>
                         <AppText text={article.createdAt} />
                     </HStack>
                     <AppText title={article.title} size='xl' bolt />
                     <AppText title={article.subtitle} />
                     {/* {types} */}
                     <AppImage
-                        fallback={<Skeleton width='100%' height={250} />}
+                        fallback={<Skeleton className={cls.img} />}
+                        errorFallback={
+                            <ImageErrorFallback className={cls.img} />
+                        }
                         src={article.img}
                         className={cls.img}
                         alt={article.title}
@@ -79,11 +83,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
                             <div className={cls.blur} />
                         </div>
                     )}
-                    <HStack
-                        justify='between'
-                        className={cls.footer}
-                        align='center'
-                    >
+                    <HStack max justify='between'>
                         <AppLink
                             target={target}
                             to={getRouteArticleDetails(article.id)}
@@ -111,7 +111,8 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
         >
             <Card className={cls.card} padding='0'>
                 <AppImage
-                    fallback={<Skeleton width={200} height={200} />}
+                    fallback={<Skeleton className={cls.img} />}
+                    errorFallback={<ImageErrorFallback className={cls.img} />}
                     alt={article.title}
                     src={article.img}
                     className={cls.img}
@@ -121,7 +122,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
                         title={article.subtitle}
                         className={cls.subtitle}
                     />
-                    <HStack align='center' justify='between'>
+                    <HStack max justify='between'>
                         <AppText text={article.createdAt} />
                         {views}
                     </HStack>
@@ -136,7 +137,6 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
                             // className={cls.Avatar}
                         />
                         <AppText text={article.user.username} bolt />
-                        <AppText text={article.createdAt} />
                     </HStack>
                 </VStack>
             </Card>

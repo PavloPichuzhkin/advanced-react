@@ -5,6 +5,7 @@ import {
     useLayoutEffect,
     useState,
 } from 'react';
+import { ImageErrorFallback } from '../ImageErrorFallback';
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
     className?: string;
@@ -25,6 +26,8 @@ export const AppImage = memo((props: AppImageProps) => {
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
+    const errorImageFallback = errorFallback || <ImageErrorFallback />;
+
     useLayoutEffect(() => {
         const img = new Image();
         img.src = src ?? '';
@@ -41,8 +44,12 @@ export const AppImage = memo((props: AppImageProps) => {
         return fallback;
     }
 
-    if (hasError && errorFallback) {
-        return errorFallback;
+    // if (hasError && errorFallback) {
+    //     return errorFallback;
+    // }
+
+    if (hasError) {
+        return errorImageFallback;
     }
     // eslint-disable-next-line
     return <img className={className} src={src} alt={alt} {...otherProps} />;

@@ -35,6 +35,7 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import cls from './ArticleDetails.module.scss';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
+import { ImageErrorFallback } from '@/shared/ui/redesigned/ImageErrorFallback';
 // import { articleDetailsReducer } from '../../testing'; // for testing ESLint plugin 'project-fsd-architecture/slice-imports-validation'
 // import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 
@@ -77,6 +78,7 @@ const Deprecated = () => {
 
 const Redesigned = () => {
     const article = useSelector(getArticleDetailsData);
+    const { t } = useTranslation('articles');
 
     return (
         <>
@@ -92,7 +94,15 @@ const Redesigned = () => {
                 // size='xl'
             />
             <AppImage
-                fallback={<Skeleton width='100%' height={400} border='16px' />}
+                fallback={<Skeleton className={cls.img} border='3px' />}
+                errorFallback={
+                    // <div className={cls.img}>{`${t('Oooh NO')}!`}</div>
+                    <ImageErrorFallback
+                        // width='100%'
+                        // height={200}
+                        className={cls.img}
+                    />
+                }
                 src={article?.img}
                 className={cls.img}
             />
@@ -123,11 +133,12 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                 feature='isAppRedesigned'
                 on={
                     <>
-                        <Skeleton width='60%' height={40} border='3px' />
-                        <Skeleton width='90%' height={64} border='3px' />
-                        <Skeleton width='100%' height={300} border='3px' />
-                        <Skeleton width='100%' height={250} border='3px' />
-                        <Skeleton width='100%' height={200} border='3px' />
+                        <Skeleton width='60%' height={32} border='3px' />
+                        <Skeleton width='90%' height={32} border='3px' />
+                        <Skeleton width='100%' height={280} border='3px' />
+                        <Skeleton width='80%' height={32} border='3px' />
+                        <Skeleton width='100%' height={170} border='3px' />
+                        <Skeleton width='100%' height={100} border='3px' />
                     </>
                 }
                 off={

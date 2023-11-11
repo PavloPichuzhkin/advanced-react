@@ -42,5 +42,6 @@
     "{{count}} views_zero": "{{count}} views",
     "{{count}} views_one": "{{count}} view",
     "{{count}} views_other": "{{count}} views",
-    "{{count}} views": "{{count}} views"
+    "{{count}} views": "{{count}} views",
+    "Oooh NO": "Oooh NO"
 }

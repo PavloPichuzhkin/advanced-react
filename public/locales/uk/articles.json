@@ -43,5 +43,6 @@
     "{{count}} views_one": "{{count}} перегляд",
     "{{count}} views_few": "{{count}} перегляди",
     "{{count}} views_many": "{{count}} переглядів",
-    "{{count}} views": "{{count}} переглядів"
+    "{{count}} views": "{{count}} переглядів",
+    "Oooh NO": "Oooh NO"
 }

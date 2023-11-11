@@ -66,9 +66,10 @@ export const Flex = (props: FlexProps) => {
 
     const classes = [
         className,
+        directionClasses[direction],
         justifyClasses[justify],
         align && alignClasses[align],
-        directionClasses[direction],
+
         gap && gapClasses[gap],
         cls[wrap],
     ];

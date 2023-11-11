@@ -3,9 +3,12 @@
 }
 
 .BIG {
+    margin-bottom: 32px;
+
     .img {
         width: 100%;
         max-height: 420px;
+        min-height: 300px;
         object-fit: cover;
     }
 
@@ -31,7 +34,7 @@
 
 .SMALL {
     .Avatar {
-        margin: 12px 8px
+        margin: 12px 16px
     }
 
     .card {
