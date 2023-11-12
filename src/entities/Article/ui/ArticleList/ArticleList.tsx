@@ -68,7 +68,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             data-testid='ArticleList'
         >
             {articles.length > 0 ? articles.map(renderArticle) : null}
-            {true && getSkeletons(view)}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 });

@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { VStack } from '@/shared/ui/redesigned/Stack';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import {
     DynamicModuleLoader,
     ReducersList,
@@ -10,18 +9,14 @@ import {
 import { Currency } from '@/entities/CurrencySelect';
 import { Country } from '@/entities/CountrySelect';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getUserAuthData } from '@/entities/User';
 import { ProfileCard } from '@/entities/Profile';
 // import { ProfileCard } from '@/entities/Profile/ui/ProfileCard'; // for testing ESLint plugin 'project-fsd-architecture/public-api-imports-validation'
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 // import { getProfileForm } from '@/features/EditableProfileCard/model/selectors/getProfileForm/getProfileForm'; // layer-imports rule should not work
-
-import { ValidateProfileError } from '../../model/consts/consts';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
-import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCardHeader } from '../../ui/EditableProfileCardHeader/EditableProfileCardHeader';
 import cls from './EditableProfileCard.module.scss';
@@ -43,18 +38,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
-    const authData = useSelector(getUserAuthData);
-    const validateErrors = useSelector(getProfileValidateErrors);
 
-    const validateErrorTranslates = {
-        [ValidateProfileError.SERVER_ERROR]: t('Server error during save'),
-        [ValidateProfileError.INCORRECT_COUNTRY]: t('Incorrect region'),
-        [ValidateProfileError.NO_DATA]: t('Data not specified'),
-        [ValidateProfileError.INCORRECT_USER_DATA]: t(
-            'First and last name are required',
-        ),
-        [ValidateProfileError.INCORRECT_AGE]: t('Incorrect age'),
-    };
     // useInitialEffect(() => {
     //     if (id) {
     //         dispatch(fetchProfileData(id));
@@ -91,9 +75,6 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     const onChangeAge = useCallback(
         (value?: string) => {
-            console.log(value);
-            console.log('Number(value)', Number(value));
-
             if (Number.isInteger(Number(value))) {
                 dispatch(
                     profileActions.updateProfile({ age: Number(value || 0) }),
@@ -137,15 +118,6 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                 <EditableProfileCardHeader
                     className={cls.EditableProfileCard}
                 />
-                {!!validateErrors?.length &&
-                    validateErrors?.map((err) => (
-                        <Text
-                            key={err}
-                            theme={TextTheme.ERROR}
-                            title={`${validateErrorTranslates[err]}!`}
-                            data-testid='EditableProfileCard.Error'
-                        />
-                    ))}
                 <ProfileCard
                     data={formData}
                     isLoading={isLoading}

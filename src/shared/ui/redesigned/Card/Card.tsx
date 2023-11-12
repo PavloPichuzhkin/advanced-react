@@ -4,7 +4,7 @@ import cls from './Card.module.scss';
 
 type CardVariant = 'primary' | 'outlined' | 'light';
 type CardPadding = '0' | '8' | '16' | '20' | '24';
-type CardBorder = 'round' | 'normal';
+type CardBorder = 'round' | 'normal' | 'partial';
 type CardBorderRadius =
     | '2px'
     | '8px'
@@ -38,7 +38,7 @@ export const Card = memo((props: CardProps) => {
         className,
         children,
         // borderRadius,
-        border = 'normal',
+        border = 'partial',
         variant = 'primary',
         padding = '8',
         max,

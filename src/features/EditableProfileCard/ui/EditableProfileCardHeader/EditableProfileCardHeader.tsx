@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { memo, useCallback, useState, useEffect } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import {
     Button as ButtonDeprecated,
     ButtonTheme,
@@ -18,6 +18,8 @@ import { updateProfileData } from '../../model/services/updateProfileData/update
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { AppText } from '@/shared/ui/redesigned/Text';
+import { Card } from '@/shared/ui/redesigned/Card';
+import { ValidateProfileError } from '../../model/consts/consts';
 
 interface ProfilePageHeaderProps {
     className?: string;
@@ -35,6 +37,16 @@ export const EditableProfileCardHeader = memo(
 
         const readonly = useSelector(getProfileReadonly);
         const dispatch = useAppDispatch();
+
+        const validateErrorTranslates = {
+            [ValidateProfileError.SERVER_ERROR]: t('Server error during save'),
+            [ValidateProfileError.INCORRECT_COUNTRY]: t('Incorrect region'),
+            [ValidateProfileError.NO_DATA]: t('Data not specified'),
+            [ValidateProfileError.INCORRECT_USER_DATA]: t(
+                'First and last name are required',
+            ),
+            [ValidateProfileError.INCORRECT_AGE]: t('Incorrect age'),
+        };
 
         const onEdit = useCallback(() => {
             dispatch(profileActions.setReadonly(false));
@@ -63,50 +75,64 @@ export const EditableProfileCardHeader = memo(
             <ToggleFeatures
                 feature='isAppRedesigned'
                 on={
-                    <HStack
-                        max
-                        justify='between'
-                        align='center'
-                        className={classNames('', {}, [className])}
-                    >
-                        <AppText title={t('Profile')} />
-                        {canEdit && (
-                            <div>
-                                {readonly ? (
-                                    <Button
-                                        variant={ButtonTheme.OUTLINE}
-                                        onClick={onEdit}
-                                        data-testid='EditableProfileCardHeader.EditButton'
-                                    >
-                                        {t('Edit')}
-                                    </Button>
-                                ) : (
-                                    <HStack gap='8'>
+                    <Card padding='24' max>
+                        <HStack
+                            max
+                            justify='between'
+                            align='center'
+                            className={classNames('', {}, [className])}
+                        >
+                            {validateErrors?.length ? (
+                                validateErrors?.map((err) => (
+                                    <AppText
+                                        key={err}
+                                        variant='error'
+                                        title={`${validateErrorTranslates[err]}!`}
+                                        data-testid='EditableProfileCard.Error'
+                                    />
+                                ))
+                            ) : (
+                                <AppText title={t('Profile')} />
+                            )}
+
+                            {canEdit && (
+                                <div>
+                                    {readonly ? (
                                         <Button
-                                            variant={ButtonTheme.OUTLINE}
-                                            onClick={onSave}
-                                            disabled={
-                                                // !!validateErrors?.length && myTimeout
-                                                Boolean(
-                                                    validateErrors?.length,
-                                                ) && myTimeout
-                                            }
-                                            data-testid='EditableProfileCardHeader.SaveButton'
+                                            onClick={onEdit}
+                                            data-testid='EditableProfileCardHeader.EditButton'
                                         >
-                                            {t('Save')}
+                                            {t('Edit')}
                                         </Button>
-                                        <Button
-                                            variant='filled'
-                                            onClick={onCancelEdit}
-                                            data-testid='EditableProfileCardHeader.CancelButton'
-                                        >
-                                            {t('Cancel')}
-                                        </Button>
-                                    </HStack>
-                                )}
-                            </div>
-                        )}
-                    </HStack>
+                                    ) : (
+                                        <HStack gap='8'>
+                                            <Button
+                                                variant='outline'
+                                                color='success'
+                                                onClick={onSave}
+                                                disabled={
+                                                    // !!validateErrors?.length && myTimeout
+                                                    Boolean(
+                                                        validateErrors?.length,
+                                                    ) && myTimeout
+                                                }
+                                                data-testid='EditableProfileCardHeader.SaveButton'
+                                            >
+                                                {t('Save')}
+                                            </Button>
+                                            <Button
+                                                variant='filled'
+                                                onClick={onCancelEdit}
+                                                data-testid='EditableProfileCardHeader.CancelButton'
+                                            >
+                                                {t('Cancel')}
+                                            </Button>
+                                        </HStack>
+                                    )}
+                                </div>
+                            )}
+                        </HStack>
+                    </Card>
                 }
                 off={
                     <HStack
@@ -115,7 +141,18 @@ export const EditableProfileCardHeader = memo(
                         align='center'
                         className={classNames('', {}, [className])}
                     >
-                        <Text title={t('Profile')} />
+                        {validateErrors?.length ? (
+                            validateErrors?.map((err) => (
+                                <Text
+                                    key={err}
+                                    theme={TextTheme.ERROR}
+                                    title={`${validateErrorTranslates[err]}!`}
+                                    data-testid='EditableProfileCard.Error'
+                                />
+                            ))
+                        ) : (
+                            <Text title={t('Profile')} />
+                        )}
                         {canEdit && (
                             <div>
                                 {readonly ? (

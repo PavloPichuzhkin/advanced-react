@@ -76,7 +76,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
             <ToggleFeatures
                 feature='isAppRedesigned'
                 on={
-                    <Card border='round' max padding='24'>
+                    <Card max padding='24'>
                         {addCommentFormIsLoading ? (
                             <AppText
                                 variant='error'
