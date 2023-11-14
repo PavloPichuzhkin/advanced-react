@@ -26,7 +26,7 @@ export const Modal = (props: ModalProps) => {
         onClose,
         isOpen,
     });
-
+    // debugger;
     const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.isOpening]: isOpening,

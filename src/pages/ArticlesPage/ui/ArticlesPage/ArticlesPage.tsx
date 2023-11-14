@@ -61,8 +61,8 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
                                 [className],
                             )}
                         >
-                            <ArticleInfiniteList className={cls.list} />
                             <ArticlePageGreeting />
+                            <ArticleInfiniteList className={cls.list} />
                         </Page>
                     }
                 />

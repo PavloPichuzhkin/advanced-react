@@ -1,14 +1,24 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 // eslint-disable-next-line project-fsd-architecture/layer-imports
 import { ThrowErrorButton } from '@/app/providers/ErrorBoundary/ui/ThrowErrorButton';
 import { Counter } from '@/widgets/Counter';
 import { CounterEntity } from '@/entities/Counter';
 import { Page } from '@/widgets/Page';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { ModalNew } from '@/shared/ui/redesigned/Modal/ModalNew';
+import { AppText } from '@/shared/ui/redesigned/Text';
 
 const AboutPage = () => {
     const { t } = useTranslation('about');
     const [test, setTest] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const onModalClose = useCallback(() => {
+        setIsModalOpen(false);
+    }, []);
+    const onModalOpen = useCallback(() => {
+        setIsModalOpen(true);
+    }, []);
     return (
         <Page data-testid='AboutPage'>
             <div>{t('About Page')}</div>
@@ -17,6 +27,16 @@ const AboutPage = () => {
             <ThrowErrorButton />
             <Counter />
             <CounterEntity />
+            <Button onClick={onModalOpen}>{t('Open Modal')}</Button>
+            {/* {isModalOpen && ( */}
+            <ModalNew isOpen={isModalOpen} onClose={onModalClose} lazy>
+                <AppText
+                    title={t(
+                        'This is a new easier variant of Modal UI component',
+                    )}
+                />
+            </ModalNew>
+            {/* )} */}
         </Page>
     );
 };

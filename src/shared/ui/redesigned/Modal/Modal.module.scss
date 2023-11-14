@@ -43,6 +43,8 @@
 }
 
 .isOpening {
+    // transition: 0.5s transform;
+
     .content {
         transform: scale(1.1);
     }

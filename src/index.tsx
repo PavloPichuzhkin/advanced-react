@@ -6,6 +6,7 @@ import ErrorBoundary from '@/app/providers/ErrorBoundary/ui/ErrorBoundary';
 import { StoreProvider } from '@/app/providers/StoreProvider';
 import App from './app/App';
 import './shared/config/i18n/i18n';
+import { ForceUpdateProvider } from '@/shared/lib/render/forceUpdate';
 
 const domNode = document.getElementById('root') as HTMLElement;
 // if (!domNode) {
@@ -18,13 +19,15 @@ const root = createRoot(domNode);
 root.render(
     <StrictMode>
         <BrowserRouter>
-            <StoreProvider>
-                <ThemeProvider>
-                    <ErrorBoundary>
-                        <App />
-                    </ErrorBoundary>
-                </ThemeProvider>
-            </StoreProvider>
+            <ForceUpdateProvider>
+                <StoreProvider>
+                    <ThemeProvider>
+                        <ErrorBoundary>
+                            <App />
+                        </ErrorBoundary>
+                    </ThemeProvider>
+                </StoreProvider>
+            </ForceUpdateProvider>
         </BrowserRouter>
     </StrictMode>,
 );

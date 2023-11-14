@@ -24,16 +24,16 @@ export function useModal({ animationDelay, isOpen, onClose }: UseModalProps) {
         ReturnType<typeof setTimeout>
     >;
 
-    useEffect(() => {
-        if (isOpen) {
-            setIsMounted(true);
-            // setIsOpening(true);
-            timerRefForOpening.current = setTimeout(
-                () => setIsOpening(true),
-                0,
-            );
-        }
-    }, [isOpen]);
+    // useEffect(() => {
+    //     if (isOpen) {
+    //         setIsMounted(true);
+    //         // setIsOpening(true);
+    //         timerRefForOpening.current = setTimeout(
+    //             () => setIsOpening(true),
+    //             0,
+    //         );
+    //     }
+    // }, [isOpen]);
 
     const close = useCallback(() => {
         if (onClose) {
@@ -54,23 +54,28 @@ export function useModal({ animationDelay, isOpen, onClose }: UseModalProps) {
         [close],
     );
 
-    useEffect(
-        () => {
-            if (isOpen) {
-                window.addEventListener('keydown', onKeyDown);
-            }
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true);
+            // setIsOpening(true);
+            timerRefForOpening.current = setTimeout(
+                () => setIsOpening(true),
+                0,
+            );
+            window.addEventListener('keydown', onKeyDown);
+        }
 
-            return () => {
-                setIsOpening(false);
-                // setIsMounted(false);
+        return () => {
+            setIsOpening(false);
+            // setIsMounted(false);
 
-                clearTimeout(timerRef.current);
-                clearTimeout(timerRefForOpening.current);
-                window.removeEventListener('keydown', onKeyDown);
-            };
-        }, // eslint-disable-next-line
-        [isOpen, onKeyDown],
-    );
+            clearTimeout(timerRef.current);
+            clearTimeout(timerRefForOpening.current);
+            window.removeEventListener('keydown', onKeyDown);
+        };
+    }, [isOpen, onKeyDown]);
+
+    // debugger;
 
     return {
         isOpening,

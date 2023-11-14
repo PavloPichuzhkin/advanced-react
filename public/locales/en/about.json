@@ -4,5 +4,7 @@
         "part1": "To get started, edit <1>src/App.js</1> and save to reload."
     },
     "Test": "Test",
-    "some": "some"
+    "some": "some",
+    "Open Modal": "Open Modal",
+    "This is a new easier variant of Modal UI component": "This is a new easier variant of Modal UI component"
 }

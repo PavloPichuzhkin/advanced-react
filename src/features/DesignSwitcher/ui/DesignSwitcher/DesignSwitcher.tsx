@@ -15,6 +15,7 @@ import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
 import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
 
 interface DesignSwitcherProps {
     className?: string;
@@ -27,6 +28,7 @@ export const DesignSwitcher = memo((props: DesignSwitcherProps) => {
     const dispatch = useAppDispatch();
     const authData = useSelector(getUserAuthData);
     const [isLoading, setIsLoading] = useState(false);
+    const forceUpdate = useForceUpdate();
 
     const items = [
         {
@@ -58,6 +60,7 @@ export const DesignSwitcher = memo((props: DesignSwitcherProps) => {
             // //     setIsLoading(false);
             // // }
             // ();
+            forceUpdate();
         }
     };
 

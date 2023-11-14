@@ -6,6 +6,8 @@ import { Text } from '@/shared/ui/deprecated/Text';
 import { saveJsonSettings, useJsonSettings } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Drawer } from '@/shared/ui/redesigned/Drawers';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { AppText } from '@/shared/ui/redesigned/Text';
 
 export const ArticlePageGreeting = memo(() => {
     const { t } = useTranslation('articles');
@@ -25,23 +27,40 @@ export const ArticlePageGreeting = memo(() => {
     }, []);
 
     const text = (
-        <Text
-            title={t('Welcome to the articles page!')}
-            text={t('Here you can search and view articles on various topics')}
+        <ToggleFeatures
+            feature='isAppRedesigned'
+            on={
+                <AppText
+                    title={t('Welcome to the articles page!')}
+                    text={t(
+                        'Here you can search and view articles on various topics',
+                    )}
+                />
+            }
+            off={
+                <Text
+                    title={t('Welcome to the articles page!')}
+                    text={t(
+                        'Here you can search and view articles on various topics',
+                    )}
+                />
+            }
         />
     );
 
     if (isMobile) {
-        return (
+        return isOpen ? (
             <Drawer lazy isOpen={isOpen} onClose={onClose}>
                 {text}
             </Drawer>
-        );
+        ) : null;
     }
 
     return (
-        <Modal lazy isOpen={isOpen} onClose={onClose}>
-            {text}
-        </Modal>
+        isOpen && (
+            <Modal lazy isOpen={isOpen} onClose={onClose}>
+                {text}
+            </Modal>
+        )
     );
 });

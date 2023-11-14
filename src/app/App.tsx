@@ -18,23 +18,25 @@ function App() {
     const inited = useSelector(getUserInited);
 
     useEffect(() => {
+        // if (!inited) {
         dispatch(initAuthData());
         // console.log('userActions.initAuthData()');
-    }, [dispatch]);
+        // }
+    }, [dispatch, inited]);
 
     if (!inited) {
         return (
             <div
-                className={classNames('app', {}, [theme])}
-                // className={classNames(
-                //     toggleFeatures({
-                //         name: 'isAppRedesigned',
-                //         on: () => 'app_redesigned',
-                //         off: () => 'app_redesigned',
-                //     }),
-                //     {},
-                //     [theme],
-                // )}
+                // className={classNames('app', {}, [theme])}
+                className={classNames(
+                    toggleFeatures({
+                        name: 'isAppRedesigned',
+                        on: () => 'app',
+                        off: () => 'app_redesigned',
+                    }),
+                    {},
+                    [theme],
+                )}
                 style={{
                     height: '100vh',
                     display: 'flex',

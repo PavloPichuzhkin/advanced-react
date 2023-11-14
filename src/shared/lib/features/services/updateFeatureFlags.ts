@@ -27,7 +27,7 @@ export const updateFeatureFlag = createAsyncThunk<
             }),
         );
 
-        window.location.reload();
+        // window.location.reload();
         return undefined;
     } catch (e) {
         console.log(e);
