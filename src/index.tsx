@@ -17,17 +17,17 @@ const domNode = document.getElementById('root') as HTMLElement;
 
 const root = createRoot(domNode);
 root.render(
-    <StrictMode>
-        <BrowserRouter>
-            <ForceUpdateProvider>
-                <StoreProvider>
-                    <ThemeProvider>
-                        <ErrorBoundary>
-                            <App />
-                        </ErrorBoundary>
-                    </ThemeProvider>
-                </StoreProvider>
-            </ForceUpdateProvider>
-        </BrowserRouter>
-    </StrictMode>,
+    // <StrictMode>
+    <BrowserRouter>
+        <ForceUpdateProvider>
+            <StoreProvider>
+                <ThemeProvider>
+                    <ErrorBoundary>
+                        <App />
+                    </ErrorBoundary>
+                </ThemeProvider>
+            </StoreProvider>
+        </ForceUpdateProvider>
+    </BrowserRouter>,
+    // </StrictMode>,
 );

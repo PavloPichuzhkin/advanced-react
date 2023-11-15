@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
+    LOCAL_STORAGE_LAST_DESIGN_KEY,
     LOCAL_STORAGE_THEME_KEY,
     USER_LOCALSTORAGE_KEY,
 } from '@/shared/const/localstorage';
@@ -22,6 +23,10 @@ export const userSlice = createSlice({
             state.authData = action.payload;
             setFeatureFlags(action.payload.features);
             localStorage.setItem(USER_LOCALSTORAGE_KEY, action.payload.id);
+            localStorage.setItem(
+                LOCAL_STORAGE_LAST_DESIGN_KEY,
+                action.payload.features?.isAppRedesigned ? 'new' : 'old',
+            );
         },
         // initAuthData: (state) => {
         //     const user = localStorage.getItem(USER_LOCALSTORAGE_KEY);
@@ -54,6 +59,10 @@ export const userSlice = createSlice({
                 localStorage.setItem(
                     LOCAL_STORAGE_THEME_KEY,
                     payload.jsonSettings?.theme as Theme,
+                );
+                localStorage.setItem(
+                    LOCAL_STORAGE_LAST_DESIGN_KEY,
+                    payload.features?.isAppRedesigned ? 'new' : 'old',
                 );
 
                 state._inited = true;

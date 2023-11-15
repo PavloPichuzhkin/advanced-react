@@ -8,6 +8,7 @@ import { Page } from '@/widgets/Page';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { ModalNew } from '@/shared/ui/redesigned/Modal/ModalNew';
 import { AppText } from '@/shared/ui/redesigned/Text';
+import { Example } from '@/shared/ui/redesigned/Modal/Example';
 
 const AboutPage = () => {
     const { t } = useTranslation('about');
@@ -29,14 +30,21 @@ const AboutPage = () => {
             <CounterEntity />
             <Button onClick={onModalOpen}>{t('Open Modal')}</Button>
             {/* {isModalOpen && ( */}
-            <ModalNew isOpen={isModalOpen} onClose={onModalClose} lazy>
+            {/* <ModalNew isOpen={isModalOpen} onClose={onModalClose} lazy> */}
+            {/*    <AppText */}
+            {/*        title={t( */}
+            {/*            'This is a new easier variant of Modal UI component', */}
+            {/*        )} */}
+            {/*    /> */}
+            {/* </ModalNew> */}
+            {/* )} */}
+            <Example isOpened={isModalOpen} onClose={onModalClose}>
                 <AppText
                     title={t(
                         'This is a new easier variant of Modal UI component',
                     )}
                 />
-            </ModalNew>
-            {/* )} */}
+            </Example>
         </Page>
     );
 };

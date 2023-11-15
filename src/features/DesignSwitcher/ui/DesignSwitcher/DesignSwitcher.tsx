@@ -61,6 +61,7 @@ export const DesignSwitcher = memo((props: DesignSwitcherProps) => {
             // // }
             // ();
             forceUpdate();
+            // window.location.reload();
         }
     };
 

@@ -2,8 +2,16 @@
 // not change in any session, so it is just a variable!
 
 import { FeatureFlags } from '@/shared/types';
+import { LOCAL_STORAGE_LAST_DESIGN_KEY } from '@/shared/const/localstorage';
 
-let featureFlags: FeatureFlags;
+const defaultFeatures: FeatureFlags = {
+    isAppRedesigned:
+        localStorage.getItem(LOCAL_STORAGE_LAST_DESIGN_KEY) !== 'old',
+};
+
+let featureFlags: FeatureFlags = {
+    ...defaultFeatures,
+};
 
 export function setFeatureFlags(newFeatureFlags?: FeatureFlags) {
     if (newFeatureFlags) {

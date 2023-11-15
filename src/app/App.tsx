@@ -31,8 +31,8 @@ function App() {
                 className={classNames(
                     toggleFeatures({
                         name: 'isAppRedesigned',
-                        on: () => 'app',
-                        off: () => 'app_redesigned',
+                        on: () => 'app_redesigned',
+                        off: () => 'app',
                     }),
                     {},
                     [theme],
