@@ -7,7 +7,7 @@ import { Text, TextSize } from '../../../deprecated/Text';
 import { VStack } from '../../../redesigned/Stack';
 
 const meta: Meta<typeof Drawer> = {
-    title: 'Shared/Drawers/Drawer',
+    title: 'Shared/Drawers/DrawerDeprecated',
     component: Drawer,
     // tags: ['autodocs'],
     args: {

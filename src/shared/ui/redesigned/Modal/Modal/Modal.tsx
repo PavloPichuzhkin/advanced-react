@@ -5,6 +5,7 @@ import { toggleFeatures } from '@/shared/lib/features';
 import { Overlay } from '../../Overlay';
 import { Portal } from '../../Portal';
 import { useModalTransition } from '@/shared/lib/hooks/useModalTransition/useModalTransition';
+import { ANIMATION_DELAY } from '@/shared/const/modalAnimationDelay';
 
 interface ModalProps {
     className?: string;
@@ -12,8 +13,6 @@ interface ModalProps {
     isOpen?: boolean;
     onClose?: () => void;
 }
-
-const ANIMATION_DELAY = 800;
 
 export const Modal = (props: ModalProps) => {
     const { className, children, isOpen, onClose } = props;

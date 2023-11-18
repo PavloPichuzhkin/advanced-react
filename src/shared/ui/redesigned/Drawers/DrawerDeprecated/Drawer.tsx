@@ -6,8 +6,6 @@ import { Overlay } from '../../../redesigned/Overlay';
 import cls from './Drawer.module.scss';
 import { Portal } from '../../../redesigned/Portal';
 import { toggleFeatures } from '@/shared/lib/features';
-import { useModalTransition } from '@/shared/lib/hooks/useModalTransition/useModalTransition';
-import { ANIMATION_DELAY } from '@/shared/const/modalAnimationDelay';
 
 interface DrawerProps {
     className?: string;
@@ -21,18 +19,21 @@ export const Drawer = memo((props: DrawerProps) => {
     const { className, children, onClose, isOpen, lazy } = props;
     const { theme } = useTheme();
 
-    const { hasTransitionedIn, isClosing, close } = useModalTransition({
-        animationDelay: ANIMATION_DELAY,
+    const { isOpening, close, isClosing, isMounted } = useModal({
+        animationDelay: 800,
         onClose,
         isOpen,
     });
+
     const mods: Mods = {
         [cls.opened]: isOpen,
+        [cls.isClosing]: isClosing,
+        [cls.isOpening]: isOpening,
     };
 
-    // if (lazy && !isMounted) {
-    //     return null;
-    // }
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal element={document.getElementById('app') ?? document.body}>
@@ -48,14 +49,7 @@ export const Drawer = memo((props: DrawerProps) => {
                 ])}
             >
                 <Overlay onClick={close} />
-                <div
-                    className={classNames(cls.content, {
-                        [cls.in]: hasTransitionedIn && !isClosing,
-                        [cls.isClosing]: isClosing,
-                    })}
-                >
-                    {children}
-                </div>
+                <div className={cls.content}>{children}</div>
             </div>
         </Portal>
     );
