@@ -4,7 +4,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Modal } from './Modal';
 
 const meta: Meta<typeof Modal> = {
-    title: 'Shared/Modal',
+    title: 'Shared/ModalDeprecated',
     component: Modal,
     tags: ['autodocs'],
 };

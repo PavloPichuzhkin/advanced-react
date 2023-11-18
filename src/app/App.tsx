@@ -11,6 +11,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { Spinner } from '@/shared/ui/deprecated/Spinner';
 import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts';
+import { MainLayoutLoader } from '@/shared/layouts/MainLayoutLoader/MainLayoutLoader';
 
 function App() {
     const { theme } = useTheme();
@@ -25,27 +26,29 @@ function App() {
     }, [dispatch, inited]);
 
     if (!inited) {
+        // if (true) {
         return (
-            <div
-                // className={classNames('app', {}, [theme])}
-                className={classNames(
-                    toggleFeatures({
-                        name: 'isAppRedesigned',
-                        on: () => 'app_redesigned',
-                        off: () => 'app',
-                    }),
-                    {},
-                    [theme],
-                )}
-                style={{
-                    height: '100vh',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                }}
-            >
-                <Spinner />
-            </div>
+            <ToggleFeatures
+                feature='isAppRedesigned'
+                on={
+                    <div className={classNames('app_redesigned', {}, [theme])}>
+                        <MainLayoutLoader />
+                    </div>
+                }
+                off={
+                    <div
+                        className={classNames('app', {}, [theme])}
+                        style={{
+                            height: '100vh',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}
+                    >
+                        <Spinner />
+                    </div>
+                }
+            />
         );
     }
 

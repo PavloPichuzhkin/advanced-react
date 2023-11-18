@@ -127,7 +127,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
                 />
             </VStack>
             <BrowserView>
-                <Modal onClose={onCloseModal} isOpen={isModalOpen} lazy>
+                <Modal onClose={onCloseModal} isOpen={isModalOpen}>
                     <VStack max gap='24' className={cls.form}>
                         {modalContent}
                         <HStack max gap='16' justify='end'>

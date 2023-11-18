@@ -1,49 +1,38 @@
 import React, { ReactNode } from 'react';
-import { classNames, Mods } from '@/shared/lib/helpers/classNames/classNames';
-import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
-import { useModal } from '@/shared/lib/hooks/useModal/useModal';
-import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
-import { Overlay } from '../Overlay';
+import { classNames, Mods } from '@/shared/lib/helpers/classNames/classNames';
 import { toggleFeatures } from '@/shared/lib/features';
+import { Overlay } from '../../Overlay';
+import { Portal } from '../../Portal';
+import { useModalTransition } from '@/shared/lib/hooks/useModalTransition/useModalTransition';
 
 interface ModalProps {
     className?: string;
     children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
-    lazy?: boolean;
 }
 
-const ANIMATION_DELAY = 500;
+const ANIMATION_DELAY = 800;
+
 export const Modal = (props: ModalProps) => {
-    const { className, children, isOpen, onClose, lazy } = props;
+    const { className, children, isOpen, onClose } = props;
 
-    const { theme } = useTheme();
-
-    const { isOpening, close, isClosing, isMounted } = useModal({
+    const { hasTransitionedIn, isClosing, close } = useModalTransition({
         animationDelay: ANIMATION_DELAY,
         onClose,
         isOpen,
     });
-    // debugger;
+
     const mods: Mods = {
         [cls.opened]: isOpen,
-        [cls.isOpening]: isOpening,
-        [cls.isClosing]: isClosing,
     };
-
-    if (lazy && !isMounted) {
-        return null;
-    }
 
     return (
         <Portal element={document.getElementById('app') ?? document.body}>
             <div
                 className={classNames(cls.Modal, mods, [
                     className,
-                    theme,
-                    // 'app_modal',
                     toggleFeatures({
                         name: 'isAppRedesigned',
                         on: () => cls.modalNew,
@@ -52,7 +41,14 @@ export const Modal = (props: ModalProps) => {
                 ])}
             >
                 <Overlay onClick={close} />
-                <div className={cls.content}>{children}</div>
+                <div
+                    className={classNames(cls.content, {
+                        [cls.in]: hasTransitionedIn && !isClosing,
+                        [cls.isClosing]: isClosing,
+                    })}
+                >
+                    {children}
+                </div>
             </div>
         </Portal>
     );

@@ -12,35 +12,35 @@
 .content {
     padding: 20px;
     border-radius: 12px;
-
-    // transform: scale(0.5);
-    // transition: 0.5s transform;
     max-width: 60%;
     opacity: 0;
-    transform: translateY(150px);
+    transform: scale(1.5);
+
+    // transform: translateY(150px);
     transition: opacity 1s ease, transform 1s ease;
 }
 
-.transition {
-    transition: 0.5s transform;
-}
 
 .opened {
     pointer-events: auto;
     opacity: 1;
     z-index: var(--modal-z-index);
 
-    .content {
-        // transition: 0.5s transform;
-        transform: scale(0.5);
-    }
 }
 
-.content.in.visible {
+.content.in {
     opacity: 1;
-    transform: translateY(0);
+
+    // transform: translateY(0);
+    transform: scale(1);
 }
 
+.isClosing {
+    opacity: 0;
+
+    // transform: translateY(0);
+    transform: scale(0.3);
+}
 
 .modalNew {
     .content {

@@ -9,9 +9,9 @@ import React, {
 import { classNames, Mods } from '@/shared/lib/helpers/classNames/classNames';
 
 import cls from './ModalNew.module.scss';
-import { Portal } from '../Portal';
+import { Portal } from '../../Portal';
 import { toggleFeatures } from '@/shared/lib/features';
-import { Overlay } from '../Overlay';
+import { Overlay } from '../../Overlay';
 
 interface ModalProps {
     className?: string;

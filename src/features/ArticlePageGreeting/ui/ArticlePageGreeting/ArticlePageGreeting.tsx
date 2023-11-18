@@ -58,7 +58,7 @@ export const ArticlePageGreeting = memo(() => {
 
     return (
         isOpen && (
-            <Modal lazy isOpen={isOpen} onClose={onClose}>
+            <Modal isOpen={isOpen} onClose={onClose}>
                 {text}
             </Modal>
         )

@@ -4,8 +4,9 @@ import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { Loader } from '@/shared/ui/deprecated/Loader';
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 import cls from './LoginModal.module.scss';
-import { ModalNew } from '@/shared/ui/redesigned/Modal/ModalNew';
+import { ModalNew } from '@/shared/ui/redesigned/Modal/experiments/ModalNew';
 import LoginForm from '../LoginForm/LoginForm';
+import { Example } from '@/shared/ui/redesigned/Modal/experiments/Example';
 
 interface LoginModalProps {
     className?: string;
@@ -24,7 +25,6 @@ export const LoginModal = ({
         className={classNames(cls.LoginModal, {}, [className])}
         isOpen={isOpen}
         onClose={onClose}
-        lazy={lazy}
     >
         {/* <LoginForm onSuccess={onClose} /> */}
 

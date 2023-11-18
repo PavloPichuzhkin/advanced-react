@@ -1,14 +1,14 @@
 // https://www.letsbuildui.dev/articles/how-to-animate-mounting-content-in-react/
 import React, { ReactNode, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useMountTransition } from './useMountTransition';
-import { Button } from '../Button';
+import { useModalTransition } from './useMountTransition';
+import { Button } from '../../Button';
 import './Example.scss';
 import cls from './Example.module.scss';
 import { classNames, Mods } from '@/shared/lib/helpers/classNames/classNames';
 import { toggleFeatures } from '@/shared/lib/features';
-import { Overlay } from '../Overlay';
-import { Portal } from '../Portal';
+import { Overlay } from '../../Overlay';
+import { Portal } from '../../Portal';
 
 interface ModalProps {
     className?: string;
@@ -18,56 +18,52 @@ interface ModalProps {
     lazy?: boolean;
 }
 
+const ANIMATION_DELAY = 800;
 export const Example = (props: ModalProps) => {
     const { className, children, isOpened, onClose, lazy } = props;
 
-    const hasTransitionedIn = useMountTransition(isOpened, 1000);
+    const { hasTransitionedIn, isClosing, close } = useModalTransition({
+        animationDelay: ANIMATION_DELAY,
+        onClose,
+        isOpened,
+    });
     const { t } = useTranslation('about');
+
+    // if (lazy && !hasTransitionedIn) {
+    //     // brakes transition, in the same time with mounting transition in React don't work
+    //     return null;
+    // }
+
     const mods: Mods = {
         [cls.opened]: isOpened,
         // [cls.isClosing]: isClosing,
     };
+
     return (
         <Portal element={document.getElementById('app') ?? document.body}>
-            {/* {(hasTransitionedIn || isOpened) && ( */}
             <div
-                className={classNames(
-                    cls.Modal,
-                    mods,
-                    // {},
-                    [
-                        className,
-                        toggleFeatures({
-                            name: 'isAppRedesigned',
-                            on: () => cls.modalNew,
-                            off: () => cls.modalOld,
-                        }),
-                    ],
-                )}
+                className={classNames(cls.Modal, mods, [
+                    className,
+                    toggleFeatures({
+                        name: 'isAppRedesigned',
+                        on: () => cls.modalNew,
+                        off: () => cls.modalOld,
+                    }),
+                ])}
             >
-                <Overlay onClick={onClose} />
-                {(hasTransitionedIn || isOpened) && (
-                    <div
-                        className={classNames(cls.content, {
-                            [cls.visible]: isOpened,
-                            [cls.in]: hasTransitionedIn,
-                        })}
-                    >
-                        {children}
-                    </div>
-                )}
-                {/* <div */}
-                {/*    className={classNames( */}
-                {/*        cls.content, */}
-                {/*        // { [cls.transition]: isMounted }, */}
-                {/*        {}, */}
-                {/*        [], */}
-                {/*    )} */}
-                {/* > */}
-                {/*    {children} */}
-                {/* </div> */}
+                <Overlay onClick={close} />
+                {/* {(hasTransitionedIn || isOpened) && ( */}
+                <div
+                    className={classNames(cls.content, {
+                        // [cls.visible]: isOpened,
+                        [cls.in]: hasTransitionedIn && !isClosing,
+                        [cls.isClosing]: isClosing,
+                    })}
+                >
+                    {children}
+                </div>
+                {/* )} */}
             </div>
-            {/* )} */}
         </Portal>
     );
 };
@@ -90,7 +86,7 @@ export const Example = (props: ModalProps) => {
 //                         })}
 //                     >
 //                         {t(
-//                             'This is a new easier variant of Modal UI component',
+//                             'This is a new easier variant of ModalDeprecated UI component',
 //                         )}
 //                     </div>
 //                 )}
@@ -117,7 +113,7 @@ export const Example = (props: ModalProps) => {
 //                         }`}
 //                     >
 //                         {t(
-//                             'This is a new easier variant of Modal UI component',
+//                             'This is a new easier variant of ModalDeprecated UI component',
 //                         )}
 //                     </div>
 //                 )}
@@ -145,7 +141,7 @@ export const Example = (props: ModalProps) => {
 //                         }`}
 //                     >
 //                         {t(
-//                             'This is a new easier variant of Modal UI component',
+//                             'This is a new easier variant of ModalDeprecated UI component',
 //                         )}
 //                     </div>
 //                 )}

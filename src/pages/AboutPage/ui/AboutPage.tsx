@@ -6,19 +6,29 @@ import { Counter } from '@/widgets/Counter';
 import { CounterEntity } from '@/entities/Counter';
 import { Page } from '@/widgets/Page';
 import { Button } from '@/shared/ui/redesigned/Button';
-import { ModalNew } from '@/shared/ui/redesigned/Modal/ModalNew';
+import { ModalNew } from '@/shared/ui/redesigned/Modal/experiments/ModalNew';
 import { AppText } from '@/shared/ui/redesigned/Text';
-import { Example } from '@/shared/ui/redesigned/Modal/Example';
+import { Example } from '@/shared/ui/redesigned/Modal/experiments/Example';
+import { Modal } from '@/shared/ui/redesigned/Modal';
+import { Drawer } from '@/shared/ui/redesigned/Drawers';
 
 const AboutPage = () => {
     const { t } = useTranslation('about');
     const [test, setTest] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
     const onModalClose = useCallback(() => {
         setIsModalOpen(false);
     }, []);
     const onModalOpen = useCallback(() => {
         setIsModalOpen(true);
+    }, []);
+    const onDrawerClose = useCallback(() => {
+        setIsDrawerOpen(false);
+    }, []);
+    const onDrawerOpen = useCallback(() => {
+        setIsDrawerOpen(true);
     }, []);
     return (
         <Page data-testid='AboutPage'>
@@ -29,22 +39,35 @@ const AboutPage = () => {
             <Counter />
             <CounterEntity />
             <Button onClick={onModalOpen}>{t('Open Modal')}</Button>
+            <Button onClick={onDrawerOpen}>{t('Open Drawer')}</Button>
+
             {/* {isModalOpen && ( */}
             {/* <ModalNew isOpen={isModalOpen} onClose={onModalClose} lazy> */}
             {/*    <AppText */}
             {/*        title={t( */}
-            {/*            'This is a new easier variant of Modal UI component', */}
+            {/*            'This is a new easier variant of ModalDeprecated UI component', */}
             {/*        )} */}
             {/*    /> */}
             {/* </ModalNew> */}
             {/* )} */}
-            <Example isOpened={isModalOpen} onClose={onModalClose}>
-                <AppText
-                    title={t(
-                        'This is a new easier variant of Modal UI component',
-                    )}
-                />
-            </Example>
+            {isModalOpen && (
+                <Modal isOpen={isModalOpen} onClose={onModalClose}>
+                    <AppText
+                        title={t(
+                            'This is a new easier variant of Modal UI component',
+                        )}
+                    />
+                </Modal>
+            )}
+            {isDrawerOpen && (
+                <Drawer isOpen={isDrawerOpen} onClose={onDrawerClose}>
+                    <AppText
+                        title={t(
+                            'This is a new easier variant of Modal UI component',
+                        )}
+                    />
+                </Drawer>
+            )}
         </Page>
     );
 };

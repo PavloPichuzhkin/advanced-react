@@ -1,0 +1,23 @@
+.MainLayoutLoader {
+    // max-height: 100vh;
+    // padding: 0;
+}
+
+.header {
+    padding: 16px;
+}
+
+.content {
+    max-width: 1400px;
+    min-width: 600px;
+    height: 94vh;
+
+    // height: 100%;
+    padding: 0;
+
+    .last {
+        min-height: 20%;
+        max-height: 100%;
+
+    }
+}
