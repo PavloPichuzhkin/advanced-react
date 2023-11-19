@@ -18,6 +18,7 @@ export const MainLayout = memo((props: MainLayoutProps) => {
 
     return (
         <div
+            id='scroller'
             className={classNames(cls.MainLayout, {}, [className])}
             ref={wrapperRef}
             onScroll={onScroll}

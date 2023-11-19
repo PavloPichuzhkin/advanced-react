@@ -20,7 +20,10 @@ export function setFeatureFlags(newFeatureFlags?: FeatureFlags) {
 }
 
 export function getFeatureFlag(flag: keyof FeatureFlags) {
-    if (__PROJECT__ === 'storybook') {
+    if (
+        __PROJECT__ === 'storybook'
+        // || __PROJECT__ === 'jest'
+    ) {
         if (flag === 'isAppRedesigned') {
             return false;
         }

@@ -12,16 +12,19 @@ import { Spinner } from '@/shared/ui/deprecated/Spinner';
 import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts';
 import { MainLayoutLoader } from '@/shared/layouts/MainLayoutLoader/MainLayoutLoader';
+import { ScrollToolbar } from '@/widgets/ScrollToolbar';
+// eslint-disable-next-line project-fsd-architecture/layer-imports
+import { useAppToolbar } from '@/app/lib/useAppToolbar';
 
 function App() {
     const { theme } = useTheme();
     const dispatch = useAppDispatch();
     const inited = useSelector(getUserInited);
+    const appToolbar = useAppToolbar();
 
     useEffect(() => {
         // if (!inited) {
         dispatch(initAuthData());
-        // console.log('userActions.initAuthData()');
         // }
     }, [dispatch, inited]);
 
@@ -65,7 +68,12 @@ function App() {
                             sidebar={<Sidebar />}
                             content={<AppRouter />}
                             header={<Navbar />}
-                            toolbar={<div>1111111111</div>}
+                            toolbar={
+                                <>
+                                    <div>1111111111</div>
+                                    {appToolbar}
+                                </>
+                            }
                         />
                     </Suspense>
                 </div>
