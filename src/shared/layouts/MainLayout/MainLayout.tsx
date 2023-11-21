@@ -14,7 +14,7 @@ interface MainLayoutProps {
 export const MainLayout = memo((props: MainLayoutProps) => {
     const { className, content, toolbar, header, sidebar } = props;
 
-    const { wrapperRef, onScroll } = useScrollPosition(300);
+    const { wrapperRef, onScroll } = useScrollPosition(100);
 
     return (
         <div

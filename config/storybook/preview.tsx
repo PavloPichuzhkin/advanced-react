@@ -12,6 +12,7 @@ import { AsyncStoryDecorator } from '@/shared/config/storybook/AsyncStoryDecorat
 import { selectEntitiesFromNormalizedData } from '@/shared/lib/helpers/selectEntities/selectEntities';
 import { mockReturnArticlesPageState } from '@/shared/assets/tests/mockReturnArticlesPageState';
 import { Article } from '@/entities/Article';
+import { FeaturesFlagsDecorator } from '@/shared/config/storybook/FeaturesFlagsDecorator';
 // import { AsyncStoryDecorator } from '../../src/shared/config/storybook/AsyncStoryDecorator';
 
 initialize({
@@ -102,6 +103,7 @@ const preview: Preview = {
         StoreProviderDecorator,
         mswDecorator,
         AsyncStoryDecorator,
+        // FeaturesFlagsDecorator({isAppRedesigned: true}),
         // AsyncStoryDecorator(),
     ],
 };

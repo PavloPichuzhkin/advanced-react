@@ -2,9 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Code } from './Code';
+import { FeaturesFlagsDecorator } from '@/shared/config/storybook/FeaturesFlagsDecorator';
+import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
 
 const meta: Meta<typeof Code> = {
-    title: 'Shared/Code',
+    title: 'Shared/Redesigned/Code',
     component: Code,
     // tags: ['autodocs'],
 };
@@ -39,17 +41,29 @@ export const Primary: Story = {
         text: code,
     },
 };
-
+Primary.decorators = [
+    // FeaturesFlagsDecorator({ isAppRedesigned: true }),
+    RedesignDecorator,
+];
 export const Dark: Story = {
     args: {
         text: code,
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [
+        RedesignDecorator,
+        ThemeDecorator(Theme.DARK),
+
+        // FeaturesFlagsDecorator({ isAppRedesigned: true }),
+    ],
 };
 
 export const Danger: Story = {
     args: {
         text: code,
     },
-    decorators: [ThemeDecorator(Theme.DANGER)],
+    decorators: [
+        ThemeDecorator(Theme.DANGER),
+        RedesignDecorator,
+        // FeaturesFlagsDecorator({ isAppRedesigned: true }),
+    ],
 };
