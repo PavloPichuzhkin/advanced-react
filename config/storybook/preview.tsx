@@ -2,7 +2,10 @@ import type { Preview } from '@storybook/react';
 import { initialize, mswDecorator, mswLoader } from 'msw-storybook-addon';
 import { rest } from 'msw';
 import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator';
-import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator';
+import {
+    ThemeDecorator,
+    withThemeProvider,
+} from '../../src/shared/config/storybook/ThemeDecorator';
 import { Theme } from '../../src/shared/lib/context/ThemeContext';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator';
 import i18nextStoryDecorator from '../../src/shared/config/storybook/i18nextStoryDecorator';
@@ -35,20 +38,20 @@ const preview: Preview = {
                 dynamicTitle: true,
             },
         },
-        // theme: {
-        //     description: 'Global theme for components',
-        //     defaultValue: Theme.LIGHT,
-        //     toolbar: {
-        //         title: 'Theme',
-        //         icon: 'circlehollow',
-        //         items: [
-        //             { value: Theme.LIGHT, title: 'Light' },
-        //             { value: Theme.DARK, title: 'Dark' },
-        //             { value: Theme.DANGER, title: 'Danger' },
-        //         ],
-        //         dynamicTitle: true,
-        //     },
-        // },
+        theme: {
+            description: 'Global theme for components',
+            defaultValue: Theme.LIGHT,
+            toolbar: {
+                title: 'Theme',
+                icon: 'circlehollow',
+                items: [
+                    { value: Theme.LIGHT, title: 'Light' },
+                    { value: Theme.DARK, title: 'Dark' },
+                    { value: Theme.DANGER, title: 'Danger' },
+                ],
+                dynamicTitle: true,
+            },
+        },
     },
     parameters: {
         actions: { argTypesRegex: '^on[A-Z].*' },
@@ -61,7 +64,7 @@ const preview: Preview = {
         loaders: [mswLoader],
         layout: 'fullscreen',
         loki: {
-            captureDelay: 3000,
+            captureDelay: 100, // 3000
         },
         msw: {
             handlers: {
@@ -96,14 +99,15 @@ const preview: Preview = {
     },
     decorators: [
         StyleDecorator,
-        ThemeDecorator(Theme.LIGHT),
-        // withThemeProvider,
+
+        withThemeProvider,
+        // ThemeDecorator(Theme.LIGHT),
         RouterDecorator,
         i18nextStoryDecorator,
         StoreProviderDecorator,
         mswDecorator,
         AsyncStoryDecorator,
-        // FeaturesFlagsDecorator({isAppRedesigned: true}),
+        FeaturesFlagsDecorator({ isAppRedesigned: false }),
         // AsyncStoryDecorator(),
     ],
 };

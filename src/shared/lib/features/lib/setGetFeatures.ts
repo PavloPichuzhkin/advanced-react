@@ -7,6 +7,7 @@ import { LOCAL_STORAGE_LAST_DESIGN_KEY } from '@/shared/const/localstorage';
 const defaultFeatures: FeatureFlags = {
     isAppRedesigned:
         localStorage.getItem(LOCAL_STORAGE_LAST_DESIGN_KEY) !== 'old',
+    // localStorage.getItem(LOCAL_STORAGE_LAST_DESIGN_KEY) === 'new',
 };
 
 let featureFlags: FeatureFlags = {
@@ -30,7 +31,6 @@ export function getFeatureFlag(flag: keyof FeatureFlags) {
     //     return true;
     // }
     return Boolean(featureFlags?.[flag]);
-    // return true;
 }
 
 export function getAllFeatureFlags() {

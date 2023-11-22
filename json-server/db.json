@@ -12,7 +12,7 @@
                 "isAppRedesigned": true
             },
             "jsonSettings": {
-                "theme": "app_danger_theme",
+                "theme": "app_dark_theme",
                 "isFirstVisit": true,
                 "settingsPageHasBeenOpen": false,
                 "isArticlesPageWasOpened": true
@@ -471,7 +471,7 @@
             "lastname": "Pichuzhkin",
             "age": 22,
             "currency": "USD",
-            "country": "Great Britain",
+            "country": "Ukraine",
             "city": "Kiev",
             "username": "admin",
             "avatar": "https://as1.ftcdn.net/v2/jpg/05/56/29/10/1000_F_556291020_q2ieMiOCKYbtoLITrnt7qcSL1LJYyWrU.jpg"

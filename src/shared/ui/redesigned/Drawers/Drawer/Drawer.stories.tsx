@@ -2,14 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
-import { AnimatedDrawer } from './AnimatedDrawer';
-import { VStack } from '../../../redesigned/Stack';
+import { Drawer } from './Drawer';
 import { Text, TextSize } from '../../../deprecated/Text';
+import { VStack } from '../../../redesigned/Stack';
 import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
 
-const meta: Meta<typeof AnimatedDrawer> = {
-    title: 'Shared/Drawers/AnimatedDrawer',
-    component: AnimatedDrawer,
+const meta: Meta<typeof Drawer> = {
+    title: 'Shared/Drawers/Drawer',
+    component: Drawer,
     // tags: ['autodocs'],
     args: {
         isOpen: true,
@@ -42,7 +42,7 @@ const meta: Meta<typeof AnimatedDrawer> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof AnimatedDrawer>;
+type Story = StoryObj<typeof Drawer>;
 
 export const Primary: Story = {
     args: {},

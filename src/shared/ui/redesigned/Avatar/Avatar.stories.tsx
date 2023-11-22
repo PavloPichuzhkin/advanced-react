@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar } from './Avatar';
 import AvatarImg from '../../../assets/tests/storybook.jpg';
+import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
 
 const meta: Meta<typeof Avatar> = {
     title: 'Shared/Redesigned/Avatar',
@@ -17,3 +18,4 @@ export const Primary: Story = {
         src: AvatarImg,
     },
 };
+Primary.decorators = [RedesignDecorator];

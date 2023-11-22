@@ -1,5 +1,5 @@
 import './styles/index.scss';
-import { Suspense, useEffect } from 'react';
+import { memo, Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
@@ -12,9 +12,8 @@ import { Spinner } from '@/shared/ui/deprecated/Spinner';
 import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts';
 import { MainLayoutLoader } from '@/shared/layouts/MainLayoutLoader/MainLayoutLoader';
-import { ScrollToolbar } from '@/widgets/ScrollToolbar';
-// eslint-disable-next-line project-fsd-architecture/layer-imports
-import { useAppToolbar } from '@/app/lib/useAppToolbar';
+import { useAppToolbar } from './lib/useAppToolbar';
+import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 
 function App() {
     const { theme } = useTheme();
@@ -94,4 +93,4 @@ function App() {
     );
 }
 
-export default App;
+export default withTheme(memo(App));

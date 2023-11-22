@@ -4,6 +4,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { AppImage } from './AppImage';
 import AvatarImg from '../../../assets/tests/storybook.jpg';
+import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
 
 const meta: Meta<typeof AppImage> = {
     title: 'Shared/Redesigned/AppImage',
@@ -25,3 +26,4 @@ export const Primary: Story = {
         },
     },
 };
+Primary.decorators = [RedesignDecorator];

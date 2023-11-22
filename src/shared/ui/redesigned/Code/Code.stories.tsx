@@ -36,34 +36,20 @@ const code =
     '    },\n' +
     '};';
 
-export const Primary: Story = {
-    args: {
-        text: code,
-    },
-};
-Primary.decorators = [
-    // FeaturesFlagsDecorator({ isAppRedesigned: true }),
-    RedesignDecorator,
-];
-export const Dark: Story = {
-    args: {
-        text: code,
-    },
-    decorators: [
-        RedesignDecorator,
-        ThemeDecorator(Theme.DARK),
+export const Primary: Story = {};
+Primary.args = { text: code };
+Primary.decorators = [RedesignDecorator];
 
-        // FeaturesFlagsDecorator({ isAppRedesigned: true }),
-    ],
-};
-
-export const Danger: Story = {
-    args: {
-        text: code,
-    },
-    decorators: [
-        ThemeDecorator(Theme.DANGER),
-        RedesignDecorator,
-        // FeaturesFlagsDecorator({ isAppRedesigned: true }),
-    ],
-};
+// export const Dark: Story = {
+//     args: {
+//         text: code,
+//     },
+//     decorators: [RedesignDecorator, ThemeDecorator(Theme.DARK)],
+// };
+//
+// export const Danger: Story = {
+//     args: {
+//         text: code,
+//     },
+//     decorators: [ThemeDecorator(Theme.DANGER), RedesignDecorator],
+// };

@@ -1,4 +1,10 @@
-import { ButtonHTMLAttributes, memo, ReactNode } from 'react';
+import {
+    ButtonHTMLAttributes,
+    ForwardedRef,
+    forwardRef,
+    memo,
+    ReactNode,
+} from 'react';
 import { classNames, Mods } from '@/shared/lib/helpers/classNames/classNames';
 import cls from './Button.module.scss';
 
@@ -23,6 +29,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     as?: 'span'; // only for headless ui
 }
 
+// export const Button = forwardRef(
+//     (props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
 export const Button = memo((props: ButtonProps) => {
     const {
         className,
@@ -79,6 +87,7 @@ export const Button = memo((props: ButtonProps) => {
                 cls[size],
             ])}
             disabled={disabled}
+            // ref={ref}
             {...otherProps}
         >
             {addonLeft && <div className={cls.addonLeft}>{addonLeft}</div>}

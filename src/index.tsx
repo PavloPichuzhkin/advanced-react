@@ -21,11 +21,11 @@ root.render(
     <BrowserRouter>
         <ForceUpdateProvider>
             <StoreProvider>
-                <ThemeProvider>
-                    <ErrorBoundary>
-                        <App />
-                    </ErrorBoundary>
-                </ThemeProvider>
+                {/* <ThemeProvider> */}
+                <ErrorBoundary>
+                    <App />
+                </ErrorBoundary>
+                {/* </ThemeProvider> */}
             </StoreProvider>
         </ForceUpdateProvider>
     </BrowserRouter>,
