@@ -1,12 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
 import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
-import { Primary } from '../../Code/Code.stories';
+import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { Theme } from '@/shared/lib/context/ThemeContext';
 
 const meta: Meta<typeof Button> = {
     title: 'Shared/Redesigned/Button',
     component: Button,
-    tags: ['autodocs'],
+    // tags: ['autodocs'],
 };
 
 export default meta;
@@ -18,7 +19,7 @@ export const Outline: Story = {
         variant: 'outline',
     },
 };
-Outline.decorators = [RedesignDecorator];
+Outline.decorators = [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)];
 
 export const Square: Story = {
     args: {
@@ -28,7 +29,7 @@ export const Square: Story = {
         size: 'l',
     },
 };
-Square.decorators = [RedesignDecorator];
+Square.decorators = [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)];
 
 export const Clear: Story = {
     args: {
@@ -37,4 +38,4 @@ export const Clear: Story = {
         size: 'l',
     },
 };
-Clear.decorators = [RedesignDecorator];
+Clear.decorators = [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)];

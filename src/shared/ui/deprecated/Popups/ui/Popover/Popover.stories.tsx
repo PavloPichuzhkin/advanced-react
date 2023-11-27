@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
 import { StoryFn } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import React from 'react';
+import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Popover } from './Popover';
 import { Button, ButtonTheme } from '../../../Button';
@@ -34,7 +34,7 @@ const meta: Meta<typeof Popover> = {
             <div
                 style={{
                     whiteSpace: 'nowrap',
-                    padding: '0 15rem',
+                    padding: '8rem 15rem',
                     display: 'flex',
                     justifyContent: 'end',
                 }}
@@ -42,6 +42,7 @@ const meta: Meta<typeof Popover> = {
                 <Story />
             </div>
         ),
+        withStoryOrGlobalTheme(Theme.LIGHT),
     ],
 };
 
@@ -56,11 +57,11 @@ export const Primary: Story = {
     },
     decorators: [],
 };
-export const Dark: Story = {
-    args: {},
-    decorators: [ThemeDecorator(Theme.DARK)],
-};
-export const Danger: Story = {
-    args: {},
-    decorators: [ThemeDecorator(Theme.DANGER)],
-};
+// export const Dark: Story = {
+//     args: {},
+//     decorators: [ThemeDecorator(Theme.DARK)],
+// };
+// export const Danger: Story = {
+//     args: {},
+//     decorators: [ThemeDecorator(Theme.DANGER)],
+// };

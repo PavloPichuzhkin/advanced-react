@@ -1,12 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import {
+    ThemeDecorator,
+    withStoryOrGlobalTheme,
+} from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Text } from './Text';
+import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
 
 const meta: Meta<typeof Text> = {
     title: 'Shared/Redesigned/Text',
     component: Text,
-    tags: ['autodocs'],
+    // tags: ['autodocs'],
+    decorators: [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)],
 };
 
 export default meta;
@@ -64,6 +69,7 @@ export const SizeXL: Story = {
         size: 'xl',
     },
 };
+
 export const Error: Story = {
     args: {
         title: 'Title lorem ipsun',
@@ -80,33 +86,14 @@ export const Accent: Story = {
     },
 };
 
-export const onlyTitle: Story = {
+export const OnlyTitle: Story = {
     args: {
         title: 'Title lorem ipsun',
     },
 };
 
-export const onlyText: Story = {
+export const OnlyText: Story = {
     args: {
         text: 'Description Description Description Description',
     },
 };
-
-export const PrimaryDark: Story = {};
-PrimaryDark.args = {
-    title: 'Title lorem ipsun',
-    text: 'Description Description Description Description',
-};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const onlyTitleDark: Story = {};
-onlyTitleDark.args = {
-    title: 'Title lorem ipsun',
-};
-onlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const onlyTextDark: Story = {};
-onlyTextDark.args = {
-    text: 'Description Description Description Description',
-};
-onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];

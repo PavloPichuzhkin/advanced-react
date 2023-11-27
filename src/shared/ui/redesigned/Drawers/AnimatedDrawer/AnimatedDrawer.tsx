@@ -12,6 +12,7 @@ import { Text, TextSize } from '../../../deprecated/Text';
 import { HStack } from '../../../redesigned/Stack';
 import { Loader } from '../../../deprecated/Loader';
 import { toggleFeatures } from '@/shared/lib/features';
+import { AppText } from '../../Text';
 
 interface DrawerProps {
     className?: string;
@@ -87,7 +88,7 @@ const DrawerContent = (props: DrawerProps) => {
             <div
                 className={classNames(cls.AnimatedDrawer, {}, [
                     className,
-                    theme,
+                    // theme,
                     toggleFeatures({
                         name: 'isAppRedesigned',
                         on: () => cls.drawerNew,
@@ -106,7 +107,7 @@ const DrawerContent = (props: DrawerProps) => {
                     {...bind()}
                 >
                     <HStack justify='center' className={cls.puller}>
-                        <Text title='----' size={TextSize.XL} />
+                        <AppText title='----' size='xl' />
                     </HStack>
                     {children}
                 </Spring.a.div>

@@ -1,13 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Button, ButtonSize, ButtonTheme } from './Button';
 
 const meta: Meta<typeof Button> = {
     title: 'Shared/Button',
     component: Button,
-    tags: ['autodocs'],
+    // tags: ['autodocs'],
+    decorators: [withStoryOrGlobalTheme(Theme.LIGHT)],
 };
 
 export default meta;
@@ -62,7 +63,7 @@ export const OutlineDark: Story = {
         theme: ButtonTheme.OUTLINE,
     },
 };
-OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+OutlineDark.decorators = [withStoryOrGlobalTheme(Theme.DARK)];
 
 export const BackgroundTheme: Story = {
     args: {

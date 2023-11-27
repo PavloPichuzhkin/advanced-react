@@ -14,8 +14,15 @@ let featureFlags: FeatureFlags = {
     ...defaultFeatures,
 };
 
-export function setFeatureFlags(newFeatureFlags?: FeatureFlags) {
+export function setFeatureFlags(
+    newFeatureFlags?: FeatureFlags,
+    // project: typeof __PROJECT__ = 'frontend',
+) {
     if (newFeatureFlags) {
+        // if (__PROJECT__ === project) {
+        //     featureFlags = newFeatureFlags;
+        // }
+        // console.log(`${newFeatureFlags.isAppRedesigned} seted`);
         featureFlags = newFeatureFlags;
     }
 }
@@ -28,7 +35,7 @@ export function getFeatureFlag(flag: keyof FeatureFlags) {
     //     if (flag === 'isAppRedesigned') {
     //         return false;
     //     }
-    //     return true;
+    //     // return true;
     // }
     return Boolean(featureFlags?.[flag]);
 }

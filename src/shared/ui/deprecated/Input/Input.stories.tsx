@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Input } from './Input';
 
 const meta: Meta<typeof Input> = {
     title: 'Shared/Input',
     component: Input,
-    tags: ['autodocs'],
+    // tags: ['autodocs'],
 };
 
 export default meta;
@@ -19,6 +19,7 @@ export const Primary: Story = {
         autofocus: true,
     },
 };
+Primary.decorators = [withStoryOrGlobalTheme(Theme.LIGHT)];
 
 export const Dark: Story = {
     args: {
@@ -27,4 +28,4 @@ export const Dark: Story = {
         autofocus: true,
     },
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [withStoryOrGlobalTheme(Theme.DARK)];

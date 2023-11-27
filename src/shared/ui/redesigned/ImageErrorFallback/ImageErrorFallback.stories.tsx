@@ -1,11 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import {
+    ThemeDecorator,
+    withStoryOrGlobalTheme,
+} from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { ImageErrorFallback } from './ImageErrorFallback';
+import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
 
 const meta: Meta<typeof ImageErrorFallback> = {
-    title: 'Pages/ImageErrorFallback',
+    title: 'Shared/Redesigned/ImageErrorFallback',
     component: ImageErrorFallback,
     // tags: ['autodocs'],
 };
@@ -14,15 +18,6 @@ export default meta;
 type Story = StoryObj<typeof ImageErrorFallback>;
 
 export const Primary: Story = {
-    args: {},
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-        PartialStoreDecorator({
-            profile: {
-                form: {
-                    first: 'Pavlo',
-                },
-            },
-        }),
-    ],
+    args: { width: 100, height: 100 },
+    decorators: [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)],
 };

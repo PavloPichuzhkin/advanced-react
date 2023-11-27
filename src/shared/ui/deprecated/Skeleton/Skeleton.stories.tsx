@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import {
+    ThemeDecorator,
+    withStoryOrGlobalTheme,
+} from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Skeleton } from './Skeleton';
 
@@ -19,6 +22,7 @@ export const Primary: Story = {
         height: 200,
     },
 };
+Primary.decorators = [withStoryOrGlobalTheme(Theme.LIGHT)];
 
 export const Circle: Story = {
     args: {
@@ -27,13 +31,14 @@ export const Circle: Story = {
         height: 150,
     },
 };
+Circle.decorators = [withStoryOrGlobalTheme(Theme.LIGHT)];
 
 export const PrimaryDark: Story = {
     args: {
         width: '100%',
         height: 200,
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [withStoryOrGlobalTheme(Theme.DARK)],
 };
 
 export const CircleDark: Story = {
@@ -42,7 +47,7 @@ export const CircleDark: Story = {
         width: 150,
         height: 150,
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [withStoryOrGlobalTheme(Theme.DARK)],
 };
 
 export const PrimaryDanger: Story = {
@@ -50,7 +55,7 @@ export const PrimaryDanger: Story = {
         width: '100%',
         height: 200,
     },
-    decorators: [ThemeDecorator(Theme.DANGER)],
+    decorators: [withStoryOrGlobalTheme(Theme.DANGER)],
 };
 export const CircleDanger: Story = {
     args: {
@@ -58,5 +63,5 @@ export const CircleDanger: Story = {
         width: 150,
         height: 150,
     },
-    decorators: [ThemeDecorator(Theme.DANGER)],
+    decorators: [withStoryOrGlobalTheme(Theme.DANGER)],
 };

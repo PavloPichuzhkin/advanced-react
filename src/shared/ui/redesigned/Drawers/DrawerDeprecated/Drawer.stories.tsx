@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Drawer } from './Drawer';
 import { Text, TextSize } from '../../../deprecated/Text';
 import { VStack } from '../../../redesigned/Stack';
+import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
+import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { Theme } from '@/shared/lib/context/ThemeContext';
 
 const meta: Meta<typeof Drawer> = {
-    title: 'Shared/Drawers/DrawerDeprecated',
+    title: 'Shared/Redesigned/Drawers/DrawerDeprecated',
     component: Drawer,
     // tags: ['autodocs'],
     args: {
@@ -47,11 +47,13 @@ export const Primary: Story = {
     args: {},
     decorators: [],
 };
-export const Dark: Story = {
-    args: {},
-    decorators: [ThemeDecorator(Theme.DARK)],
-};
-export const Danger: Story = {
-    args: {},
-    decorators: [ThemeDecorator(Theme.DANGER)],
-};
+Primary.decorators = [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)];
+
+// export const Dark: Story = {
+//     args: {},
+//     decorators: [ThemeDecorator(Theme.DARK)],
+// };
+// export const Danger: Story = {
+//     args: {},
+//     decorators: [ThemeDecorator(Theme.DANGER)],
+// };

@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
-import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { AppLogo } from './AppLogo';
 import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
 
@@ -15,6 +14,6 @@ export default meta;
 type Story = StoryObj<typeof AppLogo>;
 
 export const Primary: Story = {
-    args: {},
+    args: { size: 300 },
 };
-Primary.decorators = [RedesignDecorator];
+Primary.decorators = [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)];

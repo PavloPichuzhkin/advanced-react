@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Code } from './Code';
-import { FeaturesFlagsDecorator } from '@/shared/config/storybook/FeaturesFlagsDecorator';
 import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
 
 const meta: Meta<typeof Code> = {
@@ -38,7 +37,7 @@ const code =
 
 export const Primary: Story = {};
 Primary.args = { text: code };
-Primary.decorators = [RedesignDecorator];
+Primary.decorators = [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)];
 
 // export const Dark: Story = {
 //     args: {

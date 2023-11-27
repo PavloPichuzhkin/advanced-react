@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoryFn } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { ListBox } from './ListBox';
 
@@ -29,10 +29,11 @@ export const Primary: Story = {
     },
     decorators: [
         (Story: StoryFn) => (
-            <div style={{ padding: '5rem' }}>
+            <div style={{ padding: '9rem' }}>
                 <Story />
             </div>
         ),
+        withStoryOrGlobalTheme(Theme.LIGHT),
     ],
 };
 
@@ -46,11 +47,11 @@ export const Dark: Story = {
         ],
     },
     decorators: [
-        ThemeDecorator(Theme.DARK),
         (Story: StoryFn) => (
-            <div style={{ padding: '5rem' }}>
+            <div style={{ padding: '9rem' }}>
                 <Story />
             </div>
         ),
+        withStoryOrGlobalTheme(Theme.DARK),
     ],
 };

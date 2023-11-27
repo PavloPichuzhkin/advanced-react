@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Text, TextAlign, TextSize, TextTheme } from './Text';
+import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
 
 const meta: Meta<typeof Text> = {
     title: 'Shared/Text',
@@ -17,6 +17,7 @@ export const Primary: Story = {
         title: 'Title lorem ipsun',
         text: 'Description Description Description Description',
     },
+    decorators: [withStoryOrGlobalTheme(Theme.LIGHT)],
 };
 export const PrimaryCenterAlign: Story = {
     args: {
@@ -24,6 +25,7 @@ export const PrimaryCenterAlign: Story = {
         text: 'Description Description Description Description',
         align: TextAlign.CENTER,
     },
+    decorators: [withStoryOrGlobalTheme(Theme.LIGHT)],
 };
 export const PrimaryRightAlign: Story = {
     args: {
@@ -31,6 +33,7 @@ export const PrimaryRightAlign: Story = {
         text: 'Description Description Description Description',
         align: TextAlign.RIGHT,
     },
+    decorators: [withStoryOrGlobalTheme(Theme.LIGHT)],
 };
 
 export const SizeS: Story = {
@@ -39,6 +42,7 @@ export const SizeS: Story = {
         text: 'Description Description Description Description',
         size: TextSize.S,
     },
+    decorators: [withStoryOrGlobalTheme(Theme.LIGHT)],
 };
 
 export const SizeM: Story = {
@@ -47,6 +51,7 @@ export const SizeM: Story = {
         text: 'Description Description Description Description',
         size: TextSize.M,
     },
+    decorators: [withStoryOrGlobalTheme(Theme.LIGHT)],
 };
 
 export const SizeL: Story = {
@@ -55,6 +60,7 @@ export const SizeL: Story = {
         text: 'Description Description Description Description',
         size: TextSize.L,
     },
+    decorators: [withStoryOrGlobalTheme(Theme.LIGHT)],
 };
 
 export const SizeXL: Story = {
@@ -63,6 +69,7 @@ export const SizeXL: Story = {
         text: 'Description Description Description Description',
         size: TextSize.XL,
     },
+    decorators: [withStoryOrGlobalTheme(Theme.LIGHT)],
 };
 export const Error: Story = {
     args: {
@@ -70,6 +77,7 @@ export const Error: Story = {
         text: 'Description Description Description Description',
         theme: TextTheme.ERROR,
     },
+    decorators: [withStoryOrGlobalTheme(Theme.LIGHT)],
 };
 
 export const ErrorDark: Story = {
@@ -78,19 +86,21 @@ export const ErrorDark: Story = {
         text: 'Description Description Description Description',
         theme: TextTheme.ERROR,
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [withStoryOrGlobalTheme(Theme.DARK)],
 };
 
-export const onlyTitle: Story = {
+export const OnlyTitle: Story = {
     args: {
         title: 'Title lorem ipsun',
     },
+    decorators: [withStoryOrGlobalTheme(Theme.LIGHT)],
 };
 
-export const onlyText: Story = {
+export const OnlyText: Story = {
     args: {
         text: 'Description Description Description Description',
     },
+    decorators: [withStoryOrGlobalTheme(Theme.LIGHT)],
 };
 
 export const PrimaryDark: Story = {};
@@ -98,16 +108,16 @@ PrimaryDark.args = {
     title: 'Title lorem ipsun',
     text: 'Description Description Description Description',
 };
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+PrimaryDark.decorators = [withStoryOrGlobalTheme(Theme.DARK)];
 
-export const onlyTitleDark: Story = {};
-onlyTitleDark.args = {
+export const OnlyTitleDark: Story = {};
+OnlyTitleDark.args = {
     title: 'Title lorem ipsun',
 };
-onlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
+OnlyTitleDark.decorators = [withStoryOrGlobalTheme(Theme.DARK)];
 
-export const onlyTextDark: Story = {};
-onlyTextDark.args = {
+export const OnlyTextDark: Story = {};
+OnlyTextDark.args = {
     text: 'Description Description Description Description',
 };
-onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
+OnlyTextDark.decorators = [withStoryOrGlobalTheme(Theme.DARK)];

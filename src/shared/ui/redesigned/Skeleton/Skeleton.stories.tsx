@@ -1,12 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import {
+    ThemeDecorator,
+    withStoryOrGlobalTheme,
+} from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Skeleton } from './Skeleton';
+import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
 
 const meta: Meta<typeof Skeleton> = {
     title: 'Shared/Redesigned/Skeleton',
     component: Skeleton,
     // tags: ['autodocs'],
+    decorators: [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)],
 };
 
 export default meta;
@@ -26,37 +31,4 @@ export const Circle: Story = {
         width: 150,
         height: 150,
     },
-};
-
-export const PrimaryDark: Story = {
-    args: {
-        width: '100%',
-        height: 200,
-    },
-    decorators: [ThemeDecorator(Theme.DARK)],
-};
-
-export const CircleDark: Story = {
-    args: {
-        border: '50%',
-        width: 150,
-        height: 150,
-    },
-    decorators: [ThemeDecorator(Theme.DARK)],
-};
-
-export const PrimaryDanger: Story = {
-    args: {
-        width: '100%',
-        height: 200,
-    },
-    decorators: [ThemeDecorator(Theme.DANGER)],
-};
-export const CircleDanger: Story = {
-    args: {
-        border: '50%',
-        width: 150,
-        height: 150,
-    },
-    decorators: [ThemeDecorator(Theme.DANGER)],
 };

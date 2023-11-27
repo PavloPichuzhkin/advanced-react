@@ -25,10 +25,14 @@ body {
     font: var(--font-m);
 }
 
+.app1 {
+    min-height: 100vh
+}
 
 .app_redesigned {
     background: var(--bg-redesigned);
-    min-height: 100vh;
+
+    // min-height: 100vh;
     font: var(--font-m-redesigned);
     color: var(--text-redesigned);
 
@@ -65,3 +69,7 @@ body {
     border: 1px solid var(--icon-redesigned);
 }
 
+.overflowStory {
+    // overflow-y: scroll;
+    height: 100%;
+}

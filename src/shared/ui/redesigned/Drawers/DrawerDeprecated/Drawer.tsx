@@ -40,7 +40,7 @@ export const Drawer = memo((props: DrawerProps) => {
             <div
                 className={classNames(cls.Drawer, mods, [
                     className,
-                    theme,
+                    // theme,
                     toggleFeatures({
                         name: 'isAppRedesigned',
                         on: () => cls.drawerNew,

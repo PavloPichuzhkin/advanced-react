@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Select } from './Select';
 
 const meta: Meta<typeof Select> = {
     title: 'Shared/Select',
     component: Select,
-    tags: ['autodocs'],
+    // tags: ['autodocs'],
 };
 
 export default meta;
@@ -21,6 +21,8 @@ export const Primary: Story = {
         ],
     },
 };
+Primary.decorators = [withStoryOrGlobalTheme(Theme.LIGHT)];
+
 export const Dark: Story = {
     args: {
         label: 'Select something',
@@ -30,4 +32,4 @@ export const Dark: Story = {
         ],
     },
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [withStoryOrGlobalTheme(Theme.DARK)];

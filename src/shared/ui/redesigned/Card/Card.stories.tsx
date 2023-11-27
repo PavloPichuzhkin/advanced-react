@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { AppText } from '../Text';
 import { Card } from './Card';
@@ -8,7 +8,7 @@ import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
 const meta: Meta<typeof Card> = {
     title: 'Shared/Redesigned/Card',
     component: Card,
-    tags: ['autodocs'],
+    // tags: ['autodocs'],
 };
 
 export default meta;
@@ -19,7 +19,7 @@ export const Primary: Story = {
         children: <AppText title='title title' text='text text' />,
     },
 };
-Primary.decorators = [RedesignDecorator];
+Primary.decorators = [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)];
 
 // export const Dark: Story = {
 //     args: {

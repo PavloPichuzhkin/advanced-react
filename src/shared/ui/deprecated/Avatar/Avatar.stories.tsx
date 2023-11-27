@@ -1,11 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar } from './Avatar';
 import AvatarImg from '../../../assets/tests/storybook.jpg';
+import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { Theme } from '@/shared/lib/context/ThemeContext';
 
 const meta: Meta<typeof Avatar> = {
     title: 'Shared/Avatar',
     component: Avatar,
-    tags: ['autodocs'],
+    // tags: ['autodocs'],
 };
 
 export default meta;
@@ -17,9 +19,12 @@ export const Primary: Story = {
         src: AvatarImg,
     },
 };
+Primary.decorators = [withStoryOrGlobalTheme(Theme.LIGHT)];
+
 export const Small: Story = {
     args: {
         size: 100,
         src: AvatarImg,
     },
 };
+Small.decorators = [withStoryOrGlobalTheme(Theme.LIGHT)];

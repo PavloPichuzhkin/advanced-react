@@ -4,6 +4,7 @@ import { rest } from 'msw';
 import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator';
 import {
     ThemeDecorator,
+    withStoryOrGlobalTheme,
     withThemeProvider,
 } from '../../src/shared/config/storybook/ThemeDecorator';
 import { Theme } from '../../src/shared/lib/context/ThemeContext';
@@ -16,11 +17,38 @@ import { selectEntitiesFromNormalizedData } from '@/shared/lib/helpers/selectEnt
 import { mockReturnArticlesPageState } from '@/shared/assets/tests/mockReturnArticlesPageState';
 import { Article } from '@/entities/Article';
 import { FeaturesFlagsDecorator } from '@/shared/config/storybook/FeaturesFlagsDecorator';
+import { TestDecorator } from '@/shared/config/storybook/TestDecorator';
+import { getFeatureFlag, toggleFeatures } from '@/shared/lib/features';
 // import { AsyncStoryDecorator } from '../../src/shared/config/storybook/AsyncStoryDecorator';
 
 initialize({
     onUnhandledRequest: 'bypass',
 });
+
+const themeTool = toggleFeatures({
+    name: 'isAppRedesigned',
+    on: () => ({
+        theme: {
+            description: 'Global theme for components',
+            defaultValue: Theme.LIGHT,
+            toolbar: {
+                title: 'Theme',
+                icon: 'circlehollow',
+                items: [
+                    { value: Theme.LIGHT, title: 'Light' },
+                    { value: Theme.DARK, title: 'Dark' },
+                    { value: Theme.DANGER, title: 'Danger' },
+                ],
+                dynamicTitle: true,
+            },
+        },
+    }),
+    off: () => ({
+        theme: {},
+    }),
+});
+
+// console.log(getFeatureFlag('isAppRedesigned'));
 
 const preview: Preview = {
     globalTypes: {
@@ -52,6 +80,8 @@ const preview: Preview = {
                 dynamicTitle: true,
             },
         },
+
+        // ...themeTool,
     },
     parameters: {
         actions: { argTypesRegex: '^on[A-Z].*' },
@@ -99,16 +129,21 @@ const preview: Preview = {
     },
     decorators: [
         StyleDecorator,
-
-        withThemeProvider,
+        TestDecorator('111111'),
         // ThemeDecorator(Theme.LIGHT),
         RouterDecorator,
         i18nextStoryDecorator,
         StoreProviderDecorator,
         mswDecorator,
         AsyncStoryDecorator,
+        // withThemeProvider,
+        // ThemeDecorator(Theme.LIGHT), /// //
+        //
+        // withStoryOrGlobalTheme(Theme.LIGHT),
         FeaturesFlagsDecorator({ isAppRedesigned: false }),
+
         // AsyncStoryDecorator(),
+        // TestDecorator('222222'),
     ],
 };
 export default preview;

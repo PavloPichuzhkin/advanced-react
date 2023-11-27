@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Tabs } from './Tabs';
+import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
 
 const meta: Meta<typeof Tabs> = {
     title: 'Shared/Redesigned/Tabs',
@@ -33,3 +34,4 @@ export const Primary: Story = {
         onTabClick: action('onTabClick'),
     },
 };
+Primary.decorators = [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)];
