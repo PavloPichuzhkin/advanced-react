@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Modal } from './Modal';
 import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
@@ -20,7 +20,7 @@ export const Light: Story = {
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.\n ',
     },
 };
-Light.decorators = [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)];
+Light.decorators = [RedesignDecorator, ThemeDecorator(Theme.LIGHT)];
 // export const Dark: Story = {
 //     args: {
 //         isOpen: true,

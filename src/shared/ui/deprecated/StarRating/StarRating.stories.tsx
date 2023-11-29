@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { StarRating } from './StarRating';
 
@@ -14,5 +14,5 @@ type Story = StoryObj<typeof StarRating>;
 
 export const Primary: Story = {
     args: {},
-    decorators: [withStoryOrGlobalTheme(Theme.LIGHT)],
+    decorators: [ThemeDecorator(Theme.LIGHT)],
 };

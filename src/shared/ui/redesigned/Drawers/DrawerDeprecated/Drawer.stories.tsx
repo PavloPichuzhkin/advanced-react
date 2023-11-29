@@ -3,7 +3,7 @@ import { Drawer } from './Drawer';
 import { Text, TextSize } from '../../../deprecated/Text';
 import { VStack } from '../../../redesigned/Stack';
 import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
-import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 
 const meta: Meta<typeof Drawer> = {
@@ -47,7 +47,7 @@ export const Primary: Story = {
     args: {},
     decorators: [],
 };
-Primary.decorators = [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)];
+Primary.decorators = [RedesignDecorator, ThemeDecorator(Theme.LIGHT)];
 
 // export const Dark: Story = {
 //     args: {},

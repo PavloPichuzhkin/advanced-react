@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Select } from './Select';
 
@@ -21,7 +21,7 @@ export const Primary: Story = {
         ],
     },
 };
-Primary.decorators = [withStoryOrGlobalTheme(Theme.LIGHT)];
+Primary.decorators = [ThemeDecorator(Theme.LIGHT)];
 
 export const Dark: Story = {
     args: {
@@ -32,4 +32,4 @@ export const Dark: Story = {
         ],
     },
 };
-Dark.decorators = [withStoryOrGlobalTheme(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

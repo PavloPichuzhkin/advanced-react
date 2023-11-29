@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoryFn } from '@storybook/react';
-import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Button } from '../../../Button';
 import { Dropdown } from './Dropdown';
@@ -31,7 +31,7 @@ Primary.decorators = [
             <Story />
         </div>
     ),
-    withStoryOrGlobalTheme(Theme.LIGHT),
+    ThemeDecorator(Theme.LIGHT),
 ];
 
 export const Dark: Story = {
@@ -50,5 +50,5 @@ Dark.decorators = [
             <Story />
         </div>
     ),
-    withStoryOrGlobalTheme(Theme.DARK),
+    ThemeDecorator(Theme.DARK),
 ];

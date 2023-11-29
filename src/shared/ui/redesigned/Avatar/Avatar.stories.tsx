@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar } from './Avatar';
 import AvatarImg from '../../../assets/tests/storybook.jpg';
 import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
-import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 
 const meta: Meta<typeof Avatar> = {
@@ -20,4 +20,4 @@ export const Primary: Story = {
         src: AvatarImg,
     },
 };
-Primary.decorators = [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)];
+Primary.decorators = [RedesignDecorator, ThemeDecorator(Theme.LIGHT)];

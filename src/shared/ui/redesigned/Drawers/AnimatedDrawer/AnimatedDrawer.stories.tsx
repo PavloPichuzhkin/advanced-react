@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AnimatedDrawer } from './AnimatedDrawer';
 import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
 import { mockDrawersChildren } from '@/shared/assets/tests/mockDrawersChildren';
-import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 
 const meta: Meta<typeof AnimatedDrawer> = {
@@ -23,7 +23,7 @@ export const Primary: Story = {
     args: {},
     decorators: [],
 };
-Primary.decorators = [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)];
+Primary.decorators = [RedesignDecorator, ThemeDecorator(Theme.LIGHT)];
 
 // export const Dark: Story = {
 //     args: {},

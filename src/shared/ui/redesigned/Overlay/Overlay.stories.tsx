@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Overlay } from './Overlay';
 import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
-import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 
 const meta: Meta<typeof Overlay> = {
@@ -15,5 +15,5 @@ type Story = StoryObj<typeof Overlay>;
 
 export const Primary: Story = {
     args: {},
-    decorators: [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)],
+    decorators: [RedesignDecorator, ThemeDecorator(Theme.LIGHT)],
 };

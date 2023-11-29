@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoryFn } from '@storybook/react';
-import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { ListBox } from './ListBox';
 
@@ -33,7 +33,7 @@ export const Primary: Story = {
                 <Story />
             </div>
         ),
-        withStoryOrGlobalTheme(Theme.LIGHT),
+        ThemeDecorator(Theme.LIGHT),
     ],
 };
 
@@ -52,6 +52,6 @@ export const Dark: Story = {
                 <Story />
             </div>
         ),
-        withStoryOrGlobalTheme(Theme.DARK),
+        ThemeDecorator(Theme.DARK),
     ],
 };

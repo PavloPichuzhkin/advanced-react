@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Tabs } from './Tabs';
 
@@ -34,7 +34,7 @@ export const Primary: Story = {
         value: 'tab 2',
         onTabClick: action('onTabClick'),
     },
-    decorators: [withStoryOrGlobalTheme(Theme.LIGHT)],
+    decorators: [ThemeDecorator(Theme.LIGHT)],
 };
 export const Dark: Story = {
     args: {
@@ -42,5 +42,5 @@ export const Dark: Story = {
         value: 'tab 2',
         onTabClick: action('onTabClick'),
     },
-    decorators: [withStoryOrGlobalTheme(Theme.DARK)],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

@@ -1,7 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Modal } from './Modal';
 import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
-import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import {
+    ThemeDecorator,
+    withThemeProvider,
+} from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 
 const meta: Meta<typeof Modal> = {
@@ -28,4 +31,4 @@ export const Light: Story = {
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.\n ',
     },
 };
-Light.decorators = [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)];
+Light.decorators = [RedesignDecorator, withThemeProvider];

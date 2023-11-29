@@ -4,7 +4,6 @@ import { rest } from 'msw';
 import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator';
 import {
     ThemeDecorator,
-    withStoryOrGlobalTheme,
     withThemeProvider,
 } from '../../src/shared/config/storybook/ThemeDecorator';
 import { Theme } from '../../src/shared/lib/context/ThemeContext';
@@ -30,7 +29,8 @@ const themeTool = toggleFeatures({
     on: () => ({
         theme: {
             description: 'Global theme for components',
-            defaultValue: Theme.LIGHT,
+            // defaultValue: Theme.LIGHT,
+            defaultValue: undefined,
             toolbar: {
                 title: 'Theme',
                 icon: 'circlehollow',
@@ -69,6 +69,7 @@ const preview: Preview = {
         theme: {
             description: 'Global theme for components',
             defaultValue: Theme.LIGHT,
+            // defaultValue: undefined,
             toolbar: {
                 title: 'Theme',
                 icon: 'circlehollow',
@@ -94,7 +95,7 @@ const preview: Preview = {
         loaders: [mswLoader],
         layout: 'fullscreen',
         loki: {
-            captureDelay: 100, // 3000
+            captureDelay: 6000, // 3000
         },
         msw: {
             handlers: {
@@ -135,15 +136,16 @@ const preview: Preview = {
         i18nextStoryDecorator,
         StoreProviderDecorator,
         mswDecorator,
-        AsyncStoryDecorator,
+
         // withThemeProvider,
         // ThemeDecorator(Theme.LIGHT), /// //
         //
         // withStoryOrGlobalTheme(Theme.LIGHT),
+        AsyncStoryDecorator,
         FeaturesFlagsDecorator({ isAppRedesigned: false }),
 
         // AsyncStoryDecorator(),
-        // TestDecorator('222222'),
+        TestDecorator('222222'),
     ],
 };
 export default preview;

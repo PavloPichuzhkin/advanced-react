@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
 import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
-import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 
 const meta: Meta<typeof Button> = {
@@ -19,7 +19,7 @@ export const Outline: Story = {
         variant: 'outline',
     },
 };
-Outline.decorators = [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)];
+Outline.decorators = [RedesignDecorator, ThemeDecorator(Theme.LIGHT)];
 
 export const Square: Story = {
     args: {
@@ -29,7 +29,7 @@ export const Square: Story = {
         size: 'l',
     },
 };
-Square.decorators = [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)];
+Square.decorators = [RedesignDecorator, ThemeDecorator(Theme.LIGHT)];
 
 export const Clear: Story = {
     args: {
@@ -38,4 +38,4 @@ export const Clear: Story = {
         size: 'l',
     },
 };
-Clear.decorators = [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)];
+Clear.decorators = [RedesignDecorator, ThemeDecorator(Theme.LIGHT)];

@@ -1,8 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import {
+    ThemeDecorator,
+    withThemeProvider,
+} from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { ArticleBlockType } from '../../model/consts/articleConsts';
 import { ArticleCodeBlockComponent } from './ArticleCodeBlockComponent';
+import { TestDecorator } from '@/shared/config/storybook/TestDecorator';
 
 const meta: Meta<typeof ArticleCodeBlockComponent> = {
     title: 'Entities/Article/ArticleCodeBlockComponent',
@@ -44,7 +48,9 @@ export const Primary: Story = {
         },
     },
 };
-
+// Primary.decorators = [withStoryOrGlobalTheme(Theme.LIGHT)];
+// Primary.decorators = [withThemeProvider];
+Primary.decorators = [ThemeDecorator(Theme.LIGHT)];
 export const Dark: Story = {
     args: {
         block: {
@@ -54,8 +60,9 @@ export const Dark: Story = {
         },
     },
     decorators: [
-        ThemeDecorator(Theme.DARK),
         // withThemeProvider,
+        // withStoryOrGlobalTheme(Theme.DARK)
+        ThemeDecorator(Theme.DARK),
     ],
 };
 
@@ -67,5 +74,12 @@ export const Danger: Story = {
             code,
         },
     },
-    decorators: [ThemeDecorator(Theme.DANGER)],
+
+    decorators: [
+        // TestDecorator('33333'),
+        // withThemeProvider,
+        // withStoryOrGlobalTheme(Theme.DANGER),
+        // TestDecorator('44444'),
+        ThemeDecorator(Theme.DANGER),
+    ],
 };

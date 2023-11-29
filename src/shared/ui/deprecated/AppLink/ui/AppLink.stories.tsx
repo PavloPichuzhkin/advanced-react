@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { AppLink, AppLinkTheme } from './AppLink';
 
@@ -20,7 +20,7 @@ export const Primary: Story = {
         theme: AppLinkTheme.PRIMARY,
     },
 };
-Primary.decorators = [withStoryOrGlobalTheme(Theme.LIGHT)];
+Primary.decorators = [ThemeDecorator(Theme.LIGHT)];
 
 export const Secondary: Story = {
     args: {
@@ -28,7 +28,7 @@ export const Secondary: Story = {
         theme: AppLinkTheme.SECONDARY,
     },
 };
-Secondary.decorators = [withStoryOrGlobalTheme(Theme.LIGHT)];
+Secondary.decorators = [ThemeDecorator(Theme.LIGHT)];
 
 export const Red: Story = {
     args: {
@@ -36,7 +36,7 @@ export const Red: Story = {
         theme: AppLinkTheme.RED,
     },
 };
-Red.decorators = [withStoryOrGlobalTheme(Theme.LIGHT)];
+Red.decorators = [ThemeDecorator(Theme.LIGHT)];
 
 export const PrimaryDark: Story = {
     args: {
@@ -44,7 +44,7 @@ export const PrimaryDark: Story = {
         theme: AppLinkTheme.PRIMARY,
     },
 };
-PrimaryDark.decorators = [withStoryOrGlobalTheme(Theme.DARK)];
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const SecondaryDark: Story = {
     args: {
@@ -52,7 +52,7 @@ export const SecondaryDark: Story = {
         theme: AppLinkTheme.SECONDARY,
     },
 };
-SecondaryDark.decorators = [withStoryOrGlobalTheme(Theme.DARK)];
+SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const RedDark: Story = {
     args: {
@@ -60,4 +60,4 @@ export const RedDark: Story = {
         theme: AppLinkTheme.RED,
     },
 };
-RedDark.decorators = [withStoryOrGlobalTheme(Theme.DARK)];
+RedDark.decorators = [ThemeDecorator(Theme.DARK)];

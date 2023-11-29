@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Text } from '../Text/Text';
 import { Card } from './Card';
@@ -17,17 +17,17 @@ export const Primary: Story = {
     args: {
         children: <Text title='title title' text='text text' />,
     },
-    decorators: [withStoryOrGlobalTheme(Theme.LIGHT)],
+    decorators: [ThemeDecorator(Theme.LIGHT)],
 };
 export const Dark: Story = {
     args: {
         children: <Text title='title title' text='text text' />,
     },
-    decorators: [withStoryOrGlobalTheme(Theme.DARK)],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 export const Danger: Story = {
     args: {
         children: <Text title='title title' text='text text' />,
     },
-    decorators: [withStoryOrGlobalTheme(Theme.DANGER)],
+    decorators: [ThemeDecorator(Theme.DANGER)],
 };

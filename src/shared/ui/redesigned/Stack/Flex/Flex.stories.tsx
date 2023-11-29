@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Flex } from './Flex';
 import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
-import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 
 const meta: Meta<typeof Flex> = {
     title: 'Shared/Redesigned/Flex',
     component: Flex,
     // tags: ['autodocs'],
-    decorators: [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)],
+    decorators: [RedesignDecorator, ThemeDecorator(Theme.LIGHT)],
 };
 
 export default meta;

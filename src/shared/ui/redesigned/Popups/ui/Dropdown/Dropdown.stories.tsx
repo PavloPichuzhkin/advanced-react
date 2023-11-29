@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoryFn } from '@storybook/react';
-import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Button } from '../../../Button';
 import { Dropdown } from './Dropdown';
@@ -31,7 +31,7 @@ export const Primary: Story = {
             </div>
         ),
         RedesignDecorator,
-        withStoryOrGlobalTheme(Theme.LIGHT),
+        ThemeDecorator(Theme.LIGHT),
     ],
 };
 

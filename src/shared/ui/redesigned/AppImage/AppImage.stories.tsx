@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { AppImage } from './AppImage';
 import AvatarImg from '../../../assets/tests/storybook.jpg';
@@ -25,4 +25,4 @@ export const Primary: Story = {
         },
     },
 };
-Primary.decorators = [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)];
+Primary.decorators = [RedesignDecorator, ThemeDecorator(Theme.LIGHT)];

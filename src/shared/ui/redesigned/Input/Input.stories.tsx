@@ -1,8 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import {
-    ThemeDecorator,
-    withStoryOrGlobalTheme,
-} from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Input } from './Input';
 import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
@@ -23,7 +20,7 @@ export const Primary: Story = {
         autofocus: true,
     },
 };
-Primary.decorators = [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)];
+Primary.decorators = [RedesignDecorator, ThemeDecorator(Theme.LIGHT)];
 
 // export const Dark: Story = {
 //     args: {

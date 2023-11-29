@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoryFn } from '@storybook/react';
 import React from 'react';
-import { withStoryOrGlobalTheme } from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Popover } from './Popover';
 import { Button } from '../../../Button';
@@ -44,7 +44,7 @@ const meta: Meta<typeof Popover> = {
             </div>
         ),
         RedesignDecorator,
-        withStoryOrGlobalTheme(Theme.LIGHT),
+        ThemeDecorator(Theme.LIGHT),
     ],
 };
 

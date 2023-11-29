@@ -1,8 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import {
-    ThemeDecorator,
-    withStoryOrGlobalTheme,
-} from '@/shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { ImageErrorFallback } from './ImageErrorFallback';
@@ -19,5 +16,5 @@ type Story = StoryObj<typeof ImageErrorFallback>;
 
 export const Primary: Story = {
     args: { width: 100, height: 100 },
-    decorators: [RedesignDecorator, withStoryOrGlobalTheme(Theme.LIGHT)],
+    decorators: [RedesignDecorator, ThemeDecorator(Theme.LIGHT)],
 };
