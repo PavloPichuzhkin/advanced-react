@@ -4,19 +4,17 @@ import { useGlobals } from '@storybook/preview-api';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 // eslint-disable-next-line project-fsd-architecture/layer-imports
 import { ThemeProvider } from '@/app/providers/ThemeProvider';
-import { getFeatureFlag, toggleFeatures } from '@/shared/lib/features';
+import {
+    getFeatureFlag,
+    getToggleFeaturesAppClass,
+    toggleFeatures,
+} from '@/shared/lib/features';
 
 const ThemeDecoratorDeprecated =
     (theme: Theme) => (StoryComponent: StoryFn) => {
-        const appClass = toggleFeatures({
-            name: 'isAppRedesigned',
-            on: () => 'app_redesigned',
-            off: () => 'app',
-        });
-
         return (
             <ThemeProvider initialTheme={theme}>
-                <div className={`${appClass} ${theme}`}>
+                <div className={`${getToggleFeaturesAppClass()} ${theme}`}>
                     <StoryComponent />
                 </div>
             </ThemeProvider>
@@ -27,16 +25,13 @@ export const withThemeProvider = (
     StoryComponent: StoryFn,
     context: StoryContext,
 ) => {
-    const appClass = toggleFeatures({
-        name: 'isAppRedesigned',
-        on: () => 'app_redesigned',
-        off: () => 'app',
-    });
     const { theme } = context.globals;
 
     return (
         <ThemeProvider initialTheme={theme}>
-            <div className={`${appClass} ${theme} overflowStory`}>
+            <div
+                className={`${getToggleFeaturesAppClass()} ${theme} overflowStory`}
+            >
                 <StoryComponent />
             </div>
         </ThemeProvider>
@@ -52,12 +47,6 @@ export const ThemeDecorator =
         const {
             globals: { theme: contextTheme },
         } = context;
-
-        const appClass = toggleFeatures({
-            name: 'isAppRedesigned',
-            on: () => 'app_redesigned',
-            off: () => 'app',
-        });
 
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useEffect(() => {
@@ -77,10 +66,15 @@ export const ThemeDecorator =
             storyTheme,
             'finalTheme:',
             finalTheme,
+            'AppClass:',
+            getToggleFeaturesAppClass(),
         );
         return (
             <ThemeProvider initialTheme={finalTheme}>
-                <div className={`${appClass} ${finalTheme}`}>
+                <div
+                    id='app'
+                    className={`${getToggleFeaturesAppClass()} ${finalTheme} overflowStory`}
+                >
                     <StoryComponent />
                 </div>
             </ThemeProvider>
@@ -95,12 +89,6 @@ export const withStoryOrGlobalTheme =
         const {
             globals: { theme },
         } = context;
-
-        const appClass = toggleFeatures({
-            name: 'isAppRedesigned',
-            on: () => 'app_redesigned',
-            off: () => 'app',
-        });
 
         // console.log(
         //     isThemeInitedRef.current,
@@ -118,9 +106,9 @@ export const withStoryOrGlobalTheme =
         return (
             <ThemeProvider initialTheme={theme ?? storyTheme}>
                 <div
-                    className={`${appClass} ${
+                    className={`${getToggleFeaturesAppClass()} ${
                         theme ?? storyTheme
-                    } overflowStory`}
+                    } `}
                 >
                     <StoryComponent />
                 </div>

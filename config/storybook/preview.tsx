@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/react';
 import { initialize, mswDecorator, mswLoader } from 'msw-storybook-addon';
 import { rest } from 'msw';
+import { withRouter } from 'storybook-addon-react-router-v6';
 import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator';
 import {
     ThemeDecorator,
@@ -18,10 +19,21 @@ import { Article } from '@/entities/Article';
 import { FeaturesFlagsDecorator } from '@/shared/config/storybook/FeaturesFlagsDecorator';
 import { TestDecorator } from '@/shared/config/storybook/TestDecorator';
 import { getFeatureFlag, toggleFeatures } from '@/shared/lib/features';
+import { mockArticleData } from '@/shared/assets/tests/mockArticleData';
+import { InitUserDecorator } from '@/shared/config/storybook/InitUserDecorator';
+import { mockNotifications } from '@/shared/assets/tests/mockNotifications';
 // import { AsyncStoryDecorator } from '../../src/shared/config/storybook/AsyncStoryDecorator';
 
 initialize({
     onUnhandledRequest: 'bypass',
+    // onUnhandledRequest(request) {
+    //     const url = request.url.pathname;
+    //
+    //     if (url.includes('localhost') || url.includes('api.com'))
+    //         console.log(
+    //             `Found an unhandled ${request.method} request to ${url}`,
+    //         );
+    // },
 });
 
 const themeTool = toggleFeatures({
@@ -101,7 +113,7 @@ const preview: Preview = {
             handlers: {
                 test: [
                     rest.get(`${__API__}/articles`, (_req, res, ctx) => {
-                        // console.log('handler work');
+                        // console.log('handler  work');
                         return res(
                             ctx.json(
                                 selectEntitiesFromNormalizedData(
@@ -111,9 +123,21 @@ const preview: Preview = {
                         );
                     }),
                 ],
+                test3: [
+                    rest.get(`${__API__}/articles/:id`, (_req, res, ctx) => {
+                        // console.log('handler work');
+                        return res(ctx.json(mockArticleData));
+                    }),
+                ],
                 test2: [
                     rest.get(`${__API__}/article-ratings`, (_req, res, ctx) => {
                         return res(ctx.json(null));
+                    }),
+                ],
+                notifications: [
+                    rest.get(`${__API__}/notifications`, (_req, res, ctx) => {
+                        console.log('handler preview work');
+                        return res(ctx.json(mockNotifications));
                     }),
                 ],
                 //
@@ -131,21 +155,16 @@ const preview: Preview = {
     decorators: [
         StyleDecorator,
         TestDecorator('111111'),
-        // ThemeDecorator(Theme.LIGHT),
-        RouterDecorator,
-        i18nextStoryDecorator,
-        StoreProviderDecorator,
-        mswDecorator,
 
-        // withThemeProvider,
-        // ThemeDecorator(Theme.LIGHT), /// //
-        //
-        // withStoryOrGlobalTheme(Theme.LIGHT),
+        i18nextStoryDecorator,
+        mswDecorator,
         AsyncStoryDecorator,
         FeaturesFlagsDecorator({ isAppRedesigned: false }),
 
-        // AsyncStoryDecorator(),
-        TestDecorator('222222'),
+        withRouter, // makes rerender, themDecor broken, make globall InitThemeDecor , reactRouter withoute it dont work in story
+        // RouterDecorator,
+        // InitUserDecorator(),
+        StoreProviderDecorator,
     ],
 };
 export default preview;

@@ -4,16 +4,17 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { ErrorPage } from './ErrorPage';
 
 const meta: Meta<typeof ErrorPage> = {
-    title: 'widgets/ErrorPage',
+    title: 'widgets/ErrorPage/Deprecated',
     component: ErrorPage,
     tags: ['autodocs'],
 };
-
 export default meta;
+
 type Story = StoryObj<typeof ErrorPage>;
 
 export const Light: Story = {
     args: {},
+    decorators: [ThemeDecorator(Theme.LIGHT)],
 };
 export const Dark: Story = {
     args: {},

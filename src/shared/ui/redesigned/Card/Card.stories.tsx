@@ -22,7 +22,6 @@ export const Primary: Story = {
         children: <AppText title='title title' text='text text' />,
     },
 };
-// Primary.decorators = [RedesignDecorator, withThemeProvider];
 Primary.decorators = [ThemeDecorator(), RedesignDecorator];
 
 // export const Dark: Story = {

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import {
     DynamicModuleLoader,
@@ -41,7 +41,7 @@ import { ImageErrorFallback } from '@/shared/ui/redesigned/ImageErrorFallback';
 
 interface ArticleDetailsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 const reducers: ReducersList = {
@@ -121,9 +121,12 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     const error = useSelector(getArticleDetailsError);
 
-    useInitialEffect(() => {
-        dispatch(fetchArticleById(id));
-    });
+    // useInitialEffect(() => {
+    //     dispatch(fetchArticleById(id!));
+    // });
+    useEffect(() => {
+        dispatch(fetchArticleById(id!));
+    }, [dispatch, id]);
 
     let content;
 

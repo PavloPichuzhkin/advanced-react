@@ -3,7 +3,7 @@ import { Article, ArticleType, ArticleBlockType } from '@/entities/Article';
 import { UserRole } from '@/entities/User';
 import image from './mockImageForArticleDetailsPage.png';
 
-export const article: Article = {
+export const mockArticleData: Article = {
     id: '1',
     user: {
         id: '1',

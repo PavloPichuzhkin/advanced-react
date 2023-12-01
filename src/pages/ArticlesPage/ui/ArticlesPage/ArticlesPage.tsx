@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import {
@@ -40,9 +40,12 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
         }
     }, [dispatch]);
 
-    useInitialEffect(() => {
+    // useInitialEffect(() => {
+    //     dispatch(initArticlesPage(searchParams));
+    // });
+    useEffect(() => {
         dispatch(initArticlesPage(searchParams));
-    });
+    }, [dispatch, searchParams]);
 
     const content = (
         <ToggleFeatures

@@ -10,13 +10,14 @@ const meta: Meta<typeof NotificationList> = {
     component: NotificationList,
     // tags: ['autodocs'],
     parameters: {
-        msw: {
-            handlers: [
-                rest.get(`${__API__}/notifications`, (_req, res, ctx) => {
-                    return res(ctx.json(mockNotifications));
-                }),
-            ],
-        },
+        // msw: {
+        //     handlers: [
+        //         rest.get(`${__API__}/notifications`, (_req, res, ctx) => {
+        //             console.log('handler stoory work');
+        //             return res(ctx.json(mockNotifications));
+        //         }),
+        //     ],
+        // },
     },
 };
 

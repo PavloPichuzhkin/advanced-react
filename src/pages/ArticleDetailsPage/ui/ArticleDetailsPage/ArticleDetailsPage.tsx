@@ -34,7 +34,7 @@ const reducers: ReducersList = {
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('articles');
-    let { id } = useParams<{ id: string }>();
+    const { id } = useParams<{ id: string }>();
 
     const dispatch = useAppDispatch();
 
@@ -42,10 +42,12 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         dispatch(fetchCommentsByArticleId(id));
     });
 
-    if (__PROJECT__ === 'storybook') {
-        id = '1';
-    }
+    // if (__PROJECT__ === 'storybook') {
+    //     id = '1';
+    // }
     if (!id) {
+        // if (id === undefined) {
+
         return (
             <Page
                 className={classNames(cls.ArticleDetailsPage, {}, [className])}

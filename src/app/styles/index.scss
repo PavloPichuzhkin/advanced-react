@@ -4,18 +4,18 @@
 @import "./themes/dark";
 @import "./themes/danger";
 
-// html {
-//    height: 100vh;
-//    overflow-y: auto;
-//    scrollbar-gutter: stable;
-// }
+html {
+    height: 100vh;
 
-body {
-    // font: var(--font-m);
-    overflow: hidden;
+    // overflow-y: auto;
 
-    // overflow-x: hidden;
+    // scrollbar-gutter: unset;
+}
 
+body,
+#root {
+    height: 100%;
+    overflow-y: hidden;
 }
 
 .app {
@@ -25,9 +25,6 @@ body {
     font: var(--font-m);
 }
 
-.app1 {
-    min-height: 100vh
-}
 
 .app_redesigned {
     background: var(--bg-redesigned);
@@ -70,6 +67,6 @@ body {
 }
 
 .overflowStory {
-    // overflow-y: scroll;
-    height: 100%;
+    overflow-y: scroll;
+    height: 100vh;
 }

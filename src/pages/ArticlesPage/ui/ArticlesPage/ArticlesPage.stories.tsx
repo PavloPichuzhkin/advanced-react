@@ -19,12 +19,12 @@ export const Primary: Story = {
     args: {},
     decorators: [
         ThemeDecorator(Theme.DARK),
-        PartialStoreDecorator({
-            articlesPage: mockReturnArticlesPageState(),
-            user: {
-                authData: { jsonSettings: { isArticlesPageWasOpened: true } },
-            },
-        }),
+        // PartialStoreDecorator({
+        //     articlesPage: mockReturnArticlesPageState(),
+        //     user: {
+        //         authData: { jsonSettings: { isArticlesPageWasOpened: true } },
+        //     },
+        // }),
     ],
 };
 

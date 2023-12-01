@@ -14,6 +14,7 @@ import { MainLayout } from '@/shared/layouts';
 import { MainLayoutLoader } from '@/shared/layouts/MainLayoutLoader/MainLayoutLoader';
 import { useAppToolbar } from './lib/useAppToolbar';
 import { withTheme } from './providers/ThemeProvider/ui/withTheme';
+import { withErrorBoundary } from './providers/ErrorBoundary/ui/withErrorBoundary';
 
 function App() {
     const { theme } = useTheme();
@@ -93,4 +94,4 @@ function App() {
     );
 }
 
-export default withTheme(memo(App));
+export default withTheme(withErrorBoundary(memo(App)));

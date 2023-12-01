@@ -12,7 +12,8 @@ const config: StorybookConfig = {
             },
         },
         '@storybook/addon-interactions',
-        // 'storybook-addon-themes', // for storybook 6<
+        '@storybook/addon-a11y',
+        'storybook-addon-react-router-v6',
     ],
     framework: {
         name: '@storybook/react-webpack5',

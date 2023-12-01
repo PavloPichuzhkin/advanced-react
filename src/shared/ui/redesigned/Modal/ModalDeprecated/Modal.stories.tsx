@@ -20,7 +20,7 @@ export const Light: Story = {
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.\n ',
     },
 };
-Light.decorators = [RedesignDecorator, ThemeDecorator(Theme.LIGHT)];
+Light.decorators = [ThemeDecorator(Theme.LIGHT), RedesignDecorator];
 // export const Dark: Story = {
 //     args: {
 //         isOpen: true,

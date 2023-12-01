@@ -9,11 +9,9 @@ import './shared/config/i18n/i18n';
 import { ForceUpdateProvider } from '@/shared/lib/render/forceUpdate';
 
 const domNode = document.getElementById('root') as HTMLElement;
-// if (!domNode) {
-//     throw new Error(
-//         'root not found',
-//     );
-// }
+if (!domNode) {
+    throw new Error('Element with ID = "root" not found');
+}
 
 const root = createRoot(domNode);
 root.render(
@@ -21,11 +19,7 @@ root.render(
     <BrowserRouter>
         <ForceUpdateProvider>
             <StoreProvider>
-                {/* <ThemeProvider> */}
-                <ErrorBoundary>
-                    <App />
-                </ErrorBoundary>
-                {/* </ThemeProvider> */}
+                <App />
             </StoreProvider>
         </ForceUpdateProvider>
     </BrowserRouter>,

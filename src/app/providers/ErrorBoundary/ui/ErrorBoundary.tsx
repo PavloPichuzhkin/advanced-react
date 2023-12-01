@@ -38,7 +38,6 @@ class ErrorBoundary extends React.Component<
             // You can render any custom fallback UI
             return (
                 <Suspense fallback={<Loader />}>
-                    {/* <Suspense fallback=""> */}
                     <ErrorPage className={classNames('', {}, [])} />
                 </Suspense>
             );
