@@ -59,11 +59,11 @@ export const Error: Story = {
                 ArticleView.SMALL,
                 'ooo',
             ),
-            user: {
-                authData: {
-                    jsonSettings: { isArticlesPageWasOpened: undefined },
-                },
-            },
+            // user: {
+            //     authData: {
+            //         jsonSettings: { isArticlesPageWasOpened: undefined },
+            //     },
+            // },
         }),
     ],
 };
