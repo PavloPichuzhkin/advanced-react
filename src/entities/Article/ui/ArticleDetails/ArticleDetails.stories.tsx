@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { reactRouterParameters } from 'storybook-addon-react-router-v6';
+import {
+    reactRouterParameters,
+    withRouter,
+} from 'storybook-addon-react-router-v6';
 import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
@@ -16,13 +19,12 @@ const meta: Meta<typeof ArticleDetails> = {
         // loki: {
         //     captureDelay: 5000,
         // },
-
-        reactRouter: reactRouterParameters({
-            location: {
-                pathParams: { id: '41' },
-            },
-            routing: { path: getRouteArticleDetails(':id') },
-        }),
+        // reactRouter: reactRouterParameters({
+        //     location: {
+        //         pathParams: { id: '41' },
+        //     },
+        //     routing: { path: getRouteArticleDetails(':id') },
+        // }),
     },
 };
 
@@ -39,16 +41,24 @@ export const Primary: Story = {
         //     }),
         ThemeDecorator(Theme.LIGHT),
     ],
+    // parameters: {
+    //     reactRouter: reactRouterParameters({
+    //         location: {
+    //             pathParams: { id: '41' },
+    //         },
+    //         routing: { path: getRouteArticleDetails(':id') },
+    //     }),
+    // },
 };
 export const PrimaryRedesigned: Story = {
     args: { id: '1' },
     decorators: [
-        PartialStoreDecorator({
-            articleDetails: {
-                data: mockArticleData,
-            },
-        }),
-        ThemeDecorator(),
+        // PartialStoreDecorator({
+        //     articleDetails: {
+        //         data: mockArticleData,
+        //     },
+        // }),
+        ThemeDecorator(Theme.LIGHT),
         RedesignDecorator,
     ],
 };

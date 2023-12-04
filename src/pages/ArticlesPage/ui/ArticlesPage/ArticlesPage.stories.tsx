@@ -10,6 +10,14 @@ const meta: Meta<typeof ArticlesPage> = {
     title: 'Pages/ArticlesPage/ArticlesPage',
     component: ArticlesPage,
     // tags: ['autodocs'],
+    decorators: [
+        PartialStoreDecorator({
+            // articlesPage: mockReturnArticlesPageState(),
+            user: {
+                authData: { jsonSettings: { isArticlesPageWasOpened: true } },
+            },
+        }),
+    ],
 };
 
 export default meta;
@@ -20,7 +28,7 @@ export const Primary: Story = {
     decorators: [
         ThemeDecorator(Theme.DARK),
         // PartialStoreDecorator({
-        //     articlesPage: mockReturnArticlesPageState(),
+        //     // articlesPage: mockReturnArticlesPageState(),
         //     user: {
         //         authData: { jsonSettings: { isArticlesPageWasOpened: true } },
         //     },
@@ -34,9 +42,9 @@ export const Loading: Story = {
         ThemeDecorator(Theme.DARK),
         PartialStoreDecorator({
             articlesPage: mockReturnArticlesPageState(true),
-            user: {
-                authData: { jsonSettings: { isArticlesPageWasOpened: true } },
-            },
+            // user: {
+            //     authData: { jsonSettings: { isArticlesPageWasOpened: true } },
+            // },
         }),
     ],
 };
@@ -52,7 +60,9 @@ export const Error: Story = {
                 'ooo',
             ),
             user: {
-                authData: { jsonSettings: { isArticlesPageWasOpened: true } },
+                authData: {
+                    jsonSettings: { isArticlesPageWasOpened: undefined },
+                },
             },
         }),
     ],

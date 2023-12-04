@@ -16,16 +16,16 @@ export default meta;
 type Story = StoryObj<typeof ArticleDetailsComments>;
 
 export const Primary: Story = {
-    args: {},
+    args: { id: '1' },
     decorators: [
         ThemeDecorator(Theme.DARK),
-        PartialStoreDecorator(
-            {
-                articleDetailsPage: {
-                    comments: mockReturnArticleDetailsCommentsState(),
-                },
-            },
-            { articleDetailsPage: articleDetailsPageReducer },
-        ),
+        //     PartialStoreDecorator(
+        //         {
+        //             articleDetailsPage: {
+        //                 comments: mockReturnArticleDetailsCommentsState(),
+        //             },
+        //         },
+        //         { articleDetailsPage: articleDetailsPageReducer },
+        //     ),
     ],
 };

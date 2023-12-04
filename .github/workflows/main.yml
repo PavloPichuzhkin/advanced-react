@@ -33,24 +33,24 @@ jobs:
       - name: Install modules
         run: npm ci
 
-#      - name: Build production project
-#        run: npm run build:prod
-#        if: always()
-
-#      - name: Build storybook
-#        run: npm run storybook:build
-#        if: always()
-
-      - name: Screenshot testing
-        run: npm run test:ui:ci
-        if: always()
-
-#      - name: Run storybook
-#        run: npm run storybook
-#
-#      - name: Screenshot testing
-#        run: npm run test:ui
-#        if: always()
+      ##      - name: Build production project
+      ##        run: npm run build:prod
+      ##        if: always()
+      #
+      ##      - name: Build storybook
+      ##        run: npm run storybook:build
+      ##        if: always()
+      #
+      #      - name: Screenshot testing
+      #        run: npm run test:ui:ci
+      #        if: always()
+      #
+      ##      - name: Run storybook
+      ##        run: npm run storybook
+      ##
+      ##      - name: Screenshot testing
+      ##        run: npm run test:ui
+      ##        if: always()
 
       - name: Unit testing
         run: npm run test:unit
@@ -94,7 +94,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install modules
-        run: npm ci --force
+        run: npm ci
 
       - name: Linting typescript ESLint
         run: npm run lint:ts

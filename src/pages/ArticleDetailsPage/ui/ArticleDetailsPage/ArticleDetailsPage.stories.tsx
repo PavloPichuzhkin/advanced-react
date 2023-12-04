@@ -28,6 +28,7 @@ const meta: Meta<typeof ArticleDetailsPage> = {
         reactRouter: reactRouterParameters({
             location: {
                 pathParams: { id: '42' },
+                // searchParams: { isLoading: 'true' },
             },
             routing: { path: getRouteArticleDetails(':id') },
         }),
@@ -51,16 +52,16 @@ export const PrimaryRedesigned: Story = {
     decorators: [
         ThemeDecorator(),
         RedesignDecorator,
-        // PartialStoreDecorator(
-        //     {
-        //         articleDetails: {
-        //             data: mockArticleData,
-        //         },
-        //         articleDetailsPage: {
-        //             comments: mockReturnArticleDetailsCommentsState(),
-        //         },
-        //     },
-        //     { articleDetailsPage: articleDetailsPageReducer },
-        // ),
+        PartialStoreDecorator(
+            {
+                articleDetails: {
+                    data: mockArticleData,
+                },
+                articleDetailsPage: {
+                    comments: mockReturnArticleDetailsCommentsState(),
+                },
+            },
+            { articleDetailsPage: articleDetailsPageReducer },
+        ),
     ],
 };

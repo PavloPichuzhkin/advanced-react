@@ -11,7 +11,10 @@ import { Theme } from '../../src/shared/lib/context/ThemeContext';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator';
 import i18nextStoryDecorator from '../../src/shared/config/storybook/i18nextStoryDecorator';
 import i18n from '../../src/shared/config/i18n/i18n';
-import { StoreProviderDecorator } from '../../src/shared/config/storybook/StoreProviderDecorator';
+import {
+    PartialStoreDecorator,
+    StoreProviderDecorator,
+} from '../../src/shared/config/storybook/StoreProviderDecorator';
 import { AsyncStoryDecorator } from '@/shared/config/storybook/AsyncStoryDecorator';
 import { selectEntitiesFromNormalizedData } from '@/shared/lib/helpers/selectEntities/selectEntities';
 import { mockReturnArticlesPageState } from '@/shared/assets/tests/mockReturnArticlesPageState';
@@ -22,6 +25,7 @@ import { getFeatureFlag, toggleFeatures } from '@/shared/lib/features';
 import { mockArticleData } from '@/shared/assets/tests/mockArticleData';
 import { InitUserDecorator } from '@/shared/config/storybook/InitUserDecorator';
 import { mockNotifications } from '@/shared/assets/tests/mockNotifications';
+import { mockReturnArticleDetailsCommentsState } from '@/shared/assets/tests/mockArticleDetailsComments';
 // import { AsyncStoryDecorator } from '../../src/shared/config/storybook/AsyncStoryDecorator';
 
 initialize({
@@ -107,7 +111,7 @@ const preview: Preview = {
         loaders: [mswLoader],
         layout: 'fullscreen',
         loki: {
-            captureDelay: 6000, // 3000
+            captureDelay: 1000, // 3000
         },
         msw: {
             handlers: {
@@ -140,6 +144,26 @@ const preview: Preview = {
                         return res(ctx.json(mockNotifications));
                     }),
                 ],
+                comments: [
+                    rest.get('/comments', (req, res, ctx) => {
+                        // if (isMockLoading()) {
+                        //     return res(
+                        //         ctx.status(200),
+                        //         ctx.json({}),
+                        //         ctx.delay('infinite'),
+                        //     );
+                        // }
+
+                        return res(
+                            ctx.status(200),
+                            ctx.json(
+                                selectEntitiesFromNormalizedData(
+                                    mockReturnArticleDetailsCommentsState,
+                                ),
+                            ),
+                        );
+                    }),
+                ],
                 //
                 // profile: profileHandlers,
                 // articleDetails: articleDetailsHandlers,
@@ -161,10 +185,11 @@ const preview: Preview = {
         AsyncStoryDecorator,
         FeaturesFlagsDecorator({ isAppRedesigned: false }),
 
-        withRouter, // makes rerender, themDecor broken, make globall InitThemeDecor , reactRouter withoute it dont work in story
         // RouterDecorator,
-        // InitUserDecorator(),
-        StoreProviderDecorator,
+        InitUserDecorator(),
+        // StoreProviderDecorator,
+        PartialStoreDecorator(),
+        withRouter, // makes rerender, themDecor broken, make globall InitThemeDecor , reactRouter withoute it dont work in story
     ],
 };
 export default preview;

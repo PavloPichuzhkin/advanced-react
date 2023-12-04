@@ -7,6 +7,8 @@ import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/Dynami
 import { articleDetailsReducer } from '@/entities/Article/testing';
 import { profileReducer } from '@/features/EditableProfileCard/testing';
 import { articlesPageReducer } from '@/pages/ArticlesPage/testing';
+import { addCommentFormReducer } from '@/features/AddCommentForm/testing';
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
 
 export const StoreProviderDecorator = (StoryComponent: StoryFn) => (
     <StoreProvider>
@@ -19,10 +21,13 @@ const defaultAsyncReducers: ReducersList = {
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
     articlesPage: articlesPageReducer,
+    addCommentForm: addCommentFormReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 };
+// articleDetailsPage?: ArticleDetailsPageSchema;
 
 export const PartialStoreDecorator =
-    (state: DeepPartial<StateSchema>, asyncReducers?: ReducersList) =>
+    (state?: DeepPartial<StateSchema>, asyncReducers?: ReducersList) =>
     (StoryComponent: StoryFn) => (
         <StoreProvider
             initialState={state}

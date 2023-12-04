@@ -39,8 +39,10 @@ export const withThemeProvider = (
 };
 
 export const ThemeDecorator =
-    (storyTheme?: Theme) =>
+    (storyTheme: Theme = Theme.LIGHT) =>
     (StoryComponent: StoryFn, context: StoryContext) => {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        const renderCounterRef = useRef(0) as MutableRefObject<number>;
         // eslint-disable-next-line react-hooks/rules-of-hooks
         const isThemeInitedRef = useRef(false) as MutableRefObject<boolean>;
 
@@ -48,17 +50,27 @@ export const ThemeDecorator =
             globals: { theme: contextTheme },
         } = context;
 
+        renderCounterRef.current += 1;
+
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useEffect(() => {
             isThemeInitedRef.current = true;
+
+            // if (renderCounterRef.current) {
+            //     isThemeInitedRef.current = true;
+            // }
+            // renderCounterRef.current += 1;
         }, [contextTheme]);
 
-        const finalTheme = isThemeInitedRef.current
-            ? contextTheme
-            : storyTheme || contextTheme;
-
+        const finalTheme =
+            renderCounterRef.current > 2 && isThemeInitedRef.current
+                ? // const finalTheme = isThemeInitedRef.current
+                  contextTheme
+                : storyTheme || contextTheme;
         console.log(
-            'isThemeInitedRef',
+            renderCounterRef.current,
+            'isThemeInitedRef:',
+            // isThemeInitedRef.current,
             isThemeInitedRef.current,
             'contextTheme:',
             contextTheme,

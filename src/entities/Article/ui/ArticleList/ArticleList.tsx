@@ -53,6 +53,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             target={target}
         />
     );
+
     if (!isLoading && !articles.length) {
         return (
             <div className={classNames(cls.noArticles, {}, [className])}>

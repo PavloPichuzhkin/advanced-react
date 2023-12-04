@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import AddCommentForm, { addComment } from '@/features/AddCommentForm';
@@ -34,9 +34,12 @@ export const ArticleDetailsComments = memo(
         const dispatch = useAppDispatch();
         const article = useSelector(getArticleDetailsData);
 
-        useInitialEffect(() => {
+        // useInitialEffect(() => {
+        //     dispatch(fetchCommentsByArticleId(id));
+        // });
+        useEffect(() => {
             dispatch(fetchCommentsByArticleId(id));
-        });
+        }, [dispatch, id]);
 
         const onSendComment = useCallback(async () => {
             const resultAddComment = await dispatch(

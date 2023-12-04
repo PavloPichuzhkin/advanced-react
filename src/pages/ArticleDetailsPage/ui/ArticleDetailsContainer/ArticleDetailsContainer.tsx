@@ -12,10 +12,6 @@ export const ArticleDetailsContainer = memo(
         const { className } = props;
         const { id } = useParams<{ id: string }>();
 
-        // if (!id) {
-        //     return null;
-        // }
-
         return (
             <Card max className={className} padding='24'>
                 <ArticleDetails id={id} />

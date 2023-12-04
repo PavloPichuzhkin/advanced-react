@@ -6,8 +6,7 @@
 
 html {
     height: 100vh;
-
-    // overflow-y: auto;
+    overflow-y: hidden; // to not jumping while loading
 
     // scrollbar-gutter: unset;
 }
@@ -15,7 +14,7 @@ html {
 body,
 #root {
     height: 100%;
-    overflow-y: hidden;
+    overflow-y: auto;
 }
 
 .app {
@@ -23,6 +22,21 @@ body,
     overflow: hidden;
     color: var(--primary-color);
     font: var(--font-m);
+
+    *::-webkit-scrollbar {
+        width: 12px;
+        height: 10px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: var(--card-bg);
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: var(--inverted-primary-color);
+        border-radius: 4px;
+        border: 2px solid var(--primary-color);
+    }
 }
 
 
@@ -33,37 +47,24 @@ body,
     font: var(--font-m-redesigned);
     color: var(--text-redesigned);
 
+    *::-webkit-scrollbar {
+        width: 12px;
+        height: 10px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: var(--light-bg-redesigned);
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: var(--bg-redesigned);
+        border-radius: 4px;
+        border: 1px solid var(--icon-redesigned);
+    }
 }
 
 .content-page {
     display: flex;
-}
-
-*::-webkit-scrollbar {
-    width: 12px;
-    height: 10px;
-}
-
-.app * ::-webkit-scrollbar-track {
-    background: var(--card-bg);
-}
-
-.app * ::-webkit-scrollbar-thumb {
-    background-color: var(--inverted-primary-color);
-    border-radius: 4px;
-    border: 2px solid var(--primary-color);
-}
-
-.app_redesigned *::-webkit-scrollbar-track {
-    background: var(--light-bg-redesigned);
-
-}
-
-
-.app_redesigned *::-webkit-scrollbar-thumb {
-    background-color: var(--bg-redesigned);
-    border-radius: 4px;
-    border: 1px solid var(--icon-redesigned);
 }
 
 .overflowStory {

@@ -12,7 +12,7 @@
                 "isAppRedesigned": true
             },
             "jsonSettings": {
-                "theme": "app_dark_theme",
+                "theme": "app_danger_theme",
                 "isFirstVisit": true,
                 "settingsPageHasBeenOpen": false,
                 "isArticlesPageWasOpened": true
@@ -469,6 +469,18 @@
             "userId": "1",
             "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem delectus dignissimos                             dolores, ea eveniet expedita explicabo fuga in ipsum laboriosam laborum magnam modi optio                             perferendis perspiciatis quasi soluta voluptates voluptatibus",
             "id": "6sW5s_h"
+        },
+        {
+            "articleId": "15",
+            "userId": "1",
+            "text": "fj,jghkj",
+            "id": "Ch6Dxyx"
+        },
+        {
+            "articleId": "2",
+            "userId": "1",
+            "text": "cnv",
+            "id": "9P24_ja"
         }
     ],
     "profile": [
