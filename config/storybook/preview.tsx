@@ -26,7 +26,6 @@ import { mockArticleData } from '@/shared/assets/tests/mockArticleData';
 import { InitUserDecorator } from '@/shared/config/storybook/InitUserDecorator';
 import { mockNotifications } from '@/shared/assets/tests/mockNotifications';
 import { mockReturnArticleDetailsCommentsState } from '@/shared/assets/tests/mockArticleDetailsComments';
-// import { AsyncStoryDecorator } from '../../src/shared/config/storybook/AsyncStoryDecorator';
 
 initialize({
     onUnhandledRequest: 'bypass',
