@@ -64,8 +64,6 @@ const themeTool = toggleFeatures({
     }),
 });
 
-// console.log(getFeatureFlag('isAppRedesigned'));
-
 const preview: Preview = {
     globalTypes: {
         locale: {
