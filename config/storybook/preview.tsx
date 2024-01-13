@@ -22,10 +22,11 @@ import { Article } from '@/entities/Article';
 import { FeaturesFlagsDecorator } from '@/shared/config/storybook/FeaturesFlagsDecorator';
 import { TestDecorator } from '@/shared/config/storybook/TestDecorator';
 import { getFeatureFlag, toggleFeatures } from '@/shared/lib/features';
-import { mockArticleData } from '@/shared/assets/tests/mockArticleData';
 import { InitUserDecorator } from '@/shared/config/storybook/InitUserDecorator';
 import { mockNotifications } from '@/shared/assets/tests/mockNotifications';
 import { mockReturnArticleDetailsCommentsState } from '@/shared/assets/tests/mockArticleDetailsComments';
+import { DesignSwitcherDecorator } from '@/shared/config/storybook/RedesignDecorator';
+import { articleDetailsHandler } from '@/entities/Article/testing';
 // import { AsyncStoryDecorator } from '../../src/shared/config/storybook/AsyncStoryDecorator';
 
 initialize({
@@ -38,30 +39,6 @@ initialize({
     //             `Found an unhandled ${request.method} request to ${url}`,
     //         );
     // },
-});
-
-const themeTool = toggleFeatures({
-    name: 'isAppRedesigned',
-    on: () => ({
-        theme: {
-            description: 'Global theme for components',
-            // defaultValue: Theme.LIGHT,
-            defaultValue: undefined,
-            toolbar: {
-                title: 'Theme',
-                icon: 'circlehollow',
-                items: [
-                    { value: Theme.LIGHT, title: 'Light' },
-                    { value: Theme.DARK, title: 'Dark' },
-                    { value: Theme.DANGER, title: 'Danger' },
-                ],
-                dynamicTitle: true,
-            },
-        },
-    }),
-    off: () => ({
-        theme: {},
-    }),
 });
 
 const preview: Preview = {
@@ -95,8 +72,6 @@ const preview: Preview = {
                 dynamicTitle: true,
             },
         },
-
-        // ...themeTool,
     },
     parameters: {
         actions: { argTypesRegex: '^on[A-Z].*' },
@@ -125,12 +100,13 @@ const preview: Preview = {
                         );
                     }),
                 ],
-                test3: [
-                    rest.get(`${__API__}/articles/:id`, (_req, res, ctx) => {
-                        // console.log('handler work');
-                        return res(ctx.json(mockArticleData));
-                    }),
-                ],
+                // test3: [
+                //     rest.get(`${__API__}/articles/:id`, (_req, res, ctx) => {
+                //         // console.log('handler work');
+                //         return res(ctx.json(mockArticleData));
+                //     }),
+                // ],
+                articleDetails: articleDetailsHandler,
                 test2: [
                     rest.get(`${__API__}/article-ratings`, (_req, res, ctx) => {
                         return res(ctx.json(null));
@@ -179,15 +155,16 @@ const preview: Preview = {
         TestDecorator('111111'),
 
         i18nextStoryDecorator,
-        mswDecorator,
+
         AsyncStoryDecorator,
-        FeaturesFlagsDecorator({ isAppRedesigned: false }),
+        ThemeDecorator(),
+        // InitUserDecorator(),
+        DesignSwitcherDecorator(),
 
         // RouterDecorator,
-        InitUserDecorator(),
-        // StoreProviderDecorator,
+        withRouter, // makes rerender, reactRouter without it don't work in story
         PartialStoreDecorator(),
-        withRouter, // makes rerender, themDecor broken, make globall InitThemeDecor , reactRouter withoute it dont work in story
+        mswDecorator,
     ],
 };
 export default preview;

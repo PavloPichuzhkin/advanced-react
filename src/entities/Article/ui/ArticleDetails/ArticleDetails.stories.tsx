@@ -6,7 +6,7 @@ import {
 import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
-import { mockArticleData } from '@/shared/assets/tests/mockArticleData';
+import { mockArticleData } from '../../model/mocks/mockArticleData';
 import { ArticleDetails } from './ArticleDetails';
 import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
 import { getRouteArticleDetails } from '@/shared/const/router';
@@ -15,16 +15,11 @@ const meta: Meta<typeof ArticleDetails> = {
     title: 'Entities/Article/ArticleDetails',
     component: ArticleDetails,
     // tags: ['autodocs'],
+    args: { id: '1' },
     parameters: {
         // loki: {
         //     captureDelay: 5000,
         // },
-        // reactRouter: reactRouterParameters({
-        //     location: {
-        //         pathParams: { id: '41' },
-        //     },
-        //     routing: { path: getRouteArticleDetails(':id') },
-        // }),
     },
 };
 
@@ -32,68 +27,18 @@ export default meta;
 type Story = StoryObj<typeof ArticleDetails>;
 
 export const Primary: Story = {
-    // args: { id: '2' },
     decorators: [
         //     PartialStoreDecorator({
         //         articleDetails: {
         //             data: mockArticleData,
         //         },
         //     }),
-        ThemeDecorator(Theme.LIGHT),
-    ],
-    // parameters: {
-    //     reactRouter: reactRouterParameters({
-    //         location: {
-    //             pathParams: { id: '41' },
-    //         },
-    //         routing: { path: getRouteArticleDetails(':id') },
-    //     }),
-    // },
-};
-export const PrimaryRedesigned: Story = {
-    args: { id: '1' },
-    decorators: [
-        // PartialStoreDecorator({
-        //     articleDetails: {
-        //         data: mockArticleData,
-        //     },
-        // }),
-        ThemeDecorator(Theme.LIGHT),
-        RedesignDecorator,
+        // ThemeDecorator(Theme.LIGHT),
     ],
 };
-export const Dark: Story = {
-    args: {},
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-        PartialStoreDecorator({
-            articleDetails: {
-                data: mockArticleData,
-            },
-        }),
-    ],
-};
+export const PrimaryRedesigned: Story = {};
+export const Dark: Story = {};
 
-export const Loading: Story = {
-    args: {},
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-        PartialStoreDecorator({
-            articleDetails: {
-                isLoading: true,
-            },
-        }),
-    ],
-};
+export const Loading: Story = {};
 
-export const Error: Story = {
-    args: {},
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-        PartialStoreDecorator({
-            articleDetails: {
-                error: 'error',
-            },
-        }),
-    ],
-};
+export const Error: Story = {};

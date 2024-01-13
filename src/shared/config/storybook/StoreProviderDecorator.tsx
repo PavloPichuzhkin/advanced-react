@@ -24,7 +24,6 @@ const defaultAsyncReducers: ReducersList = {
     addCommentForm: addCommentFormReducer,
     articleDetailsPage: articleDetailsPageReducer,
 };
-// articleDetailsPage?: ArticleDetailsPageSchema;
 
 export const PartialStoreDecorator =
     (state?: DeepPartial<StateSchema>, asyncReducers?: ReducersList) =>

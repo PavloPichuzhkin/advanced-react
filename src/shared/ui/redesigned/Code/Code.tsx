@@ -21,35 +21,16 @@ export const Code = memo((props: CodeProps) => {
     }, [text]);
 
     return (
-        <ToggleFeatures
-            feature='isAppRedesigned'
-            on={
-                <pre className={classNames(cls.Code, {}, [className])}>
-                    <Icon
-                        clickable
-                        onClick={onCopy}
-                        className={cls.copyBtn}
-                        Svg={CopyIconNew}
-                        height={40}
-                        width={40}
-                    />
-                    <code>{text}</code>
-                </pre>
-            }
-            off={
-                <pre
-                    className={classNames(clsDeprecated.Code, {}, [className])}
-                >
-                    <Button
-                        onClick={onCopy}
-                        className={clsDeprecated.copyBtn}
-                        theme={ButtonTheme.CLEAR}
-                    >
-                        <CopyIcon className={clsDeprecated.copyIcon} />
-                    </Button>
-                    <code>{text}</code>
-                </pre>
-            }
-        />
+        <pre className={classNames(cls.Code, {}, [className])}>
+            <Icon
+                clickable
+                onClick={onCopy}
+                className={cls.copyBtn}
+                Svg={CopyIconNew}
+                height={40}
+                width={40}
+            />
+            <code>{text}</code>
+        </pre>
     );
 });

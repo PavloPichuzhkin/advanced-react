@@ -1,7 +1,8 @@
 /* eslint max-len: off */
-import { Article, ArticleType, ArticleBlockType } from '@/entities/Article';
+import { ArticleType, ArticleBlockType } from '../consts/articleConsts';
 import { UserRole } from '@/entities/User';
-import image from './mockImageForArticleDetailsPage.png';
+import image from '../../../../shared/assets/tests/mockImageForArticleDetailsPage.png';
+import { Article } from '../types/article';
 
 export const mockArticleData: Article = {
     id: '1',

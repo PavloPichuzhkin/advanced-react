@@ -75,7 +75,6 @@ const Deprecated = () => {
         </>
     );
 };
-
 const Redesigned = () => {
     const article = useSelector(getArticleDetailsData);
     const { t } = useTranslation('articles');
@@ -204,6 +203,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             />
         );
     }
+    // debugger;
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>

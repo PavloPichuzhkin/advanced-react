@@ -20,6 +20,7 @@ type Story = StoryObj<typeof Modal>;
 export const Light: Story = {
     args: {
         isOpen: true,
+
         children:
             // (
             // <AppText
@@ -31,4 +32,4 @@ export const Light: Story = {
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.\n ',
     },
 };
-Light.decorators = [ThemeDecorator(), RedesignDecorator];
+Light.decorators = [ThemeDecorator()];

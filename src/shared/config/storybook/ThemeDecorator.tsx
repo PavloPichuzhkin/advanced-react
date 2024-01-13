@@ -1,14 +1,10 @@
 import { StoryContext, StoryFn } from '@storybook/react';
-import { MutableRefObject, useEffect, useRef, useState } from 'react';
+import { MutableRefObject, useEffect, useRef } from 'react';
 import { useGlobals } from '@storybook/preview-api';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 // eslint-disable-next-line project-fsd-architecture/layer-imports
 import { ThemeProvider } from '@/app/providers/ThemeProvider';
-import {
-    getFeatureFlag,
-    getToggleFeaturesAppClass,
-    toggleFeatures,
-} from '@/shared/lib/features';
+import { getToggleFeaturesAppClass } from '@/shared/lib/features';
 
 const ThemeDecoratorDeprecated =
     (theme: Theme) => (StoryComponent: StoryFn) => {
@@ -39,7 +35,7 @@ export const withThemeProvider = (
 };
 
 export const ThemeDecorator =
-    (storyTheme: Theme = Theme.LIGHT) =>
+    (storyTheme?: Theme) =>
     (StoryComponent: StoryFn, context: StoryContext) => {
         // eslint-disable-next-line react-hooks/rules-of-hooks
         const renderCounterRef = useRef(0) as MutableRefObject<number>;
@@ -48,6 +44,7 @@ export const ThemeDecorator =
 
         const {
             globals: { theme: contextTheme },
+            name,
         } = context;
 
         renderCounterRef.current += 1;
@@ -55,32 +52,28 @@ export const ThemeDecorator =
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useEffect(() => {
             isThemeInitedRef.current = true;
-
-            // if (renderCounterRef.current) {
-            //     isThemeInitedRef.current = true;
-            // }
-            // renderCounterRef.current += 1;
         }, [contextTheme]);
 
+        const storyNameTheme = () => {
+            if (name.toLowerCase().includes('dark')) return Theme.DARK;
+            if (name.toLowerCase().includes('danger')) return Theme.DANGER;
+
+            return Theme.LIGHT;
+        };
         const finalTheme =
             renderCounterRef.current > 2 && isThemeInitedRef.current
-                ? // const finalTheme = isThemeInitedRef.current
-                  contextTheme
-                : storyTheme || contextTheme;
-        console.log(
-            renderCounterRef.current,
-            'isThemeInitedRef:',
-            // isThemeInitedRef.current,
-            isThemeInitedRef.current,
-            'contextTheme:',
-            contextTheme,
-            'storyTheme:',
-            storyTheme,
-            'finalTheme:',
-            finalTheme,
-            'AppClass:',
-            getToggleFeaturesAppClass(),
-        );
+                ? contextTheme
+                : storyTheme || storyNameTheme() || contextTheme;
+
+        // console.log({
+        //     renderCounterRef: renderCounterRef.current,
+        //     isThemeInitedRef: isThemeInitedRef.current,
+        //     contextTheme,
+        //     storyTheme,
+        //     finalTheme,
+        //     AppClass: getToggleFeaturesAppClass(),
+        // });
+
         return (
             <ThemeProvider initialTheme={finalTheme}>
                 <div

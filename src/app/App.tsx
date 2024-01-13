@@ -15,6 +15,7 @@ import { MainLayoutLoader } from '@/shared/layouts/MainLayoutLoader/MainLayoutLo
 import { useAppToolbar } from './lib/useAppToolbar';
 import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 import { withErrorBoundary } from './providers/ErrorBoundary/ui/withErrorBoundary';
+import { PageLoader } from '@/widgets/PageLoader';
 
 function App() {
     const { theme } = useTheme();
@@ -63,7 +64,7 @@ function App() {
                     id='app'
                     className={classNames('app_redesigned', {}, [theme])}
                 >
-                    <Suspense fallback=''>
+                    <Suspense fallback={<PageLoader />}>
                         <MainLayout
                             sidebar={<Sidebar />}
                             content={<AppRouter />}
@@ -80,7 +81,7 @@ function App() {
             }
             off={
                 <div id='app' className={classNames('app', {}, [theme])}>
-                    <Suspense fallback=''>
+                    <Suspense fallback={<PageLoader />}>
                         {/* for i18next */}
                         <Navbar />
                         <div className='content-page'>

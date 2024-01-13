@@ -2,7 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Modal } from './Modal';
-import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
+import {
+    DesignSwitcherDecorator,
+    RedesignDecorator,
+} from '@/shared/config/storybook/RedesignDecorator';
 
 const meta: Meta<typeof Modal> = {
     title: 'Shared/Redesigned/Modal/ModalDeprecated',
@@ -20,7 +23,11 @@ export const Light: Story = {
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.\n ',
     },
 };
-Light.decorators = [ThemeDecorator(Theme.LIGHT), RedesignDecorator];
+Light.decorators = [
+    ThemeDecorator(Theme.LIGHT),
+    // RedesignDecorator
+    DesignSwitcherDecorator(false),
+];
 // export const Dark: Story = {
 //     args: {
 //         isOpen: true,

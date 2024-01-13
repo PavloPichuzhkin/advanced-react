@@ -12,11 +12,7 @@ export const renderArticleBlocks = (block: ArticleBlock) => {
         case ArticleBlockType.CODE:
             return <ArticleCodeBlockComponent key={block.id} block={block} />;
         case ArticleBlockType.IMAGE:
-            return (
-                // <HStack max justify='center' key={block.id}>
-                <ArticleImageBlockComponent block={block} key={block.id} />
-                // </HStack>
-            );
+            return <ArticleImageBlockComponent block={block} key={block.id} />;
         case ArticleBlockType.TEXT:
             return <ArticleTextBlockComponent key={block.id} block={block} />;
         case ArticleBlockType.TIPS:

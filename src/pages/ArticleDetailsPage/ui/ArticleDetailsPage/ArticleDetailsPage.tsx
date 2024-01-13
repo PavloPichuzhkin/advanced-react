@@ -36,15 +36,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('articles');
     const { id } = useParams<{ id: string }>();
 
-    // const dispatch = useAppDispatch();
-    //
-    // useInitialEffect(() => {
-    //     dispatch(fetchCommentsByArticleId(id));
-    // });
-
-    // if (__PROJECT__ === 'storybook') {
-    //     id = '1';
-    // }
     if (!id) {
         return (
             <Page
