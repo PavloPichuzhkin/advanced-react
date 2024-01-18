@@ -12,6 +12,7 @@ import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { mockArticleData } from '@/entities/Article/testing';
+import { InitUserDecorator } from '@/shared/config/storybook/InitUserDecorator';
 
 const meta: Meta<typeof ArticleDetailsPage> = {
     title: 'Pages/ArticleDetailsPage/ArticleDetailsPage',
@@ -34,7 +35,9 @@ const meta: Meta<typeof ArticleDetailsPage> = {
 export default meta;
 type Story = StoryObj<typeof ArticleDetailsPage>;
 
-export const Primary: Story = {};
+export const Primary: Story = {
+    decorators: [InitUserDecorator()],
+};
 export const PrimaryRedesigned: Story = {
     args: {},
     decorators: [

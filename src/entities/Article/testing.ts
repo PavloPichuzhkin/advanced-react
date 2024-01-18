@@ -1,3 +1,4 @@
 export { articleDetailsReducer } from './model/slice/articleDetailsSlice';
-export { articleDetailsHandler } from './model/mocks/articleDetailsHandler';
+export { articleDetailsMSWHandler } from './model/mocks/articleDetailsMSWHandler';
 export { mockArticleData } from './model/mocks/mockArticleData';
+export { fetchArticleById } from './model/services/fetchArticleById/fetchArticleById';

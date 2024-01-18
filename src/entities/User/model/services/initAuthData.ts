@@ -14,8 +14,8 @@ export const initAuthData = createAsyncThunk<User, void, ThunkConfig<string>>(
 
         const userId = localStorage.getItem(USER_LOCALSTORAGE_KEY);
 
-        if (!userId) {
-            return rejectWithValue('');
+        if (!userId || userId === 'null') {
+            return rejectWithValue('Error - userId undefined');
         }
 
         try {

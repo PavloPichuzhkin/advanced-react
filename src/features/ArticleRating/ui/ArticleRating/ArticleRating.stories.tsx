@@ -28,13 +28,13 @@ export const Primary: Story = {
 export const PrimaryWithRating: Story = {
     args: {},
     parameters: {
-        msw: {
-            handlers: [
-                rest.get(`${__API__}/article-ratings`, (_req, res, ctx) => {
-                    return res(ctx.json([{ rate: 4 }]));
-                }),
-            ],
-        },
+        // msw: {
+        //     handlers: [
+        //         rest.get(`${__API__}/article-ratings`, (_req, res, ctx) => {
+        //             return res(ctx.json([{ rate: 4 }]));
+        //         }),
+        //     ],
+        // },
     },
 };
 

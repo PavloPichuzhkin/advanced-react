@@ -26,7 +26,10 @@ import { InitUserDecorator } from '@/shared/config/storybook/InitUserDecorator';
 import { mockNotifications } from '@/shared/assets/tests/mockNotifications';
 import { mockReturnArticleDetailsCommentsState } from '@/shared/assets/tests/mockArticleDetailsComments';
 import { DesignSwitcherDecorator } from '@/shared/config/storybook/RedesignDecorator';
-import { articleDetailsHandler } from '@/entities/Article/testing';
+import { articleDetailsMSWHandler } from '@/entities/Article/testing';
+import { userMSWHandler } from '@/entities/User/testing';
+import { articleRatingMSWHandler } from '@/features/ArticleRating/testing';
+import { LoadingDecorator } from '@/shared/config/storybook/LoadingDecorator';
 // import { AsyncStoryDecorator } from '../../src/shared/config/storybook/AsyncStoryDecorator';
 
 initialize({
@@ -100,18 +103,7 @@ const preview: Preview = {
                         );
                     }),
                 ],
-                // test3: [
-                //     rest.get(`${__API__}/articles/:id`, (_req, res, ctx) => {
-                //         // console.log('handler work');
-                //         return res(ctx.json(mockArticleData));
-                //     }),
-                // ],
-                articleDetails: articleDetailsHandler,
-                test2: [
-                    rest.get(`${__API__}/article-ratings`, (_req, res, ctx) => {
-                        return res(ctx.json(null));
-                    }),
-                ],
+                articleDetails: articleDetailsMSWHandler,
                 notifications: [
                     rest.get(`${__API__}/notifications`, (_req, res, ctx) => {
                         console.log('handler preview work');
@@ -138,33 +130,34 @@ const preview: Preview = {
                         );
                     }),
                 ],
-                //
+                user: userMSWHandler,
                 // profile: profileHandlers,
                 // articleDetails: articleDetailsHandlers,
                 // articles: articleHandlers,
                 // comments: commentHandlers,
                 // image: imageHandlers,
                 // notification: notificationHandlers,
-                // rating: ratingHandlers,
-                // user: userHandlers,
+                articleRating: articleRatingMSWHandler(0),
             },
         },
     },
     decorators: [
+        // TestDecorator('111111'),
         StyleDecorator,
-        TestDecorator('111111'),
-
         i18nextStoryDecorator,
 
-        AsyncStoryDecorator,
+        // AsyncStoryDecorator,
         ThemeDecorator(),
         // InitUserDecorator(),
         DesignSwitcherDecorator(),
 
         // RouterDecorator,
         withRouter, // makes rerender, reactRouter without it don't work in story
+        LoadingDecorator,
         PartialStoreDecorator(),
         mswDecorator,
+        AsyncStoryDecorator,
+        // TestDecorator('2222222'),
     ],
 };
 export default preview;

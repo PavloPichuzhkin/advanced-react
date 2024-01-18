@@ -20,7 +20,7 @@
         "lint:fix": "concurrently \"eslint \"**/*.{ts,tsx}\" --fix\" \"npx stylelint \"**/*.scss\" --fix\"",
         "test:unit": "jest --config ./config/jest/jest.config.ts",
         "test:e2e": "cypress open",
-        "test:ui": "npx loki test --chromeRetries=3 --chromeConcurrency=1",
+        "test:ui": "npx loki test --chromeRetries=3 --chromeConcurrency=4",
         "test:ui:ok": "npx loki approve",
         "test:ui:ci": "concurrently -s first -k \"npm run storybook\" \"npm run test:ui\"",
         "test:ui:report": "npm run test:ui:json && npm run test:ui:html",

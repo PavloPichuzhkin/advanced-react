@@ -15,7 +15,7 @@ export const RedesignDecorator = (StoryComponent: StoryFn) => {
 export const DesignSwitcherDecorator = (newDesign?: boolean) =>
     function Decorator(StoryComponent: StoryFn, context: StoryContext) {
         const { title, name } = context;
-
+        // console.log(name);
         setFeatureFlags({
             ...getAllFeatureFlags(),
             isAppRedesigned:

@@ -87,21 +87,10 @@ const Redesigned = () => {
                 size='xl'
                 bolt
             />
-            <AppText
-                data-testid='ArticleDetails'
-                title={article?.subtitle}
-                // size='xl'
-            />
+            <AppText data-testid='ArticleDetails' title={article?.subtitle} />
             <AppImage
                 fallback={<Skeleton className={cls.img} border='3px' />}
-                errorFallback={
-                    // <div className={cls.img}>{`${t('Oooh NO')}!`}</div>
-                    <ImageErrorFallback
-                        // width='100%'
-                        // height={200}
-                        className={cls.img}
-                    />
-                }
+                errorFallback={<ImageErrorFallback className={cls.img} />}
                 src={article?.img}
                 className={cls.img}
             />

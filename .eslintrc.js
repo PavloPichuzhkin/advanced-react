@@ -81,6 +81,7 @@ module.exports = {
                     '**/*.test.*',
                     '**/*.stories.*',
                     '**/StoreProviderDecorator.tsx',
+                    '**/LoadingDecorator.tsx',
                     '**/preview.tsx',
                 ],
             },
