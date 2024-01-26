@@ -4,7 +4,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { ArticleSortSelector } from './ArticleSortSelector';
 
 const meta: Meta<typeof ArticleSortSelector> = {
-    title: 'Entities/Article/ArticleSortSelector',
+    title: 'Features/ArticleSortSelector',
     component: ArticleSortSelector,
     // tags: ['autodocs'],
 };

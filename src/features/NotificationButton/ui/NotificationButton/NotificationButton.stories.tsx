@@ -4,7 +4,7 @@ import { StoryFn } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { NotificationButton } from './NotificationButton';
-import { mockNotifications } from '@/shared/assets/tests/mockNotifications';
+import { mockNotifications } from '@/entities/Notification/testing';
 
 const meta: Meta<typeof NotificationButton> = {
     title: 'Features/NotificationButton',

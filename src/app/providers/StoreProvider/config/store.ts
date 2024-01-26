@@ -50,4 +50,5 @@ export function createReduxStore(
     return store;
 }
 
-export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
+export type ReduxStore = ReturnType<typeof createReduxStore>;
+export type AppDispatch = ReduxStore['dispatch'];

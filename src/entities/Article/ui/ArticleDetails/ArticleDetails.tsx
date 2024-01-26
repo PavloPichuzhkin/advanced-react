@@ -17,7 +17,6 @@ import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Icon } from '@/shared/ui/deprecated/Icon';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import {
     getArticleDetailsData,
@@ -192,7 +191,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             />
         );
     }
-    // debugger;
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>

@@ -4,7 +4,7 @@ import {
     withRouter,
 } from 'storybook-addon-react-router-v6';
 import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
-import { mockReturnArticleDetailsCommentsState } from '@/shared/assets/tests/mockArticleDetailsComments';
+import { mockReturnArticleDetailsCommentsState } from '@/entities/Comments/testing';
 import { articleDetailsPageReducer } from '../../model/slice';
 import ArticleDetailsPage from './ArticleDetailsPage';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';

@@ -4,7 +4,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { ArticleViewSelector } from './ArticleViewSelector';
 
 const meta: Meta<typeof ArticleViewSelector> = {
-    title: 'Entities/Article/ArticleViewSelector',
+    title: 'Features/ArticleViewSelector',
     component: ArticleViewSelector,
     // tags: ['autodocs'],
 };

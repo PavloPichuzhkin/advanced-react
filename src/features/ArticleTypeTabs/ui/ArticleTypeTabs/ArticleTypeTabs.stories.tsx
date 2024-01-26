@@ -4,7 +4,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 const meta: Meta<typeof ArticleTypeTabs> = {
-    title: 'Entities/Article/ArticleTypeTabs',
+    title: 'Features/ArticleTypeTabs',
     component: ArticleTypeTabs,
     // tags: ['autodocs'],
 };

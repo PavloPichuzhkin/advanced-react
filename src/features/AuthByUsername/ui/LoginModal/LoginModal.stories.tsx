@@ -5,7 +5,7 @@ import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDe
 import { LoginModal } from './LoginModal';
 
 const meta: Meta<typeof LoginModal> = {
-    title: 'features/AuthByUsername/LoginModal',
+    title: 'Features/AuthByUsername/LoginModal',
     component: LoginModal,
     tags: ['autodocs'],
 };

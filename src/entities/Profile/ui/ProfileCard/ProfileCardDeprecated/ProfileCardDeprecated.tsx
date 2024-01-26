@@ -7,7 +7,7 @@ import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
 import { CurrencySelect } from '@/entities/CurrencySelect';
 import { CountrySelect } from '@/entities/CountrySelect';
-import { ProfileCardProps } from '../ProfileCard/ProfileCard';
+import { ProfileCardProps } from '../ProfileCard';
 import { Text, TextAlign, TextTheme } from '@/shared/ui/deprecated/Text';
 import { Spinner } from '@/shared/ui/deprecated/Spinner';
 

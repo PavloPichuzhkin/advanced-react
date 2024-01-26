@@ -1,4 +1,5 @@
 import { UserRole } from '@/entities/User';
+// eslint-disable-next-line project-fsd-architecture/layer-imports
 import { ArticleDetailsCommentsSchema } from '@/pages/ArticleDetailsPage';
 
 export const mockReturnArticleDetailsCommentsState = (

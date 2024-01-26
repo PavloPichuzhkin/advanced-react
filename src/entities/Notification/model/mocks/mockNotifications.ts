@@ -1,4 +1,4 @@
-import { Notification } from '@/entities/Notification';
+import { Notification } from '../types/notification';
 
 export const mockNotifications: Notification[] = [
     {
@@ -11,7 +11,7 @@ export const mockNotifications: Notification[] = [
         id: '2',
         title: 'Notification 2',
         description: 'An event has occurred',
-        href: 'http://localhost:3003/admin',
+        href: 'http://localhost:3003/articles',
     },
     {
         id: '3',

@@ -7,7 +7,7 @@ import { Input } from '@/shared/ui/redesigned/Input';
 import { CurrencySelect } from '@/entities/CurrencySelect';
 import { CountrySelect } from '@/entities/CountrySelect';
 import { Card } from '@/shared/ui/redesigned/Card';
-import { ProfileCardProps } from '../ProfileCard/ProfileCard';
+import { ProfileCardProps } from '../ProfileCard';
 import cls from '../ProfileCardDeprecated/ProfileCardDeprecated.module.scss';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { AppText } from '@/shared/ui/redesigned/Text';

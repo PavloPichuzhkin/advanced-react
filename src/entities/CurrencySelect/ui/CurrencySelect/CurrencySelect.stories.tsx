@@ -1,13 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StoryFn } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import { CurrencySelect } from './CurrencySelect';
+import AddStylesDecorator from '@/shared/config/storybook/AddStylesDecorator';
 
 const meta: Meta<typeof CurrencySelect> = {
-    title: 'Entities/CurrencySelect',
+    title: 'Entities/CurrencySelect/Deprecated',
     component: CurrencySelect,
-    tags: ['autodocs'],
+    // tags: ['autodocs'],
+    decorators: [AddStylesDecorator({ padding: '18rem 2rem', width: '100%' })],
 };
 
 export default meta;
@@ -16,21 +15,4 @@ type Story = StoryObj<typeof CurrencySelect>;
 export const Primary: Story = {
     args: {},
 };
-Primary.decorators = [
-    (Story: StoryFn) => (
-        <div style={{ padding: '8rem' }}>
-            <Story />
-        </div>
-    ),
-];
-export const Dark: Story = {
-    args: {},
-};
-Dark.decorators = [
-    ThemeDecorator(Theme.DARK),
-    (Story: StoryFn) => (
-        <div style={{ padding: '8rem' }}>
-            <Story />
-        </div>
-    ),
-];
+export const Dark: Story = {};

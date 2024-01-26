@@ -15,11 +15,9 @@ import { Card } from '@/shared/ui/redesigned/Card';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
-import { ArticleTextBlockComponent } from '../../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { AppLink } from '@/shared/ui/redesigned/AppLink';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { Button } from '@/shared/ui/redesigned/Button';
-// import cls from '../ArticleListItem.module.scss';
 import cls from './ArticleListItemRedesigned.module.scss';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { ImageErrorFallback } from '@/shared/ui/redesigned/ImageErrorFallback';
@@ -28,7 +26,6 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
     const { className, article, view, target } = props;
     const { t } = useTranslation('articles');
 
-    const types = <AppText title={article.type.join(', ')} />;
     const views = (
         <HStack gap='8' align='center'>
             <Icon Svg={EyeIcon} />
@@ -50,7 +47,6 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
                     cls[view],
                 ])}
                 data-testid='ArticleListItem'
-                // border='6px'
             >
                 <VStack gap='16'>
                     <HStack max gap='12' justify='between'>
@@ -62,7 +58,6 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
                     </HStack>
                     <AppText title={article.title} size='xl' bolt />
                     <AppText title={article.subtitle} />
-                    {/* {types} */}
                     <AppImage
                         fallback={<Skeleton className={cls.img} />}
                         errorFallback={
@@ -126,16 +121,8 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
                         <AppText text={article.createdAt} />
                         {views}
                     </HStack>
-                    {/* <HStack gap='12' align='center'> */}
-                    {/*    <div className={cls.infoWrapper}>{types}</div> */}
-                    {/*    <AppText text={article.title} className={cls.title} /> */}
-                    {/* </HStack> */}
                     <HStack gap='12' align='center' className={cls.Avatar}>
-                        <Avatar
-                            size={30}
-                            src={article.user.avatar}
-                            // className={cls.Avatar}
-                        />
+                        <Avatar size={30} src={article.user.avatar} />
                         <AppText text={article.user.username} bolt />
                     </HStack>
                 </VStack>

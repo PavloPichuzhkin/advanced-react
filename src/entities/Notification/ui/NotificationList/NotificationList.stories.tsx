@@ -1,39 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { rest } from 'msw';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import { NotificationList } from './NotificationList';
-import { mockNotifications } from '@/shared/assets/tests/mockNotifications';
 
 const meta: Meta<typeof NotificationList> = {
-    title: 'Entities/Notification/NotificationList',
+    title: 'Entities/Notification/NotificationList/Deprecated',
     component: NotificationList,
     // tags: ['autodocs'],
     parameters: {
-        // msw: {
-        //     handlers: [
-        //         rest.get(`${__API__}/notifications`, (_req, res, ctx) => {
-        //             console.log('handler stoory work');
-        //             return res(ctx.json(mockNotifications));
-        //         }),
-        //     ],
-        // },
+        loki: {
+            captureDelay: 2000,
+        },
     },
 };
 
 export default meta;
 type Story = StoryObj<typeof NotificationList>;
 
-export const Primary: Story = {
-    args: {},
-    decorators: [],
-};
+export const Primary: Story = {};
 
-export const Dark: Story = {
-    args: {},
-    decorators: [ThemeDecorator(Theme.DARK)],
-};
-export const Danger: Story = {
-    args: {},
-    decorators: [ThemeDecorator(Theme.DANGER)],
-};
+export const Loading: Story = {};
+
+export const Error: Story = {};
+
+export const Empty: Story = {};

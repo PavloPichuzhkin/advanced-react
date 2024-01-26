@@ -4,7 +4,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { RatingCard } from './RatingCard';
 
 const meta: Meta<typeof RatingCard> = {
-    title: 'Entities/RatingCard',
+    title: 'Entities/RatingCard/Deprecated',
     component: RatingCard,
     // tags: ['autodocs'],
 };
@@ -20,21 +20,11 @@ export const Primary: Story = {
     },
 };
 
-export const Dark: Story = {
+export const Rated: Story = {
     args: {
         feedbackTitle: 'WOW what is...',
-        hasFeedback: true,
-        title: 'WOW I can click here',
-    },
-    decorators: [ThemeDecorator(Theme.DARK)],
-};
-
-export const DarkWithRating: Story = {
-    args: {
-        feedbackTitle: 'WOW what is...',
-        hasFeedback: true,
-        title: 'WOW I can click here',
         rate: 4,
+        title: 'WOW I can click here',
+        hasFeedback: true,
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
 };

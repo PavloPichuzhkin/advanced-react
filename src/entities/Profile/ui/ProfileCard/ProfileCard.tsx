@@ -7,12 +7,12 @@ import {
     ProfileCardErrorRedesigned,
     ProfileCardRedesigned,
     ProfileCardRedesignedSkeleton,
-} from '../ProfileCardRedesigned/ProfileCardRedesigned';
+} from './ProfileCardRedesigned/ProfileCardRedesigned';
 import {
     ProfileCardDeprecated,
     ProfileCardErrorDeprecated,
     ProfileCardLoaderDeprecated,
-} from '../ProfileCardDeprecated/ProfileCardDeprecated';
+} from './ProfileCardDeprecated/ProfileCardDeprecated';
 
 export interface ProfileCardProps {
     className?: string;

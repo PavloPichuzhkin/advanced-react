@@ -1,69 +1,43 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import { selectEntitiesFromNormalizedData } from '@/shared/lib/helpers/selectEntities/selectEntities';
-import { mockReturnArticleDetailsCommentsState } from '@/shared/assets/tests/mockArticleDetailsComments';
+import { mockReturnArticleDetailsCommentsState } from '../../model/mocks/mockArticleDetailsComments';
 import { CommentCard } from './CommentCard';
 
 const meta: Meta<typeof CommentCard> = {
-    title: 'Entities/Comments/CommentCard',
+    title: 'Entities/Comments/CommentCard/Deprecated',
     component: CommentCard,
     // tags: ['autodocs'],
+    args: {
+        comment: selectEntitiesFromNormalizedData(
+            mockReturnArticleDetailsCommentsState,
+        )[0],
+    },
 };
 
 export default meta;
 type Story = StoryObj<typeof CommentCard>;
 
-export const Primary: Story = {
-    args: {
-        comment: selectEntitiesFromNormalizedData(
-            mockReturnArticleDetailsCommentsState,
-        )[0],
-    },
-};
+export const Primary: Story = {};
 
 export const LightLoading: Story = {
     args: {
-        comment: selectEntitiesFromNormalizedData(
-            mockReturnArticleDetailsCommentsState,
-        )[0],
         isLoading: true,
     },
 };
 export const Dark: Story = {
-    args: {
-        comment: selectEntitiesFromNormalizedData(
-            mockReturnArticleDetailsCommentsState,
-        )[0],
-    },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    args: {},
 };
 
 export const DarkLoading: Story = {
     args: {
-        comment: selectEntitiesFromNormalizedData(
-            mockReturnArticleDetailsCommentsState,
-        )[0],
         isLoading: true,
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
-export const Danger: Story = {
-    args: {
-        comment: selectEntitiesFromNormalizedData(
-            mockReturnArticleDetailsCommentsState,
-        )[0],
-    },
-    decorators: [ThemeDecorator(Theme.DANGER)],
-};
+export const Danger: Story = {};
 
 export const DangerLoading: Story = {
     args: {
-        comment: selectEntitiesFromNormalizedData(
-            mockReturnArticleDetailsCommentsState,
-        )[0],
         isLoading: true,
     },
-    decorators: [ThemeDecorator(Theme.DANGER)],
 };

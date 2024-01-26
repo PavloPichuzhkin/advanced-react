@@ -54,7 +54,7 @@ export const CountrySelect = memo(
         return (
             <ToggleFeatures
                 feature='isAppRedesigned'
-                on={<ListBox {...props} />}
+                on={<ListBox {...props} showArrow />}
                 off={<ListBoxDeprecated {...props} />}
             />
         );
