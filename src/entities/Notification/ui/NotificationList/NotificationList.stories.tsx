@@ -17,7 +17,7 @@ type Story = StoryObj<typeof NotificationList>;
 
 export const Primary: Story = {};
 
-export const Loading: Story = {};
+// export const Loading: Story = {};
 
 export const Error: Story = {};
 
