@@ -5,7 +5,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 
 const meta: Meta<typeof Avatar> = {
-    title: 'Shared/Avatar',
+    title: 'Shared/Deprecated/Avatar',
     component: Avatar,
     // tags: ['autodocs'],
 };

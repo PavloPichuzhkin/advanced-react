@@ -4,7 +4,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Spinner } from './Spinner';
 
 const meta: Meta<typeof Spinner> = {
-    title: 'Shared/Spinner',
+    title: 'Shared/Deprecated/Spinner',
     component: Spinner,
     // tags: ['autodocs'],
 };

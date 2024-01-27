@@ -4,7 +4,7 @@ import { Text, TextAlign, TextSize, TextTheme } from './Text';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 
 const meta: Meta<typeof Text> = {
-    title: 'Shared/Text',
+    title: 'Shared/Deprecated/Text',
     component: Text,
     tags: ['autodocs'],
 };

@@ -5,7 +5,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Button, ButtonSize, ButtonTheme } from './Button';
 
 const meta: Meta<typeof Button> = {
-    title: 'Shared/Button',
+    title: 'Shared/Deprecated/Button',
     component: Button,
     // tags: ['autodocs'],
     decorators: [ThemeDecorator(Theme.LIGHT)],

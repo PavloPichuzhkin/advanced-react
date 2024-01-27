@@ -4,7 +4,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { StarRating } from './StarRating';
 
 const meta: Meta<typeof StarRating> = {
-    title: 'Shared/StarRating',
+    title: 'Shared/Deprecated/StarRating',
     component: StarRating,
     // tags: ['autodocs'],
 };

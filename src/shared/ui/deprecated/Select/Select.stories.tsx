@@ -4,7 +4,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Select } from './Select';
 
 const meta: Meta<typeof Select> = {
-    title: 'Shared/Select',
+    title: 'Shared/Deprecated/Select',
     component: Select,
     // tags: ['autodocs'],
 };

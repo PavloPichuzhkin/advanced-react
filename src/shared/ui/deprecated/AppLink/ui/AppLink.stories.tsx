@@ -5,7 +5,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { AppLink, AppLinkTheme } from './AppLink';
 
 const meta: Meta<typeof AppLink> = {
-    title: 'Shared/AppLink',
+    title: 'Shared/Deprecated/AppLinkDeprecated',
     component: AppLink,
     // tags: ['autodocs'],
     // args: { to: '/' },

@@ -9,7 +9,7 @@ import { Icon } from '../../../Icon';
 import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg';
 
 const meta: Meta<typeof Popover> = {
-    title: 'Shared/Popups/Popover',
+    title: 'Shared/Deprecated/Popups/Popover',
     component: Popover,
     // tags: ['autodocs'],
     args: {

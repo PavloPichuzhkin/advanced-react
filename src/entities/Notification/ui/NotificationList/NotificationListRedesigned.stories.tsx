@@ -17,7 +17,11 @@ type Story = StoryObj<typeof NotificationList>;
 
 export const Primary: Story = {};
 
-// export const Loading: Story = {}; //MSW handler problem
+export const Loading: Story = {
+    parameters: {
+        loki: { skip: true },
+    },
+}; // MSW handler problem
 
 export const Error: Story = {};
 

@@ -4,7 +4,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Skeleton } from './Skeleton';
 
 const meta: Meta<typeof Skeleton> = {
-    title: 'Shared/Skeleton',
+    title: 'Shared/Deprecated/Skeleton',
     component: Skeleton,
     // tags: ['autodocs'],
 };

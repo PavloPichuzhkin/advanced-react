@@ -5,7 +5,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Tabs } from './Tabs';
 
 const meta: Meta<typeof Tabs> = {
-    title: 'Shared/Tabs',
+    title: 'Shared/Deprecated/Tabs',
     component: Tabs,
     // tags: ['autodocs'],
 };

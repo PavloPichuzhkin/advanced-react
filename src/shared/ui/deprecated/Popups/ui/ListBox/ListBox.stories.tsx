@@ -5,7 +5,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { ListBox } from './ListBox';
 
 const meta: Meta<typeof ListBox> = {
-    title: 'Shared/Popups/ListBox',
+    title: 'Shared/Deprecated/Popups/ListBox',
     component: ListBox,
     // tags: ['autodocs'],
     parameters: {

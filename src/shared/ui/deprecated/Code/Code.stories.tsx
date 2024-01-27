@@ -7,7 +7,7 @@ import { codeExample } from '../../redesigned/Code/testing';
 // import { codeExample } from '../../redesigned/Code/mockCodeExample';
 
 const meta: Meta<typeof Code> = {
-    title: 'Shared/Code',
+    title: 'Shared/Deprecated/Code',
     component: Code,
     // tags: ['autodocs'],
     args: {

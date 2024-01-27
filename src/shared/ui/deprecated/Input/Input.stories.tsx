@@ -4,7 +4,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Input } from './Input';
 
 const meta: Meta<typeof Input> = {
-    title: 'Shared/Input',
+    title: 'Shared/Deprecated/Input',
     component: Input,
     // tags: ['autodocs'],
 };

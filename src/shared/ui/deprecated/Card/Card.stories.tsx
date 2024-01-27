@@ -5,7 +5,7 @@ import { Text } from '../Text/Text';
 import { Card } from './Card';
 
 const meta: Meta<typeof Card> = {
-    title: 'shared/Card',
+    title: 'shared/Deprecated/Card',
     component: Card,
     // tags: ['autodocs'],
 };
