@@ -5,6 +5,11 @@ const meta: Meta<typeof MainPage> = {
     title: 'Pages/MainPage',
     component: MainPage,
     // tags: ['autodocs'],
+    parameters: {
+        loki: {
+            captureDelay: 2000, // strange FAIL gitActions
+        },
+    },
 };
 
 export default meta;
