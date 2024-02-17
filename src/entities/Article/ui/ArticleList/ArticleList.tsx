@@ -2,13 +2,16 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
-import { Card } from '@/shared/ui/deprecated/Card';
+import { Card as CarDdeprecated } from '@/shared/ui/deprecated/Card';
+import { Card as CardRedesigned } from '@/shared/ui/redesigned/Card';
+
 import { ArticleView } from '../../model/consts/articleConsts';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
 import { Article } from '../../model/types/article';
-import { toggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features';
+import { AppText } from '@/shared/ui/redesigned/Text';
 
 interface ArticleListProps {
     className?: string;
@@ -57,9 +60,22 @@ export const ArticleList = memo((props: ArticleListProps) => {
     if (!isLoading && !articles.length) {
         return (
             <div className={classNames(cls.noArticles, {}, [className])}>
-                <Card>
-                    <Text size={TextSize.L} title={t('No articles found')} />
-                </Card>
+                <ToggleFeatures
+                    feature='isAppRedesigned'
+                    on={
+                        <CardRedesigned>
+                            <AppText size='l' title={t('No articles found')} />
+                        </CardRedesigned>
+                    }
+                    off={
+                        <CarDdeprecated>
+                            <Text
+                                size={TextSize.L}
+                                title={t('No articles found')}
+                            />
+                        </CarDdeprecated>
+                    }
+                />
             </div>
         );
     }

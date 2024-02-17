@@ -5,9 +5,9 @@ import { ErrorPage } from './ErrorPage';
 import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
 
 const metaRedesigned: Meta<typeof ErrorPage> = {
-    title: 'widgets/ErrorPage/Redesigned',
+    title: 'Widgets/ErrorPage/Redesigned',
     component: ErrorPage,
-    tags: ['autodocs'],
+    // tags: ['autodocs'],
 };
 export default metaRedesigned;
 
@@ -15,5 +15,5 @@ type Story = StoryObj<typeof ErrorPage>;
 
 export const Redesigned: Story = {
     args: {},
-    decorators: [RedesignDecorator, ThemeDecorator(Theme.LIGHT)],
+    // decorators: [RedesignDecorator, ThemeDecorator(Theme.LIGHT)],
 };

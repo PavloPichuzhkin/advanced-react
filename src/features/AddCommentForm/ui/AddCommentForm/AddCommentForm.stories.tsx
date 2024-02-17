@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import AddCommentForm from './AddCommentForm';
+import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 
 const meta: Meta<typeof AddCommentForm> = {
-    title: 'Features/AddCommentForm',
+    title: 'Features/AddCommentForm/Deprecated',
     component: AddCommentForm,
     // tags: ['autodocs'],
 };
@@ -12,16 +11,12 @@ const meta: Meta<typeof AddCommentForm> = {
 export default meta;
 type Story = StoryObj<typeof AddCommentForm>;
 
-export const Primary: Story = {
-    args: {},
+export const Primary: Story = {};
+
+export const CommentIsSending: Story = {
     decorators: [
-        ThemeDecorator(Theme.DARK),
-        // PartialStoreDecorator({
-        //     profile: {
-        //         form: {
-        //             first: 'Pavlo',
-        //         },
-        //     },
-        // })
+        PartialStoreDecorator({
+            addCommentForm: { isLoading: true },
+        }),
     ],
 };

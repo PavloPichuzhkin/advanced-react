@@ -7,7 +7,7 @@ import { ArticleView } from '@/entities/Article';
 import { ArticleInfiniteList } from './ArticleInfiniteList';
 
 const meta: Meta<typeof ArticleInfiniteList> = {
-    title: 'Pages/ArticlesPage/ArticleInfiniteList',
+    title: 'Pages/ArticlesPage/ArticleInfiniteList/Deprecated',
     component: ArticleInfiniteList,
     // tags: ['autodocs'],
 };
@@ -20,7 +20,7 @@ export const Primary: Story = {
     decorators: [
         ThemeDecorator(Theme.DARK),
         PartialStoreDecorator({
-            articlesPage: mockReturnArticlesPageState(),
+            articlesPage: mockReturnArticlesPageState({}),
         }),
     ],
 };
@@ -30,7 +30,7 @@ export const Loading: Story = {
     decorators: [
         ThemeDecorator(Theme.DARK),
         PartialStoreDecorator({
-            articlesPage: mockReturnArticlesPageState(true),
+            articlesPage: mockReturnArticlesPageState({ isLoading: true }),
         }),
     ],
 };
@@ -40,11 +40,11 @@ export const Error: Story = {
     decorators: [
         ThemeDecorator(Theme.DARK),
         PartialStoreDecorator({
-            articlesPage: mockReturnArticlesPageState(
-                false,
-                ArticleView.SMALL,
-                'ooo',
-            ),
+            articlesPage: mockReturnArticlesPageState({
+                isLoading: false,
+                view: ArticleView.SMALL,
+                error: 'OhhError',
+            }),
         }),
     ],
 };
@@ -54,7 +54,9 @@ export const Big: Story = {
     decorators: [
         ThemeDecorator(Theme.DARK),
         PartialStoreDecorator({
-            articlesPage: mockReturnArticlesPageState(false, ArticleView.BIG),
+            articlesPage: mockReturnArticlesPageState({
+                view: ArticleView.BIG,
+            }),
         }),
     ],
 };

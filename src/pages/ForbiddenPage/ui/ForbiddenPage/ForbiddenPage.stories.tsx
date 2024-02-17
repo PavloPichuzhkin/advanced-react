@@ -10,19 +10,5 @@ const meta: Meta<typeof ForbiddenPage> = {
 export default meta;
 type Story = StoryObj<typeof ForbiddenPage>;
 
-export const Primary: Story = {
-    args: {},
-    decorators: [
-        // ThemeDecorator(Theme.DARK),
-        // PartialStoreDecorator({
-        //     profile: {
-        //         form: {
-        //             first: 'Pavlo',
-        //         },
-        //     },
-        // }),
-        // (Story: StoryFn) => (
-        //     <div style={{ padding: '5rem' }}><Story /></div>
-        // )
-    ],
-};
+export const Primary: Story = {};
+export const PrimaryRedesigned: Story = {};

@@ -1,12 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import MainPage from './MainPage';
 
 const meta: Meta<typeof MainPage> = {
     title: 'Pages/MainPage',
     component: MainPage,
-    tags: ['autodocs'],
+    // tags: ['autodocs'],
 };
 
 export default meta;
@@ -16,7 +14,6 @@ export const Light: Story = {
     args: {},
 };
 
-export const Dark: Story = {
+export const LightRedesigned: Story = {
     args: {},
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];

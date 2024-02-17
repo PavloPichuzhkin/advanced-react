@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
+import { ArticleType } from '@/entities/Article';
 
 const meta: Meta<typeof ArticleTypeTabs> = {
-    title: 'Features/ArticleTypeTabs',
+    title: 'Features/ArticleTypeTabs/Deprecated',
     component: ArticleTypeTabs,
     // tags: ['autodocs'],
 };
@@ -13,15 +12,5 @@ export default meta;
 type Story = StoryObj<typeof ArticleTypeTabs>;
 
 export const Primary: Story = {
-    args: {},
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-        // PartialStoreDecorator({
-        //     profile: {
-        //         form: {
-        //             first: 'Pavlo',
-        //         },
-        //     },
-        // })
-    ],
+    args: { value: ArticleType.IT },
 };

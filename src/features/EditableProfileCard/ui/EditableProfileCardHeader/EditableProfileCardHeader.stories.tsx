@@ -1,11 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { EditableProfileCardHeader } from './EditableProfileCardHeader';
 
 const meta: Meta<typeof EditableProfileCardHeader> = {
-    title: 'Features/EditableProfileCard/EditableProfileCardHeader',
+    title: 'Features/EditableProfileCard/EditableProfileCardHeader/Deprecated',
     component: EditableProfileCardHeader,
     // tags: ['autodocs'],
 };
@@ -13,17 +11,23 @@ const meta: Meta<typeof EditableProfileCardHeader> = {
 export default meta;
 type Story = StoryObj<typeof EditableProfileCardHeader>;
 
-export const Primary: Story = {
+export const PrimaryEditMode: Story = {
     args: {},
     decorators: [
         PartialStoreDecorator({
             profile: {
-                readonly: true,
+                // readonly: true,
             },
         }),
     ],
 };
-export const Dark: Story = {
-    args: {},
-    decorators: [ThemeDecorator(Theme.DARK)],
+export const ReadonlyMode: Story = {};
+export const NotMyProfile: Story = {
+    decorators: [
+        PartialStoreDecorator({
+            profile: {
+                data: { id: 'some' },
+            },
+        }),
+    ],
 };

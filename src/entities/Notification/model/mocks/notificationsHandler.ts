@@ -12,6 +12,7 @@ export const notificationHandler = [
             //     getGlobalDispatch({
             //         // Assistant for loki test here need to dispatch pending type from notificationApi, own store, like fetchArticleById
             //         // type: fetchArticleById.pending.type,
+            //         type: 'rtkApi/executeQuery/pending1111',
             //     });
             // }, 1000);
             return res(ctx.status(200), ctx.json({}), ctx.delay('infinite'));

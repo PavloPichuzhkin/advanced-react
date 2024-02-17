@@ -9,7 +9,7 @@ const meta: Meta<typeof CommentsList> = {
     // tags: ['autodocs'],
     args: {
         comments: selectEntitiesFromNormalizedData(
-            mockReturnArticleDetailsCommentsState,
+            mockReturnArticleDetailsCommentsState(),
         ),
     },
 };

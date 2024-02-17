@@ -112,7 +112,6 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                         <Input
                             autofocus
                             type='text'
-                            // className={cls.input}
                             placeholder={t('Enter username')}
                             onChange={onChangeUsername}
                             value={username}
@@ -126,7 +125,6 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                         />
                         <Button
                             className={cls.loginBtn}
-                            // variant='outline'
                             onClick={onLoginClick}
                             disabled={isLoading}
                         >

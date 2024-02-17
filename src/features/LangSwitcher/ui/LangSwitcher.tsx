@@ -5,8 +5,6 @@ import {
     ButtonTheme,
 } from '@/shared/ui/deprecated/Button';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
-import { Icon } from '@/shared/ui/redesigned/Icon';
-import ThemeIcon from '@/shared/assets/icons/redesigned/theme.svg';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Button } from '@/shared/ui/redesigned/Button';
 
@@ -40,12 +38,5 @@ export const LangSwitcher = memo(({ className, short }: LangSwitcherProps) => {
                 </ButtonDeprecated>
             }
         />
-        // <Button
-        //     className={classNames('', {}, [className])}
-        //     theme={ButtonTheme.CLEAR}
-        //     onClick={toggle}
-        // >
-        //     {short ? t('Short Language') : t('Language')}
-        // </Button>
     );
 });

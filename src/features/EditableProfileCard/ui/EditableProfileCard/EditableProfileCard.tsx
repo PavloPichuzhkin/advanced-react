@@ -39,12 +39,9 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
 
-    // useInitialEffect(() => {
-    //     if (id) {
-    //         dispatch(fetchProfileData(id));
-    //     }
-    // });
     useEffect(() => {
+        // request disabled for storybook, mock data are in store already,
+        // for example
         if (__PROJECT__ !== 'storybook' && __PROJECT__ !== 'jest') {
             if (id) {
                 dispatch(fetchProfileData(id));

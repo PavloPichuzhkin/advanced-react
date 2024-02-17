@@ -3,6 +3,7 @@ import { ArticleType, ArticleBlockType } from '../consts/articleConsts';
 import { UserRole } from '@/entities/User';
 import image from '../../../../shared/assets/tests/mockImageForArticleDetailsPage.png';
 import { Article } from '../types/article';
+import AvatarImg from '@/shared/assets/tests/storybook.jpg';
 
 export const mockArticleData: Article = {
     id: '1',
@@ -10,6 +11,7 @@ export const mockArticleData: Article = {
         id: '1',
         username: 'Gogi',
         roles: [UserRole.ADMIN],
+        avatar: AvatarImg,
     },
     title: 'Javascript news',
     subtitle: "What's new in JS for 2023? Що нового в JS у 2023 році?",

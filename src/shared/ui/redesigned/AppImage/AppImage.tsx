@@ -26,7 +26,9 @@ export const AppImage = memo((props: AppImageProps) => {
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
-    const errorImageFallback = errorFallback || <ImageErrorFallback />;
+    const errorImageFallback = errorFallback || (
+        <ImageErrorFallback className={className} />
+    );
 
     useLayoutEffect(() => {
         const img = new Image();

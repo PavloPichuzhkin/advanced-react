@@ -19,6 +19,8 @@ import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { ArticleListItemProps } from '../ArticleListItem';
+import { AppText } from '@/shared/ui/redesigned/Text';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 export const ArticleListItemDeprecated = memo((props: ArticleListItemProps) => {
     const { className, article, view, target } = props;
@@ -26,10 +28,10 @@ export const ArticleListItemDeprecated = memo((props: ArticleListItemProps) => {
 
     const types = <Text text={article.type.join(', ')} className={cls.types} />;
     const views = (
-        <>
+        <HStack gap='8' align='center'>
             <Text text={String(article.views)} className={cls.views} />
             <Icon Svg={EyeIcon} />
-        </>
+        </HStack>
     );
 
     if (view === ArticleView.BIG) {

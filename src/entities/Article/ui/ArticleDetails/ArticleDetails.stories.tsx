@@ -1,11 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleDetails } from './ArticleDetails';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
-import { TestDecorator } from '@/shared/config/storybook/TestDecorator';
-import { LoadingDecorator } from '@/shared/config/storybook/LoadingDecorator';
-import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
-import { mockArticleData } from '../../model/mocks/mockArticleData';
 
 const meta: Meta<typeof ArticleDetails> = {
     title: 'Entities/Article/ArticleDetails/Deprecated',

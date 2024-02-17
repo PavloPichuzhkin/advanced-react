@@ -9,9 +9,7 @@ const meta: Meta<typeof AppImage> = {
     title: 'Shared/Redesigned/AppImage',
     component: AppImage,
     // tags: ['autodocs'],
-    args: {
-        src: AvatarImg,
-    },
+    args: {},
 };
 
 export default meta;
@@ -19,6 +17,7 @@ type Story = StoryObj<typeof AppImage>;
 
 export const Primary: Story = {
     args: {
+        src: AvatarImg,
         style: {
             width: 300,
             height: 300,
@@ -26,3 +25,12 @@ export const Primary: Story = {
     },
 };
 Primary.decorators = [RedesignDecorator, ThemeDecorator(Theme.LIGHT)];
+export const ErrorImageFallback: Story = {
+    args: {
+        // src: AvatarImg,
+        style: {
+            width: 300,
+            height: 300,
+        },
+    },
+};

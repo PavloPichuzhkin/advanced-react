@@ -17,7 +17,7 @@ export interface DropdownItem {
 
 interface DropdownProps {
     className?: string;
-    items: DropdownItem[];
+    items: Array<DropdownItem | null>;
     direction?: DropdownDirection;
     trigger: ReactNode;
 }
@@ -36,6 +36,8 @@ export function Dropdown(props: DropdownProps) {
             </Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
                 {items.map((item, index) => {
+                    if (!item || !item.content) return null;
+
                     const content = ({ active }: { active: boolean }) => (
                         <button
                             type='button'

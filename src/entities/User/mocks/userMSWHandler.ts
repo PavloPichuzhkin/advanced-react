@@ -7,7 +7,6 @@ export const userMSWHandler = [
     rest.get(
         `${__API__}/users/:id`,
 
-        // '/users/:id',
         (req, res, ctx) => {
             const { id } = req.params;
 

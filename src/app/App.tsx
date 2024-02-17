@@ -24,13 +24,10 @@ function App() {
     const appToolbar = useAppToolbar();
 
     useEffect(() => {
-        // if (!inited) {
         dispatch(initAuthData());
-        // }
     }, [dispatch, inited]);
 
     if (!inited) {
-        // if (true) {
         return (
             <ToggleFeatures
                 feature='isAppRedesigned'
@@ -95,4 +92,4 @@ function App() {
     );
 }
 
-export default withTheme(withErrorBoundary(memo(App)));
+export default withTheme(withErrorBoundary(App));

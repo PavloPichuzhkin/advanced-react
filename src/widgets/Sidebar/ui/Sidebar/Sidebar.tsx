@@ -15,10 +15,11 @@ import ArrowIcon from '@/shared/assets/icons/redesigned/arrow-bottom.svg';
 
 interface SidebarProps {
     className?: string;
+    isCollapsed?: boolean | undefined;
 }
 
-export const Sidebar = ({ className }: SidebarProps) => {
-    const [collapsed, setCollapsed] = useState(false);
+export const Sidebar = ({ className, isCollapsed }: SidebarProps) => {
+    const [collapsed, setCollapsed] = useState(Boolean(isCollapsed));
     const sidebarItemsList = useSelector(getSidebarItems);
 
     const onToggle = () => {

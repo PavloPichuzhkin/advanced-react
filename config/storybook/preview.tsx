@@ -9,15 +9,13 @@ import i18nextStoryDecorator from '../../src/shared/config/storybook/i18nextStor
 import i18n from '../../src/shared/config/i18n/i18n';
 import { PartialStoreDecorator } from '../../src/shared/config/storybook/StoreProviderDecorator';
 import { AsyncStoryDecorator } from '@/shared/config/storybook/AsyncStoryDecorator';
-import { selectEntitiesFromNormalizedData } from '@/shared/lib/helpers/selectEntities/selectEntities';
-import { mockReturnArticlesPageState } from '@/shared/assets/tests/mockReturnArticlesPageState';
-import { Article } from '@/entities/Article';
 import { notificationHandler } from '@/entities/Notification/testing';
 import { articleCommentsMSWHandler } from '@/entities/Comments/testing';
 import { DesignSwitcherDecorator } from '@/shared/config/storybook/RedesignDecorator';
 import { articleDetailsMSWHandler } from '@/entities/Article/testing';
 import { userMSWHandler } from '@/entities/User/testing';
 import { articleRatingMSWHandler } from '@/features/ArticleRating/testing';
+import { articlesMSWHandler } from '@/pages/ArticlesPage/testing';
 // import { AsyncStoryDecorator } from '../../src/shared/config/storybook/AsyncStoryDecorator';
 
 initialize({
@@ -82,24 +80,13 @@ const preview: Preview = {
                 articleDetails: articleDetailsMSWHandler,
                 articleRating: articleRatingMSWHandler(0),
                 comments: articleCommentsMSWHandler,
-                test: [
-                    rest.get(`${__API__}/articles`, (_req, res, ctx) => {
-                        // console.log('handler  work');
-                        return res(
-                            ctx.json(
-                                selectEntitiesFromNormalizedData(
-                                    mockReturnArticlesPageState,
-                                ) as Article[],
-                            ),
-                        );
-                    }),
-                ],
+
+                articles: articlesMSWHandler,
 
                 notifications: notificationHandler,
 
                 user: userMSWHandler,
-                // profile: profileHandlers,
-                // image: imageHandlers,
+                // profile: profileHandlers, // disabled in EditableProfileCard
             },
         },
     },

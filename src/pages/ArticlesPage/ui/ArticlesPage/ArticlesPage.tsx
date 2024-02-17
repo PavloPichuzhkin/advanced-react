@@ -6,7 +6,6 @@ import {
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from '@/widgets/Page';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import cls from './ArticlesPage.module.scss';
@@ -32,17 +31,11 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const [searchParams] = useSearchParams();
 
     const onLoadNextPart = useCallback(() => {
-        if (
-            __PROJECT__ !== 'storybook'
-            // && __PROJECT__ !== 'jest'
-        ) {
+        if (__PROJECT__ !== 'storybook') {
             dispatch(fetchNextArticlesPage());
         }
     }, [dispatch]);
 
-    // useInitialEffect(() => {
-    //     dispatch(initArticlesPage(searchParams));
-    // });
     useEffect(() => {
         dispatch(initArticlesPage(searchParams));
     }, [dispatch, searchParams]);

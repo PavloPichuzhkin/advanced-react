@@ -1,12 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { mockProfileData } from '@/shared/assets/tests/mockProfileData';
 import { EditableProfileCard } from './EditableProfileCard';
 
 const meta: Meta<typeof EditableProfileCard> = {
-    title: 'Features/EditableProfileCard/EditableProfileCard',
+    title: 'Features/EditableProfileCard/EditableProfileCard/Deprecated',
     component: EditableProfileCard,
     // tags: ['autodocs'],
 };
@@ -24,20 +22,28 @@ export const Primary: Story = {
                 data: mockProfileData,
             },
         }),
-        // (Story: StoryFn) => (
-        //     <div style={{ padding: '5rem' }}><Story /></div>
-        // )
     ],
 };
-export const Dark: Story = {
+
+export const EditMode: Story = {
     args: {},
     decorators: [
-        ThemeDecorator(Theme.DARK),
+        PartialStoreDecorator({
+            profile: {
+                readonly: false,
+                form: mockProfileData,
+                data: mockProfileData,
+            },
+        }),
+    ],
+};
+export const Loading: Story = {
+    args: {},
+    decorators: [
         PartialStoreDecorator({
             profile: {
                 readonly: true,
-                form: mockProfileData,
-                data: mockProfileData,
+                isLoading: true,
             },
         }),
     ],

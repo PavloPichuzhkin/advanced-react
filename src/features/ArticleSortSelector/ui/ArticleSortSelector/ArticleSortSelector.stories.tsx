@@ -4,7 +4,7 @@ import { Theme } from '@/shared/lib/context/ThemeContext';
 import { ArticleSortSelector } from './ArticleSortSelector';
 
 const meta: Meta<typeof ArticleSortSelector> = {
-    title: 'Features/ArticleSortSelector',
+    title: 'Features/ArticleSortSelector/Deprecated',
     component: ArticleSortSelector,
     // tags: ['autodocs'],
 };
@@ -14,14 +14,5 @@ type Story = StoryObj<typeof ArticleSortSelector>;
 
 export const Primary: Story = {
     args: {},
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-        // PartialStoreDecorator({
-        //     profile: {
-        //         form: {
-        //             first: 'Pavlo',
-        //         },
-        //     },
-        // })
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

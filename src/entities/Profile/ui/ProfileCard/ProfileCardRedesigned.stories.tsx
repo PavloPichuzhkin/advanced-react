@@ -1,18 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ProfileCardRedesigned } from './ProfileCardRedesigned';
-import { mockProfileData } from '../../../model/mocks/mockProfileData';
+import { ProfileCard } from './ProfileCard';
+import { mockProfileData } from '../../model/mocks/mockProfileData';
 
-const meta: Meta<typeof ProfileCardRedesigned> = {
+const meta: Meta<typeof ProfileCard> = {
     title: 'Entities/ProfileCard/Redesigned',
-    component: ProfileCardRedesigned,
+    component: ProfileCard,
     // tags: ['autodocs'],
     args: {
         data: mockProfileData,
     },
+    parameters: {
+        loki: {
+            captureDelay: 3000,
+        },
+    },
 };
 
 export default meta;
-type Story = StoryObj<typeof ProfileCardRedesigned>;
+type Story = StoryObj<typeof ProfileCard>;
 
 export const Primary: Story = {};
 

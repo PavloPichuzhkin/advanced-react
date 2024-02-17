@@ -92,16 +92,15 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
             className={classNames(cls.ProfileCardRedesigned, {}, [className])}
         >
             <VStack max gap='32'>
-                {data?.avatar && (
-                    <HStack justify='center' max>
-                        <Avatar src={data?.avatar} size={120} border='40%' />
-                    </HStack>
-                )}
+                <HStack justify='center' max>
+                    <Avatar src={data?.avatar} size={120} border='40%' />
+                </HStack>
                 <HStack justify='center' gap='32' max>
                     <VStack max gap='24' className=''>
                         <Input
                             value={data?.first}
                             label={t('Your Firstname')}
+                            placeholder={t('Your Firstname')}
                             onChange={onChangeFirstname}
                             readonly={readonly}
                             autofocus={!readonly}
@@ -111,6 +110,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
                         <Input
                             value={data?.lastname}
                             label={t('Your Lastname')}
+                            placeholder={t('Your Lastname')}
                             onChange={onChangeLastname}
                             readonly={readonly}
                             data-testid='ProfileCard.lastname'
@@ -119,6 +119,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
                         <Input
                             value={data?.age}
                             label={t('Your age')}
+                            placeholder={t('Your age')}
                             onChange={onChangeAge}
                             readonly={readonly}
                             labelWhiteSpace='labelWhiteSpaceNowrap'
@@ -126,6 +127,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
                         <Input
                             value={data?.city}
                             label={t('City')}
+                            placeholder={t('City')}
                             onChange={onChangeCity}
                             readonly={readonly}
                             labelWhiteSpace='labelWhiteSpaceNowrap'
@@ -135,6 +137,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
                         <Input
                             value={data?.username}
                             label={t('Your username')}
+                            placeholder={t('Your username')}
                             onChange={onChangeUsername}
                             readonly={readonly}
                             labelWhiteSpace='labelWhiteSpaceNowrap'
@@ -142,6 +145,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
                         <Input
                             value={data?.avatar}
                             label={t('Avatar link')}
+                            placeholder={t('Avatar link')}
                             onChange={onChangeAvatar}
                             readonly={readonly}
                             labelWhiteSpace='labelWhiteSpaceNowrap'

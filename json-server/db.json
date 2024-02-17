@@ -12,7 +12,7 @@
                 "isAppRedesigned": false
             },
             "jsonSettings": {
-                "theme": "app_dark_theme",
+                "theme": "app_light_theme",
                 "isFirstVisit": true,
                 "settingsPageHasBeenOpen": false,
                 "isArticlesPageWasOpened": true
@@ -81,7 +81,7 @@
                 "isAppRedesigned": false
             },
             "jsonSettings": {
-                "theme": "app_danger_theme",
+                "theme": "app_light_theme",
                 "isFirstVisit": true,
                 "settingsPageHasBeenOpen": false,
                 "isArticlesPageWasOpened": true
@@ -486,7 +486,7 @@
     "profile": [
         {
             "id": "1",
-            "first": "Pavlo",
+            "first": "Pavlo111",
             "lastname": "Pichuzhkin",
             "age": 22,
             "currency": "USD",

@@ -9,7 +9,7 @@ import { ArticleListItem } from './ArticleListItem';
 export const createStories = () => {
     type Story = StoryObj<typeof ArticleListItem>;
     const article = selectEntitiesFromNormalizedData(
-        mockReturnArticlesPageState,
+        mockReturnArticlesPageState({}),
     )[0];
     const Primary: Story = {
         args: { article, view: ArticleView.SMALL },

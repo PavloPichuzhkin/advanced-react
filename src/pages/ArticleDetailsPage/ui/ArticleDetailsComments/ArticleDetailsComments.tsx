@@ -6,7 +6,6 @@ import AddCommentForm, { addComment } from '@/features/AddCommentForm';
 import { CommentsList } from '@/entities/Comments';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getArticleDetailsData } from '@/entities/Article';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -28,15 +27,10 @@ export const ArticleDetailsComments = memo(
 
         const comments = useSelector(getArticleComments.selectAll);
         const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-        // const commentsIsLoading = true;
-        // console.log(comments);
 
         const dispatch = useAppDispatch();
         const article = useSelector(getArticleDetailsData);
 
-        // useInitialEffect(() => {
-        //     dispatch(fetchCommentsByArticleId(id));
-        // });
         useEffect(() => {
             dispatch(fetchCommentsByArticleId(id));
         }, [dispatch, id]);

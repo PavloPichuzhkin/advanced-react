@@ -3,20 +3,12 @@ import { rest } from 'msw';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import ArticleRating from './ArticleRating';
+import { articleRatingMSWHandler } from '../../model/mocks/articleRatingMSWHandler';
 
 const meta: Meta<typeof ArticleRating> = {
-    title: 'Features/ArticleRating',
+    title: 'Features/ArticleRating/Deprecated',
     component: ArticleRating,
     // tags: ['autodocs'],
-    parameters: {
-        // msw: {
-        //     handlers: [
-        //         rest.get(`${__API__}/article-ratings`, (_req, res, ctx) => {
-        //             return res(ctx.json(null));
-        //         }),
-        //     ],
-        // },
-    },
 };
 
 export default meta;
@@ -28,20 +20,17 @@ export const Primary: Story = {
 export const PrimaryWithRating: Story = {
     args: {},
     parameters: {
-        // msw: {
-        //     handlers: [
-        //         rest.get(`${__API__}/article-ratings`, (_req, res, ctx) => {
-        //             return res(ctx.json([{ rate: 4 }]));
-        //         }),
-        //     ],
-        // },
+        msw: articleRatingMSWHandler(4),
     },
 };
 
-export const Dark: Story = {
-    args: {},
-    decorators: [ThemeDecorator(Theme.DARK)],
+export const Loading: Story = {
+    parameters: {
+        loki: { skip: true },
+    },
 };
+
+export const Dark: Story = {};
 export const Danger: Story = {
     args: {},
     decorators: [ThemeDecorator(Theme.DANGER)],

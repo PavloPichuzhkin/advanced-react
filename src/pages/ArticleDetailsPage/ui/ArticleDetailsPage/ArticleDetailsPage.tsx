@@ -7,8 +7,6 @@ import {
     DynamicModuleLoader,
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList';
@@ -16,10 +14,9 @@ import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetails
 import { articleDetailsPageReducer } from '../../model/slice';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import cls from './ArticleDetailsPage.module.scss';
-import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { ArticleRating } from '@/features/ArticleRating';
 import { Card } from '@/shared/ui/deprecated/Card';
-import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { StickyContentLayout } from '@/shared/layouts';
 import { ArticleDetailsContainer } from '../ArticleDetailsContainer/ArticleDetailsContainer';
 import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer';

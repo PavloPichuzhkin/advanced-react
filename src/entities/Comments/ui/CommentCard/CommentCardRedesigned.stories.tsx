@@ -9,7 +9,7 @@ const meta: Meta<typeof CommentCard> = {
     // tags: ['autodocs'],
     args: {
         comment: selectEntitiesFromNormalizedData(
-            mockReturnArticleDetailsCommentsState,
+            mockReturnArticleDetailsCommentsState(),
         )[0],
     },
 };

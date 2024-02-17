@@ -1,12 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import { ThemeSwitcher } from './ThemeSwitcher';
+import AddStylesDecorator from '@/shared/config/storybook/AddStylesDecorator';
 
 const meta: Meta<typeof ThemeSwitcher> = {
-    title: 'widgets/ThemeSwitcher',
+    title: 'Features/ThemeSwitcher/Deprecated',
     component: ThemeSwitcher,
-    tags: ['autodocs'],
+    // tags: ['autodocs'],
+    decorators: [
+        AddStylesDecorator({
+            background: 'var(--inverted-bg-color)',
+        }),
+    ],
 };
 
 export default meta;
@@ -19,4 +23,3 @@ export const Light: Story = {
 export const Dark: Story = {
     args: {},
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];

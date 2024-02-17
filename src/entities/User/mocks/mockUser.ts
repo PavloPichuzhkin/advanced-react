@@ -6,7 +6,7 @@ export const mockUser: User = {
     id: '1',
     username: 'admin',
     roles: [UserRole.ADMIN],
-    jsonSettings: {},
+    jsonSettings: { isArticlesPageWasOpened: true },
     features: {
         isArticleRatingEnabled: true,
     },

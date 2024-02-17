@@ -1,6 +1,4 @@
 import { memo } from 'react';
-import { ArticleViewSelector } from '@/features/ArticleViewSelector';
-
 import { useArticleFilters } from '../../lib/hooks/useArticleFilters';
 import { ArticlesFilters } from '@/widgets/ArticlesFilters';
 

@@ -5,7 +5,7 @@ import { FeatureFlags } from '@/shared/types';
 interface ToggleFeaturesProps {
     feature: keyof FeatureFlags;
     on: ReactElement | null;
-    off: ReactElement;
+    off: ReactElement | null;
 }
 
 export const ToggleFeatures = (props: ToggleFeaturesProps) => {
@@ -15,5 +15,5 @@ export const ToggleFeatures = (props: ToggleFeaturesProps) => {
         return on || null;
     }
 
-    return off;
+    return off || null;
 };

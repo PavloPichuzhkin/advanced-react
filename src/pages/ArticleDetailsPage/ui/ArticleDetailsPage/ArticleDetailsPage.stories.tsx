@@ -1,17 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import {
-    reactRouterParameters,
-    withRouter,
-} from 'storybook-addon-react-router-v6';
-import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
-import { mockReturnArticleDetailsCommentsState } from '@/entities/Comments/testing';
-import { articleDetailsPageReducer } from '../../model/slice';
+import { reactRouterParameters } from 'storybook-addon-react-router-v6';
 import ArticleDetailsPage from './ArticleDetailsPage';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import { getRouteArticleDetails } from '@/shared/const/router';
-import { mockArticleData } from '@/entities/Article/testing';
 import { InitUserDecorator } from '@/shared/config/storybook/InitUserDecorator';
 
 const meta: Meta<typeof ArticleDetailsPage> = {
@@ -41,6 +31,7 @@ export const Primary: Story = {
 export const PrimaryRedesigned: Story = {
     args: {},
     decorators: [
+        // InitUserDecorator(),
         // ThemeDecorator(Theme.LIGHT),
         // PartialStoreDecorator(
         //     {

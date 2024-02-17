@@ -28,7 +28,7 @@ export const articleCommentsMSWHandler = [
             ctx.status(200),
             ctx.json(
                 selectEntitiesFromNormalizedData(
-                    mockReturnArticleDetailsCommentsState,
+                    mockReturnArticleDetailsCommentsState(),
                 ),
             ),
         );

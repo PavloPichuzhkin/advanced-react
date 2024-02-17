@@ -37,7 +37,14 @@ export default ({ config }: { config: webpack.Configuration }) => {
         // }
         return rule;
     });
-
+    config!.module!.rules.push({
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    });
     config!.module!.rules.push({
         test: /\.svg$/,
         use: [
@@ -59,14 +66,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
             },
         ],
     });
-    config!.module!.rules.push({
-        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
-        use: [
-            {
-                loader: 'file-loader',
-            },
-        ],
-    });
+
     // {
     //     test: /\.(svg|ico|jpg|jpeg|png|apng|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/,
     //         type: 'asset/resource',

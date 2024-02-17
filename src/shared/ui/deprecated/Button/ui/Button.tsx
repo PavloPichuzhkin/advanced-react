@@ -44,7 +44,6 @@ export const Button = memo((props: ButtonProps) => {
         fullWidth = false,
         ...otherProps
     } = props;
-    // console.log('RENDER Button');
 
     const mods: Mods = {
         [cls.square]: square,

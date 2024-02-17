@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import {
     DynamicModuleLoader,
@@ -49,10 +49,14 @@ const reducers: ReducersList = {
 
 const Deprecated = () => {
     const article = useSelector(getArticleDetailsData);
+
     return (
         <>
             <HStack max justify='center'>
                 <Avatar size={200} src={article?.img} border='40%' />
+                {/* webstorm emmet remembrance */}
+                {/* UserIn[prop=''123].cs#id */}
+                {/* table>tr*3>td*2 */}
             </HStack>
             <VStack gap='8' data-testid='ArticleDetails.Info'>
                 <TextDeprecated
@@ -62,8 +66,12 @@ const Deprecated = () => {
                     size={TextSize.L}
                 />
                 <HStack gap='12'>
-                    <Icon Svg={EyeIcon} />
-                    <TextDeprecated text={String(article?.views)} />
+                    {article?.views && (
+                        <>
+                            <Icon Svg={EyeIcon} />
+                            <TextDeprecated text={String(article?.views)} />
+                        </>
+                    )}
                 </HStack>
                 <HStack gap='12'>
                     <Icon Svg={CalendarIcon} />

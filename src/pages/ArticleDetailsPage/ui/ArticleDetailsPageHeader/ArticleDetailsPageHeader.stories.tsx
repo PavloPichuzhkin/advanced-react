@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
+import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 
 const meta: Meta<typeof ArticleDetailsPageHeader> = {
     title: 'Pages/ArticleDetailsPage/ArticleDetailsPageHeader',
@@ -12,16 +11,19 @@ const meta: Meta<typeof ArticleDetailsPageHeader> = {
 export default meta;
 type Story = StoryObj<typeof ArticleDetailsPageHeader>;
 
-export const Primary: Story = {
-    args: {},
+export const Primary: Story = {};
+
+// export const PrimaryRedesigned: Story = {}; // ArticleDetailsPageHeader used only in old design
+
+export const UserCanEditArticle: Story = {
     decorators: [
-        ThemeDecorator(Theme.DARK),
-        // PartialStoreDecorator({
-        //     profile: {
-        //         form: {
-        //             first: 'Pavlo',
-        //         },
-        //     },
-        // })
+        PartialStoreDecorator({
+            articleDetails: { data: { user: { id: 'some' } } },
+            user: {
+                authData: {
+                    id: 'some',
+                },
+            },
+        }),
     ],
 };

@@ -1,42 +1,37 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { Sidebar } from './Sidebar';
+import cls from './Sidebar.module.scss';
 
 const meta: Meta<typeof Sidebar> = {
-    title: 'widgets/Sidebar',
+    title: 'Widgets/Sidebar/Deprecated',
     component: Sidebar,
-    tags: ['autodocs'],
+    // tags: ['autodocs'],
 };
 
 export default meta;
 type Story = StoryObj<typeof Sidebar>;
 
-export const AuthLight: Story = {
-    args: {},
+export const Collapsed: Story = {
+    args: {
+        isCollapsed: true,
+    },
+    decorators: [
+        PartialStoreDecorator({
+            user: { authData: {} },
+        }),
+    ],
 };
-AuthLight.decorators = [
-    PartialStoreDecorator({
-        user: { authData: {} },
-    }),
-];
-
-export const AuthDark: Story = {
-    args: {},
-};
-AuthDark.decorators = [
-    ThemeDecorator(Theme.DARK),
-    PartialStoreDecorator({
-        user: { authData: {} },
-    }),
-];
 
 export const Light: Story = {
-    args: {},
+    args: { className: cls.storybookDeprecated },
 };
+Light.decorators = [
+    PartialStoreDecorator({
+        user: { authData: {} },
+    }),
+];
 
-export const Dark: Story = {
-    args: {},
+export const Unauthorized: Story = {
+    args: { className: cls.storybookDeprecated },
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];

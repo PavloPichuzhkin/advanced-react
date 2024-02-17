@@ -20,6 +20,7 @@ import { Button } from '@/shared/ui/redesigned/Button';
 import { AppText } from '@/shared/ui/redesigned/Text';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { ValidateProfileError } from '../../model/consts/consts';
+import { SaveButton } from './SaveButton';
 
 interface ProfilePageHeaderProps {
     className?: string;
@@ -60,17 +61,6 @@ export const EditableProfileCardHeader = memo(
             dispatch(updateProfileData());
         }, [dispatch]);
 
-        const [myTimeout, setMyTimeout] = useState(true);
-
-        useEffect(() => {
-            if (validateErrors) {
-                setMyTimeout(true);
-                setTimeout(() => {
-                    setMyTimeout(false);
-                }, 3000);
-            }
-        }, [validateErrors]);
-
         return (
             <ToggleFeatures
                 feature='isAppRedesigned'
@@ -95,42 +85,41 @@ export const EditableProfileCardHeader = memo(
                                 <AppText title={t('Profile')} />
                             )}
 
-                            {canEdit && (
-                                <div>
-                                    {readonly ? (
+                            {canEdit &&
+                                (readonly ? (
+                                    <Button
+                                        onClick={onEdit}
+                                        data-testid='EditableProfileCardHeader.EditButton'
+                                    >
+                                        {t('Edit')}
+                                    </Button>
+                                ) : (
+                                    <HStack gap='8'>
+                                        {/* <Button */}
+                                        {/*    variant='outline' */}
+                                        {/*    color='success' */}
+                                        {/*    onClick={onSave} */}
+                                        {/*    disabled={ */}
+                                        {/*        // !!validateErrors?.length && myTimeout */}
+                                        {/*        // Boolean( */}
+                                        {/*        //     validateErrors?.length, */}
+                                        {/*        // ) && */}
+                                        {/*        !myTimeout */}
+                                        {/*    } */}
+                                        {/*    data-testid='EditableProfileCardHeader.SaveButton' */}
+                                        {/* > */}
+                                        {/*    {t('Save')} */}
+                                        {/* </Button> */}
+                                        <SaveButton />
                                         <Button
-                                            onClick={onEdit}
-                                            data-testid='EditableProfileCardHeader.EditButton'
+                                            variant='filled'
+                                            onClick={onCancelEdit}
+                                            data-testid='EditableProfileCardHeader.CancelButton'
                                         >
-                                            {t('Edit')}
+                                            {t('Cancel')}
                                         </Button>
-                                    ) : (
-                                        <HStack gap='8'>
-                                            <Button
-                                                variant='outline'
-                                                color='success'
-                                                onClick={onSave}
-                                                disabled={
-                                                    // !!validateErrors?.length && myTimeout
-                                                    Boolean(
-                                                        validateErrors?.length,
-                                                    ) && myTimeout
-                                                }
-                                                data-testid='EditableProfileCardHeader.SaveButton'
-                                            >
-                                                {t('Save')}
-                                            </Button>
-                                            <Button
-                                                variant='filled'
-                                                onClick={onCancelEdit}
-                                                data-testid='EditableProfileCardHeader.CancelButton'
-                                            >
-                                                {t('Cancel')}
-                                            </Button>
-                                        </HStack>
-                                    )}
-                                </div>
-                            )}
+                                    </HStack>
+                                ))}
                         </HStack>
                     </Card>
                 }
@@ -168,12 +157,6 @@ export const EditableProfileCardHeader = memo(
                                         <ButtonDeprecated
                                             theme={ButtonTheme.OUTLINE}
                                             onClick={onSave}
-                                            disabled={
-                                                // !!validateErrors?.length && myTimeout
-                                                Boolean(
-                                                    validateErrors?.length,
-                                                ) && myTimeout
-                                            }
                                             data-testid='EditableProfileCardHeader.SaveButton'
                                         >
                                             {t('Save')}

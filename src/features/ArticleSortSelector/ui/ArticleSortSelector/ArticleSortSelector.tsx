@@ -3,14 +3,14 @@ import { memo, useMemo } from 'react';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { Select, SelectOption } from '@/shared/ui/deprecated/Select';
 import { SortOrder } from '@/shared/types';
-import { ArticleSortField } from '../../../../entities/Article/model/consts/articleConsts';
-// import { ArticleSortField } from 'entities/Article'; // for test circular dependency plugin
-// TODO consider using dependency cruiser
+import { ArticleSortField } from '@/entities/Article';
 import cls from './ArticleSortSelector.module.scss';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { ListBox } from '@/shared/ui/redesigned/Popups';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { AppText } from '@/shared/ui/redesigned/Text';
+
+// TODO consider using dependency cruiser
 
 interface ArticleSortSelectorProps {
     className?: string;
@@ -56,14 +56,6 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
         [t],
     );
 
-    // const changeSortHandler = useCallback((newSort: string) => {
-    //     onChangeSort(newSort as ArticleSortField);
-    // }, [onChangeSort]);
-    //
-    // const changeOrderHandler = useCallback((newOrder: string) => {
-    //     onChangeOrder(newOrder as SortOrder);
-    // }, [onChangeOrder]);
-
     return (
         <ToggleFeatures
             feature='isAppRedesigned'
@@ -77,16 +69,13 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
                         <AppText text={`${t('Sort by')}:`} />
                         <ListBox<ArticleSortField>
                             items={sortFieldOptions}
-                            // label={t('Sort by')}
                             value={sort}
                             onChange={onChangeSort}
                         />
                         <ListBox<SortOrder>
                             items={orderOptions}
-                            // label={t('by')}
                             value={order}
                             onChange={onChangeOrder}
-                            // className={cls.order}
                         />
                     </VStack>
                 </div>

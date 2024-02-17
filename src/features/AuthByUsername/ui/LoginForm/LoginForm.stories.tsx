@@ -1,14 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { loginReducer } from '../../model/slice/loginSlice';
 import LoginForm from './LoginForm';
 
 const meta: Meta<typeof LoginForm> = {
-    title: 'features/AuthByUsername/LoginForm',
+    title: 'features/AuthByUsername/LoginForm/Deprecated',
     component: LoginForm,
-    tags: ['autodocs'],
+    // tags: ['autodocs'],
     parameters: {
         loki: {
             captureDelay: 5000,
@@ -19,20 +17,15 @@ const meta: Meta<typeof LoginForm> = {
 export default meta;
 type Story = StoryObj<typeof LoginForm>;
 
-export const Primary: Story = {
-    args: {},
-};
+export const Primary: Story = {};
 Primary.decorators = [
     PartialStoreDecorator({
         loginForm: { username: '123', password: 'asd' },
     }),
 ];
 
-export const Dark: Story = {
-    args: {},
-};
+export const Dark: Story = {};
 Dark.decorators = [
-    ThemeDecorator(Theme.DARK),
     PartialStoreDecorator(
         {
             loginForm: { username: '123', password: 'asd' },
@@ -41,20 +34,14 @@ Dark.decorators = [
     ),
 ];
 
-export const withError: Story = {
-    args: {},
-};
-withError.args = {};
+export const withError: Story = {};
 withError.decorators = [
     PartialStoreDecorator({
         loginForm: { username: '123', password: 'asd', error: 'ERROR' },
     }),
 ];
 
-export const Loading: Story = {
-    args: {},
-};
-Loading.args = {};
+export const Loading: Story = {};
 Loading.decorators = [
     PartialStoreDecorator({
         loginForm: { isLoading: true },

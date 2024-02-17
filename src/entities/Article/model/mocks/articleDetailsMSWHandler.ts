@@ -18,9 +18,9 @@ export const articleDetailsMSWHandler = [
                 }, 1000);
                 // return res(
                 //     ctx.status(200),
-                //     ctx.json({}),
-                //     // ctx.json(mockArticleData),
-                //     ctx.delay('infinite'),
+                //     // ctx.json({}),
+                //     ctx.json(mockArticleData),
+                //     ctx.delay('infinite'), // dont work with Loki
                 // );
             }
 

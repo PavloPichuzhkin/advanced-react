@@ -25,7 +25,7 @@ export const createStories = () => {
     type Story = StoryObj<typeof ArticleList>;
 
     const articles = selectEntitiesFromNormalizedData(
-        mockReturnArticlesPageState,
+        mockReturnArticlesPageState({}),
     ) as Article[];
 
     const Primary: Story = {

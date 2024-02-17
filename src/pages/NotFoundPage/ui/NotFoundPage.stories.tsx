@@ -1,12 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import { NotFoundPage } from './NotFoundPage';
 
 const meta: Meta<typeof NotFoundPage> = {
     title: 'Pages/NotFoundPage',
     component: NotFoundPage,
-    tags: ['autodocs'],
+    // tags: ['autodocs'],
 };
 
 export default meta;
@@ -16,7 +14,6 @@ export const Light: Story = {
     args: {},
 };
 
-export const Dark: Story = {
+export const Redesigned: Story = {
     args: {},
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];

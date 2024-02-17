@@ -9,19 +9,27 @@ import {
 import { UserRole } from '@/entities/User';
 import { SortOrder } from '@/shared/types';
 
-export const mockReturnArticlesPageState = (
-    isLoading: boolean = false,
-    view: ArticleView = ArticleView.SMALL,
-    error: string | undefined = undefined,
-    order: SortOrder = 'asc',
-    sort: ArticleSortField = ArticleSortField.VIEWS,
-    // page: number;
-    // limit?: number;
-    // hasMore: boolean;
-    // search: string;
-    // type: ArticleType;
-    // _inited: boolean;
-): ArticlesPageSchema => {
+// {
+//     isLoading: boolean = false,
+//         view: ArticleView = ArticleView.SMALL,
+//     error: string | undefined = undefined,
+//     order: SortOrder = "asc",
+//     sort: ArticleSortField = ArticleSortField.VIEWS
+//     // page: number;
+//     // limit?: number;
+//     // hasMore: boolean;
+//     // search: string;
+//     // type: ArticleType;
+//     // _inited: boolean;
+// }
+// ): ArticlesPageSchema => {
+export const mockReturnArticlesPageState = ({
+    isLoading = false,
+    view = ArticleView.SMALL,
+    error = undefined,
+    order = 'asc',
+    sort = ArticleSortField.VIEWS,
+}: DeepPartial<ArticlesPageSchema>): ArticlesPageSchema => {
     return {
         error,
         isLoading,

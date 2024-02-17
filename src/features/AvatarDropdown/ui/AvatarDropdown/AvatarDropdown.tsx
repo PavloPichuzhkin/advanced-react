@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
+import { memo, ReactNode, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
@@ -19,9 +19,10 @@ import {
     getRouteProfile,
     getRouteSettings,
 } from '@/shared/const/router';
-import { ToggleFeatures } from '@/shared/lib/features';
+import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
 import { Dropdown } from '@/shared/ui/redesigned/Popups';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
+import { CreateArticleButton } from '../../../CreateArticleButton';
 
 interface AvatarDropdownProps {
     className?: string;
@@ -45,6 +46,17 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
     if (!authData) {
         return null;
     }
+    const createArticleButton = toggleFeatures({
+        name: 'isAppRedesigned',
+        on: () => ({
+            // content: (<div>{t('Main page')}</div>) as ReactNode,
+            content: (<CreateArticleButton />) as ReactNode,
+        }),
+        off: () => ({
+            content: null,
+        }),
+    });
+
     const items = [
         ...(isAdminPanelAvailable
             ? [
@@ -61,13 +73,14 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
         {
             content: t('Settings'),
             href: getRouteSettings(),
-            // disabled: true,
         },
         {
             content: t('Sign out'),
             onClick: onLogout,
-            // disabled: true,
         },
+        null,
+        createArticleButton,
+
         {
             content: t('Main page'),
             href: getRouteMain(),

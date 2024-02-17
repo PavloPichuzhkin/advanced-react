@@ -1,13 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StoryFn } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { AvatarDropdown } from './AvatarDropdown';
 import { UserRole } from '@/entities/User';
+import AddStylesDecorator from '@/shared/config/storybook/AddStylesDecorator';
+import AvatarImg from '@/shared/assets/tests/storybook.jpg';
 
 const meta: Meta<typeof AvatarDropdown> = {
-    title: 'Features/AvatarDropdown',
+    title: 'Features/AvatarDropdown/Deprecated',
     component: AvatarDropdown,
     // tags: ['autodocs'],
     decorators: [
@@ -16,28 +15,36 @@ const meta: Meta<typeof AvatarDropdown> = {
                 authData: {
                     username: 'Pavlo',
                     roles: [UserRole.SUPER_ADMIN],
+                    avatar: AvatarImg,
                 },
             },
         }),
-        (Story: StoryFn) => (
-            <div style={{ padding: '8rem 12rem', display: 'flex' }}>
-                <Story />
-            </div>
-        ),
+        AddStylesDecorator({
+            padding: '2rem 12rem 16rem 12rem',
+            display: 'flex',
+        }),
     ],
 };
 
 export default meta;
 type Story = StoryObj<typeof AvatarDropdown>;
 
-export const Primary: Story = {
-    args: {},
+export const Primary: Story = {};
+
+export const DarkWithoutAuthData: Story = {
+    decorators: [
+        PartialStoreDecorator({
+            // user: {},
+        }),
+    ],
 };
-export const Dark: Story = {
-    args: {},
-    decorators: [ThemeDecorator(Theme.DARK)],
-};
-export const Danger: Story = {
-    args: {},
-    decorators: [ThemeDecorator(Theme.DANGER)],
+
+export const DangerWithoutAvatar: Story = {
+    decorators: [
+        PartialStoreDecorator({
+            user: {
+                authData: {},
+            },
+        }),
+    ],
 };

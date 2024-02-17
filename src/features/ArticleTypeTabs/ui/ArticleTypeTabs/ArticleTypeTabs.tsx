@@ -3,7 +3,7 @@ import { memo, useCallback, useMemo } from 'react';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { TabItem, Tabs as TabsDeprecated } from '@/shared/ui/deprecated/Tabs';
 
-import { ArticleType } from '../../../../entities/Article/model/consts/articleConsts';
+import { ArticleType } from '@/entities/Article';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Tabs } from '@/shared/ui/redesigned/Tabs';
 

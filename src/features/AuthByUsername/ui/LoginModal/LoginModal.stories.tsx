@@ -1,13 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { LoginModal } from './LoginModal';
 
 const meta: Meta<typeof LoginModal> = {
-    title: 'Features/AuthByUsername/LoginModal',
+    title: 'Features/AuthByUsername/LoginModal/Deprecated',
     component: LoginModal,
-    tags: ['autodocs'],
+    // tags: ['autodocs'],
 };
 
 export default meta;
@@ -17,21 +15,20 @@ export const Primary: Story = {
     args: {
         isOpen: true,
     },
+    decorators: [
+        PartialStoreDecorator({
+            loginForm: { username: '123', password: 'asd' },
+        }),
+    ],
 };
-Primary.decorators = [
-    PartialStoreDecorator({
-        loginForm: { username: '123', password: 'asd' },
-    }),
-];
 
-export const Dark: Story = {
+export const DarkWithError: Story = {
     args: {
         isOpen: true,
     },
+    decorators: [
+        PartialStoreDecorator({
+            loginForm: { username: '123', password: 'asd', error: 'ERROR' },
+        }),
+    ],
 };
-Dark.decorators = [
-    ThemeDecorator(Theme.DARK),
-    PartialStoreDecorator({
-        loginForm: { username: '123', password: 'asd', error: 'ERROR' },
-    }),
-];

@@ -9,7 +9,7 @@ import { Drawer } from '@/shared/ui/redesigned/Drawers';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { AppText } from '@/shared/ui/redesigned/Text';
 
-export const ArticlePageGreeting = memo(() => {
+const ArticlePageGreeting = memo(() => {
     const { t } = useTranslation('articles');
     const [isOpen, setIsOpen] = useState(false);
     const { isArticlesPageWasOpened } = useJsonSettings();
@@ -64,3 +64,4 @@ export const ArticlePageGreeting = memo(() => {
         )
     );
 });
+export default ArticlePageGreeting;

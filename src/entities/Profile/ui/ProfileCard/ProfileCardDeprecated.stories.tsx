@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ProfileCardDeprecated } from './ProfileCardDeprecated';
-import { mockProfileData } from '../../../model/mocks/mockProfileData';
+import { ProfileCard } from './ProfileCard';
+import { mockProfileData } from '../../model/mocks/mockProfileData';
 
-const meta: Meta<typeof ProfileCardDeprecated> = {
+const meta: Meta<typeof ProfileCard> = {
     title: 'Entities/ProfileCard/Deprecated',
-    component: ProfileCardDeprecated,
+    component: ProfileCard,
     // tags: ['autodocs'],
     args: {
         data: mockProfileData,
@@ -12,7 +12,7 @@ const meta: Meta<typeof ProfileCardDeprecated> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ProfileCardDeprecated>;
+type Story = StoryObj<typeof ProfileCard>;
 
 export const Primary: Story = {};
 

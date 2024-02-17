@@ -6,7 +6,7 @@ import { ErrorPage } from './ErrorPage';
 const meta: Meta<typeof ErrorPage> = {
     title: 'widgets/ErrorPage/Deprecated',
     component: ErrorPage,
-    tags: ['autodocs'],
+    // tags: ['autodocs'],
 };
 export default meta;
 
@@ -16,11 +16,11 @@ export const Light: Story = {
     args: {},
     decorators: [ThemeDecorator(Theme.LIGHT)],
 };
-export const Dark: Story = {
-    args: {},
-    decorators: [ThemeDecorator(Theme.DARK)],
-};
-export const Danger: Story = {
-    args: {},
-    decorators: [ThemeDecorator(Theme.DANGER)],
-};
+// export const Dark: Story = {
+//     args: {},
+//     decorators: [ThemeDecorator(Theme.DARK)],
+// };
+// export const Danger: Story = {
+//     args: {},
+//     decorators: [ThemeDecorator(Theme.DANGER)],
+// };

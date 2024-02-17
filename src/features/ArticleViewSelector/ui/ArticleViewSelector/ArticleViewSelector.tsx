@@ -11,7 +11,7 @@ import {
     Button as ButtonDeprecated,
     ButtonTheme,
 } from '@/shared/ui/deprecated/Button';
-import { ArticleView } from '../../../../entities/Article/model/consts/articleConsts';
+import { ArticleView } from '@/entities/Article';
 import cls from './ArticleViewSelector.module.scss';
 import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
 import { Icon } from '@/shared/ui/redesigned/Icon';
@@ -24,28 +24,45 @@ interface ArticleViewSelectorProps {
     onViewClick?: (view: ArticleView) => void;
 }
 
-const viewTypes = [
-    {
-        view: ArticleView.SMALL,
-        icon: toggleFeatures({
-            name: 'isAppRedesigned',
-            on: () => TiledIcon,
-            off: () => TiledIconDeprecated,
-        }),
-    },
-    {
-        view: ArticleView.BIG,
-        icon: toggleFeatures({
-            name: 'isAppRedesigned',
-            on: () => ListIcon,
-            off: () => ListIconDeprecated,
-        }),
-    },
-];
+// const viewTypes = [
+//     {
+//         view: ArticleView.SMALL,
+//         icon: toggleFeatures({
+//             name: 'isAppRedesigned',
+//             on: () => TiledIcon,
+//             off: () => TiledIconDeprecated,
+//         }),
+//     },
+//     {
+//         view: ArticleView.BIG,
+//         icon: toggleFeatures({
+//             name: 'isAppRedesigned',
+//             on: () => ListIcon,
+//             off: () => ListIconDeprecated,
+//         }),
+//     },
+// ];
 
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
     const { className, view, onViewClick } = props;
-
+    const viewTypes = [
+        {
+            view: ArticleView.SMALL,
+            icon: toggleFeatures({
+                name: 'isAppRedesigned',
+                on: () => TiledIcon,
+                off: () => TiledIconDeprecated,
+            }),
+        },
+        {
+            view: ArticleView.BIG,
+            icon: toggleFeatures({
+                name: 'isAppRedesigned',
+                on: () => ListIcon,
+                off: () => ListIconDeprecated,
+            }),
+        },
+    ];
     const onClick = (newView: ArticleView) => () => {
         onViewClick?.(newView);
     };
@@ -60,20 +77,17 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
                         {},
                         [className],
                     )}
-                    // borderRadius='28px'
                     border='round'
                 >
                     <HStack gap='8'>
                         {viewTypes.map((viewType) => (
-                            <Icon
+                            <Icon // Assistant lost svg colors in storybook
+                                // because of viewTypes declared outside component
                                 key={viewType.view}
                                 Svg={viewType.icon}
                                 clickable
                                 onClick={onClick(viewType.view)}
                                 selected={viewType.view === view}
-                                // className={classNames('', {
-                                //     [cls.selected]: viewType.view === view,
-                                // })}
                             />
                         ))}
                     </HStack>

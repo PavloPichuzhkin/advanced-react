@@ -1,12 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
 import { PartialStoreDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { mockProfileData } from '@/shared/assets/tests/mockProfileData';
 import ProfilePage from './ProfilePage';
 
 const meta: Meta<typeof ProfilePage> = {
-    title: 'Pages/ProfilePage',
+    title: 'Pages/ProfilePage/Deprecated',
     component: ProfilePage,
     parameters: {
         loki: {
@@ -31,16 +29,35 @@ export const Light: Story = {
         }),
     ],
 };
-
-export const Dark: Story = {
+export const EditMode: Story = {
     args: {},
     decorators: [
-        ThemeDecorator(Theme.DARK),
         PartialStoreDecorator({
             profile: {
+                readonly: false,
                 form: mockProfileData,
                 data: mockProfileData,
-                readonly: undefined,
+            },
+        }),
+    ],
+};
+export const NotMyEmptyProfile: Story = {
+    decorators: [
+        PartialStoreDecorator({
+            profile: {
+                data: { id: 'some' },
+            },
+        }),
+    ],
+};
+
+export const Loading: Story = {
+    args: {},
+    decorators: [
+        PartialStoreDecorator({
+            profile: {
+                readonly: true,
+                isLoading: true,
             },
         }),
     ],

@@ -107,7 +107,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
             <Card className={cls.card} padding='0'>
                 <AppImage
                     fallback={<Skeleton className={cls.img} />}
-                    errorFallback={<ImageErrorFallback className={cls.img} />}
+                    // errorFallback={<ImageErrorFallback className={cls.img} />}
                     alt={article.title}
                     src={article.img}
                     className={cls.img}
