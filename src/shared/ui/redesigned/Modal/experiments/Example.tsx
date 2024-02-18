@@ -1,8 +1,7 @@
 // https://www.letsbuildui.dev/articles/how-to-animate-mounting-content-in-react/
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useModalTransition } from './useMountTransition';
-import { Button } from '../../Button';
 import './Example.scss';
 import cls from './Example.module.scss';
 import { classNames, Mods } from '@/shared/lib/helpers/classNames/classNames';

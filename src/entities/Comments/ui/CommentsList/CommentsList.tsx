@@ -5,7 +5,6 @@ import { Text } from '@/shared/ui/deprecated/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { CommentCard } from '../CommentCard/CommentCard';
 import { Comment } from '../../model/types/comments';
-import { Card } from '@/shared/ui/redesigned/Card';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { AppText } from '@/shared/ui/redesigned/Text';
 

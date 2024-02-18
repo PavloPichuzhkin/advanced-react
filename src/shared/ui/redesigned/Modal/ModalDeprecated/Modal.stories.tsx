@@ -2,10 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
 import { Modal } from './Modal';
-import {
-    DesignSwitcherDecorator,
-    RedesignDecorator,
-} from '@/shared/config/storybook/RedesignDecorator';
+import { DesignSwitcherDecorator } from '@/shared/config/storybook/RedesignDecorator';
 
 const meta: Meta<typeof Modal> = {
     title: 'Shared/Redesigned/Modal/ModalDeprecated',

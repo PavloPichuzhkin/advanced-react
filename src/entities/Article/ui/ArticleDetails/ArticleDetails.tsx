@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback, useEffect, useMemo } from 'react';
+import { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import {
     DynamicModuleLoader,

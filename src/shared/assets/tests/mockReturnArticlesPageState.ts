@@ -7,7 +7,6 @@ import {
     ArticleBlockType,
 } from '@/entities/Article';
 import { UserRole } from '@/entities/User';
-import { SortOrder } from '@/shared/types';
 
 // {
 //     isLoading: boolean = false,

@@ -3,7 +3,6 @@ import { isMockLoading } from '@/shared/lib/mock-server/isMockLoading';
 import { isMockError } from '@/shared/lib/mock-server/isMockError';
 import { mockNotifications } from './mockNotifications';
 import { isMockEmpty } from '@/shared/lib/mock-server/isMockEmpty';
-import { getGlobalDispatch } from '@/shared/lib/helpers/globalDispatch/globalDispatch';
 
 export const notificationHandler = [
     rest.get(`${__API__}/notifications`, (req, res, ctx) => {

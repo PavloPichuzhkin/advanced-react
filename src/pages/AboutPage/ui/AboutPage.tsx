@@ -6,9 +6,7 @@ import { Counter } from '@/widgets/Counter';
 import { CounterEntity } from '@/entities/Counter';
 import { Page } from '@/widgets/Page';
 import { Button } from '@/shared/ui/redesigned/Button';
-import { ModalNew } from '@/shared/ui/redesigned/Modal/experiments/ModalNew';
 import { AppText } from '@/shared/ui/redesigned/Text';
-import { Example } from '@/shared/ui/redesigned/Modal/experiments/Example';
 import { Modal } from '@/shared/ui/redesigned/Modal';
 import { Drawer } from '@/shared/ui/redesigned/Drawers';
 

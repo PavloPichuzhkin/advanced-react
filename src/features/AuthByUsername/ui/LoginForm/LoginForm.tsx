@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import React, { memo, useCallback, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import {
@@ -40,7 +39,6 @@ const reducers: ReducersList = {
 const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
-    const navigate = useNavigate();
 
     const username = useSelector(getUsername);
     const password = useSelector(getPassword);

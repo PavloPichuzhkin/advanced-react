@@ -1,11 +1,7 @@
 import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
-import CopyIcon from '@/shared/assets/icons/copy-20-20.svg';
-import { Button, ButtonTheme } from '../../deprecated/Button';
 import cls from './Code.module.scss';
-import clsDeprecated from '../../deprecated/Code/Code.module.scss';
 import CopyIconNew from '@/shared/assets/icons/redesigned/copy.svg';
-import { ToggleFeatures } from '@/shared/lib/features';
 import { Icon } from '../Icon';
 
 interface CodeProps {

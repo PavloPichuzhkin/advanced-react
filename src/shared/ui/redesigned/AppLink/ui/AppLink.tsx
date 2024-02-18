@@ -1,4 +1,4 @@
-import { Link, type LinkProps, NavLink } from 'react-router-dom';
+import { type LinkProps, NavLink } from 'react-router-dom';
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import cls from './AppLink.module.scss';

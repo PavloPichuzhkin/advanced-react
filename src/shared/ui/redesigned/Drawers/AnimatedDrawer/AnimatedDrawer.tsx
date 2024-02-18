@@ -8,7 +8,6 @@ import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Overlay } from '../../../redesigned/Overlay';
 import cls from './AnimatedDrawer.module.scss';
 import { Portal } from '../../../redesigned/Portal';
-import { Text, TextSize } from '../../../deprecated/Text';
 import { HStack } from '../../../redesigned/Stack';
 import { Loader } from '../../../deprecated/Loader';
 import { toggleFeatures } from '@/shared/lib/features';

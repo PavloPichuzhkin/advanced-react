@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import cls from './Modal.module.scss';
 import { classNames, Mods } from '@/shared/lib/helpers/classNames/classNames';
 import { toggleFeatures } from '@/shared/lib/features';
@@ -12,10 +12,12 @@ interface ModalProps {
     children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
+    onCloseModalFromParent?: (closeModal: () => void) => void;
 }
 
-export const Modal = (props: ModalProps) => {
-    const { className, children, isOpen, onClose } = props;
+export const Modal = React.memo((props: ModalProps) => {
+    const { className, children, isOpen, onClose, onCloseModalFromParent } =
+        props;
 
     const { hasTransitionedIn, isClosing, close } = useModalTransition({
         animationDelay: ANIMATION_DELAY,
@@ -26,10 +28,17 @@ export const Modal = (props: ModalProps) => {
     const mods: Mods = {
         [cls.opened]: isOpen,
     };
+    //
+    // useEffect(() => {
+    //     if (onCloseModalFromParent) {
+    //         onCloseModalFromParent(close);
+    //     }
+    // }, [close, onCloseModalFromParent]);
 
     return (
         <Portal element={document.getElementById('app') ?? document.body}>
             <div
+                data-testid='modal'
                 className={classNames(cls.Modal, mods, [
                     className,
                     toggleFeatures({
@@ -51,4 +60,4 @@ export const Modal = (props: ModalProps) => {
             </div>
         </Portal>
     );
-};
+});

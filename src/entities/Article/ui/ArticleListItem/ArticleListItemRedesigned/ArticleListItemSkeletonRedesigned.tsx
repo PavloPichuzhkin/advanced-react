@@ -6,12 +6,6 @@ import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import cls from './ArticleListItemRedesigned.module.scss';
 import { ArticleListItemSkeletonProps } from '../ArticleListItemSkeleton';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
-import { Avatar } from '@/shared/ui/redesigned/Avatar';
-import { AppText } from '@/shared/ui/redesigned/Text';
-import { AppImage } from '@/shared/ui/redesigned/AppImage';
-import { AppLink } from '@/shared/ui/redesigned/AppLink';
-import { getRouteArticleDetails } from '@/shared/const/router';
-import { Button } from '@/shared/ui/redesigned/Button';
 
 export const ArticleListItemSkeletonRedesigned = memo(
     (props: ArticleListItemSkeletonProps) => {

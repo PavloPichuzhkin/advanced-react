@@ -25,7 +25,7 @@ module.exports = {
         'i18next',
         'react-hooks',
         'project-fsd-architecture',
-        // 'unused-imports',
+        'unused-imports',
         'prettier',
     ],
     rules: {
@@ -94,7 +94,7 @@ module.exports = {
                 testFilesPatterns: ['**/tests/*'],
             },
         ],
-        // 'unused-imports/no-unused-imports': 'error',
+        // 'unused-imports/no-unused-imports': 'error', // comment to disable
         // 'prettier/prettier': 'error',
         'prettier/prettier': [
             'error',

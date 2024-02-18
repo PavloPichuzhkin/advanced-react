@@ -1,7 +1,6 @@
 import { StoryContext, StoryFn } from '@storybook/react';
-import { getFeatureFlag, setFeatureFlags } from '@/shared/lib/features';
+import { setFeatureFlags } from '@/shared/lib/features';
 import { getAllFeatureFlags } from '@/shared/lib/features/lib/setGetFeatures';
-import i18n from '../i18n/i18n';
 
 export const RedesignDecorator = (StoryComponent: StoryFn) => {
     setFeatureFlags({ ...getAllFeatureFlags(), isAppRedesigned: true });

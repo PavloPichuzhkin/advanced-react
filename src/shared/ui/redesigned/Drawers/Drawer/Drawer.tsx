@@ -1,7 +1,6 @@
 import { memo, ReactNode } from 'react';
 import { classNames, Mods } from '@/shared/lib/helpers/classNames/classNames';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
-import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 import { Overlay } from '../../../redesigned/Overlay';
 import cls from './Drawer.module.scss';
 import { Portal } from '../../../redesigned/Portal';

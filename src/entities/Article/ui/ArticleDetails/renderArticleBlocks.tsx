@@ -1,7 +1,6 @@
 import { ArticleBlock } from '../../model/types/article';
 // import { ArticleBlockType } from '../..';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
-import { HStack } from '@/shared/ui/redesigned/Stack';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleTipsBlockComponent } from '../ArticleTipsBlockComponent/ArticleTipsBlockComponent';

@@ -17,7 +17,6 @@ import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
 import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
 import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
-import { LOCAL_STORAGE_LAST_DESIGN_KEY } from '@/shared/const/localstorage';
 import { getAllFeatureFlags } from '@/shared/lib/features/lib/setGetFeatures';
 
 interface DesignSwitcherProps {

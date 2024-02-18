@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
-import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { MainLayout } from '../MainLayout/MainLayout';
 import cls from './MainLayoutLoader.module.scss';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';

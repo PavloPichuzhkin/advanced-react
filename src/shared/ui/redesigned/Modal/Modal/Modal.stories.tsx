@@ -1,11 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Modal } from './Modal';
-import { RedesignDecorator } from '@/shared/config/storybook/RedesignDecorator';
-import {
-    ThemeDecorator,
-    withThemeProvider,
-} from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/lib/context/ThemeContext';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 
 const meta: Meta<typeof Modal> = {
     title: 'Shared/Redesigned/Modal/Modal',

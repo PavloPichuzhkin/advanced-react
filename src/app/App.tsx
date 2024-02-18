@@ -1,5 +1,5 @@
 import './styles/index.scss';
-import { memo, Suspense, useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
@@ -9,7 +9,7 @@ import { Sidebar } from '@/widgets/Sidebar';
 import { getUserInited, initAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Spinner } from '@/shared/ui/deprecated/Spinner';
-import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts';
 import { MainLayoutLoader } from '@/shared/layouts/MainLayoutLoader/MainLayoutLoader';
 import { useAppToolbar } from './lib/useAppToolbar';
