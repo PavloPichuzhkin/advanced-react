@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/lib/context/ThemeContext';
-import { ErrorPage } from './ErrorPage';
+import ErrorPage from './ErrorPage';
 
 const meta: Meta<typeof ErrorPage> = {
     title: 'widgets/ErrorPage/Deprecated',

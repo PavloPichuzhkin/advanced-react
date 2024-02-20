@@ -72,7 +72,7 @@ const preview: Preview = {
         loaders: [mswLoader],
         layout: 'fullscreen',
         loki: {
-            captureDelay: 1000, // 3000
+            captureDelay: 1500, // 3000
         },
         msw: {
             handlers: {

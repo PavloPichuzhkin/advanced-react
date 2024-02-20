@@ -19,7 +19,7 @@ interface ErrorPageProps {
     className?: string;
 }
 
-export const ErrorPage = ({ className }: ErrorPageProps) => {
+const ErrorPage = ({ className }: ErrorPageProps) => {
     const { t } = useTranslation();
 
     const reloadPage = () => {
@@ -74,3 +74,4 @@ export const ErrorPage = ({ className }: ErrorPageProps) => {
         </div>
     );
 };
+export default ErrorPage;

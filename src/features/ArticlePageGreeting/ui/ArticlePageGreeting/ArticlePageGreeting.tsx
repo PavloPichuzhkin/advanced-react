@@ -9,6 +9,14 @@ import { Drawer } from '@/shared/ui/redesigned/Drawers';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { AppText } from '@/shared/ui/redesigned/Text';
 
+/**
+ * `ArticlePageGreeting` is a memoized functional component that displays a greeting message to the user when they visit the articles page for the first time.
+ * It uses the `useTranslation` hook from `react-i18next` to provide localized strings for the greeting.
+ * The greeting is displayed in a `Modal` or a `Drawer` depending on whether the device is mobile or not.
+ * The state of whether the articles page was opened before is stored using the `useJsonSettings` hook.
+ * The `ToggleFeatures` component is used to switch between the old and new design of the app.
+ */
+
 const ArticlePageGreeting = memo(() => {
     const { t } = useTranslation('articles');
     const [isOpen, setIsOpen] = useState(false);

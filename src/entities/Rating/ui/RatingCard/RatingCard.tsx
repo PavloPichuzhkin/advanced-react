@@ -1,6 +1,12 @@
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback, useState } from 'react';
-import { BrowserView, MobileView } from 'react-device-detect';
+import { memo, MutableRefObject, useCallback, useRef, useState } from 'react';
+import {
+    BrowserView,
+    MobileView,
+    isMobile,
+    isBrowser,
+} from 'react-device-detect';
+
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import cls from './RatingCard.module.scss';
 import { Card as CardDeprecated } from '@/shared/ui/deprecated/Card';
@@ -46,6 +52,13 @@ export const RatingCard = memo((props: RatingCardProps) => {
     const [starsCount, setStarsCount] = useState(rate);
     const [feedback, setFeedback] = useState('');
 
+    // const childRef = useRef() as MutableRefObject<ReturnType<typeof Modal>>;
+    const childRef = useRef() as MutableRefObject<any>;
+
+    const closeFromChildRef = () => {
+        childRef.current.closeForParent();
+    };
+
     const onSelectStars = useCallback(
         (selectedStarsCount: number) => {
             setStarsCount(selectedStarsCount);
@@ -62,18 +75,16 @@ export const RatingCard = memo((props: RatingCardProps) => {
         setIsModalOpen(false);
     }, []);
 
-    // const onCloseModalWithTransition = useCallback((closeModal: () => void) => {
-    //     closeModal();
-    // }, []);
-
     const acceptHandle = useCallback(() => {
         onAccept?.(starsCount, feedback);
-        onCloseModal();
+        if (isMobile) onCloseModal();
+        if (isBrowser) closeFromChildRef();
     }, [feedback, onAccept, onCloseModal, starsCount]);
 
     const cancelHandle = useCallback(() => {
         onCancel?.(starsCount);
-        onCloseModal();
+        if (isMobile) onCloseModal();
+        if (isBrowser) closeFromChildRef();
     }, [onCancel, onCloseModal, starsCount]);
 
     const modalContent = (
@@ -134,9 +145,10 @@ export const RatingCard = memo((props: RatingCardProps) => {
             </VStack>
             <BrowserView>
                 <Modal
+                    ref={childRef}
                     onClose={onCloseModal}
                     isOpen={isModalOpen}
-                    // onCloseModalFromParent={onCloseModalWithTransition}
+                    lazy
                 >
                     <VStack max gap='24' className={cls.form}>
                         {modalContent}
@@ -184,6 +196,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
             </BrowserView>
             <MobileView>
                 <AnimatedDrawer
+                    // ref={childRef}
                     isOpen={isModalOpen}
                     lazy
                     onClose={cancelHandle}

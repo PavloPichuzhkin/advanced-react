@@ -14,6 +14,7 @@ export const Overlay = memo((props: OverlayProps) => {
         <div
             onClick={onClick}
             className={classNames(cls.Overlay, {}, [className])}
+            data-testid='overlay'
         />
     );
 });

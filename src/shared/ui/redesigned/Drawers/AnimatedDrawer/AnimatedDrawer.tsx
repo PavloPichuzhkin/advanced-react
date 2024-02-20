@@ -109,6 +109,7 @@ const DrawerContent = (props: DrawerProps) => {
                         <AppText title='----' size='xl' />
                     </HStack>
                     {children}
+                    {/* <ThrowErrorButton /> */}
                 </Spring.a.div>
             </div>
         </Portal>
@@ -123,6 +124,10 @@ const DrawerAsync = (props: DrawerProps) => {
 
     return <DrawerContent {...props} />;
 };
+
+// const DrawerAsyncWithBoundary = withErrorBoundary(
+//     DrawerAsync as React.ComponentType,
+// );
 
 export const AnimatedDrawer = memo((props: DrawerProps) => {
     return (

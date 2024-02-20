@@ -9,7 +9,7 @@ const meta: Meta<typeof ArticleList> = {
     component: ArticleList,
     parameters: {
         loki: {
-            captureDelay: 6000,
+            captureDelay: 7000,
         },
     },
     // tags: ['autodocs'],
