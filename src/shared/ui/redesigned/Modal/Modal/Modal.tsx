@@ -8,15 +8,7 @@ import { Portal } from '../../Portal';
 import { useModalTransition } from '@/shared/lib/hooks/useModalTransition/useModalTransition';
 import { ANIMATION_DELAY } from '@/shared/const/modalAnimationDelay';
 
-interface ModalProps {
-    className?: string;
-    children?: ReactNode;
-    isOpen?: boolean;
-    onClose?: () => void;
-    lazy?: boolean;
-}
-
-/**
+/** Codiumate /docstring request from Webstorm
  * `Modal` is a React component that creates a modal dialog. It uses a `Portal` to
  * render the modal outside the normal React component tree, specifically within the `app` element
  * or the body of the document if `app` is not found.
@@ -33,18 +25,65 @@ interface ModalProps {
  */
 
 // 2 variant
-/**
+
+/** Codiumate '/docstring JSDoc' request from Webstorm
+ * A modal component that can be controlled from a parent component.
+ *
+ * @component
+ * @param {object} props - Component props
+ * @param {string} props.className - Additional CSS class for the modal
+ * @param {ReactNode} props.children - Content of the modal
+ * @param {boolean} props.isOpen - Whether the modal is open or not
+ * @param {function} props.onClose - Function to call when the modal is closed
+ * @param {boolean} props.lazy - If true, the modal will not render when it's closed
+ * @param {Ref} ref - Ref object to interact with the modal
+ * @returns {ReactNode} The rendered modal component
+ */
+
+/** Codiumate '/docstring JSDoc like' request from Webstorm -> more detailed
  * `Modal` is a React component that creates a modal dialog.
  *
  * @component
- * @param {object} props - The properties that define the `Modal` component.
- * @param {string} props.className - An optional CSS class to apply to the modal.
- * @param {ReactNode} props.children - The content to be displayed within the modal.
- * @param {boolean} props.isOpen - A flag indicating whether the modal is currently open.
- * @param {function} props.onClose - A function to be called when the modal is closed.
- * @param {boolean} props.lazy - If true, the modal will not render its content until it is opened.
- * @returns {ReactNode} The `Modal` component.
+ * @param {object} props - Component props
+ * @param {string} props.className - Optional CSS class to apply to the modal
+ * @param {ReactNode} props.children - React nodes to be rendered inside the modal
+ * @param {boolean} props.isOpen - If true, the modal is open. Otherwise, it's closed.
+ * @param {function} props.onClose - Function to be called when the modal is requested to close
+ * @param {boolean} props.lazy - If true, the modal won't be rendered until it's open
+ * @returns {ReactNode} A React node representing the modal dialog
  */
+
+/** Codiumate '/docstring' request from VSCode
+ * React memoized functional component for rendering a modal.
+ *
+ * @param {ModalProps} props - The props for the modal component.
+ * @param {string} props.className - The class name for the modal.
+ * @param {ReactNode} props.children - The content to be rendered inside the modal.
+ * @param {boolean} props.isOpen - Flag indicating whether the modal is open or not.
+ * @param {() => void} props.onClose - Callback function to be called when the modal is closed.
+ * @param {boolean} props.lazy - Flag indicating whether the modal should be lazy loaded or not.
+ * @returns {ReactNode} - The rendered modal component.
+ */
+
+/** Codiumate '/docstring JSDoc' & '/docstring  JSDoc like' request from VSCode -> absolutely the same
+ * React memoized functional component for rendering a modal.
+ *
+ * @param {ModalProps} props - The props for the modal component.
+ * @param {string} props.className - The class name for the modal.
+ * @param {ReactNode} props.children - The content to be rendered inside the modal.
+ * @param {boolean} props.isOpen - Flag indicating whether the modal is open or not.
+ * @param {() => void} props.onClose - Callback function to be called when the modal is closed.
+ * @param {boolean} props.lazy - Flag indicating whether the modal should be lazy loaded or not.
+ * @returns {ReactNode} The rendered modal component.
+ */
+
+interface ModalProps {
+    className?: string;
+    children?: ReactNode;
+    isOpen?: boolean;
+    onClose?: () => void;
+    lazy?: boolean;
+}
 
 // solution https://bobbyhadz.com/blog/react-call-function-in-child-component
 // another interesting solution https://medium.com/@abubakarmemon/pass-function-as-children-in-react-a1bac3e11d58
@@ -90,6 +129,7 @@ export const Modal = React.memo(
                 >
                     <Overlay onClick={close} />
                     <div
+                        data-testid='modalContent'
                         className={classNames(cls.content, {
                             [cls.in]: hasTransitionedIn && !isClosing,
                             [cls.isClosing]: isClosing,
