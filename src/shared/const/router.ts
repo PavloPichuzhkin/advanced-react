@@ -9,6 +9,8 @@ export enum AppRoutes {
     ADMIN_PANEL = 'admin_panel',
     FORBIDDEN = 'forbidden',
     SETTINGS = 'settings',
+    EXCEL = 'Excel',
+
     // last
     NOT_FOUND = 'not_found',
 }
@@ -23,6 +25,7 @@ export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`;
 export const getRouteAdmin = () => '/admin';
 export const getRouteSettings = () => '/settings';
 export const getRouteForbidden = () => '/forbidden';
+export const getRouteExcel = () => '/Excel';
 
 export const AppRouteByPathPattern: Record<string, AppRoutes> = {
     [getRouteMain()]: AppRoutes.MAIN,

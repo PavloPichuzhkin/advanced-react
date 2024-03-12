@@ -6,8 +6,8 @@
         "keyframes-name-pattern": null,
         "custom-property-empty-line-before": null,
         "block-no-empty": null,
+        "no-descending-specificity": null,
         "color-hex-length": "long",
-
         "rule-empty-line-before": [
             "always-multi-line",
             {

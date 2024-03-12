@@ -1,0 +1,123 @@
+@import "variables";
+@import "mixins";
+
+.excel__table {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: $header-height + $toolbar-height + $formula-height;
+    overflow: auto;
+    height: calc(100vh - ($header-height + $toolbar-height + $formula-height + 2 * 32px)); // 32px MainLayout content padding-top bottom
+    padding-bottom: 2px;
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        min-height: 20px;
+        height: $row-height;
+
+        // position: relative;
+    }
+
+    .row-info {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: $info-cell-width;
+        height: 100%;
+        border: 1px solid $border-color;
+        background: var(--light-bg-redesigned);
+        border-top: none;
+
+    }
+
+    .row-data {
+        display: flex;
+    }
+
+    .column {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--light-bg-redesigned);
+        min-width: 40px;
+        width: $cell-width;
+        border: 1px solid $border-color;
+        border-top: 0;
+        border-left: 0;
+        height: 100%;
+    }
+
+    // .row:first-child {
+    //    .row-data {
+    //        //background: #00C8FF;
+    //        width: max-content;
+    //        position: absolute;
+    //        left: 0;
+    //        right: 0;
+    //        top: 0;
+    //    }
+    //    border: 2px solid orange;
+    //    //position: absolute;
+    //    //left: 0;
+    //    //right: 0;
+    //    //top: 0;
+    //    //z-index: 1000;
+    // }
+
+    .cell {
+        min-width: 40px;
+        padding: 0 5px;
+        width: $cell-width;
+        height: 100%;
+        border: 1px solid #e2e3e3;
+        border-top: 0;
+        border-left: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        outline: none;
+
+
+        &.selected {
+            border: none;
+            outline: 2px solid #3c74ff;
+            z-index: 2;
+        }
+    }
+
+    .col-resize, .row-resize {
+        position: absolute;
+        background: var(--icon-redesigned);
+        opacity: 0;
+
+        &:hover {
+            opacity: 1;
+            z-index: 1;
+        }
+    }
+
+    .col-resize {
+        top: 0;
+        bottom: 0;
+        right: -2px;
+        width: 4px;
+
+        &:hover {
+            cursor: col-resize;
+        }
+    }
+
+    .row-resize {
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 4px;
+
+        &:hover {
+            cursor: row-resize;
+        }
+    }
+
+}

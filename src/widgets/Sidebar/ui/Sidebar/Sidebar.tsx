@@ -28,13 +28,15 @@ export const Sidebar = ({ className, isCollapsed }: SidebarProps) => {
 
     const itemsList = useMemo(
         () =>
-            sidebarItemsList.map((item) => (
-                <SidebarItem
-                    item={item}
-                    collapsed={collapsed}
-                    key={item.path}
-                />
-            )),
+            sidebarItemsList.map((item) => {
+                return item ? (
+                    <SidebarItem
+                        item={item}
+                        collapsed={collapsed}
+                        key={item.path}
+                    />
+                ) : null;
+            }),
         [collapsed, sidebarItemsList],
     );
     return (

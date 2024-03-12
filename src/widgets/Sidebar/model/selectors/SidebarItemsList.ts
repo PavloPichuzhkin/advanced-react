@@ -14,13 +14,28 @@ import { SidebarItemType } from '../types/SidebarItemType';
 import {
     getRouteAbout,
     getRouteArticles,
+    getRouteExcel,
     getRouteMain,
     getRouteProfile,
 } from '@/shared/const/router';
-import { toggleFeatures } from '@/shared/lib/features';
+import { getFeatureFlag, toggleFeatures } from '@/shared/lib/features';
 
 export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
-    const sidebarItemsList: SidebarItemType[] = [
+    const excelTool = getFeatureFlag('isAppRedesigned')
+        ? {
+              path: getRouteExcel(),
+              Icon: toggleFeatures({
+                  name: 'isAppRedesigned',
+                  off: () => ArticleIconDeprecated,
+                  on: () => ArticleIcon,
+              }),
+              text: 'Excel',
+              authOnly: true,
+          }
+        : null;
+
+    // const sidebarItemsList: SidebarItemType[] = [
+    const sidebarItemsList: Array<SidebarItemType | null> = [
         {
             path: getRouteMain(),
             Icon: toggleFeatures({
@@ -63,6 +78,8 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
                 text: 'Articles',
                 authOnly: true,
             },
+
+            excelTool,
         );
     }
 

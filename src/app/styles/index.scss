@@ -56,6 +56,10 @@ body,
         background: var(--light-bg-redesigned);
     }
 
+    *::-webkit-scrollbar-corner {
+        background: none;
+    }
+
     *::-webkit-scrollbar-thumb {
         background-color: var(--bg-redesigned);
         border-radius: 4px;

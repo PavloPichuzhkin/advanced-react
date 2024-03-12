@@ -1,0 +1,19 @@
+@import "header";
+@import "toolbar";
+@import "formula";
+@import "table";
+@import "dashboard";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.excel {
+    position: relative;
+    height: 100%;
+    max-width: 100%;
+}
+
+

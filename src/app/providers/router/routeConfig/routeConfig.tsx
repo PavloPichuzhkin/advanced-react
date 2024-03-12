@@ -17,12 +17,15 @@ import {
     getRouteArticleDetails,
     getRouteArticleEdit,
     getRouteArticles,
+    getRouteExcel,
     getRouteForbidden,
     getRouteMain,
     getRouteProfile,
     getRouteSettings,
 } from '@/shared/const/router';
 import { SettingsPage } from '@/pages/SettingsPage';
+import { Excel } from '@/pages/Excel';
+import { ToggleFeatures } from '@/shared/lib/features';
 // // eslint-disable-next-line
 // import AboutPage from '@/pages/AboutPage/ui/AboutPage'; // test forceUpdate reinitiate state
 
@@ -34,6 +37,10 @@ export interface AppRouteProps {
     roles?: UserRole[];
 }
 
+const authOnlyWithAllRoles = {
+    authOnly: true,
+    roles: [UserRole.MANAGER, UserRole.ADMIN, UserRole.SUPER_ADMIN],
+};
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     [AppRoutes.MAIN]: {
         path: getRouteMain(),
@@ -81,6 +88,20 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     [AppRoutes.SETTINGS]: {
         path: getRouteSettings(),
         element: <SettingsPage />,
+        ...authOnlyWithAllRoles, // commented line - testing DesignSwitcher -> without authData don't work
+    },
+    [AppRoutes.EXCEL]: {
+        path: getRouteExcel(),
+        element: (
+            <ToggleFeatures
+                feature='isAppRedesigned'
+                on={<Excel />}
+                off={<ForbiddenPage />}
+                // off={null} // work, but some Page corner problem (old design), maybe to not wrap all pages in Page wrap it here after import
+                // // or batter TODO create in AppRouter (element) HOC, include scrolling...
+            />
+        ),
+        ...authOnlyWithAllRoles,
     },
 
     [AppRoutes.NOT_FOUND]: {

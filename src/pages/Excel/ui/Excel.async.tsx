@@ -1,6 +1,7 @@
 import React from 'react';
 
-export const AboutPageAsync = React.lazy(() => import('./AboutPage'));
+// export const ExcelAsync = React.lazy(() => import('./AboutPage'));
+export const ExcelAsync = React.lazy(() => import('./Excel'));
 
 // export const ExcelAsync = React.lazy(
 //     async () => new Promise((resolve) => {
