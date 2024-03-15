@@ -20,7 +20,7 @@ class Dom {
     }
 
     on(eventType, callback) {
-        this.$el.addEventListener(eventType, callback);
+        this.$el.addEventListener(eventType, callback, true);
     }
 
     off(eventType, callback) {
@@ -43,8 +43,30 @@ class Dom {
 
     removeChildren() {
         this.$el.innerHTML = '';
-
         return this;
+    }
+
+    closest(selector) {
+        // eslint-disable-next-line no-use-before-define
+        return $(this.$el.closest(selector));
+    }
+
+    getCoords() {
+        return this.$el.getBoundingClientRect();
+    }
+
+    get data() {
+        return this.$el.dataset;
+    }
+
+    findAll(selector) {
+        return this.$el.querySelectorAll(selector);
+    }
+
+    css(styles = {}) {
+        Object.keys(styles).forEach((key) => {
+            this.$el.style[key] = styles[key];
+        });
     }
 }
 

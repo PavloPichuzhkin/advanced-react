@@ -37,10 +37,12 @@ export interface AppRouteProps {
     roles?: UserRole[];
 }
 
-const authOnlyWithAllRoles = {
+const authOnlyWithRoles = (
+    roles = [UserRole.MANAGER, UserRole.ADMIN, UserRole.SUPER_ADMIN],
+) => ({
     authOnly: true,
-    roles: [UserRole.MANAGER, UserRole.ADMIN, UserRole.SUPER_ADMIN],
-};
+    roles,
+});
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     [AppRoutes.MAIN]: {
         path: getRouteMain(),
@@ -74,12 +76,12 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
         path: getRouteArticleEdit(':id'),
         element: <ArticleEditPage />,
         authOnly: true,
+        // ...authOnlyWithRoles([UserRole.ADMIN]),
     },
     [AppRoutes.ADMIN_PANEL]: {
         path: getRouteAdmin(),
         element: <AdminPanelPage />,
-        authOnly: true,
-        roles: [UserRole.MANAGER, UserRole.ADMIN, UserRole.SUPER_ADMIN],
+        ...authOnlyWithRoles(),
     },
     [AppRoutes.FORBIDDEN]: {
         path: getRouteForbidden(),
@@ -88,7 +90,7 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     [AppRoutes.SETTINGS]: {
         path: getRouteSettings(),
         element: <SettingsPage />,
-        ...authOnlyWithAllRoles, // commented line - testing DesignSwitcher -> without authData don't work
+        ...authOnlyWithRoles, // commented line - testing DesignSwitcher -> without authData don't work
     },
     [AppRoutes.EXCEL]: {
         path: getRouteExcel(),
@@ -101,7 +103,7 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
                 // // or batter TODO create in AppRouter (element) HOC, include scrolling...
             />
         ),
-        ...authOnlyWithAllRoles,
+        ...authOnlyWithRoles,
     },
 
     [AppRoutes.NOT_FOUND]: {

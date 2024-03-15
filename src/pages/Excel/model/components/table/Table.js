@@ -1,13 +1,18 @@
 import { createTable } from './table.template';
 import { ExcelComponent } from '../../core/ExcelComponent';
+import { resizeHandler } from './table.resize';
+import { shouldResize } from './table.functions';
 
 export class Table extends ExcelComponent {
     static className = 'excel__table';
 
-    constructor($root) {
+    constructor(
+        $root,
+        // : ReturnType<typeof $>
+    ) {
         super($root, {
             name: 'Toolbar',
-            listeners: ['click'],
+            listeners: ['mousedown'],
         });
     }
 
@@ -15,10 +20,9 @@ export class Table extends ExcelComponent {
         return createTable(32);
     }
 
-    onClick(event) {
-        // console.log(event.target.getAttribute('class'));
-        if (event.target.dataset.resize) {
-            console.log('Resizing:', event.target.dataset);
+    onMousedown = (event) => {
+        if (shouldResize(event)) {
+            resizeHandler(this.$root, event);
         }
-    }
+    };
 }

@@ -16,7 +16,6 @@
         min-height: 20px;
         height: $row-height;
 
-        // position: relative;
     }
 
     .row-info {
@@ -50,23 +49,6 @@
         height: 100%;
     }
 
-    // .row:first-child {
-    //    .row-data {
-    //        //background: #00C8FF;
-    //        width: max-content;
-    //        position: absolute;
-    //        left: 0;
-    //        right: 0;
-    //        top: 0;
-    //    }
-    //    border: 2px solid orange;
-    //    //position: absolute;
-    //    //left: 0;
-    //    //right: 0;
-    //    //top: 0;
-    //    //z-index: 1000;
-    // }
-
     .cell {
         min-width: 40px;
         padding: 0 5px;
@@ -91,10 +73,11 @@
         position: absolute;
         background: var(--icon-redesigned);
         opacity: 0;
+        z-index: 1;
 
         &:hover {
-            opacity: 1;
-            z-index: 1;
+            opacity: 1 !important;
+
         }
     }
 

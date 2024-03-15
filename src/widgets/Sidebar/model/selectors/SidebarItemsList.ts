@@ -7,6 +7,8 @@ import ArticleIconDeprecated from '@/shared/assets/icons/article.svg';
 
 import MainIcon from '@/shared/assets/icons/redesigned/home.svg';
 import ArticleIcon from '@/shared/assets/icons/redesigned/article.svg';
+import TiledIcon from '@/shared/assets/icons/tile.svg';
+
 import AboutIcon from '@/shared/assets/icons/redesigned/Info.svg';
 import ProfileIcon from '@/shared/assets/icons/redesigned/avatar.svg';
 
@@ -27,7 +29,7 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
               Icon: toggleFeatures({
                   name: 'isAppRedesigned',
                   off: () => ArticleIconDeprecated,
-                  on: () => ArticleIcon,
+                  on: () => TiledIcon,
               }),
               text: 'Excel',
               authOnly: true,
@@ -74,6 +76,7 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
                     name: 'isAppRedesigned',
                     off: () => ArticleIconDeprecated,
                     on: () => ArticleIcon,
+                    // on: () => ArticleIconDeprecated,
                 }),
                 text: 'Articles',
                 authOnly: true,
