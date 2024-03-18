@@ -3,24 +3,24 @@ import { $ } from '../../core/dom';
 export function resizeHandler($root, event) {
     event.preventDefault();
     const $resizer = $(event.target);
+
     // const $parent = $resizer.$el.parentNode // bad!
     // const $parent = $resizer.$el.closest('.column') // better but bad
     const $parent = $resizer.closest('[data-type="resizable"]');
     const coords = $parent.getCoords();
     const type = $resizer.data.resize;
-    // const sideProp = type === 'col' ? 'bottom' : 'right';
+
     const sideProp =
         type === 'col'
             ? {
                   bottom: `-${$root.$el.clientHeight}px`,
 
-                  // bottom: '-2000px',
                   width: '2px',
                   right: '-1px',
               }
             : {
-                  // right: '-6000px',
                   right: `-${$root.$el.clientWidth}px`,
+
                   height: '2px',
                   bottom: '-1px',
               };

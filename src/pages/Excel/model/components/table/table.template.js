@@ -1,12 +1,23 @@
-const CODES = {
-    A: 65,
-    Z: 90,
-};
+import { CODES, COLUMNS_COUNT } from './table.consts';
 
-function toCell(_, index) {
-    return `
-    <div class="cell" contenteditable data-col="${index}"></div>
-  `;
+// function toCell(row, col) {
+//     return `
+//     <div class="cell" contenteditable data-col="${col}" data-row="${row}"></div>
+//   `;
+// }
+
+function toCell(row) {
+    return function (_, col) {
+        return `
+      <div 
+        class="cell" 
+        contenteditable 
+        data-col="${col}"
+        data-type="cell"
+        data-id="${row}:${col}"
+      ></div>
+    `;
+    };
 }
 
 function toColumn(col, index) {
@@ -38,10 +49,9 @@ function toChar(_, index) {
 }
 
 export function createTable(rowsCount = 15) {
-    const colsCount = CODES.Z - CODES.A + 1;
     const rows = [];
 
-    const cols = new Array(colsCount)
+    const cols = new Array(COLUMNS_COUNT)
         .fill('')
         .map(toChar)
         .map(toColumn)
@@ -52,7 +62,11 @@ export function createTable(rowsCount = 15) {
     rows.push(createRow(null, cols));
 
     for (let i = 0; i < rowsCount; i += 1) {
-        const cells = new Array(colsCount).fill('').map(toCell).join('');
+        const cells = new Array(COLUMNS_COUNT)
+            .fill('')
+            // .map((_, col) => toCell(row, col))
+            .map(toCell(i))
+            .join('');
 
         rows.push(createRow(i + 1, cells));
     }
