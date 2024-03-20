@@ -1,11 +1,5 @@
 import { CODES, COLUMNS_COUNT } from './table.consts';
 
-// function toCell(row, col) {
-//     return `
-//     <div class="cell" contenteditable data-col="${col}" data-row="${row}"></div>
-//   `;
-// }
-
 function toCell(row) {
     return function (_, col) {
         return `
@@ -15,7 +9,7 @@ function toCell(row) {
         data-col="${col}"
         data-type="cell"
         data-id="${row}:${col}"
-      ></div>
+      >333</div>
     `;
     };
 }
@@ -62,11 +56,7 @@ export function createTable(rowsCount = 15) {
     rows.push(createRow(null, cols));
 
     for (let i = 0; i < rowsCount; i += 1) {
-        const cells = new Array(COLUMNS_COUNT)
-            .fill('')
-            // .map((_, col) => toCell(row, col))
-            .map(toCell(i))
-            .join('');
+        const cells = new Array(COLUMNS_COUNT).fill('').map(toCell(i)).join('');
 
         rows.push(createRow(i + 1, cells));
     }

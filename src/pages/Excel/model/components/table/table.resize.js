@@ -67,7 +67,7 @@ export function resizeHandler($root, event) {
         document.onmouseup = null;
 
         if (type === 'col') {
-            $parent.css({ width: `${value}px` });
+            // $parent.css({ width: `${value}px` });
             $root
                 .findAll(`[data-col="${$parent.data.col}"]`)
                 // eslint-disable-next-line no-return-assign
