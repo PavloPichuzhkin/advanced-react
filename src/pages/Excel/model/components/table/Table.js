@@ -5,6 +5,7 @@ import { isCell, matrix, nextSelector, shouldResize } from './table.functions';
 import { TableSelection } from './TableSelection';
 import { $ } from '../../core/dom';
 import { ROWS_COUNT } from './table.consts';
+import * as actions from '../../redux/actions';
 
 export class Table extends ExcelComponent {
     static className = 'excel__table';
@@ -41,10 +42,14 @@ export class Table extends ExcelComponent {
         this.$on('formula:keydown', (event) => {
             this.selection.current.focus();
         });
+
+        // this.$subscribe((state) => {
+        //     console.log('TableState', state);
+        // });
     }
 
     toHTML() {
-        return createTable(ROWS_COUNT);
+        return createTable(ROWS_COUNT, this.store.getState());
     }
 
     selectCell($cell) {
@@ -52,11 +57,24 @@ export class Table extends ExcelComponent {
         this.$emit('table:select', $cell);
     }
 
+    async resizeTable(event) {
+        try {
+            const data = await resizeHandler(this.$root, event);
+            console.log(data);
+            this.$dispatch(
+                data.type === 'col'
+                    ? actions.tableColResize(data)
+                    : actions.tableRowResize(data),
+            );
+        } catch (e) {
+            console.warn('Resize error', e.message);
+        }
+    }
+
     onMousedown = (event) => {
         if (shouldResize(event)) {
-            resizeHandler(this.$root, event);
+            this.resizeTable(event);
         } else if (isCell(event)) {
-            // console.log(event);
             const $target = $(event.target);
             this.$emit('table:select', $target);
             if (event.ctrlKey) {
@@ -69,16 +87,8 @@ export class Table extends ExcelComponent {
                 this.selection.selectGroup($cells, $target);
             } else {
                 this.selection.select($target);
-                // this.$emit('table:select', $target);
             }
         }
-    };
-
-    onClick = (event) => {
-        const $el = $(event.target);
-
-        const { id } = $el.data;
-        // console.log(id);
     };
 
     onKeydown(event) {
@@ -105,4 +115,11 @@ export class Table extends ExcelComponent {
     onInput(event) {
         this.$emit('table:input', $(event.target));
     }
+
+    onClick = (event) => {
+        const $el = $(event.target);
+
+        const { id } = $el.data;
+        // console.log(id);
+    };
 }

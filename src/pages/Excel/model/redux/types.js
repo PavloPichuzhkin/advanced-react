@@ -1,0 +1,2 @@
+export const TABLE_COL_RESIZE = 'TABLE_COL_RESIZE';
+export const TABLE_ROW_RESIZE = 'TABLE_ROW_RESIZE';
