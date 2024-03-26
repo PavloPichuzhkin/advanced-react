@@ -11,14 +11,12 @@ import '../model/scss/index.scss';
 import { createStore } from '../model/core/createStore';
 import { rootReducer } from '../model/redux/rootReducer';
 import { storage } from '../model/core/utils';
+import { initialState } from '../model/redux/initialState';
 
 // https://betterprogramming.pub/4-ways-of-adding-external-js-files-in-reactjs-823f85de3668
 // https://stackoverflow.com/questions/34424845/adding-script-tag-to-react-jsx
 
-const store = createStore(
-    rootReducer,
-    storage('excel-state') || { colState: {} },
-);
+const store = createStore(rootReducer, initialState);
 
 store.subscribe((state: unknown) => {
     // console.log('App State: ', state);

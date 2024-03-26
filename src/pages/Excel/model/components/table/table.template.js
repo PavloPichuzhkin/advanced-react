@@ -8,6 +8,8 @@ function getWidth(state, index) {
 function toCell(state, row) {
     return function (_, col) {
         const width = getWidth(state.colState, col);
+        const cellId = `${row}:${col}`;
+
         return `
       <div 
         class="cell" 
@@ -16,7 +18,7 @@ function toCell(state, row) {
         data-type="cell"
         data-id="${row}:${col}"
         ${width ? `style = width:${width}px` : ''}
-      ></div>
+      >${state.dataState[cellId] || ''}</div>
     `;
     };
 }

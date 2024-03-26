@@ -21,6 +21,13 @@ export function storage(key, data) {
     localStorage.setItem(key, JSON.stringify(data));
 }
 
+export function isEqual(a, b) {
+    if (typeof a === 'object' && typeof b === 'object') {
+        return JSON.stringify(a) === JSON.stringify(b);
+    }
+    return a === b;
+}
+
 function isObject(object) {
     return object != null && typeof object === 'object';
 }

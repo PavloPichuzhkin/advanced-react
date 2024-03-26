@@ -5,24 +5,26 @@
     text-align: center;
     position: relative;
     display: inline-block;
-    color: rgb(0 0 0 / 70%);
+    color: var(--icon-redesigned);
 
     & i {
         font-size: 18px;
-        color: var(--icon-redesigned);
-
-        &:active, &.active {
-            color: $color;
-        }
     }
 
+    &:active, &.active {
+        // & i {
+
+        color: $color;
+
+        // }
+
+    }
 
     &:hover {
         background: var(--light-bg-redesigned);
         cursor: pointer;
     }
 }
-
 
 @mixin clear-list() {
     list-style: none;

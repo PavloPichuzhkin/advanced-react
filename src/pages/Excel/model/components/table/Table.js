@@ -23,12 +23,12 @@ export class Table extends ExcelComponent {
     }
 
     prepare() {
-        // console.log('prepare');
+        console.log('prepare');
         this.selection = new TableSelection();
     }
 
     init() {
-        // console.log('init');
+        console.log('init');
         super.init();
 
         const $cell = this.$root.findEl('[data-id="0:0"]');
@@ -36,16 +36,13 @@ export class Table extends ExcelComponent {
         this.$emit('table:select', $cell);
 
         this.$on('formula:input', (text) => {
+            this.updateTextInStore(text);
             this.selection.current.text(text);
         });
 
         this.$on('formula:keydown', (event) => {
             this.selection.current.focus();
         });
-
-        // this.$subscribe((state) => {
-        //     console.log('TableState', state);
-        // });
     }
 
     toHTML() {
@@ -61,11 +58,7 @@ export class Table extends ExcelComponent {
         try {
             const data = await resizeHandler(this.$root, event);
             console.log(data);
-            this.$dispatch(
-                data.type === 'col'
-                    ? actions.tableColResize(data)
-                    : actions.tableRowResize(data),
-            );
+            this.$dispatch(actions.tableResize(data));
         } catch (e) {
             console.warn('Resize error', e.message);
         }
@@ -112,8 +105,21 @@ export class Table extends ExcelComponent {
         }
     }
 
+    // onInput(event) {
+    //     this.$emit('table:input', $(event.target));
+    // }
+
+    updateTextInStore(value) {
+        this.$dispatch(
+            actions.changeText({
+                id: this.selection.current.id(),
+                value,
+            }),
+        );
+    }
+
     onInput(event) {
-        this.$emit('table:input', $(event.target));
+        this.updateTextInStore($(event.target).text());
     }
 
     onClick = (event) => {

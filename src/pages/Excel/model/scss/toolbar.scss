@@ -13,6 +13,9 @@
     display: flex;
 
     .button {
-        @include button(var(--accent-redesigned));
+        // @include button(var(--accent-redesigned));
+
+        @include button(red);
+
     }
 }

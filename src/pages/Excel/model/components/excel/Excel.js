@@ -1,5 +1,6 @@
 import { $ } from '../../core/dom';
 import { Emitter } from '../../core/Emitter';
+import { StoreSubscriber } from '../../core/StoreSubscriber';
 
 export class Excel {
     constructor(selector, options) {
@@ -8,6 +9,7 @@ export class Excel {
         this.emitter = new Emitter();
 
         this.store = options.store;
+        this.subscriber = new StoreSubscriber(this.store);
     }
 
     getRoot() {
@@ -46,15 +48,15 @@ export class Excel {
     render() {
         this.$el.append(this.getRoot());
 
-        // eslint-disable-next-line consistent-return
+        this.subscriber.subscribeComponents(this.components);
+
         this.components.forEach((component) => {
-            // if (component.name !== 'Toolbar') {
             return component.init();
-            // }
         });
     }
 
     destroy() {
+        this.subscriber.unsubscribeFromStore();
         this.components.forEach((component) => component.destroy());
     }
 }
