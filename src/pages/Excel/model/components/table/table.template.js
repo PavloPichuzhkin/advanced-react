@@ -1,7 +1,13 @@
-import { CODES, COLUMNS_COUNT, DEFAULT_WIDTH } from './table.consts';
+import {
+    CODES,
+    COLUMNS_COUNT,
+    DEFAULT_WIDTH,
+    defaultStyles,
+} from './table.consts';
+import { camelToDashCase, toInlineStyles } from '../../core/utils';
 
 function getWidth(state, index) {
-    // return `${state[index] || DEFAULT_WIDTH}px`;
+    // return `${state[index] || DEFAULT_WIDTH}px`; // first method to render table with determined cell width from state
     return state[index];
 }
 
@@ -10,18 +16,23 @@ function toCell(state, row) {
         const width = getWidth(state.colState, col);
         const cellId = `${row}:${col}`;
 
+        const styles = toInlineStyles({
+            ...defaultStyles,
+            ...state.stylesState[cellId],
+        });
+
         return `
       <div 
         class="cell" 
         contenteditable 
         data-col="${col}"
         data-type="cell"
-        data-id="${row}:${col}"
-        ${width ? `style = width:${width}px` : ''}
+        data-id="${row}:${col}"        
+        ${width ? `style ="${styles}; width: ${width}px"` : `style="${styles}"`}
       >${state.dataState[cellId] || ''}</div>
     `;
     };
-}
+} // style="${styles}; width: ${width}"
 
 function toColumn({ col, index, width }) {
     return `
@@ -35,7 +46,7 @@ function toColumn({ col, index, width }) {
       <div class="col-resize" data-resize="col"></div>
     </div>
   `;
-} // style="width: ${width}"
+} // style="width: ${width}" // using first method
 
 function createRow(content, index, height) {
     const resize = index

@@ -10,7 +10,7 @@ export class TableSelection {
     select($el) {
         this.clear();
         this.group.push($el);
-
+        // https://stackoverflow.com/questions/511088/use-javascript-to-place-cursor-at-end-of-text-in-text-input-element
         $el.focus().addClass(TableSelection.className);
 
         this.current = $el;
@@ -34,5 +34,13 @@ export class TableSelection {
         this.group.forEach(($el) => $el.addClass(TableSelection.className));
         $el.focus();
         this.current = $el;
+    }
+
+    applyStyle(style) {
+        this.group.forEach(($el) => $el.css(style));
+    }
+
+    get selectedIds() {
+        return this.group.map(($el) => $el.id());
     }
 }

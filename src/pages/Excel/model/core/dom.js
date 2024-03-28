@@ -95,6 +95,14 @@ class Dom {
         return this.data.id;
     }
 
+    getStyles(styles = []) {
+        return styles.reduce((res, s) => {
+            res[s] = this.$el.style[s];
+            console.log(res);
+            return res;
+        }, {});
+    }
+
     focus() {
         this.$el.focus();
         return this;
