@@ -5,6 +5,7 @@ import {
     defaultStyles,
 } from './table.consts';
 import { camelToDashCase, toInlineStyles } from '../../core/utils';
+import { parse } from '../../core/parse';
 
 function getWidth(state, index) {
     // return `${state[index] || DEFAULT_WIDTH}px`; // first method to render table with determined cell width from state
@@ -15,6 +16,7 @@ function toCell(state, row) {
     return function (_, col) {
         const width = getWidth(state.colState, col);
         const cellId = `${row}:${col}`;
+        const data = state.dataState[cellId];
 
         const styles = toInlineStyles({
             ...defaultStyles,
@@ -27,9 +29,10 @@ function toCell(state, row) {
         contenteditable 
         data-col="${col}"
         data-type="cell"
-        data-id="${row}:${col}"        
+        data-id="${row}:${col}"  
+        ${data ? `data-value ="${data}"` : ''}        
         ${width ? `style ="${styles}; width: ${width}px"` : `style="${styles}"`}
-      >${state.dataState[cellId] || ''}</div>
+      >${parse(data) || ''}</div>
     `;
     };
 } // style="${styles}; width: ${width}"

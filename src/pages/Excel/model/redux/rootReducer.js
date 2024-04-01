@@ -1,4 +1,10 @@
-import { APPLY_STYLE, CHANGE_STYLES, CHANGE_TEXT, TABLE_RESIZE } from './types';
+import {
+    APPLY_STYLE,
+    CHANGE_STYLES,
+    CHANGE_TEXT,
+    CHANGE_TITLE,
+    TABLE_RESIZE,
+} from './types';
 import { deepObjectEqual } from '../core/utils';
 
 function statePartValue(state, field, action) {
@@ -15,38 +21,39 @@ export function rootReducer(state, action) {
         return a + b;
     }
 
-    console.log(action.data);
+    // console.log(action.data);
+
     switch (action.type) {
         case TABLE_RESIZE:
             field = action.data.type === 'col' ? 'colState' : 'rowState';
 
-            console.log(
-                deepObjectEqual(
-                    {
-                        ...state,
-                        [field]: {
-                            ...statePartValue(state, field, action),
-                            some2: { some2: 2 },
-                            fn: fn2,
-                            // fn2(a, b) {
-                            //     return a + b;
-                            // },
-                        },
-                    },
-                    {
-                        ...state,
-                        [field]: {
-                            ...state[field],
-                            [action.data.id]: action.data.value,
-                            some2: { some2: 2 },
-                            fn: fn2,
-                            // fn2(a, b) {
-                            //     return a + b;
-                            // },
-                        },
-                    },
-                ),
-            );
+            // console.log(
+            //     deepObjectEqual(
+            //         {
+            //             ...state,
+            //             [field]: {
+            //                 ...statePartValue(state, field, action),
+            //                 some2: { some2: 2 },
+            //                 fn: fn2,
+            //                 // fn2(a, b) {
+            //                 //     return a + b;
+            //                 // },
+            //             },
+            //         },
+            //         {
+            //             ...state,
+            //             [field]: {
+            //                 ...state[field],
+            //                 [action.data.id]: action.data.value,
+            //                 some2: { some2: 2 },
+            //                 fn: fn2,
+            //                 // fn2(a, b) {
+            //                 //     return a + b;
+            //                 // },
+            //             },
+            //         },
+            //     ),
+            // );
 
             return { ...state, [field]: statePartValue(state, field, action) };
 
@@ -71,6 +78,8 @@ export function rootReducer(state, action) {
                 [field]: statePart,
                 currentStyles: { ...state.currentStyles, ...action.data.value },
             };
+        case CHANGE_TITLE:
+            return { ...state, title: action.data };
         default:
             return state;
     }

@@ -10,20 +10,21 @@ import { Page } from '@/widgets/Page';
 import '../model/scss/index.scss';
 import { createStore } from '../model/core/createStore';
 import { rootReducer } from '../model/redux/rootReducer';
-import { storage } from '../model/core/utils';
+import { debounce, storage } from '../model/core/utils';
 import { initialState } from '../model/redux/initialState';
 
 // https://betterprogramming.pub/4-ways-of-adding-external-js-files-in-reactjs-823f85de3668
 // https://stackoverflow.com/questions/34424845/adding-script-tag-to-react-jsx
 
-const store = createStore(rootReducer, initialState);
-
-store.subscribe((state: unknown) => {
-    // console.log('App State: ', state);
-    storage('excel-state', state);
-});
-
 const ExcelPage = () => {
+    const store = createStore(rootReducer, initialState);
+    const stateListener = debounce((state: unknown) => {
+        console.log('App State: ', state);
+        storage('excel-state', state);
+    }, 900);
+
+    store.subscribe(stateListener);
+
     const { i18n } = useTranslation();
 
     useEffect(() => {
@@ -36,7 +37,7 @@ const ExcelPage = () => {
         return () => {
             excel.clearRoot();
         };
-    }, [i18n.language]);
+    }, [i18n.language, store]);
     return (
         <Page data-testid='ExcelPage'>
             <div id='excel' />

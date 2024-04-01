@@ -1,13 +1,14 @@
 import { createTable } from './table.template';
-import { ExcelComponent } from '../../core/ExcelComponent';
 import { resizeHandler } from './table.resize';
 import { isCell, matrix, nextSelector, shouldResize } from './table.functions';
 import { TableSelection } from './TableSelection';
 import { $ } from '../../core/dom';
 import { defaultStyles, ROWS_COUNT } from './table.consts';
 import * as actions from '../../redux/actions';
+import { ExcelStateComponent } from '../../core/ExcelStateComponent';
+import { parse } from '../../core/parse';
 
-export class Table extends ExcelComponent {
+export class Table extends ExcelStateComponent {
     static className = 'excel__table';
 
     constructor(
@@ -33,11 +34,13 @@ export class Table extends ExcelComponent {
 
         const $cell = this.$root.findEl('[data-id="0:0"]');
         this.selection.select($cell);
+        this.dispatchChangeStyles($cell);
+
         this.$emit('table:select', $cell);
 
         this.$on('formula:input', (text) => {
+            this.selection.current.attr('data-value', text).text(parse(text));
             this.updateTextInStore(text);
-            this.selection.current.text(text);
         });
 
         this.$on('formula:keydown', (event) => {
@@ -45,9 +48,8 @@ export class Table extends ExcelComponent {
         });
 
         this.$on('toolbar:applyStyle', (style) => {
-            console.log(style);
+            // console.log(style);
             this.selection.applyStyle(style);
-            // this.$dispatch(actions.changeStyles(style));
             this.$dispatch(
                 actions.applyStyle({
                     value: style,
@@ -69,6 +71,7 @@ export class Table extends ExcelComponent {
     async resizeTable(event) {
         try {
             const data = await resizeHandler(this.$root, event);
+            // console.log('resizeHandler', data);
             this.$dispatch(actions.tableResize(data));
         } catch (e) {
             console.warn('Resize error', e.message);
@@ -129,7 +132,10 @@ export class Table extends ExcelComponent {
     }
 
     onInput(event) {
-        this.updateTextInStore($(event.target).text());
+        const text = $(event.target).text();
+        this.selection.current.attr('data-value', text);
+        // this.selection.current.text(parse(text));
+        this.updateTextInStore(text);
     }
 
     onClick = (event) => {

@@ -1,12 +1,11 @@
 import { $ } from '../../core/dom';
+import { throttle } from '../../core/utils';
 
 export function resizeHandler($root, event) {
     return new Promise((resolve) => {
         event.preventDefault();
         const $resizer = $(event.target);
 
-        // const $parent = $resizer.$el.parentNode // bad!
-        // const $parent = $resizer.$el.closest('.column') // better but bad
         const $parent = $resizer.closest('[data-type="resizable"]');
         const coords = $parent.getCoords();
         const type = $resizer.data.resize;
@@ -25,6 +24,7 @@ export function resizeHandler($root, event) {
                       height: '2px',
                       bottom: '-1px',
                   };
+
         const sidePropAfterMove =
             type === 'col'
                 ? {
@@ -38,58 +38,64 @@ export function resizeHandler($root, event) {
                       bottom: '-2px',
                   };
 
-        let value;
-
-        // console.log($parent);
-        // console.log($parent.$el);
-        // console.log($parent.$el.clientWidth);
-        // console.log($root.$el.clientWidth);
-        // console.log($root.$el.clientHeight);
-
         $resizer.css({
             opacity: 1,
             ...sideProp,
         });
 
-        document.onmousemove = (e) => {
-            if (type === 'col') {
-                const delta = e.pageX - coords.right;
-                value = Math.round(coords.width + delta);
+        let value;
+        let isMouseUp = false;
+        let resizerStyles;
 
-                $resizer.css({ right: `${-delta}px` });
-            } else {
-                const delta = e.pageY - coords.bottom;
-                value = coords.height + delta;
+        document.onmousemove =
+            //
+            throttle(
+                //
+                (e) => {
+                    if (type === 'col') {
+                        const delta = e.pageX - coords.right;
+                        value = Math.round(coords.width + delta);
 
-                $resizer.css({ bottom: `${-delta}px` });
-            }
-        };
+                        resizerStyles = { right: `${-delta}px` };
+                    } else {
+                        const delta = e.pageY - coords.bottom;
+                        value = coords.height + delta;
+
+                        resizerStyles = { bottom: `${-delta}px` };
+                    }
+
+                    // eslint-disable-next-line no-unused-expressions
+                    !isMouseUp && $resizer.css(resizerStyles);
+                },
+                //
+                50,
+            );
 
         document.onmouseup = () => {
-            document.onmousemove = null;
-            document.onmouseup = null;
+            $resizer.css({
+                opacity: 0,
+                ...sidePropAfterMove,
+            });
 
             if (type === 'col') {
-                // $parent.css({ width: `${value}px` });
                 $root
                     .findAll(`[data-col="${$parent.data.col}"]`)
-                    // eslint-disable-next-line no-return-assign
-                    .forEach((el) => (el.style.width = `${value}px`));
+                    .forEach((el) => {
+                        el.style.width = `${value}px`;
+                    });
             } else {
                 $parent.css({ height: `${value}px` });
             }
 
             resolve({
                 value,
-                // id: type === 'col' ? $parent.data.col : $parent.data.row,
                 id: $parent.data[type],
                 type,
             });
 
-            $resizer.css({
-                opacity: 0,
-                ...sidePropAfterMove,
-            });
+            isMouseUp = true;
+            document.onmousemove = null;
+            document.onmouseup = null;
         };
     });
 }

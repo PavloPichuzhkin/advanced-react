@@ -1,7 +1,9 @@
 import { storage } from '../core/utils';
 import { defaultStyles } from '../components/table/table.consts';
+import { defaultTitle } from '../components/header/Header';
 
 const defaultState = {
+    title: defaultTitle,
     rowState: {},
     colState: {},
     dataState: {}, // {'0:1':'some text'}

@@ -51,3 +51,48 @@ export function toInlineStyles(styles = {}) {
         .map((key) => `${camelToDashCase(key)}: ${styles[key]}`)
         .join(';');
 }
+
+export function debounce(fn, wait) {
+    let timeout;
+    return function (...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            // fn(...args);
+            fn.apply(this, args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// export function throttle(fn, wait = 1000) {
+//     let timeout;
+//     let shouldThrottle = false;
+//     return function (...args) {
+//         if (!shouldThrottle) {
+//             fn.apply(this, args);
+//             shouldThrottle = true;
+//             clearTimeout(timeout);
+//
+//             timeout = setTimeout(() => {
+//                 shouldThrottle = false;
+//             }, wait);
+//         }
+//     };
+// }
+
+export function throttle(fn, wait = 1000) {
+    let timeout;
+    let shouldThrottle;
+    return (...args) => {
+        if (shouldThrottle) return;
+        shouldThrottle = true;
+        timeout = setTimeout(() => {
+            // fn(...args);
+            fn.apply(this, args);
+
+            shouldThrottle = false;
+            clearTimeout(timeout);
+        }, wait);
+    };
+}
