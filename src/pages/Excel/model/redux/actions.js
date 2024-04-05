@@ -4,6 +4,7 @@ import {
     CHANGE_TEXT,
     CHANGE_TITLE,
     TABLE_RESIZE,
+    UPDATE_OPENED_DATE,
 } from './types';
 
 export function returnAction(type, data) {
@@ -29,4 +30,8 @@ export function applyStyle(data) {
 
 export function changeTitle(data) {
     return returnAction(CHANGE_TITLE, data);
+}
+
+export function updateOpenedDate() {
+    return returnAction(UPDATE_OPENED_DATE);
 }

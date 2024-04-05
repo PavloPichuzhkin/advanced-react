@@ -12,7 +12,7 @@
                 "isAppRedesigned": true
             },
             "jsonSettings": {
-                "theme": "app_light_theme",
+                "theme": "app_dark_theme",
                 "isFirstVisit": true,
                 "settingsPageHasBeenOpen": false,
                 "isArticlesPageWasOpened": true
@@ -486,7 +486,7 @@
     "profile": [
         {
             "id": "1",
-            "first": "Pavlo111",
+            "first": "Pavlo11",
             "lastname": "Pichuzhkin",
             "age": 22,
             "currency": "USD",

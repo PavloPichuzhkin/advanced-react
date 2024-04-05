@@ -47,5 +47,11 @@
     "Old": "Old",
     "User settings": "User settings",
     "Settings": "Settings",
-    "New table": "New table"
+    "New table": "New table",
+    "Dashboard": "Dashboard",
+    "You have not created any tables": "You have not created any tables",
+    "Table name": "Table name",
+    "Opened date": "Opened date",
+    "Edited date": "Edited date",
+    "Created date": "Created date"
 }

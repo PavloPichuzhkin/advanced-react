@@ -5,3 +5,4 @@ export const CHANGE_STYLES = 'CHANGE_STYLES';
 export const APPLY_STYLE = 'APPLY_STYLE';
 
 export const CHANGE_TITLE = 'CHANGE_TITLE';
+export const UPDATE_OPENED_DATE = 'UPDATE_OPENED_DATE';

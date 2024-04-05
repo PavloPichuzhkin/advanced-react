@@ -4,6 +4,7 @@ import {
     CHANGE_TEXT,
     CHANGE_TITLE,
     TABLE_RESIZE,
+    UPDATE_OPENED_DATE,
 } from './types';
 import { deepObjectEqual } from '../core/utils';
 
@@ -55,7 +56,11 @@ export function rootReducer(state, action) {
             //     ),
             // );
 
-            return { ...state, [field]: statePartValue(state, field, action) };
+            return {
+                ...state,
+                [field]: statePartValue(state, field, action),
+                editedDate: new Date().toJSON(),
+            };
 
         case CHANGE_TEXT:
             field = 'dataState';
@@ -63,9 +68,14 @@ export function rootReducer(state, action) {
                 ...state,
                 currentText: action.data.value,
                 [field]: statePartValue(state, field, action),
+                editedDate: new Date().toJSON(),
             };
         case CHANGE_STYLES:
-            return { ...state, currentStyles: action.data };
+            return {
+                ...state,
+                currentStyles: action.data,
+                editedDate: new Date().toJSON(),
+            };
 
         case APPLY_STYLE:
             field = 'stylesState';
@@ -77,9 +87,16 @@ export function rootReducer(state, action) {
                 ...state,
                 [field]: statePart,
                 currentStyles: { ...state.currentStyles, ...action.data.value },
+                editedDate: new Date().toJSON(),
             };
         case CHANGE_TITLE:
-            return { ...state, title: action.data };
+            return {
+                ...state,
+                title: action.data,
+                editedDate: new Date().toJSON(),
+            };
+        case UPDATE_OPENED_DATE:
+            return { ...state, openedDate: new Date().toJSON() };
         default:
             return state;
     }

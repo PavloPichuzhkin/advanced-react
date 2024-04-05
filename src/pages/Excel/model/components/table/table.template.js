@@ -9,7 +9,7 @@ import { parse } from '../../core/parse';
 
 function getWidth(state, index) {
     // return `${state[index] || DEFAULT_WIDTH}px`; // first method to render table with determined cell width from state
-    return state[index];
+    return state?.[index];
 }
 
 function toCell(state, row) {
@@ -30,12 +30,14 @@ function toCell(state, row) {
         data-col="${col}"
         data-type="cell"
         data-id="${row}:${col}"  
-        ${data ? `data-value ="${data}"` : ''}        
+        ${data ? `data-value ="${data}"` : ''}       
         ${width ? `style ="${styles}; width: ${width}px"` : `style="${styles}"`}
       >${parse(data) || ''}</div>
     `;
     };
 } // style="${styles}; width: ${width}"
+// ${data ? `data-value ="${data}"` : ''}
+//  data-value ="${data || ''}"
 
 function toColumn({ col, index, width }) {
     return `

@@ -43,6 +43,7 @@ const authOnlyWithRoles = (
     authOnly: true,
     roles,
 });
+
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     [AppRoutes.MAIN]: {
         path: getRouteMain(),
@@ -90,7 +91,7 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     [AppRoutes.SETTINGS]: {
         path: getRouteSettings(),
         element: <SettingsPage />,
-        ...authOnlyWithRoles, // commented line - testing DesignSwitcher -> without authData don't work
+        // ...authOnlyWithRoles(), // commented line - testing DesignSwitcher -> without authData! don't work
     },
     [AppRoutes.EXCEL]: {
         path: `${getRouteExcel()}/*`,
@@ -103,7 +104,7 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
                 // // or batter TODO create in AppRouter (element) HOC, include scrolling...
             />
         ),
-        ...authOnlyWithRoles,
+        ...authOnlyWithRoles(),
     },
 
     [AppRoutes.NOT_FOUND]: {

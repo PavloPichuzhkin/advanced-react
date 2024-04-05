@@ -14,6 +14,7 @@ import {
 interface FetchArticlesListProps {
     replace?: boolean;
 }
+
 export const fetchArticlesList = createAsyncThunk<
     Article[],
     FetchArticlesListProps,

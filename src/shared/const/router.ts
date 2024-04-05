@@ -25,7 +25,7 @@ export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`;
 export const getRouteAdmin = () => '/admin';
 export const getRouteSettings = () => '/settings';
 export const getRouteForbidden = () => '/forbidden';
-export const getRouteExcel = () => '/Excel';
+export const getRouteExcel = () => '/Excel/';
 
 export const AppRouteByPathPattern: Record<string, AppRoutes> = {
     [getRouteMain()]: AppRoutes.MAIN,
@@ -38,4 +38,6 @@ export const AppRouteByPathPattern: Record<string, AppRoutes> = {
     [getRouteArticleEdit(':id')]: AppRoutes.ARTICLE_EDIT,
     [getRouteAdmin()]: AppRoutes.ADMIN_PANEL,
     [getRouteForbidden()]: AppRoutes.FORBIDDEN,
+    [getRouteExcel()]: AppRoutes.EXCEL,
+    '*': AppRoutes.NOT_FOUND,
 };

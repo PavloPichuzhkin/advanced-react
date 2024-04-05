@@ -25,7 +25,7 @@ import { getFeatureFlag, toggleFeatures } from '@/shared/lib/features';
 export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
     const excelTool = getFeatureFlag('isAppRedesigned')
         ? {
-              path: getRouteExcel(),
+              path: `${getRouteExcel()}#db`,
               Icon: toggleFeatures({
                   name: 'isAppRedesigned',
                   off: () => ArticleIconDeprecated,
