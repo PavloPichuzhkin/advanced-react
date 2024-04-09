@@ -19,9 +19,9 @@ function toHTML(key) {
       <div>
         ${dateOf(model.editedDate)}
       </div>
-      <div>  
-        ${dateOf(model.openedDate)}
-      </div>
+<!--      <div>  -->
+<!--        ${dateOf(model.openedDate)}-->
+<!--      </div>-->
     </li>
   `;
 }
@@ -51,7 +51,7 @@ export function createRecordsTable() {
       <span>${t('Table name')}</span>
       <span>${t('Created date')}</span>
       <span>${t('Edited date')}</span>      
-      <span>${t('Opened date')}</span>      
+<!--      <span>${t('Opened date')}</span>      -->
     </div>
 
     <ul class="db__list">

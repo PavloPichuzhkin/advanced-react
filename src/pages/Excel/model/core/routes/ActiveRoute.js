@@ -1,6 +1,5 @@
 export class ActiveRoute {
     static get path() {
-        // console.log(window.location);
         return window.location.hash.slice(1);
     }
 

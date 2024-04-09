@@ -12,10 +12,12 @@ export class Excel {
 
         this.store = options.store;
         this.subscriber = new StoreSubscriber(this.store);
+
+        this.$root = null;
     }
 
     getRoot() {
-        const $root = $.create('div', 'excel');
+        this.$root = $.create('div', 'excel');
         // console.log($root);
         const componentOptions = {
             emitter: this.emitter,
@@ -36,17 +38,17 @@ export class Excel {
             }
 
             $el.html(component.toHTML());
-            $root.append($el);
+            this.$root.append($el);
             return component;
         });
 
-        return $root;
+        return this.$root;
     }
 
     init() {
-        if (!__IS_DEV__) {
-            document.addEventListener('contextmenu', preventDefault);
-        }
+        // if (!__IS_DEV__) {
+        this.$root.$el.addEventListener('contextmenu', preventDefault);
+        // }
         this.store.dispatch(actions.updateOpenedDate());
 
         this.subscriber.subscribeComponents(this.components);
@@ -54,9 +56,10 @@ export class Excel {
     }
 
     destroy() {
+        console.log('destroy');
         this.subscriber.unsubscribeFromStore();
         this.components.forEach((component) => component.destroy());
 
-        document.removeEventListener('contextmenu', preventDefault);
+        this.$root.$el.removeEventListener('contextmenu', preventDefault);
     }
 }

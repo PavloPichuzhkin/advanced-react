@@ -18,16 +18,19 @@ export class Router {
     }
 
     init() {
-        window.addEventListener('hashchange', this.changePageHandler);
+        // window.addEventListener('hashchange', this.changePageHandler);
+        // Routing control is given to the Exel.tsx (2 renders)
         this.changePageHandler();
     }
 
     changePageHandler() {
-        if (this.page) {
-            this.page.destroy();
-        }
+        // console.log(ActiveRoute.path);
+        // if (this.page) { //page destroyed in the Exel.tsx useEffect
+        //     console.log(this.page, 'destroyed');
+        //     this.page.destroy();
+        // }
 
-        this.$placeholder.clear();
+        // this.$placeholder.clear();
 
         const Page = ActiveRoute.path.includes('excel')
             ? this.routes.excel
@@ -41,6 +44,11 @@ export class Router {
     }
 
     destroy() {
-        window.removeEventListener('hashchange', this.changePageHandler);
+        // window.removeEventListener('hashchange', this.changePageHandler);
+        if (this.page) {
+            this.$placeholder.clear();
+            this.page.destroy();
+            console.log(this.page, 'destroyed');
+        }
     }
 }

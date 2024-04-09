@@ -53,5 +53,6 @@
     "Table name": "Table name",
     "Opened date": "Opened date",
     "Edited date": "Edited date",
-    "Created date": "Created date"
+    "Created date": "Created date",
+    "Do you really want to delete this table?": "Do you really want to delete this table?"
 }

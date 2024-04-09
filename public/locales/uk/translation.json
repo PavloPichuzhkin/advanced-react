@@ -49,9 +49,10 @@
     "Settings": "Налаштування",
     "New table": "Нова таблиця",
     "Dashboard": "Панель управління",
-    "You have not created any tables": "You have not created any tables",
+    "You have not created any tables": "Ви не створили жодної таблиці",
     "Table name": "Назва таблиці",
     "Opened date": "Дата відкиття",
     "Edited date": "Дата редагування",
-    "Created date": "Дата створення"
+    "Created date": "Дата створення",
+    "Do you really want to delete this table?": "Ви справді хочете видалити цю таблицю?"
 }

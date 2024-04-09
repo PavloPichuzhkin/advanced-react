@@ -28,15 +28,16 @@ export class Header extends ExcelComponent {
         <div class="button_red" data-button="remove">
           <i class="material-icons" data-button="remove">delete</i>
         </div>
-        <a href="#hghg">
+<!--        <a href="#hghg">-->
            <div class="button" data-button="exit">          
             <i class="material-icons" data-button="exit">exit_to_app</i>                   
           </div>
-        </a>
+<!--        </a>-->
       </div>
     `;
     }
 
+    // TODO check commented lines in prod version (createRecordsTable)
     prepare() {
         this.onInput = debounce(this.onInput, 500);
     }
@@ -53,7 +54,7 @@ export class Header extends ExcelComponent {
         if ($target.data.button === 'remove') {
             // eslint-disable-next-line no-restricted-globals
             const decision = confirm(
-                'Вы действительно хотите удалить эту таблицу?',
+                t('Do you really want to delete this table?'),
             );
 
             if (decision) {

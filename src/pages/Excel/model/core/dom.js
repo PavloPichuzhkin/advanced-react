@@ -41,11 +41,6 @@ class Dom {
         return this;
     }
 
-    removeChildren() {
-        this.$el.innerHTML = '';
-        return this;
-    }
-
     closest(selector) {
         // eslint-disable-next-line no-use-before-define
         return $(this.$el.closest(selector));
