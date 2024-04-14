@@ -1,4 +1,4 @@
-import { deepObjectEqual } from './utils';
+import { deepObjectEqual } from '../utils';
 
 export class StoreSubscriber {
     constructor(store) {
@@ -23,6 +23,11 @@ export class StoreSubscriber {
             });
 
             this.prevState = this.store.getState();
+
+            // if (__IS_DEV__) {
+            //     // eslint-disable-next-line dot-notation
+            //     window['redux'] = this.prevState;
+            // }
         });
     }
 

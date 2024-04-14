@@ -18,43 +18,9 @@ export function rootReducer(state, action) {
     let field;
     let statePart;
 
-    function fn2(a, b) {
-        return a + b;
-    }
-
-    // console.log(action.data);
-
     switch (action.type) {
         case TABLE_RESIZE:
             field = action.data.type === 'col' ? 'colState' : 'rowState';
-
-            // console.log(
-            //     deepObjectEqual(
-            //         {
-            //             ...state,
-            //             [field]: {
-            //                 ...statePartValue(state, field, action),
-            //                 some2: { some2: 2 },
-            //                 fn: fn2,
-            //                 // fn2(a, b) {
-            //                 //     return a + b;
-            //                 // },
-            //             },
-            //         },
-            //         {
-            //             ...state,
-            //             [field]: {
-            //                 ...state[field],
-            //                 [action.data.id]: action.data.value,
-            //                 some2: { some2: 2 },
-            //                 fn: fn2,
-            //                 // fn2(a, b) {
-            //                 //     return a + b;
-            //                 // },
-            //             },
-            //         },
-            //     ),
-            // );
 
             return {
                 ...state,

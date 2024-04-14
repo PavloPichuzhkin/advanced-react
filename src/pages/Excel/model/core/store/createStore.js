@@ -1,6 +1,12 @@
+import { runEnvCallback } from '../routes/Router.spec';
+
 export function createStore(rootReducer, initialState = {}) {
     let state = rootReducer({ ...initialState }, { type: '__INIT__' });
     let listeners = [];
+
+    const returnListeners = runEnvCallback(() => {
+        return { listeners };
+    });
 
     return {
         subscribe(fn) {
@@ -19,5 +25,6 @@ export function createStore(rootReducer, initialState = {}) {
         getState() {
             return state;
         },
+        ...returnListeners,
     };
 }

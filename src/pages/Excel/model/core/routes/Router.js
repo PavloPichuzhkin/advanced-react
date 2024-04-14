@@ -24,7 +24,6 @@ export class Router {
     }
 
     changePageHandler() {
-        // console.log(ActiveRoute.path);
         // if (this.page) { //page destroyed in the Exel.tsx useEffect
         //     console.log(this.page, 'destroyed');
         //     this.page.destroy();
@@ -48,7 +47,7 @@ export class Router {
         if (this.page) {
             this.$placeholder.clear();
             this.page.destroy();
-            console.log(this.page, 'destroyed');
+            // console.log(this.page, 'destroyed');
         }
     }
 }

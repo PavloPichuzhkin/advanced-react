@@ -12,7 +12,7 @@
                 "isAppRedesigned": true
             },
             "jsonSettings": {
-                "theme": "app_light_theme",
+                "theme": "app_danger_theme",
                 "isFirstVisit": true,
                 "settingsPageHasBeenOpen": false,
                 "isArticlesPageWasOpened": true

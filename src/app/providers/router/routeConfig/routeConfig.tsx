@@ -94,7 +94,7 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
         // ...authOnlyWithRoles(), // commented line - testing DesignSwitcher -> without authData! don't work
     },
     [AppRoutes.EXCEL]: {
-        path: `${getRouteExcel()}/*`,
+        path: `${getRouteExcel()}*`,
         element: (
             <ToggleFeatures
                 feature='isAppRedesigned'

@@ -57,7 +57,6 @@ export function debounce(fn, wait) {
     return function (...args) {
         const later = () => {
             clearTimeout(timeout);
-            // fn(...args);
             fn.apply(this, args);
         };
         clearTimeout(timeout);
@@ -88,7 +87,6 @@ export function throttle(fn, wait = 1000) {
         if (shouldThrottle) return;
         shouldThrottle = true;
         timeout = setTimeout(() => {
-            // fn(...args);
             fn.apply(this, args);
 
             shouldThrottle = false;

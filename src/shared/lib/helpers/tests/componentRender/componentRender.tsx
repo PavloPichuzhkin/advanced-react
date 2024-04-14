@@ -12,11 +12,12 @@ import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import '@/app/styles/index.scss';
 
 export interface componentRenderOptions {
-    route?: string;
+    route?: string | Object;
     initialState?: DeepPartial<StateSchema>;
     asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
     theme?: Theme;
 }
+
 interface TestProviderProps {
     children: ReactNode;
     options?: componentRenderOptions;

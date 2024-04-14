@@ -1,12 +1,11 @@
 import { $ } from '../../core/dom';
 import { Emitter } from '../../core/Emitter';
-import { StoreSubscriber } from '../../core/StoreSubscriber';
+import { StoreSubscriber } from '../../core/store/StoreSubscriber';
 import { preventDefault } from '../../core/utils';
 import * as actions from '../../redux/actions';
 
 export class Excel {
     constructor(options) {
-        // this.$el = $(selector);
         this.components = options.components || [];
         this.emitter = new Emitter();
 
@@ -17,8 +16,8 @@ export class Excel {
     }
 
     getRoot() {
-        this.$root = $.create('div', 'excel');
-        // console.log($root);
+        this.$root = $.create('div', 'excel', 'Excel');
+
         const componentOptions = {
             emitter: this.emitter,
             store: this.store,
@@ -46,9 +45,9 @@ export class Excel {
     }
 
     init() {
-        // if (!__IS_DEV__) {
-        this.$root.$el.addEventListener('contextmenu', preventDefault);
-        // }
+        if (!__IS_DEV__) {
+            this.$root.$el.addEventListener('contextmenu', preventDefault);
+        }
         this.store.dispatch(actions.updateOpenedDate());
 
         this.subscriber.subscribeComponents(this.components);
@@ -56,7 +55,6 @@ export class Excel {
     }
 
     destroy() {
-        console.log('destroy');
         this.subscriber.unsubscribeFromStore();
         this.components.forEach((component) => component.destroy());
 

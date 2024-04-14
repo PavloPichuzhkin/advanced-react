@@ -126,10 +126,13 @@ export function $(selector) {
     return new Dom(selector);
 }
 
-$.create = (tagName, classes = '') => {
+$.create = (tagName, classes = '', dataTestId = null) => {
     const el = document.createElement(tagName);
     if (classes) {
         el.classList.add(classes);
+    }
+    if (dataTestId) {
+        el.setAttribute('data-testid', dataTestId);
     }
     return $(el);
 };

@@ -37,7 +37,6 @@ export class Header extends ExcelComponent {
     `;
     }
 
-    // TODO check commented lines in prod version (createRecordsTable)
     prepare() {
         this.onInput = debounce(this.onInput, 500);
     }
@@ -66,4 +65,3 @@ export class Header extends ExcelComponent {
         }
     }
 }
-// test for master
