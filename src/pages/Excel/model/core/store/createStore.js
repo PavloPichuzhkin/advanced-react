@@ -1,4 +1,4 @@
-import { runEnvCallback } from '../routes/Router.spec';
+import { runEnvCallback } from '../routes/Router.test';
 
 export function createStore(rootReducer, initialState = {}) {
     let state = rootReducer({ ...initialState }, { type: '__INIT__' });
