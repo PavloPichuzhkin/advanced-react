@@ -28,7 +28,6 @@ export class Router {
         //     console.log(this.page, 'destroyed');
         //     this.page.destroy();
         // }
-
         // this.$placeholder.clear();
 
         const Page = ActiveRoute.path.includes('excel')
