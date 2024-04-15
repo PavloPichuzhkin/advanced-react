@@ -102,3 +102,18 @@ export function clone(obj) {
 export function preventDefault(event) {
     event.preventDefault();
 }
+
+// const runEnvCallback = (callback, project = 'jest') => {
+//     return function (...args) {
+//         if (__PROJECT__ === project) {
+//             callback(...args);
+//         }
+//     };
+// };
+
+// eslint-disable-next-line consistent-return
+export const runEnvCallback = (callback, project = 'jest') => {
+    if (__PROJECT__ === project) {
+        return callback();
+    }
+};

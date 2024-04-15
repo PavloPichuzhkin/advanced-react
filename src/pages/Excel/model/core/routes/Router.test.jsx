@@ -6,6 +6,7 @@ import { componentRender } from '@/shared/lib/helpers/tests/componentRender/comp
 import AppRouter from '../../../../../app/providers/router/ui/AppRouter';
 import { getRouteExcel } from '@/shared/const/router';
 import { UserRole } from '@/entities/User';
+import { runEnvCallback } from '../utils';
 
 class MockDashboardPage extends Page {
     getRoot() {
@@ -25,13 +26,6 @@ class MockExcelPage extends Page {
 
 const tempWindow = window;
 
-// const runEnvCallback = (callback, project = 'jest') => {
-//     return function (...args) {
-//         if (__PROJECT__ === project) {
-//             callback(...args);
-//         }
-//     };
-// };
 // const setLocationValue = (value) => {
 //     runEnvCallback(() => {
 //         window = Object.create(window);
@@ -43,12 +37,6 @@ const tempWindow = window;
 //     })();
 // };
 
-// eslint-disable-next-line consistent-return
-export const runEnvCallback = (callback, project = 'jest') => {
-    if (__PROJECT__ === project) {
-        return callback();
-    }
-};
 export const setLocationValue = (value) => {
     // https://stackoverflow.com/questions/54021037/how-to-mock-window-location-href-with-jest-vuejs
     // eslint-disable-next-line no-global-assign
