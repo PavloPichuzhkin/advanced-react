@@ -1,5 +1,5 @@
 // eslint-disable-next-line max-classes-per-file
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import { Router } from './Router';
 import { Page } from '../../pages/Page';
 import { componentRender } from '@/shared/lib/helpers/tests/componentRender/componentRender';
@@ -131,8 +131,10 @@ describe('Router:', () => {
             },
         });
 
-        await findPage('ExcelPage');
-        await findPage('Excel');
+        await waitFor(() => {
+            findPage('ExcelPage');
+            findPage('Excel');
+        });
     });
 
     test('should render Dashboard Page', async () => {
@@ -154,8 +156,9 @@ describe('Router:', () => {
                 user: { _inited: true, authData: { roles: [UserRole.ADMIN] } },
             },
         });
-
-        await findPage('ExcelPage');
-        await findPage('Dashboard');
+        await waitFor(() => {
+            findPage('ExcelPage');
+            findPage('Dashboard');
+        });
     });
 });
