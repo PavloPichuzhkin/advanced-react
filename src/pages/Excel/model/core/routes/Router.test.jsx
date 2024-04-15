@@ -112,6 +112,8 @@ describe('Router:', () => {
     });
 
     test('should render ExcelPage', async () => {
+        // it works but don't in GitHub Actions
+
         // setLocationValue({
         //     hash: '#excel/1712347254068',
         // });
@@ -120,6 +122,7 @@ describe('Router:', () => {
                 hash: '#excel/1712347254068',
             });
         });
+
         componentRender(<AppRouter />, {
             route: {
                 pathname: getRouteExcel(),
@@ -130,13 +133,14 @@ describe('Router:', () => {
                 user: { _inited: true, authData: { roles: [UserRole.ADMIN] } },
             },
         });
-        await waitFor(async () => {
-            expect(await screen.findByTestId('ExcelPage')).toBeInTheDocument();
-            expect(await screen.findByTestId('Excel')).toBeInTheDocument();
-        });
 
-        // await findPage('ExcelPage');
-        // await findPage('Excel');
+        await waitFor(
+            async () => {
+                await findPage('ExcelPage');
+                await findPage('Excel');
+            },
+            { timeout: 3000 }, // for CI
+        );
     });
 
     test('should render Dashboard Page', async () => {

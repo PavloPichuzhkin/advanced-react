@@ -1,9 +1,15 @@
+.loader {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .ldsSpinner {
     display: inline-block;
     position: relative;
     width: 80px;
     height: 80px;
-
 }
 
 .ldsSpinner div {

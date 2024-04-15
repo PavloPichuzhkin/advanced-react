@@ -21,13 +21,14 @@ const normalize = (state) => ({
     currentText: '',
 });
 
-function storageName(param) {
+export function storageName(param) {
     return `excel: ${param}`;
 }
 
-export const normalizeInitialState = (param) => {
+export const normalizeInitialState = (state) => {
     // console.log(defaultState); // defaultState mutated from nowhere wt??????
     // check creteStore getState() (to return {... state} }
 
-    return normalize(storage(storageName(param)) || clone(defaultState));
+    return state ? normalize(state) : clone(defaultState);
+    // return normalize(storage(storageName(param)) || clone(defaultState));
 };

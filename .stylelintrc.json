@@ -14,6 +14,8 @@
                 "except": ["first-nested"],
                 "ignore": ["after-comment"]
             }
-        ]
+        ],
+        "scss/at-import-partial-extension": "always",
+        "scss/at-import-partial-extension-blacklist": [""]
     }
 }
