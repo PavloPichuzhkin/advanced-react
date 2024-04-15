@@ -130,18 +130,16 @@ describe('Router:', () => {
                 user: { _inited: true, authData: { roles: [UserRole.ADMIN] } },
             },
         });
-
-        await waitFor(() => {
-            findPage('ExcelPage');
-            findPage('Excel');
+        await waitFor(async () => {
+            expect(await screen.findByTestId('ExcelPage')).toBeInTheDocument();
+            expect(await screen.findByTestId('Excel')).toBeInTheDocument();
         });
+
+        // await findPage('ExcelPage');
+        // await findPage('Excel');
     });
 
     test('should render Dashboard Page', async () => {
-        // setLocationValue({
-        //     hash: '#some',
-        // });
-
         runEnvCallback(() => {
             setLocationValue({
                 hash: '#some',
@@ -156,9 +154,10 @@ describe('Router:', () => {
                 user: { _inited: true, authData: { roles: [UserRole.ADMIN] } },
             },
         });
-        await waitFor(() => {
-            findPage('ExcelPage');
-            findPage('Dashboard');
+
+        await waitFor(async () => {
+            await findPage('ExcelPage');
+            await findPage('Dashboard');
         });
     });
 });
