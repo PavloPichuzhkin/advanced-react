@@ -71,7 +71,7 @@ describe('Router with mock pages', () => {
         expect(router).toBeDefined();
     });
 
-    test('should render Dashboard Page', () => {
+    test('should render Dashboard Page', async () => {
         // setLocationValue({
         //     hash: '#some',
         // });
@@ -81,11 +81,12 @@ describe('Router with mock pages', () => {
             });
         });
         createRoot();
-
-        expect($root.innerHTML).toBe('<div>dashboard</div>');
+        await waitFor(async () => {
+            expect($root.innerHTML).toBe('<div>dashboard</div>');
+        });
     });
 
-    test('should render ExcelPage', () => {
+    test('should render ExcelPage', async () => {
         // setLocationValue({
         //     hash: '#excel/1712347254068',
         // });
@@ -96,7 +97,9 @@ describe('Router with mock pages', () => {
         });
         createRoot();
 
-        expect($root.innerHTML).toBe('<div>ExcelPage</div>');
+        await waitFor(async () => {
+            expect($root.innerHTML).toBe('<div>ExcelPage</div>');
+        });
     });
 });
 
@@ -139,7 +142,7 @@ describe('Router:', () => {
                 await findPage('ExcelPage');
                 await findPage('Excel');
             },
-            { timeout: 15000 }, // for CI
+            { timeout: 5000 }, // for CI
         );
     });
 
