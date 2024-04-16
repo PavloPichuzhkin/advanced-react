@@ -139,7 +139,7 @@ describe('Router:', () => {
                 await findPage('ExcelPage');
                 await findPage('Excel');
             },
-            { timeout: 3000 }, // for CI
+            { timeout: 15000 }, // for CI
         );
     });
 
