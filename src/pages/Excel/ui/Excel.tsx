@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import { Page } from '@/widgets/Page';
 import '../model/scss/index.scss';
-import { Router } from '../model/core/routes/Router';
+import { Router } from '../model/core/routes/Router.jsx';
 import { DashboardPage } from '../model/pages/DashboardPage';
 import { ExcelPageClass } from '../model/pages/ExcelPage';
 

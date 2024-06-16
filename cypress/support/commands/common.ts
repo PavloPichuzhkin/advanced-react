@@ -17,7 +17,8 @@ export const login = (username: string = 'tuser', password: string = '123') => {
         .then(({ body }) => {
             window.localStorage.setItem(
                 USER_LOCALSTORAGE_KEY,
-                JSON.stringify(body),
+                // JSON.stringify(body),
+                JSON.stringify(1),
             );
             return body;
         });
@@ -31,6 +32,7 @@ declare global {
     namespace Cypress {
         interface Chainable {
             login(email?: string, password?: string): Chainable<User>;
+
             getByTestId(testId: string): Chainable<JQuery<HTMLElement>>;
         }
     }

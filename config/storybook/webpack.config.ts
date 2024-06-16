@@ -12,6 +12,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
         locales: '',
         buildLocales: '',
+        public: '',
     };
     // // https://stackoverflow.com/questions/51771077/storybook-with-absolute-paths
     // // modules: [path.resolve(__dirname, 'src'), 'node_modules']

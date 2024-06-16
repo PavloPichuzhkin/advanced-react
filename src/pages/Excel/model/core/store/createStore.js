@@ -4,10 +4,6 @@ export function createStore(rootReducer, initialState = {}) {
     let state = rootReducer({ ...initialState }, { type: '__INIT__' });
     let listeners = [];
 
-    const returnListeners = runEnvCallback(() => {
-        return { listeners };
-    });
-
     return {
         subscribe(fn) {
             listeners.push(fn);
@@ -25,6 +21,9 @@ export function createStore(rootReducer, initialState = {}) {
         getState() {
             return state;
         },
-        ...returnListeners,
+        ...runEnvCallback(() => {
+            // for createStore.spec.js
+            return { listeners };
+        }),
     };
 }

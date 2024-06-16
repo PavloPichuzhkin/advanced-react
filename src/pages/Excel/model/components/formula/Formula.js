@@ -48,6 +48,6 @@ export class Formula extends ExcelComponent {
     }
 
     onClick() {
-        // console.log('vmjhvh');
+        // console.log(this.name, this.$root);
     }
 }

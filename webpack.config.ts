@@ -11,11 +11,13 @@ export default (env: BuildEnv) => {
         src: path.resolve(__dirname, 'src'),
         locales: path.resolve(__dirname, 'public', 'locales'),
         buildLocales: path.resolve(__dirname, 'build', 'locales'),
+        public: path.resolve(__dirname, 'public'),
     };
     const mode = env?.mode || 'development';
     const isDev = mode === 'development';
     const PORT = env?.port || 3000;
     const apiUrl = env?.apiUrl || 'http://localhost:8000';
+    const analyzer = env?.analyzer;
 
     const config: webpack.Configuration = buildWebpackConfig({
         paths,
@@ -24,6 +26,7 @@ export default (env: BuildEnv) => {
         port: PORT,
         apiUrl,
         project: 'frontend',
+        analyzer,
     });
 
     return config;

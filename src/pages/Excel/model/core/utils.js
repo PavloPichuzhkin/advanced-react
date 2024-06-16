@@ -103,7 +103,7 @@ export function preventDefault(event) {
     event.preventDefault();
 }
 
-// const runEnvCallback = (callback, project = 'jest') => {
+// const runEnvCallback = (callback, project = 'jest') => { // for 1st variant setLocationValue
 //     return function (...args) {
 //         if (__PROJECT__ === project) {
 //             callback(...args);
@@ -116,4 +116,26 @@ export const runEnvCallback = (callback, project = 'jest') => {
     if (__PROJECT__ === project) {
         return callback();
     }
+};
+
+// const setLocationValue = (value) => { // I can't decide which is better
+//     runEnvCallback(() => {
+//         window = Object.create(window);
+//
+//         Object.defineProperty(window, 'location', {
+//             value,
+//             writable: true,
+//         });
+//     })();
+// };
+
+export const setLocationValue = (value) => {
+    // https://stackoverflow.com/questions/54021037/how-to-mock-window-location-href-with-jest-vuejs
+    // eslint-disable-next-line no-global-assign
+    window = Object.create(window);
+
+    Object.defineProperty(window, 'location', {
+        value,
+        writable: true,
+    });
 };

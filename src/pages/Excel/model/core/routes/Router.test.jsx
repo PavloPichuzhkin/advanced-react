@@ -6,7 +6,7 @@ import { componentRender } from '@/shared/lib/helpers/tests/componentRender/comp
 import AppRouter from '../../../../../app/providers/router/ui/AppRouter';
 import { getRouteExcel } from '@/shared/const/router';
 import { UserRole } from '@/entities/User';
-import { runEnvCallback } from '../utils';
+import { runEnvCallback, setLocationValue } from '../utils';
 
 class MockDashboardPage extends Page {
     getRoot() {
@@ -25,28 +25,6 @@ class MockExcelPage extends Page {
 }
 
 const tempWindow = window;
-
-// const setLocationValue = (value) => {
-//     runEnvCallback(() => {
-//         window = Object.create(window);
-//
-//         Object.defineProperty(window, 'location', {
-//             value,
-//             writable: true,
-//         });
-//     })();
-// };
-
-export const setLocationValue = (value) => {
-    // https://stackoverflow.com/questions/54021037/how-to-mock-window-location-href-with-jest-vuejs
-    // eslint-disable-next-line no-global-assign
-    window = Object.create(window);
-
-    Object.defineProperty(window, 'location', {
-        value,
-        writable: true,
-    });
-};
 
 describe('Router with mock pages', () => {
     let router;

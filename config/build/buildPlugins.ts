@@ -6,17 +6,19 @@ import CopyPlugin from "copy-webpack-plugin";
 import CircularDependencyPlugin from "circular-dependency-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import path from "path";
 import { BuildOptions } from "./types/config";
 
 export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstance[] {
     const {
-        mode, paths, isDev, apiUrl, project
+        paths, isDev, apiUrl, project, analyzer
     } = options;
+
     const isProd = !isDev;
 
     const plugins = [
-        new HtmlWebpackPlugin({ template: paths.html }),
-        new webpack.ProgressPlugin(),
+        new HtmlWebpackPlugin({ template: paths.html, favicon: path.resolve(paths.public, "redux.svg") }),
+
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
             __API__: JSON.stringify(apiUrl),
@@ -38,17 +40,18 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
             }
         })
     ];
-    // plugins.push(new BundleAnalyzerPlugin({
-    //     openAnalyzer: true,
-    //     analyzerPort: 8800
-    // }));
-    if (isDev) {
-        plugins.push(new ReactRefreshWebpackPlugin());
-        plugins.push(new webpack.HotModuleReplacementPlugin());
+
+    if (analyzer) { // npm run build:prod -- --env analyzer
         plugins.push(new BundleAnalyzerPlugin({
-            openAnalyzer: false,
+            openAnalyzer: true,
             analyzerPort: 8800
         }));
+    }
+
+    if (isDev) {
+        plugins.push(new webpack.ProgressPlugin());
+        plugins.push(new ReactRefreshWebpackPlugin());
+        plugins.push(new webpack.HotModuleReplacementPlugin());
     }
 
     if (isProd) {

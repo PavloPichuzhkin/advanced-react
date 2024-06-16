@@ -29,6 +29,7 @@ export const normalizeInitialState = (state) => {
     // console.log(defaultState); // defaultState mutated from nowhere wt??????
     // check creteStore getState() (to return {... state} }
 
-    return state ? normalize(state) : clone(defaultState);
+    return state ? normalize(state) : defaultState; // clone(defaultState)-> defaultState mutated before routing, now it doesn't happen
     // return normalize(storage(storageName(param)) || clone(defaultState));
 };
+res.write('<h3>Hello from NodeJS</h3>');
