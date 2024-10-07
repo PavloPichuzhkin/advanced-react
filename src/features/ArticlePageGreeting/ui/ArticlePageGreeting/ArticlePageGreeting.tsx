@@ -25,7 +25,9 @@ const ArticlePageGreeting = memo(() => {
 
     useEffect(() => {
         if (!isArticlesPageWasOpened) {
-            setIsOpen(true);
+            setTimeout(() => setIsOpen(true), 2000);
+            // setIsOpen(true); // Here Modal css transitions problem
+
             dispatch(saveJsonSettings({ isArticlesPageWasOpened: true }));
         }
     }, [dispatch, isArticlesPageWasOpened]);
